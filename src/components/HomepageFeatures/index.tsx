@@ -10,32 +10,34 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    title: "Easy access to the Subnets ecosystem",
+    Svg: require("@site/static/img/undraw-nakamoto-ash.svg").default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        The <b>Ash protocol</b> lowers the entry cost to the Avalanche Subnets
+        ecosystem <b>for all the participants</b>.
+      </>
+    ),
+  },
+  {
+    title: "Decentralized infrastructure",
+    Svg: require("@site/static/img/undraw-ash-p2p.svg").default,
+    description: (
+      <>
+        Ash nodes are funded through <b>liquid staking</b> and run by a{" "}
+        <b>decentralized network</b> of node operators. Governance and
+        operations are <b>tracked on-chain</b>.
       </>
     ),
   },
   {
     title: "Open Source tooling",
-    Svg: require("@site/static/img/osi-keyhole.svg").default,
+    Svg: require("@site/static/img/undraw-open-source.svg").default,
     description: (
       <>
-        Ash provides a set of <a href="https://opensource.org">open-source</a>{" "}
-        tools for Avalanche node operators and developers.
-      </>
-    ),
-  },
-  {
-    title: "Powered by React",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        The Ash teams maintains a set of open-source tools that{" "}
+        <b>boost the productivity</b> of Avalanche <b>node operators</b> and{" "}
+        <b>developers</b>.
       </>
     ),
   },
