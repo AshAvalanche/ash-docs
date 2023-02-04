@@ -25,7 +25,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Ash provides a set of <a href="https://opensource.org">open-source</a>{" "}
-        tools for node operators to fluidify Avalanche nodes management.
+        tools for Avalanche node operators and developers.
       </>
     ),
   },

@@ -68,9 +68,15 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "documentation/index",
+            docId: "protocol/index",
             position: "left",
-            label: "Documentation",
+            label: "Protocol",
+          },
+          {
+            type: "doc",
+            docId: "tools/index",
+            position: "left",
+            label: "Tools",
           },
           {
             type: "doc",
@@ -92,8 +98,12 @@ const config = {
             title: "Contents",
             items: [
               {
-                label: "Documentation",
-                to: "/docs/documentation/index",
+                label: "Protocol",
+                to: "/docs/protocol/index",
+              },
+              {
+                label: "Tools",
+                to: "/docs/tools/index",
               },
               {
                 label: "Whitepaper",
