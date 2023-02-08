@@ -139,8 +139,12 @@ The Ash API tracks all on-chain activity on both Avalanche C-chain (renting cont
 
 The Ash web app and Ash validator nodes rely on the API.
 
-_Ash web app_
+<figure>
+
 ![AshWebApp](../../static/img/ash-webapp-screen-staking.png)
+
+<figcaption style={{textAlign: 'center'}}>Fig.X Ash web app</figcaption>
+</figure>
 
 The Ash web app is the **main entry point** to interact with the protocol.
 
