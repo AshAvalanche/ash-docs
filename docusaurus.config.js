@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Ash",
   tagline: "Decentralized Validator as a Service protocol on Avalanche",
-  favicon: "img/ash-logo.png",
+  favicon: "img/ash-logo.svg",
 
   // Set the production url of your site here
   url: "https://docs.ash.center",
@@ -63,7 +63,7 @@ const config = {
         title: "Ash",
         logo: {
           alt: "Ash Logo",
-          src: "img/ash-logo.png",
+          src: "img/ash-logo.svg",
         },
         items: [
           {

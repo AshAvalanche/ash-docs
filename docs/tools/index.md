@@ -20,3 +20,5 @@ An Ansible collection to manage Avalanche nodes, Subnets and blockchains.
 [Overview](./ansible-avalanche-collection/overview)
 
 ## For Avalanche developers
+
+[Whitepaper](../whitepaper/index.md)
