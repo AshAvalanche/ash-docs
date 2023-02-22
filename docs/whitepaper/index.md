@@ -54,7 +54,8 @@ The Ash protocol relies on **third-party node operators** to make sure that Subn
 
 ## Ash Demographics
 
-![AshWorkflow](/img/ash-workflow-circle-light.jpg)
+![AshWorkflow](/img/ash-workflow-circle-dark2.svg)
+
 The Ash protocol targets 3 user groups:
 
 - Subnet owners
@@ -111,7 +112,12 @@ Node operators can also benefit from the Ash team’s DevOps expertise by levera
 
 The following schema represents the target protocol architecture. All features will not be available in the first release (see Protocol evolution towards more decentralization).
 
-![AshArchi](../../static/img/ash-architecture-renting-dark.jpg)
+<figure>
+
+![AshArchi](../../static/img/ash-architecture-liquidstaking-light.svg)
+
+<figcaption style={{textAlign: 'center'}}>Fig.1 - Ash protocol architecture</figcaption>
+</figure>
 
 _Ash validators_
 
@@ -143,7 +149,7 @@ The Ash web app and Ash validator nodes rely on the API.
 
 ![AshWebApp](../../static/img/ash-webapp-screen-staking.png)
 
-<figcaption style={{textAlign: 'center'}}>Fig.X Ash web app</figcaption>
+<figcaption style={{textAlign: 'center'}}>Fig.2 - Web app PoC staking dashboard</figcaption>
 </figure>
 
 The Ash web app is the **main entry point** to interact with the protocol.
@@ -172,7 +178,13 @@ The Avalanche Ansible Collection is part of our solution to **reduce the technic
 Ash provides additional tools to **empower Subnet owners** with a ready-to-use Subnet experience, including monitoring and other services.
 
 _Node monitoring_
-PIC
+
+<figure>
+
+![AshNodeMonitoring](../../static/img/ash-node-monitoring.svg)
+
+<figcaption style={{textAlign: 'center'}}>Fig.3 - Node monitoring with Grafana</figcaption>
+</figure>
 
 All the validating nodes of the Ash protocols are **monitored** using Grafana and Prometheus. Subnet owners have access to comprehensive dashboards which include all the metrics they need to keep track of the nodes validating their Subnets.
 
