@@ -54,7 +54,7 @@ The Ash protocol relies on **third-party node operators** to make sure that Subn
 
 ## Ash Demographics
 
-![AshWorkflow](/img/ash-workflow-circle-dark2.svg)
+![AshWorkflow](/img/ash-workflow-circle-dark.svg)
 
 The Ash protocol targets 3 user groups:
 
