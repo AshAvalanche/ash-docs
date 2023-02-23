@@ -54,7 +54,7 @@ The Ash protocol relies on **third-party node operators** to make sure that Subn
 
 ## Ash Demographics
 
-![AshWorkflow](/img/ash-workflow-circle-dark.svg)
+![AshWorkflow](../../static/img/ash-workflow-circle-dark.svg)
 
 The Ash protocol targets 3 user groups:
 
@@ -181,7 +181,7 @@ _Node monitoring_
 
 <figure>
 
-![AshNodeMonitoring](../../static/img/ash-node-monitoring.svg)
+![AshNodeMonitoring](../../static/img/ash-node-monitoring.png)
 
 <figcaption style={{textAlign: 'center'}}>Fig.3 - Node monitoring with Grafana</figcaption>
 </figure>
