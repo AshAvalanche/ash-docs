@@ -14,8 +14,12 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw-nakamoto-ash.svg").default,
     description: (
       <>
-        The <b>Ash protocol</b> lowers the entry cost to the Avalanche Subnets
-        ecosystem <b>for all the participants</b>.
+        The{" "}
+        <b>
+          <a href="docs/protocol">Ash protocol</a>
+        </b>{" "}
+        lowers the entry cost to the Avalanche Subnets ecosystem{" "}
+        <b>for all the participants</b>.
       </>
     ),
   },
@@ -35,7 +39,8 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw-open-source.svg").default,
     description: (
       <>
-        The Ash teams maintains a set of open-source tools that{" "}
+        The Ash teams maintains a set of{" "}
+        <a href="docs/tools">open-source tools</a> that{" "}
         <b>boost the productivity</b> of Avalanche <b>node operators</b> and{" "}
         <b>developers</b>.
       </>

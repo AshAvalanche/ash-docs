@@ -1,4 +1,9 @@
-# Overview
+---
+sidebar_label: Overview
+sidebar_position: 1
+---
+
+# Ansible Avalanche Collection - Overview
 
 The Ansible Avalanche Collection provides [Ansible](https://www.ansible.com) roles, playbooks and modules to manage [Avalanche](https://docs.avax.network) nodes, Subnets and blockchains.
 
