@@ -12,7 +12,7 @@ If a node operator is elected by the DAO, its nodes will be allowed to **join th
 AVAX and Subnet native tokens **from the community pool** are staked on Ash node operator’s nodes. Revenues generated from these nodes are redistributed to the Ash community, and **node operators are rewarded**.
 
 :::info
-Node operators can take advantage of [Ash tools](../../tools) to boost their productivity and harden their infrastructure.
+Node operators can take advantage of [Ash tools](../../tools) to boost their productivity and make their infrastructure more robust.
 :::
 
 ## Application for the Ash Subnet

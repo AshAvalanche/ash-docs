@@ -7,9 +7,9 @@ sidebar_position: 1
 
 By liquid-staking to the Ash **community pool**, users can benefit from three types of rewards:
 
-- **AVAX** tokens
+- **AVAX** tokens from the Mainnet validation
 - **ASH** tokens that can be used to participate in the protocol governance
-- **Native tokens** from the validated Subnets
+- **Native tokens** from Subnets validation
 
 ## Liquid staking
 
