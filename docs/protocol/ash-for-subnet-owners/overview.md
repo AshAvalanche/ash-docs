@@ -12,7 +12,7 @@ sidebar_position: 1
 Ash offers 2 validation services to Subnet owners:
 
 - Validation renting
-- Spontaneous validation by the protocol
+- Voted validation by the protocol
 
 ## Validation renting
 
@@ -20,16 +20,16 @@ Subnet owners can **rent validation** from Ash nodes for a **fraction of the pri
 
 Instead of operating validator nodes themselves, Subnet owners **benefit from the expertise of the Ash team** (and the Ash network of node operators in [V3](../roadmap)).
 
-The rent is **paid every month** in AVAX, native tokens, or a combination of both. The protocol guarantees that Subnets are validated by a **robust, up-to-date set of nodes**.
+The rent is **paid monthly** in AVAX, native tokens, or a combination of both. The protocol guarantees that Subnets are validated by a **robust, up-to-date set of nodes**.
 
-Subnet owners are freed from the burden of running their own infrastructure and can instead focus on building their projects core.
+Subnet owners are freed from the burden of running their own infrastructure and can instead focus on building their projects' core.
 
 [**Start using the service**](./validator-node-renting)
 
 ## Voted validation
 
-In Ash [V2](../roadmap), liquid stakers will gain the ability to participate in the [protocol's governance](../governance/overview). The most important component of the governance is **the allocation of the protocol's validating power** to Subnets.
+In Ash [V2](../roadmap), liquid stakers will be able to participate in the [protocol's governance](../governance/overview). The main governance component is **the allocation of the protocol's validating power** between Subnets.
 
-Node operator **rewards are redistributed to liquid-stakers**. By offering attractive rewards, a Subnet will **naturally get more decentralized** because it will appeal more users.
+Node operator **rewards are redistributed to liquid-stakers**. With attractive incentives, a Subnet will **naturally get more decentralized** because it will appeal to more users.
 
 [**Discover how to maximize voted validation**](./voted-validation)
