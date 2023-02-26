@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Ash",
-  tagline: "Decentralized Validator as a Service protocol on Avalanche",
+  tagline: "Decentralized Validator as a Service protocol for Avalanche",
   favicon: "img/ash-logo.svg",
 
   // Set the production url of your site here
@@ -86,8 +86,9 @@ const config = {
           },
           {
             href: "https://github.com/AshAvalanche/ash-docs",
-            label: "GitHub",
             position: "right",
+            className: "header-github-link",
+            "aria-label": "GitHub repository",
           },
         ],
       },
@@ -115,10 +116,6 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
                 label: "Twitter",
                 href: "https://twitter.com/ash_avax",
               },
@@ -127,6 +124,10 @@ const config = {
           {
             title: "More",
             items: [
+              {
+                label: "Website",
+                href: "https://ash.center",
+              },
               {
                 label: "GitHub",
                 href: "https://github.com/AshAvalanche/ash-docs",
