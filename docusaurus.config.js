@@ -11,7 +11,7 @@ const config = {
   favicon: "img/ash-logo.svg",
 
   // Set the production url of your site here
-  url: "https://docs.ash.center",
+  url: "https://docs.ash.center/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -39,10 +39,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/AshAvalanche/ash-docs/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/AshAvalanche/ash-docs/tree/main",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
