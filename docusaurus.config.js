@@ -82,6 +82,12 @@ const config = {
             label: "Whitepaper",
           },
           {
+            type: "doc",
+            docId: "whitepaper-v2/index",
+            position: "left",
+            label: "Whitepaper V2",
+          },
+          {
             href: "https://github.com/AshAvalanche/ash-docs",
             position: "right",
             className: "header-github-link",
