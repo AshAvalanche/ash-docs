@@ -13,7 +13,7 @@ sidebar_position: 1
 _Ash is a **decentralized Validator as a Service (VaaS) protocol** that makes **Avalanche Subnets<sup> [1](#glossary)</sup>** more accessible and decentralized._  
 _The Ash protocol operates Avalanche nodes<sup> [3](#glossary)</sup>, validates Avalanche Subnets, and gives retail users easy access to the Subnets ecosystem._
 _Ash is built on top of existing liquid staking protocols to provide optimal capital efficiency._
- 
+
 ## Context
 
 [Avalanche](https://avax.network) allows any user to launch and operate its own blockchain network, with a customizable set of rules, through its **scaling solution called “Subnets”<sup> [1](#glossary)</sup>**.
@@ -31,7 +31,8 @@ The **entry costs** (financial and technical) to the Subnet ecosystem are very h
 ### Financial entry cost
 
 Running a validator node<sup> [4](#glossary)</sup> on the Avalanche Mainnet requires staking 2,000 AVAX.
-This issue is partially solved by liquid staking protocols such as [BENQI Ignite](https://benqifinance.medium.com/ignite-avalanche-validators-subnets-for-all-592d19b4aa94) and [GoGoPool](https://www.gogopool.com/) by offering to match a portion of the stake amount.
+
+This issue is partially solved by liquid staking protocols such as [BENQI Ignite](https://benqifinance.medium.com/ignite-avalanche-validators-subnets-for-all-592d19b4aa94) and [GoGoPool](https://www.gogopool.com/) which offer to match a portion of the stake amount.
 
 #### For Subnet owners
 
@@ -75,9 +76,42 @@ The Ash protocol relies on **third-party node operators** to ensure the Subnets'
 
 The Ash protocol targets 3 user groups:
 
-- Subnet owners
 - Retail users
+- Subnet owners
 - Node operators
+
+### Ash for retail users
+
+#### Node crowdfunding through staking
+
+Ash will feature multiple **community pools** in which retail users can stake<sup> [11](#glossary)</sup> their AVAX. These pools are used to **crowdfund new validator nodes<sup> [4](#glossary)</sup>** for the Ash protocol which will in turn increase the number of Subnets that can be validated.
+
+The Ash pools feature multiple types of rewards for stakers:
+
+- AVAX
+- ASH token
+- Native tokens from the validated Subnets
+- Tokens from the underlying liquid staking protocol(s)
+
+#### AVAX
+
+Stakers receive AVAX from **node validation rewards** as they would by delegating their AVAX, but in a **much more flexible way**.
+
+#### ASH token
+
+Stakers receive **ASH tokens** emitted by the Ash protocol proportionally to the amount of AVAX they stake in the community pools.
+
+The ASH token can be staked to earn veASH and vote in the **Ash DAO<sup> [7](#glossary)</sup>**. Votes will determine which Subnets are validated by the Ash protocol and which node operators get AVAX delegation to spin up new validators.
+
+**Note:** See [Tokenomics](#tokenomics) for more details on the ASH token.
+
+#### Native Subnets tokens
+
+Subnet owners can **incentivize the validation** of their Subnets by providing native tokens to the Ash protocol (leveraging features of the Banff upgrade). These tokens are **redistributed to the community** pool stakers.
+
+#### Liquid Staking protocols tokens
+
+Ash will leverage existing liquid staking protocols like [BENQI Ignite](https://benqifinance.medium.com/ignite-avalanche-validators-subnets-for-all-592d19b4aa94) and [GoGoPool](https://www.gogopool.com/) (+ more to come!) to **spin up the new validator nodes at a lower cost** while benefiting from these **protocols' native rewards**. These rewards are **redistributed to the** pool stakers.
 
 ### Ash for Subnet owners
 
@@ -98,35 +132,9 @@ Subnet owners are freed from the burden of running their own infrastructure and 
 
 #### Voted validation
 
-Liquid stakers<sup> [6](#glossary)</sup> can participate in the protocol's governance. The main governance component is **the allocation of the protocol's validating power** between Subnets.
+Ash stakers<sup> [6](#glossary)</sup> can participate in the protocol's governance. The main governance component is **the allocation of the protocol's validating power** between Subnets.
 
-Node operator **rewards are redistributed to liquid-stakers**. With attractive incentives, a Subnet will **naturally get more decentralized** because it will appeal to more users.
-
-### Ash for retail users
-
-Ash will feature a **community pool** in which retail users can liquid-stake<sup> [6](#glossary)</sup> their AVAX and Subnet native tokens. This pool is used to **crowdfund new validator nodes<sup> [4](#glossary)</sup>** for the Ash protocol which will in turn increase the number of Subnets that can be validated.
-
-The Ash pool features three type of rewards for stakers:
-
-- AVAX
-- ASH
-- Native tokens from the validated Subnets
-
-#### AVAX
-
-Stakers receive AVAX from **node validation rewards** as they would by delegating their AVAX, but in a **much more flexible way**.
-
-#### ASH
-
-Stakers receive **ASH tokens** emitted by the Ash protocol proportionally to the amount of AVAX they stake in the community pool.
-
-The ASH token will be used by the stakers to vote in the **Ash DAO<sup> [7](#glossary)</sup>**. Votes will determine which Subnets are validated by the Ash protocol and which node operators get AVAX delegation to spin up new validators.
-
-**Note:** See [Tokenomics](#tokenomics) for more details on the ASH token.
-
-#### Native Subnets tokens
-
-Subnet owners can **incentivize the validation** of their Subnets by providing native tokens to the Ash protocol (leveraging features of the Banff upgrade). These tokens are **redistributed to the community** pool stakers.
+Node operator **rewards are redistributed to stakers**. With attractive incentives, a Subnet will **naturally get more decentralized** because it will appeal to more users.
 
 ### Ash for node operators
 
@@ -195,7 +203,7 @@ Subnet owners use it to create, configure, validate, and monitor their Subnets/b
 
 #### Ash Subnet
 
-The Ash Subnet will serve as a **back-bone for the protocol**, ensuring Ash nodes' resources monitoring, subnet slots distribution, etc.
+The Ash Subnet will serve as a **backbone for the protocol**. DAO-voted node operators will have to validate the Ash Subnet. Its VM will push various metrics to public contracts to ensure Ash nodes' have proper resources (RAM and CPU), validated subnets are well-distributed, etc.
 
 ### Ansible Avalanche Collection
 
@@ -241,12 +249,11 @@ Building a truly **decentralized protocol** cannot be done overnight and we beli
 
 The first Ash release will focus on building a **reliable software layer** for validator node<sup> [4](#glossary)</sup> operating and offering the **best possible experience** to Subnet owners.
 
-The following features will be available in the subsequent releases of the protocol.
+The following features will be available in the subsequent releases of the protocol:
 
-#### Liquid Staking (V2)
+#### Node crowdfunding through staking (V2)
 
-Users will stake AVAX and Subnet native tokens into the Ash community pool to be eligible for rewards: AVAX staking rewards, Subnets rewards, and ASH tokens.
-Like any liquid staking<sup> [6](#glossary)</sup> protocol, users will receive tokens (ashAVAX, ashTOKENX, ashTOKENY) that represent their stake and can be freely transferred, traded, or used in other DeFi protocols.
+Users will be able to stake AVAX into the Ash community pools and be eligible for multiple rewards: AVAX staking rewards, Subnets rewards, ASH tokens and liquid staking tokens.
 
 #### DAO (V2)
 
@@ -293,3 +300,4 @@ A public sale will occur after the launch of the protocol.
 8. **VM (Virtual Machine):** A Virtual Machine (VM) defines the application-level logic of a blockchain. In technical terms, it specifies the blockchain’s state, state transition function, transactions, and the API through which users can interact with the blockchain. (from [Avalanche Subnets docs](https://docs.avax.network/subnets#virtual-machines))
 9. **Avalanche C-Chain:** The C-Chain is an implementation of the Ethereum Virtual Machine (EVM) that is part of Avalanche Primary Network. (from [Avalanche docs](https://docs.avax.network/overview/getting-started/avalanche-platform#contract-chain-c-chain))
 10. **Avalanche P-Chain:** The P-Chain is responsible for all validator and Subnet-level operations. The P-Chain API supports the creation of new blockchains and Subnets, the addition of validators to Subnets, staking operations, and other platform-level operations. (from [Avalanche docs](https://docs.avax.network/overview/getting-started/avalanche-platform#platform-chain-p-chain))
+11. **Staking** Staking is the process of locking up tokens to support a network while receiving a reward in return (rewards can be increased network utility, monetary compensation, etc.). (from [Avalanche knowledge base](https://support.avax.network/en/articles/4064665-what-is-staking))
