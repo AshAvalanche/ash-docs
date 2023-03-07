@@ -12,7 +12,8 @@ sidebar_position: 1
 
 _Ash is a **decentralized Validator as a Service (VaaS) protocol** that makes **Avalanche Subnets<sup> [1](#glossary)</sup>** more accessible and decentralized._  
 _The Ash protocol operates Avalanche nodes<sup> [3](#glossary)</sup>, validates Avalanche Subnets, and gives retail users easy access to the Subnets ecosystem._
-
+_Ash is built on top of existing liquid staking protocols to provide optimal capital efficiency._
+ 
 ## Context
 
 [Avalanche](https://avax.network) allows any user to launch and operate its own blockchain network, with a customizable set of rules, through its **scaling solution called “Subnets”<sup> [1](#glossary)</sup>**.
@@ -30,6 +31,7 @@ The **entry costs** (financial and technical) to the Subnet ecosystem are very h
 ### Financial entry cost
 
 Running a validator node<sup> [4](#glossary)</sup> on the Avalanche Mainnet requires staking 2,000 AVAX.
+This issue is partially solved by liquid staking protocols such as [BENQI Ignite](https://benqifinance.medium.com/ignite-avalanche-validators-subnets-for-all-592d19b4aa94) and [GoGoPool](https://www.gogopool.com/) by offering to match a portion of the stake amount.
 
 #### For Subnet owners
 
@@ -61,7 +63,9 @@ The Ash protocol aims at making Avalanche Subnets more **accessible and decentra
 
 Ash gives Avalanche projects affordable access to a **robust decentralized infrastructure** to validate their Subnets. The protocol operates the validator nodes<sup> [4](#glossary)</sup>, and developers can focus on the heart of their product.
 
-Ash also allows **retail users** to get involved in the Avalanche **Subnets ecosystem** through **liquid staking<sup> [6](#glossary)</sup>**. Stakers crowdfund new Ash validator nodes and vote to **allocate the protocol validation power** between Subnets.
+Ash also allows **retail users** to get involved in the Avalanche **Subnets ecosystem** without having to operate a node. Stakers crowdfund new validator nodes and vote to **allocate the protocol validation power** between Subnets.
+
+Established liquid staking protocols are used to fund new Ash validator nodes.
 
 The Ash protocol relies on **third-party node operators** to ensure the Subnets' decentralization.
 
@@ -88,7 +92,7 @@ Subnet owners can **rent validation** from Ash nodes for a **fraction of the pri
 
 Instead of operating validator nodes<sup> [4](#glossary)</sup> themselves, Subnet owners benefit from the expertise of the Ash team.
 
-The rent is paid monthly in AVAX, native tokens, or a combination of both. The protocol guarantees that Subnets are validated by a **robust, up-to-date set of nodes**.
+The rent is paid monthly in AVAX or stablecoins. The protocol guarantees that Subnets are validated by a **robust, up-to-date set of nodes**.
 
 Subnet owners are freed from the burden of running their own infrastructure and can instead focus on building their projects' core.
 
@@ -130,7 +134,7 @@ Node operators can **apply to operate Ash nodes** and **validate Subnets** for t
 
 If a node operator is elected by the DAO<sup> [7](#glossary)</sup>, its nodes will be allowed to **join the [Ash Subnet](#ash-subnet)**.
 
-AVAX and Subnet native tokens **from the community pool** are staked on Ash nodes. The revenues generated are redistributed to the Ash community, and **node operators are rewarded**.
+The revenues generated are redistributed to the Ash community, and **node operators are rewarded**.
 
 This key feature of the protocol provides **true decentralization** of Subnet validation.
 
