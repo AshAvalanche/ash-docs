@@ -62,17 +62,29 @@ To participate in Subnets validation, **a user has to operate Avalanche node(s)<
 
 The Ash protocol aims at making Avalanche Subnets more **accessible and decentralized** by providing a decentralized VaaS<sup> [5](#glossary)</sup> for Avalanche.
 
+<figure>
+
+![Ash overview](/img/ash-protocol-overview-dark.svg#dark-mode-only)![Ash overview](/img/ash-protocol-overview-light.svg#light-mode-only)
+
+<figcaption style={{textAlign: 'center'}}>Fig.1 - Ash overview</figcaption>
+</figure>
+
+Ash allows **retail users** to get involved in the Avalanche **Subnets ecosystem** without having to operate a node. Stakers crowdfund new validator nodes and vote to **allocate the protocol validation power** between Subnets.
+
 Ash gives Avalanche projects affordable access to a **robust decentralized infrastructure** to validate their Subnets. The protocol operates the validator nodes<sup> [4](#glossary)</sup>, and developers can focus on the heart of their product.
 
-Ash also allows **retail users** to get involved in the Avalanche **Subnets ecosystem** without having to operate a node. Stakers crowdfund new validator nodes and vote to **allocate the protocol validation power** between Subnets.
+Established **liquid staking protocols** are used to fund new Ash validator nodes. These protocols benefit from Ash success.
 
-Established liquid staking protocols are used to fund new Ash validator nodes.
-
-The Ash protocol relies on **third-party node operators** to ensure the Subnets' decentralization.
+The Ash protocol relies on **third-party node operators** to ensure the Subnets' decentralization, providing enteprise-grade software to ease node maintenance.
 
 ## Ash Demographics
 
-![AshWorkflow](../../static/img/ash-workflow-circle-dark.svg)
+<figure>
+
+![Ash workflow](/img/ash-workflow-circle-dark.svg#dark-mode-only)![Ash workflow](/img/ash-workflow-circle-light.svg#light-mode-only)
+
+<figcaption style={{textAlign: 'center'}}>Fig.2 - Ash demographics</figcaption>
+</figure>
 
 The Ash protocol targets 3 user groups:
 
@@ -156,12 +168,12 @@ The following schema represents the target protocol architecture. All features w
 
 <figure>
 
-![AshArchi](../../static/img/ash-architecture-liquidstaking-light.svg)
+![Ash architecture](/img/ash-architecture-liquidstaking-light.svg#light-mode-only)![Ash architecture](/img/ash-architecture-liquidstaking-dark.svg#dark-mode-only)
 
-<figcaption style={{textAlign: 'center'}}>Fig.1 - Ash protocol architecture</figcaption>
+<figcaption style={{textAlign: 'center'}}>Fig.3 - Ash protocol architecture</figcaption>
 </figure>
 
-#### Ash nodes
+#### Ash validator nodes
 
 Each Ash validator node<sup> [4](#glossary)</sup> offers “**Subnet slots**” for renting. The number of slots available on a node is determined by its hardware characteristics. A rented slot corresponds to a blockchain VM<sup> [8](#glossary)</sup> running on the node.
 
@@ -169,7 +181,11 @@ The Ash team will conduct large-scale benchmarking of blockchain VMs performance
 
 Validator nodes are operated by the **Ash team** and **third-party node operators** (elected by the DAO<sup> [7](#glossary)</sup>).
 
-#### Ash contracts
+#### Ash Subnet
+
+The Ash Subnet will serve as a **backbone for the protocol**. DAO-voted node operators will have to validate the Ash Subnet. Its VM will push various metrics to public contracts to ensure Ash nodes' have proper resources (RAM and CPU), validated subnets are well-distributed, etc.
+
+#### Ash smart contracts
 
 **All transactions** related to Subnet slots renting, liquid staking<sup> [6](#glossary)</sup>, and DAO votes are **tracked on-chain**.
 The Ash protocol leverages the popularity and robustness of the Avalanche C-Chain<sup> [9](#glossary)</sup> to host its smart contracts. It relies on **trusted smart contract standards** for its different building blocks:
@@ -192,18 +208,14 @@ The API will rely on **secured open-source software** that can generate ZK proof
 
 <figure>
 
-![AshWebApp](../../static/img/ash-webapp-screen-staking.png)
+![AshWebApp](/img/ash-webapp-screen-staking.png)
 
-<figcaption style={{textAlign: 'center'}}>Fig.2 - Web app PoC staking dashboard</figcaption>
+<figcaption style={{textAlign: 'center'}}>Fig.4 - Web app PoC staking dashboard</figcaption>
 </figure>
 
 The Ash web app is the **main entry point** to interact with the protocol.
 
 Subnet owners use it to create, configure, validate, and monitor their Subnets/blockchains. Retail users use it to liquid-stake AVAX and Subnet native tokens, participate in DAO votes, and claim rewards. Node operators use it to manage their validator nodes.
-
-#### Ash Subnet
-
-The Ash Subnet will serve as a **backbone for the protocol**. DAO-voted node operators will have to validate the Ash Subnet. Its VM will push various metrics to public contracts to ensure Ash nodes' have proper resources (RAM and CPU), validated subnets are well-distributed, etc.
 
 ### Ansible Avalanche Collection
 
@@ -230,9 +242,9 @@ Ash provides additional tools to **empower Subnet owners** with a ready-to-use S
 
 <figure>
 
-![AshNodeMonitoring](../../static/img/ash-node-monitoring.png)
+![AshNodeMonitoring](/img/ash-node-monitoring.png)
 
-<figcaption style={{textAlign: 'center'}}>Fig.3 - Node monitoring with Grafana</figcaption>
+<figcaption style={{textAlign: 'center'}}>Fig.5 - Node monitoring with Grafana</figcaption>
 </figure>
 
 All the validating nodes of the Ash protocols are **monitored** using Grafana and Prometheus. Subnet owners have access to comprehensive dashboards with all the metrics they need to keep track of the nodes validating their Subnets.

@@ -67,7 +67,7 @@ The Ash protocol relies on **third-party node operators** to ensure the Subnets'
 
 ## Ash Demographics
 
-![AshWorkflow](../../static/img/ash-workflow-circle-dark.svg)
+![AshWorkflow](/img/ash-workflow-circle-dark.svg)
 
 The Ash protocol targets 3 user groups:
 
@@ -144,7 +144,7 @@ The following schema represents the target protocol architecture. All features w
 
 <figure>
 
-![AshArchi](../../static/img/ash-architecture-liquidstaking-light.svg)
+![AshArchi](/img/ash-architecture-liquidstaking-light.svg)
 
 <figcaption style={{textAlign: 'center'}}>Fig.1 - Ash protocol architecture</figcaption>
 </figure>
@@ -180,7 +180,7 @@ The API will rely on **secured open-source software** that can generate ZK proof
 
 <figure>
 
-![AshWebApp](../../static/img/ash-webapp-screen-staking.png)
+![AshWebApp](/img/ash-webapp-screen-staking.png)
 
 <figcaption style={{textAlign: 'center'}}>Fig.2 - Web app PoC staking dashboard</figcaption>
 </figure>
@@ -218,7 +218,7 @@ Ash provides additional tools to **empower Subnet owners** with a ready-to-use S
 
 <figure>
 
-![AshNodeMonitoring](../../static/img/ash-node-monitoring.png)
+![AshNodeMonitoring](/img/ash-node-monitoring.png)
 
 <figcaption style={{textAlign: 'center'}}>Fig.3 - Node monitoring with Grafana</figcaption>
 </figure>
