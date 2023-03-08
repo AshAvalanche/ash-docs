@@ -98,6 +98,8 @@ The Ash protocol targets 3 user groups:
 
 Ash will feature multiple **community pools** in which retail users can stake<sup> [11](#glossary)</sup> their AVAX. These pools are used to **crowdfund new validator nodes<sup> [4](#glossary)</sup>** for the Ash protocol which will in turn increase the number of Subnets that can be validated.
 
+The Ash protocol takes care of **swapping AVAX against Subnet native tokens** to be used for staking.
+
 The Ash pools feature multiple types of rewards for stakers:
 
 - AVAX
@@ -119,7 +121,7 @@ The ASH token can be staked to earn veASH and vote in the **Ash DAO<sup> [7](#gl
 
 #### Native Subnets tokens
 
-Subnet owners can **incentivize the validation** of their Subnets by providing native tokens to the Ash protocol (leveraging features of the Banff upgrade). These tokens are **redistributed to the community** pool stakers.
+Subnet owners can **incentivize the validation** of their Subnets by providing native token rewards to Avalanche nodes (leveraging features of the Banff upgrade). These tokens are **redistributed to the Ash community** pool stakers.
 
 #### Liquid Staking protocols tokens
 
@@ -140,7 +142,7 @@ Instead of operating validator nodes<sup> [4](#glossary)</sup> themselves, Subne
 
 The rent is paid monthly in AVAX or stablecoins. The protocol guarantees that Subnets are validated by a **robust, up-to-date set of nodes**.
 
-Subnet owners are freed from the burden of running their own infrastructure and can instead focus on building their projects' core.
+Subnet owners are freed from the burden of running their own infrastructure and can instead focus on building their projects' core. Moreover, paying rent in stablecoins helps to forecast the validation costs upfront.
 
 #### Voted validation
 
@@ -215,7 +217,7 @@ The API will rely on **secured open-source software** that can generate ZK proof
 
 The Ash web app is the **main entry point** to interact with the protocol.
 
-Subnet owners use it to create, configure, validate, and monitor their Subnets/blockchains. Retail users use it to liquid-stake AVAX and Subnet native tokens, participate in DAO votes, and claim rewards. Node operators use it to manage their validator nodes.
+Subnet owners use it to create, configure, validate, and monitor their Subnets/blockchains. Retail users use it to stake AVAX, participate in DAO votes, and claim rewards. Node operators use it to manage their validator nodes.
 
 ### Ansible Avalanche Collection
 
