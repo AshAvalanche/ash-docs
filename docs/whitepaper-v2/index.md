@@ -4,9 +4,10 @@ sidebar_position: 1
 
 # Ash Whitepaper
 
-| Version | Date       | Authors                                                                                                                   | Description    |
-| ------- | ---------- | ------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| 1.0     | 25/02/2023 | Gauthier Leonard - gauthier@e36knots.com<br/>Antoine Laborde - antoine@e36knots.com<br/>Léo Schoukroun - leo@e36knots.com | Public release |
+| Version | Date       | Authors                                                                                                                   | Description                |
+| ------- | ---------- | ------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| 1.0     | 25/02/2023 | Gauthier Leonard - gauthier@e36knots.com<br/>Antoine Laborde - antoine@e36knots.com<br/>Léo Schoukroun - leo@e36knots.com | Public release             |
+| 1.1     | 08/03/2023 | Gauthier Leonard - gauthier@e36knots.com<br/>Léo Schoukroun - leo@e36knots.com                                            | Ash on top of LS protocols |
 
 ## Abstract
 
