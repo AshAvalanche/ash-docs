@@ -65,7 +65,7 @@ The Ash protocol aims at making Avalanche Subnets more **accessible and decentra
 
 <figure>
 
-![Ash overview](/img/ash-protocol-overview-dark.svg#dark-mode-only)![Ash overview](/img/ash-protocol-overview-light.svg#light-mode-only)
+![Ash overview](/img/ash-protocol-overview-dark.png#dark-mode-only)![Ash overview](/img/ash-protocol-overview-light.png#light-mode-only)
 
 <figcaption style={{textAlign: 'center'}}>Fig.1 - Ash overview</figcaption>
 </figure>
