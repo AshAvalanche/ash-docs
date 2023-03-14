@@ -116,7 +116,7 @@ Stakers receive AVAX from **node validation rewards** as they would by delegatin
 
 Stakers receive **ASH tokens** emitted by the Ash protocol proportionally to the amount of AVAX they stake in the community pool.
 
-The ASH token will be used by the stakers to vote in the **Ash DAO<sup> [7](#glossary)</sup>**. Votes will determine which Subnets are validated by the Ash protocol and which node operators get AVAX delegation to spin up new validators.
+The ASH token will be used by the stakers to vote in the **Ash DAO<sup> [7](#glossary)</sup>**. Votes will determine which Subnets are validated by the Ash protocol and which node operators get AVAX delegation to spin up new validator nodes.
 
 **Note:** See [Tokenomics](#tokenomics) for more details on the ASH token.
 
@@ -229,7 +229,7 @@ Ash can also provide additional blockchain-related metrics to Subnet owners.
 
 #### DNS / Load Balancers
 
-Ash will provide a unique DNS entry for Subnet owners (e.g.: _mysubnet.ash.center_). This entry will be served by multiple validators in a Load Balancing fashion. Subnet owners can focus on the heart of their project while Ash takes care of the accessibility of the Subnet.
+Ash will provide a unique DNS entry for Subnet owners (e.g.: _mysubnet.ash.center_). This entry will be served by multiple validator nodes in a Load Balancing fashion. Subnet owners can focus on the heart of their project while Ash takes care of the accessibility of the Subnet.
 
 ### Protocol Evolution Towards Decentralization
 
@@ -273,7 +273,7 @@ All users that are liquid-staking<sup> [6](#glossary)</sup> AVAX in the Ash comm
 ASH can be used to vote in the DAO for:
 
 - Choosing the Subnets validated by the Ash validator nodes<sup> [4](#glossary)</sup> and the number of nodes<sup> [3](#glossary)</sup> allocated to each Subnet
-- Electing the node operators that will spin up new validators using AVAX from the community pool
+- Electing the node operators that will spin up new validator nodes using AVAX from the community pool
 
 A public sale will occur after the launch of the protocol.
 

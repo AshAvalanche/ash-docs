@@ -29,5 +29,5 @@ It aims at:
 
 - **Provisioning Avalanche nodes** on Fuji or Mainnet with flawless upgrade capabilities. Ansible also brings easy node configuration persistence and idempotent deployments.
 - **Bootstrapping local test networks** that really mimic production environments
-- **Automating subnet and blockchain operations** (subnet whitelisting, plugin deployment) for validators
+- **Automating Subnet and blockchain operations** (subnet whitelisting, plugin deployment) for node operators
 - And more

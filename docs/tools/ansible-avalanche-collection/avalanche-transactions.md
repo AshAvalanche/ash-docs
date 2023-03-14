@@ -35,9 +35,10 @@ The notebook [ash.avalanche.transfer_avax](https://github.com/AshAvalanche/ansib
    ```
 
    This avoids storing usernames and passwords in plain text.
+
 2. To run the notebook, we need to provide the vault password (`ewoq`):
 
-   ```sh
+   ```bash
    ansible-playbook ash.avalanche.transfer_avax -i inventories/local --ask-vault-password
    ```
 

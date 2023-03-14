@@ -22,22 +22,22 @@ In this section, we will learn how to use the [ash.avalanche](https://github.com
 
 1. Clone this repository:
 
-   ```sh
+   ```bash
    git clone https://github.com/AshAvalanche/ansible-avalanche-getting-started
    cd ansible-avalanche-collection-getting-started
    ```
 
 2. Setup and activate Python venv:
 
-   ```sh
+   ```bash
    bin/setup.sh
    source .venv/bin/activate
    ```
 
 3. Install the `ash.avalanche` collection:
 
-   ```sh
-   ansible-galaxy collection install git+https://github.com/AshAvalanche/ansible-avalanche-collection.git,v0.4.0
+   ```bash
+   ansible-galaxy collection install git+https://github.com/AshAvalanche/ansible-avalanche-collection.git
    ```
 
 ## Bootstrapping
@@ -48,7 +48,7 @@ This section uses the `local` inventory which is pre-configured as a local Avala
 
 1. Create the 5 virtual machines that will host the Avalanche nodes:
 
-   ```sh
+   ```bash
    vagrant up
    ```
 
@@ -56,7 +56,7 @@ We will use the [ash.avalanche.bootstrap_local_network](https://github.com/AshAv
 
 2. Bootstrap the Avalanche nodes:
 
-   ```sh
+   ```bash
    ansible-playbook ash.avalanche.bootstrap_local_network -i inventories/local
    ```
 
@@ -66,7 +66,7 @@ It's done! We now have a ready to use 5 nodes Avalanche local test network.
 
 The node `validator01-local` exposes AvalancheGo APIs on it's public IP: you can query any [Avalanche API](https://docs.avax.network/build/avalanchego-apis/) at `192.168.60.11:9650` from your terminal. For example, to check if the P-Chain is done bootstrapping:
 
-```sh
+```bash
 curl -s -X POST --data '{
   "jsonrpc": "2.0",
   "id"     : 1,
@@ -79,11 +79,13 @@ curl -s -X POST --data '{
 
 The output should like this:
 
-```sh
+```bash
 {"jsonrpc":"2.0","result":{"isBootstrapped":true},"id":1}
 ```
 
-**Note:** The other nodes expose the APIs on there localhost address `127.0.0.1` so you would have to `vagrant ssh` into the VM to query them.
+:::note
+The other nodes expose the APIs on there localhost address `127.0.0.1` so you would have to `vagrant ssh` into the VM to query them.
+:::
 
 ## Pre-funded account
 

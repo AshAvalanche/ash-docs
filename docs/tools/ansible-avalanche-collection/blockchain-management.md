@@ -17,11 +17,11 @@ We should also have created and tracked a Subnet, see [Subnet management](./subn
 
 ## Create a Subnet EVM blockchain in a Subnet
 
-The playboook [ash.avalanche.create_local_blockchains](https://github.com/AshAvalanche/ansible-avalanche-collection/tree/main/playbooks/create_local_blockchains.yml) will create the blockchains listed in the `create_blockchains` variable in [`subnet_control_node.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/subnet_control_node.yml#L9). 
+The playbook [ash.avalanche.create_local_blockchains](https://github.com/AshAvalanche/ansible-avalanche-collection/tree/main/playbooks/create_local_blockchains.yml) will create the blockchains listed in the `create_blockchains` variable in [`subnet_control_node.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/subnet_control_node.yml#L9).
 
 By default, the `Subnet EVM` blockchain is created using the `subnetevm` VM.
 
-```sh
+```bash
 ansible-playbook ash.avalanche.create_local_blockchains -i inventories/local \
   -e subnet_id=$MY_SUBNET_ID
 ```
