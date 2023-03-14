@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Ansible Avalanche Collection - Overview
 
-The Ansible Avalanche Collection provides [Ansible](https://www.ansible.com) roles, playbooks and modules to manage [Avalanche](https://docs.avax.network) nodes, Subnets and blockchains.
+The [Ansible Avalanche Collection](https://github.com/AshAvalanche/ansible-avalanche-collection) provides [Ansible](https://www.ansible.com) roles, playbooks and modules to manage [Avalanche](https://docs.avax.network) nodes, Subnets and blockchains.
 
 ## What is Ansible? And why do we use it?
 
@@ -29,5 +29,5 @@ It aims at:
 
 - **Provisioning Avalanche nodes** on Fuji or Mainnet with flawless upgrade capabilities. Ansible also brings easy node configuration persistence and idempotent deployments.
 - **Bootstrapping local test networks** that really mimic production environments
-- **Automating subnet and blockchain operations** (subnet whitelisting, plugin deployment) for validators
+- **Automating Subnet and blockchain operations** (subnet whitelisting, plugin deployment) for node operators
 - And more

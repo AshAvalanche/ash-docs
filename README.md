@@ -4,13 +4,13 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 ### Installation
 
-```sh
+```bash
 pnpm i
 ```
 
 ### Local Development
 
-```sh
+```bash
 pnpm start
 ```
 
@@ -18,7 +18,7 @@ This command starts a local development server and opens up a browser window. Mo
 
 ### Build
 
-```sh
+```bash
 pnpm build
 ```
 
@@ -28,13 +28,13 @@ This command generates static content into the `build` directory and can be serv
 
 Using SSH:
 
-```sh
+```bash
 USE_SSH=true pnpm deploy
 ```
 
 Not using SSH:
 
-```sh
+```bash
 GIT_USER=<Your GitHub username> pnpm deploy
 ```
 
