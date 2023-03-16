@@ -12,6 +12,10 @@ For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ans
 
 ## Install a VM
 
+:::note
+For now only the [Subnet EVM](https://github.com/ava-labs/subnet-evm) is supported by the collection.
+:::
+
 The VMs are managed by the `avalanchego_vms_install` role variable which is empty by default ([`avalanchego_vms_install: []`](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/roles/node/defaults/main.yml#L42)).
 
 To add a new VM that will be installed on our validator nodes, we just have to update the `avalanchego_vms_install` variable. For the next example, we will install Ava Labs' [Subnet EVM](https://github.com/ava-labs/subnet-evm) in version 0.4.9. The variable we are should be added to `inventories/local/group_vars/avalanche_nodes.yml`:

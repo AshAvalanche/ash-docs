@@ -78,33 +78,17 @@ If `avalanchego_vms_install` is specified in your inventory, you have to list **
 
 ### Available VMs and AvalancheGo compatibility
 
-List of VMs currently available for install:
+List of VMs currently available for installation:
 
-- `blobvm`: The [Blob Virtual Machine](https://github.com/ava-labs/blobvm) in all versions
-- `spacesvm`: The [Spaces Virtual Machine](https://github.com/ava-labs/spacesvm) in all versions
-- `subnetevm`: The [Subnet EVM](https://github.com/ava-labs/subnet-evm) in all versions
-- `timestampvm`: The [Timestamp Virtual Machine](https://github.com/ava-labs/timestampvm) in versions `1.2.0` and later
+- `subnetevm`: The [Subnet EVM](https://github.com/ava-labs/subnet-evm) in versions `0.4.8` or later
 
 Here is the compatibility matrix with AvalancheGo versions:
 
-| AvalancheGo     | `blobvm`        | `spacesvm`      | `subnetevm`     | `timestampvm` |
-| --------------- | --------------- | --------------- | --------------- | ------------- |
-| `1.7.0-1.7.4`   | -               | `0.0.1`         | `0.1.0`         | `1.2.0`       |
-| `1.7.5-1.7.6`   | -               | `0.0.2`         | `0.1.1-0.1.2`   | `1.2.2`       |
-| `1.7.7-1.7.9`   | `0.0.1-0.0.2`   | `0.0.3`         | `0.2.0`         | `1.2.3`       |
-| `1.7.10`        | `0.0.3`         | `0.0.4`         | `0.2.1`         | `1.2.4`       |
-| `1.7.11-1.7.12` | `0.0.4`         | `0.0.5`         | `0.2.2`         | `1.2.5`       |
-| `1.7.13-1.7.18` | `0.0.5-0.0.7`   | `0.0.6-0.0.7`   | `0.2.3-0.2.5`   | `1.2.6`       |
-| `1.8.0-1.8.6`   | `0.0.8`         | `0.0.8`         | `0.3.0`         | -             |
-| `1.9.0`         | `0.0.9`         | `0.0.9`         | `0.4.0`         | `1.2.7`       |
-| `1.9.1`         | `0.0.10-0.0.11` | `0.0.9`         | `0.4.1-0.4.2`   | `1.2.8`       |
-| `1.9.2`         | `0.0.10-0.0.11` | `0.0.10-0.0.11` | `0.4.3-0.4.4`   | `1.2.9`       |
-| `1.9.3`         | `0.0.11`        | `0.0.12`        | `0.4.3-0.4.4`   | `1.3.0`       |
-| `1.9.4`         | -               | `0.0.13-0.0.14` | `0.4.5-0.4.6`   | -             |
-| `1.9.5`         | -               | -               | `0.4.7`         | -             |
-| `1.9.6-1.9.8`   | -               | `0.0.15`        | `0.4.8`         | -             |
-| `1.9.9`         | -               | -               | `0.4.9-0.4.10`  | -             |
-| `1.9.10`        | -               | -               | `0.4.11-0.4.12` | -             |
+| AvalancheGo   | `subnetevm`     |
+| ------------- | --------------- |
+| `1.9.6-1.9.8` | `0.4.8`         |
+| `1.9.9`       | `0.4.9-0.4.10`  |
+| `1.9.10`      | `0.4.11-0.4.12` |
 
 :::tip
 If a versions incompatibility is detected, an error message will be prompted and the role execution will stop.
