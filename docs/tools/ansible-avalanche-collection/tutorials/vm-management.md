@@ -1,9 +1,8 @@
 ---
-sidebar_label: VM management
 sidebar_position: 4
 ---
 
-# VM management
+# VM Management
 
 In this section, we will learn how to use the [Ansible Avalanche Collection](https://github.com/AshAvalanche/ansible-avalanche-collection) to install or upgrade VMs on the nodes.
 
@@ -31,7 +30,7 @@ ansible-playbook ash.avalanche.provision_nodes -i inventories/local
 ```
 
 :::tip
-[Ansible Avalanche Collection](https://github.com/AshAvalanche/ansible-avalanche-collection) maintains a AvalancheGo / Ava Labs' VMs [compatibility matrix](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/roles/node/vars/main.yml#L29) that keeps you from mistakenly add a VM that is not compatible with your current AvalancheGo version which could cause a critical node failure.
+The Ash team maintains a AvalancheGo / Ava Labs' VMs [compatibility matrix](../reference/roles/avalanche-node.md#available-vms-and-avalanchego-compatibility) that keeps you from mistakenly add a VM that is not compatible with your current AvalancheGo version which could cause a critical node failure.
 :::
 
 The VM binary can then be found on the Avalanche node at `/opt/avalanche/avalanchego/current/plugins/`:

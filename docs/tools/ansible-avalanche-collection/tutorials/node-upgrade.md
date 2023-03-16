@@ -1,9 +1,8 @@
 ---
-sidebar_label: Node upgrade
 sidebar_position: 3
 ---
 
-# Node upgrade
+# Node Upgrade
 
 In this section, we will learn how to upgrade the [AvalancheGo](https://github.com/ava-labs/avalanchego) version on many nodes simultaneously with a single command.
 

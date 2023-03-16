@@ -1,9 +1,8 @@
 ---
-sidebar_label: Avalanche transactions
 sidebar_position: 7
 ---
 
-# Avalanche transactions
+# Avalanche Transactions
 
 In this section, we will learn how to use the `ash.avalanche.tx` module of the [Ansible Avalanche Collection](https://github.com/AshAvalanche/ansible-avalanche-collection) to submit transactions to an Avalanche network.
 
