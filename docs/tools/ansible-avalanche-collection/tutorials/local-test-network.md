@@ -1,9 +1,8 @@
 ---
-sidebar_label: Create a local test network
 sidebar_position: 2
 ---
 
-# Create a local test network
+# Create a Local Test Network
 
 In this section, we will learn how to use the [ash.avalanche](https://github.com/AshAvalanche/ansible-avalanche-collection) Ansible collection to provision a local [Avalanche](https://docs.avax.network/) test network.
 
@@ -104,4 +103,4 @@ Different aspects of the installation can be customized:
   - [avalanche_nodes.yml](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml) is applied to all nodes
   - [bootstrap_node.yml](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/bootstrap_node.yml) is only applied to the bootstrap node
 
-For a list of all available variables, see the [ash.avalanche.node role documentation](https://github.com/AshAvalanche/ansible-avalanche-collection/tree/main/roles/node).
+For a list of all available variables, see [ash.avalanche.node reference](../reference/roles/avalanche-node.md).

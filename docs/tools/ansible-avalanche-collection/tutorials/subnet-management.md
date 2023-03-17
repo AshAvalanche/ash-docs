@@ -1,9 +1,8 @@
 ---
-sidebar_label: Subnet management
 sidebar_position: 5
 ---
 
-# Subnet management
+# Subnet Management
 
 In this section, we will learn how to use the `ash.avalanche.subnet` role to create a Subnet.
 
@@ -70,4 +69,4 @@ To track the Subnet on our nodes:
 
 To customize the Subnet: edit the variables in `inventories/local/group_vars/subnet_control_node.yml`.
 
-For a list of all available variables, see the [ash.avalanche.subnet role documentation](https://github.com/AshAvalanche/ansible-avalanche-collection/tree/main/roles/subnet).
+For a list of all available variables, see the [ash.avalanche.subnet role reference](../reference/roles/avalanche-subnet.md).

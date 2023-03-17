@@ -1,9 +1,8 @@
 ---
-sidebar_label: Blockchain management
 sidebar_position: 6
 ---
 
-# Blockchain management
+# Blockchain Management
 
 In this section, we will learn how to use the `ash.avalanche.blockchain` role to create blockchains in Subnets.
 
@@ -45,4 +44,4 @@ ok: [validator01] =>
 
 To customize the blockchains created: edit the variables in `inventories/local/group_vars/subnet_control_node.yml`.
 
-For a list of all available variables, see the [ash.avalanche.blockchain role documentation](https://github.com/AshAvalanche/ansible-avalanche-collection/tree/main/roles/blockchain).
+For a list of all available variables, see the [ash.avalanche.blockchain role reference](../reference/roles/avalanche-blockchain.md).
