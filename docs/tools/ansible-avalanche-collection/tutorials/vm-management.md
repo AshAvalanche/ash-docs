@@ -23,7 +23,7 @@ To add a new VM that will be installed on our validator nodes, we just have to u
 ```yml
 [...]
 avalanchego_vms_install:
-  - subnetevm=0.4.9
+  - subnet-evm=0.4.9
 [...]
 ```
 
@@ -47,7 +47,7 @@ ll /opt/avalanche/avalanchego/current/plugins/
 total 8
 drwxr-xr-x 2 avalanche avalanche 4096 Mar 10 18:30 ./
 drwxr-xr-x 3 avalanche avalanche 4096 Mar  9 16:10 ../
-lrwxrwxrwx 1 root      root        56 Mar 10 18:30 subnetevm -> /opt/avalanche/vms/subnetevm/subnetevm-v0.4.9/subnetevm
+lrwxrwxrwx 1 root      root        56 Mar 10 18:30 subnet-evm -> /opt/avalanche/vms/subnet-evm/subnet-evm-v0.4.9/subnet-evm
 ```
 
 AvalancheGo has been automatically restarted and the VM is ready to be used.
@@ -56,12 +56,12 @@ AvalancheGo has been automatically restarted and the VM is ready to be used.
 
 Upgrading a VM is as simple as updating the `avalanchego_vms_install` variable.
 
-For example, if we want to upgrade the `subnetevm` from version 0.4.9 to 0.4.10:
+For example, if we want to upgrade the `subnet-evm` from version 0.4.9 to 0.4.10:
 
 ```yml
 [...]
 avalanchego_vms_install:
-  - subnetevm=0.4.10
+  - subnet-evm=0.4.10
 [...]
 ```
 
@@ -78,7 +78,7 @@ ll /opt/avalanche/avalanchego/current/plugins/
 total 8
 drwxr-xr-x 2 avalanche avalanche 4096 Mar 10 18:32 ./
 drwxr-xr-x 3 avalanche avalanche 4096 Mar  9 16:10 ../
-lrwxrwxrwx 1 root      root        56 Mar 10 18:32 subnetevm -> /opt/avalanche/vms/subnetevm/subnetevm-v0.4.10/subnetevm
+lrwxrwxrwx 1 root      root        56 Mar 10 18:32 subnet-evm -> /opt/avalanche/vms/subnet-evm/subnet-evm-v0.4.10/subnet-evm
 ```
 
 ## Uninstall a VM
