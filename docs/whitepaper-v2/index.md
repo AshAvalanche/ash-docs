@@ -90,8 +90,8 @@ The Ash protocol relies on **third-party node operators** to ensure the Subnets'
 The Ash protocol targets 3 user groups:
 
 - Retail users
-- Subnet owners
 - Node operators
+- Subnet owners
 
 ### Ash for retail users
 
@@ -128,6 +128,18 @@ Subnet owners can **incentivize the validation** of their Subnets by providing n
 
 Ash will leverage existing liquid staking protocols like [BENQI Ignite](https://benqifinance.medium.com/ignite-avalanche-validators-subnets-for-all-592d19b4aa94) and [GoGoPool](https://www.gogopool.com/) (+ more to come!) to **spin up the new validator nodes at a lower cost** while benefiting from these **protocols' native rewards**. These rewards are **redistributed to the** pool stakers.
 
+### Ash for node operators
+
+Node operators can **apply to operate Ash nodes** and **validate Subnets** for the protocol.
+
+If a node operator is elected by the DAO<sup> [7](#glossary)</sup>, its nodes will be allowed to **join the [Ash Subnet](#ash-subnet)**.
+
+The revenues generated are redistributed to the Ash community, and **node operators are rewarded**.
+
+This key feature of the protocol provides **true decentralization** of Subnet validation.
+
+Node operators can also benefit from the Ash team’s DevOps expertise by leveraging open-source tools provided by the Ash team.
+
 ### Ash for Subnet owners
 
 Ash offers 2 validation services to Subnet owners:
@@ -150,18 +162,6 @@ Subnet owners are freed from the burden of running their own infrastructure and 
 Ash stakers<sup> [6](#glossary)</sup> can participate in the protocol's governance. The main governance component is **the allocation of the protocol's validating power** between Subnets.
 
 Node operator **rewards are redistributed to stakers**. With attractive incentives, a Subnet will **naturally get more decentralized** because it will appeal to more users.
-
-### Ash for node operators
-
-Node operators can **apply to operate Ash nodes** and **validate Subnets** for the protocol.
-
-If a node operator is elected by the DAO<sup> [7](#glossary)</sup>, its nodes will be allowed to **join the [Ash Subnet](#ash-subnet)**.
-
-The revenues generated are redistributed to the Ash community, and **node operators are rewarded**.
-
-This key feature of the protocol provides **true decentralization** of Subnet validation.
-
-Node operators can also benefit from the Ash team’s DevOps expertise by leveraging open-source tools provided by the Ash team.
 
 ## Technical Details
 
@@ -190,11 +190,11 @@ The Ash Subnet will serve as a **backbone for the protocol**. DAO-voted node ope
 
 #### Ash smart contracts
 
-**All transactions** related to Subnet slots renting, liquid staking<sup> [6](#glossary)</sup>, and DAO votes are **tracked on-chain**.
+**All transactions** related to Subnet slots renting, staking, and DAO votes are **tracked on-chain**.
 The Ash protocol leverages the popularity and robustness of the Avalanche C-Chain<sup> [9](#glossary)</sup> to host its smart contracts. It relies on **trusted smart contract standards** for its different building blocks:
 
 - Subnet slots rentals are represented by ERC-721 NFTs
-- The liquid staking contracts will take inspiration from industry standards like [Lido](https://lido.fi)
+- The staking contracts will take inspiration from industry standards
 - The DAO will follow an established framework (most likely [Aragon](https://aragon.org/))
 
 #### Ash API
@@ -282,23 +282,17 @@ The Ash protocol will fund third-party node operators to spin-up new validator n
 
 ### ashAVAX Token
 
-ashAVAX is an ERC20 token that represents AVAX staked within the Ash protocol. Unlike staked AVAX, it is liquid, meaning that it can be transferred, traded, or used in other DeFi applications.
+ashAVAX is an ERC-20 token that represents AVAX staked within the Ash protocol. To receive rewards, a user has to lock its ashAVAX tokens for a minimum of 2 weeks. The longer the lock, the higher the rewards.
 
-The total supply of ashAVAX reflects the amount of AVAX deposited into the protocol combined with staking rewards.
-
-ashAVAX tokens are minted upon AVAX deposited in the community pool at a 1:1 ratio.
-
-When AVAX are withdrawn from the community pool, ashAVAX are burned following the same 1:1 ratio.
+ashAVAX tokens are minted upon AVAX deposited in the community pool at a 1:1 ratio. When AVAX are withdrawn from the community pool, ashAVAX are burned following the same 1:1 ratio.
 
 ### ASH Token
 
-ASH is an ERC-20 governance token that allows users to vote for the Subnets they want the Ash protocol to validate.
+All users that are staking AVAX in the Ash community pool will receive ASH tokens as rewards. **ASH is an ERC-20 token** that can be staked to receive veASH tokens.
 
-All users that are liquid-staking<sup> [6](#glossary)</sup> AVAX in the Ash community pool will receive ASH rewards.
+veASH is used to vote in the DAO for:
 
-ASH can be used to vote in the DAO for:
-
-- Choosing the Subnets validated by the Ash validator nodes<sup> [4](#glossary)</sup> and the number of nodes<sup> [3](#glossary)</sup> allocated to each Subnet
+- Choosing the allocation of the protocol validation power: which Subnets validated by the Ash validator nodes<sup> [4](#glossary)</sup> and the number of nodes<sup> [3](#glossary)</sup> allocated to each of them
 - Electing the node operators that will spin up new validators using AVAX from the community pool
 
 A public sale will occur after the launch of the protocol.
