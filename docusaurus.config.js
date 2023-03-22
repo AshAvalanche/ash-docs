@@ -97,15 +97,15 @@ const config = {
             items: [
               {
                 label: "Protocol",
-                to: "/docs/protocol/index",
+                to: "/docs/protocol",
               },
               {
                 label: "Tools",
-                to: "/docs/tools/index",
+                to: "/docs/tools",
               },
               {
                 label: "Litepaper",
-                to: "/docs/litepaper/index",
+                to: "/docs/litepaper",
               },
             ],
           },
