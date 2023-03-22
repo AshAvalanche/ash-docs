@@ -77,9 +77,9 @@ const config = {
           },
           {
             type: "doc",
-            docId: "whitepaper/index",
+            docId: "litepaper/index",
             position: "left",
-            label: "Whitepaper",
+            label: "Litepaper",
           },
           {
             href: "https://github.com/AshAvalanche/ash-docs",
@@ -104,8 +104,8 @@ const config = {
                 to: "/docs/tools/index",
               },
               {
-                label: "Whitepaper",
-                to: "/docs/whitepaper/index",
+                label: "Witepaper",
+                to: "/docs/litepaper/index",
               },
             ],
           },
