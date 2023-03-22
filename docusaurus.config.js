@@ -104,7 +104,7 @@ const config = {
                 to: "/docs/tools/index",
               },
               {
-                label: "Witepaper",
+                label: "Litepaper",
                 to: "/docs/litepaper/index",
               },
             ],
