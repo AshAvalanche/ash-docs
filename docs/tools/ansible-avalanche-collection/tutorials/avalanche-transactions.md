@@ -10,7 +10,7 @@ In this section, we will learn how to use the `ash.avalanche.tx` module of the [
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a local test network](./local-test-network) for details.
 :::
 
-## Runing a X chain to P chain transaction
+## Perform an AVAX transfer from the X-Chain to the P-Chain
 
 The notebook [ash.avalanche.transfer_avax](https://github.com/AshAvalanche/ansible-avalanche-collection/tree/main/playbooks/transfer_avax.yml) is provided as an example. We will call this notebook and follow best practices to secure Avalanche keystore credentials using [Ansible vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html):
 

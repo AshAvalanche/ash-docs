@@ -19,7 +19,7 @@ In this section, we will learn how to use the [ash.avalanche](https://github.com
 
 ## Installation
 
-1. Clone this repository:
+1. Clone the Getting Started repository:
 
    ```bash
    git clone https://github.com/AshAvalanche/ansible-avalanche-getting-started
@@ -39,7 +39,7 @@ In this section, we will learn how to use the [ash.avalanche](https://github.com
    ansible-galaxy collection install git+https://github.com/AshAvalanche/ansible-avalanche-collection.git
    ```
 
-## Bootstrapping
+## Bootstrap a local test network
 
 :::note
 This section uses the `local` inventory which is pre-configured as a local Avalanche network (see `avalanchego_network_id: local` in [avalanche_nodes.yml](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml#L5)).
@@ -66,7 +66,7 @@ It's done! We now have a ready to use 5 nodes Avalanche local test network.
 The node `validator01-local` exposes AvalancheGo APIs on it's public IP: you can query any [Avalanche API](https://docs.avax.network/build/avalanchego-apis/) at `192.168.60.11:9650` from your terminal. For example, to check if the P-Chain is done bootstrapping:
 
 ```bash
-curl -s -X POST --data '{
+curl -X POST --data '{
   "jsonrpc": "2.0",
   "id"     : 1,
   "method" : "info.isBootstrapped",

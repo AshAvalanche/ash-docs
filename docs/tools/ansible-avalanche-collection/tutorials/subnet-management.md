@@ -12,7 +12,7 @@ For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ans
 
 ## Create control keys
 
-For this tutorial, we will use the [ash.avalanche.create_local_subnet](https://github.com/AshAvalanche/ansible-avalanche-collection/tree/main/playbooks/create_local_subnet.yml) notebook that leverages the pre-funded account to create the Subnet. Therefore, before creating the Subnet, we need to create 2 addresses that will serve as control keys for the subnet (see [Create a subnet](https://docs.avax.network/build/tutorials/platform/subnets/create-a-subnet) for more information):
+For this tutorial, we will use the [ash.avalanche.create_local_subnet](https://github.com/AshAvalanche/ansible-avalanche-collection/tree/main/playbooks/create_local_subnet.yml) notebook that leverages the pre-funded account to create the Subnet. Therefore, before creating the Subnet, we need to create 2 addresses that will serve as control keys for the Subnet (see [Create a Subnet](https://docs.avax.network/build/tutorials/platform/subnets/create-a-subnet) for more information):
 
 ```bash
 data='{
@@ -27,7 +27,7 @@ key_2=$(curl -s -X POST -H 'content-type:application/json;' --data "$data" http:
 You should only use the keystore API on nodes you manage yourself.
 :::
 
-## Subnet creation
+## Create a Subnet
 
 We will use the 2 addresses created above as control keys for the Subnet:
 
@@ -36,26 +36,26 @@ ansible-playbook ash.avalanche.create_local_subnet -i inventories/local \
   --extra-vars "{\"subnet_control_keys\": [\"$key_1\",\"$key_2\"]}"
 ```
 
-## Subnet tracking
+## Track the Subnet with the validators
 
-The `ash.avalanche.subnet` role does not handle Subnet tracking on validator nodes. The list of tracked Subnets is handled by the `avalanche_tracked_subnets` variable in the `ash.avalanche.node` role.
+The `ash.avalanche.subnet` role does not handle Subnet tracking on validator nodes. The list of tracked Subnets is handled by the `avalanchego_track_subnets` variable in the `ash.avalanche.node` role.
 
 At the end of the Subnet creation, information about the new Subnet is displayed:
 
 ```yaml
 ok: [validator01] =>
   msg: |-
-    The subnet has been created and the validators added.
-    Make sure to add the subnet ID to the track-subnets list of the validators.
+    The Subnet has been created and the validators added.
+    Make sure to add the Subnet ID to the track-subnets list of the validators.
     Subnet ID = QBEQJBMPLQTQw7JzG1GtqLDasvcFyj5RLnvwyxDi6LfooQr7L
 ```
 
 To track the Subnet on our nodes:
 
-1. Add the following lines to the `group_vars` file associated with the hosts to add the `avalanche_tracked_subnets` variable. In our case it is [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml):
+1. Add the following lines to the `group_vars` file associated with the hosts to add the `avalanchego_track_subnets` variable. In our case it is [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml):
 
    ```yaml
-   avalanche_tracked_subnets:
+   avalanchego_track_subnets:
      - QBEQJBMPLQTQw7JzG1GtqLDasvcFyj5RLnvwyxDi6LfooQr7L
    ```
 

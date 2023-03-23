@@ -186,7 +186,7 @@ Validator nodes are operated by the **Ash team** and **third-party node operator
 
 #### Ash Subnet
 
-The Ash Subnet will serve as a **backbone for the protocol**. DAO-voted node operators will have to validate the Ash Subnet. Its VM will push various metrics to public contracts to ensure Ash nodes' have proper resources (RAM and CPU), validated subnets are well-distributed, etc.
+The Ash Subnet will serve as a **backbone for the protocol**. DAO-voted node operators will have to validate the Ash Subnet. Its VM will push various metrics to public contracts to ensure Ash nodes' have proper resources (RAM and CPU), validated Subnets are well-distributed, etc.
 
 #### Ash smart contracts
 
