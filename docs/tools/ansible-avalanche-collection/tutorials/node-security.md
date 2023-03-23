@@ -51,9 +51,9 @@ curl --cacert files/https/ca.crt -X POST --data '{
   "params": {
     "chain": "P"
   }
-}' -H 'content-type:application/json;' http://192.168.60.11:9650/ext/info
+}' -H 'content-type:application/json;' https://192.168.60.11:9650/ext/info
 ```
 
 :::caution
-We recommend using different CA certificates for the HTTP API endpoints and staking. By doing so, you have the **flexibility of changing a node's FQDN** without having to change its node ID.
+We recommend using different CA certificates for the HTTP API endpoints and staking. By doing so, you have the **flexibility of migrating a node to different server** without having to change its node ID.
 :::
