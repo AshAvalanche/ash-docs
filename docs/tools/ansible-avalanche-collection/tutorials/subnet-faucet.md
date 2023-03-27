@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Subnet Faucet
 
-In this section, we will learn how to use the `ash.avalanche.faucet` role to deploy an [Avalanche Faucet](https://github.com/ava-labs/avalanche-faucet) for a Subnet.
+In this section, we will learn how to use the `ash.avalanche.faucet` role to deploy an [Avalanche Faucet](https://github.com/ava-labs/avalanche-faucet) for an EVM blockchain.
 
 :::note
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a local test network](./local-test-network) for details.
@@ -47,7 +47,7 @@ Running the `ash.avalanche.install_faucet_docker` will install Docker and the do
 ansible-playbook ash.avalanche.install_faucet_docker -i inventories/local
 ```
 
-The Faucet should then be available at <http://192.168.60.11:8000>
+The Faucet should then be available at [http://192.168.60.11:8000](http://192.168.60.11:8000)
 
 <figure>
 
@@ -57,5 +57,5 @@ The Faucet should then be available at <http://192.168.60.11:8000>
 </figure>
 
 :::caution
-The `ash.avalanche.faucet` role is not yet compatible with SSL secured AvalancheGo API endpoints (see [Node security](./node-security) for details).
+The `ash.avalanche.faucet` role is not yet compatible with secured HTTP API endpoints (see [Node security](./node-security) for details).
 :::
