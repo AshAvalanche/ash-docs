@@ -26,11 +26,23 @@ ansible-galaxy install -r ansible_collections/ash/avalanche/requirements.yml
 
 The Avalanche Faucet will be installed as a [Docker Compose](https://docs.docker.com/compose/) service on the node targeted by the `faucet` Ansible group. In [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started), it is `validator01` by default. You can change this by editing the [`hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/hosts) file.
 
-We need to let the Faucet know where to find our Subnet. To do this, let's add the following lines to the `group_vars` file associated with the hosts to add the `avalanche_faucet_config` variable. In our case it is [`faucet.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/faucet.yml):
+We need to set the blockchain configuration using the `avalanche_faucet_chains` variable. Let's modify [`faucet.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/faucet.yml) (the `group_vars` file associated with our hosts' group):
 
 ```yaml
-avalanche_faucet_config:
-  subnet_rpc: http://192.168.60.11:9650/ext/bc/2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL/rpc
+avalanche_faucet_chains:
+  - ID: ASH
+    NAME: Subnet-EVM Local Subnet
+    TOKEN: SUBNET
+    RPC: http://192.168.60.11:9650/ext/bc/2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL/rpc
+    CHAINID: 13213
+    EXPLORER: http://192.168.60.11:4000
+    IMAGE: https://docs.ash.center/img/ash-logo.svg
+    MAX_PRIORITY_FEE: 2000000000
+    MAX_FEE: 100000000000
+    DRIP_AMOUNT: 2
+    RATELIMIT:
+      MAX_LIMIT: 1
+      WINDOW_SIZE: 1440
 ```
 
 The blockchain ID (`2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL` in our case) should be the one created in the [Blockchain management](./blockchain-management) tutorial.
