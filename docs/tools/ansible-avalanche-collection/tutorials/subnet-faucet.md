@@ -36,7 +36,7 @@ avalanche_faucet_config:
 The blockchain ID (`2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL` in our case) should be the one created in the [Blockchain management](./blockchain-management) tutorial.
 
 :::tip
-If you went through all the tutorials with the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory and the default variables, you should be good to go! Otherwise, check out the other variables at XXX.
+If you went through all the tutorials with the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory and the default variables, you should be good to go! Otherwise, check out the other variables at [`ash.avalanche.faucet`](/docs/tools/ansible-avalanche-collection/reference/roles/avalanche-faucet).
 :::
 
 ## Install the faucet
