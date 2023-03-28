@@ -55,7 +55,7 @@ const config = {
         defaultMode: "dark",
       },
       // Replace with your project's social card
-      image: "img/ash-social-card.jpg",
+      image: "img/ash-social-card.png",
       navbar: {
         title: "Ash",
         logo: {
