@@ -32,7 +32,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title} docs`}
-      description="Description will go into a meta tag in <head />"
+      description="Open-source toolkit & decentralized services for Avalanche Subnets"
     >
       <HomepageHeader />
       <main>
