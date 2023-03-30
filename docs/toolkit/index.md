@@ -2,10 +2,10 @@
 sidebar_position: 1
 ---
 
-# Ash Tools
+# Overview
 
-The Ash teams provides a set of open-source tools for Avalanche node operators and developers.
-We use those tools on a daily basis to operate the Ash protocol!
+The Ash teams provides an open-source toolkit for Avalanche node operators and developers.
+We use those tools on a daily basis to operate our validator nodes!
 
 :::info
 The tools with a version `<1.0.0` are under active development and may break at any time! (even if we try our best not to 😅)

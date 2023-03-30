@@ -71,15 +71,15 @@ const config = {
           },
           {
             type: "doc",
-            docId: "tools/index",
+            docId: "toolkit/index",
             position: "left",
-            label: "Tools",
           },
           {
             type: "doc",
             docId: "litepaper/index",
             position: "left",
             label: "Litepaper",
+            label: "Toolkit docs",
           },
           {
             href: "https://github.com/AshAvalanche/ash-docs",
