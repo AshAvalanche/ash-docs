@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Ash",
-  tagline: "Decentralized Validator as a Service protocol for Avalanche",
+  tagline: "Get more from your Avalanche infrastructure.",
   favicon: "img/ash-logo.svg",
 
   // Set the production url of your site here
@@ -65,20 +65,14 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "protocol/index",
+            docId: "console/index",
             position: "left",
-            label: "Protocol",
+            label: "Console docs",
           },
           {
             type: "doc",
             docId: "toolkit/index",
             position: "left",
-          },
-          {
-            type: "doc",
-            docId: "litepaper/index",
-            position: "left",
-            label: "Litepaper",
             label: "Toolkit docs",
           },
           {
@@ -96,16 +90,12 @@ const config = {
             title: "Contents",
             items: [
               {
-                label: "Protocol",
-                to: "/docs/protocol",
+                label: "Console",
+                to: "/docs/console",
               },
               {
                 label: "Tools",
                 to: "/docs/tools",
-              },
-              {
-                label: "Litepaper",
-                to: "/docs/litepaper",
               },
             ],
           },
@@ -121,10 +111,6 @@ const config = {
           {
             title: "More",
             items: [
-              {
-                label: "Website",
-                href: "https://ash.center",
-              },
               {
                 label: "GitHub",
                 href: "https://github.com/AshAvalanche/ash-docs",
