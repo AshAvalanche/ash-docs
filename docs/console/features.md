@@ -11,7 +11,7 @@ sidebar_label: Features
 
 ### Validator management
 
-Manage your validator nodes seamlessly with the Ash Console. Edit configurations keys, install  upgrade or restart AvalancheGo, etc.
+Manage validator nodes seamlessly with the Ash Console. Edit configuration keys, install, upgrade, or restart AvalancheGo, etc.
 
 ### Subnets management
 
