@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Create a Local Test Network
 
-In this section, we will learn how to use the [ash.avalanche](https://github.com/AshAvalanche/ansible-avalanche-collection) Ansible collection to provision a local [Avalanche](https://docs.avax.network/) test network.
+In this section, we will learn how to use the [ash.avalanche](https://github.com/AshAvalanche/ansible-avalanche-collection) Ansible collection to provision a local [Avalanche](https://docs.avax.network/) test network on [VirtualBox](https://www.virtualbox.org/) virtual machines.
 
 ## Requirements
 

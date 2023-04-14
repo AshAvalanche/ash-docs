@@ -4,31 +4,23 @@ sidebar_position: 1
 
 # Overview
 
-The Ash teams provides an open-source toolkit for Avalanche node operators and developers.
+The Ash team provides an open-source toolkit for Avalanche node operators and Subnet developers.
 We use those tools on a daily basis to operate our validator nodes!
 
 :::info
 The tools with a version `<1.0.0` are under active development and may break at any time! (even if we try our best not to 😅)
 :::
 
-## For node operators
+## [Ansible Avalanche Collection](https://github.com/AshAvalanche/ansible-avalanche-collection)
 
-### Ansible Avalanche Collection
+An Ansible collection to manage Avalanche nodes, Subnets, blockchains and more!
 
-An Ansible collection to manage Avalanche nodes, Subnets and blockchains.
+[**Get started**](./ansible-avalanche-collection/tutorials/local-test-network.md)
 
-[**Overview**](./ansible-avalanche-collection/overview)
-
-## For Avalanche developers
-
-### ash-rs
-
-:::info
-The CLI is not yet open-sourced. Stay tuned by following [@ash_avax](https://twitter.com/ash_avax) 🐦!
-:::
+## ash-rs
 
 A Rust SDK to interact with the Ash protocol coming with a CLI.
 
-:::note
-The Ash CLI has interesting features that can be useful for developers outside of the Ash context!
+:::info
+The CLI is not yet open-sourced. Stay tuned by following [@ash_avax](https://twitter.com/ash_avax) 🐦!
 :::
