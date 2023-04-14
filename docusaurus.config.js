@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Ash",
-  tagline: "Get more from your Avalanche infrastructure.",
+  tagline: "Get more from your Avalanche infrastructure",
   favicon: "img/ash-logo.svg",
 
   // Set the production url of your site here

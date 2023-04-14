@@ -9,7 +9,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title} docs`}
-      description="Get more from your Avalanche infrastructure."
+      description="Get more from your Avalanche infrastructure"
     >
       <main>
         <HomepageHeader />

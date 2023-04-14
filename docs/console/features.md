@@ -19,7 +19,7 @@ Manage Subnets and blockchains.
 
 ### Networks
 
-Ash supports running Avalanche validator nodes in a private network, on the Fuji test net or on the mainnet (only in the Pro plan).
+Ash supports running Avalanche validator nodes in a private network, on the Fuji testnet, or on the mainnet (only in the Pro plans).
 
 ### Monitoring
 
@@ -35,7 +35,7 @@ Get first class support from our expert team.
 
 ### Automatic upgrade
 
-We will make sure your validators are always up to date with the latest release of AvalancheGo.
+Ash will make sure your validators are always up to date with the latest release of AvalancheGo.
 
 ### Faucet
 
@@ -55,7 +55,7 @@ Our service is infrastructure agnostic, use bare metal machines or BYOC (Bring Y
 
 ### Subnet benchmarking
 
-Stress test your Subnet with our customizable on-demande Subnet benchmarking tool.
+Stress test your Subnet with our customizable on-demand Subnet benchmarking tool.
 
 ### RPC Auth
 
