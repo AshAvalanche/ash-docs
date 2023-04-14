@@ -9,7 +9,7 @@ sidebar_label: Pricing
 🚧 Page under construction
 :::
 
-## Ash console plans
+## Ash Console plans
 
 <!-- | Price                   | Free           | $49 / month / node | $99 / month / node     | $199 / month / node    | -->
 

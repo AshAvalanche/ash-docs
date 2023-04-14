@@ -8,4 +8,4 @@ sidebar_position: 1
 🚧 Page under construction
 :::
 
-The Ash console is the one-stop shop for Avalanche services management.
+The Ash Console is the one-stop shop for Avalanche services management.

@@ -11,7 +11,7 @@ sidebar_label: Features
 
 ### Validator management
 
-Manage your validator nodes seamlessly with the Ash console. Edit configurations keys, install  upgrade or restart AvalancheGo, etc.
+Manage your validator nodes seamlessly with the Ash Console. Edit configurations keys, install  upgrade or restart AvalancheGo, etc.
 
 ### Subnets management
 
@@ -62,5 +62,5 @@ Stress test your Subnet with our customizable on-demande Subnet benchmarking too
 Secure your validators or Subnets with an authentication layer. Define RBAC to control the access to the RPCs.
 
 :::info
-Most of the features powering the Ash console are open-source as part of the [Ash toolkit](/docs/toolkit).
+Most of the features powering the Ash Console are open-source as part of the [Ash toolkit](/docs/toolkit).
 :::

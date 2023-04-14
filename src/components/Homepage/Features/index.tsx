@@ -11,13 +11,13 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Ash console",
+    title: "Ash Console",
     Svg: require("@site/static/img/undraw-nakamoto-ash.svg").default,
     description: (
       <>
         The{" "}
         <b>
-          <a href="docs/console">Ash console</a>
+          <a href="docs/console">Ash Console</a>
         </b>{" "}
         is the one-stop shop for <b>Avalanche services management</b>.
       </>
