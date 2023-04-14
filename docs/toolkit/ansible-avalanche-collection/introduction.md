@@ -1,11 +1,10 @@
 ---
-sidebar_label: Overview
 sidebar_position: 1
 ---
 
-# Ansible Avalanche Collection - Overview
+# Introduction
 
-The [Ansible Avalanche Collection](https://github.com/AshAvalanche/ansible-avalanche-collection) provides [Ansible](https://www.ansible.com) roles, playbooks and modules to manage [Avalanche](https://docs.avax.network) nodes, Subnets and blockchains.
+The [Ansible Avalanche Collection](https://github.com/AshAvalanche/ansible-avalanche-collection) provides [Ansible](https://www.ansible.com) roles, playbooks and modules to manage [Avalanche](https://docs.avax.network) nodes, Subnets, blockchains and more!
 
 ## What is Ansible? And why do we use it?
 

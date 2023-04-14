@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
+import Link from "@docusaurus/Link";
 
 type FeatureItem = {
   title: string;
@@ -10,40 +11,35 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy access to the Subnets ecosystem",
+    title: "Ash Console",
     Svg: require("@site/static/img/undraw-nakamoto-ash.svg").default,
     description: (
       <>
         The{" "}
         <b>
-          <a href="docs/protocol">Ash protocol</a>
+          <Link to="/docs/console">Ash Console</Link>
         </b>{" "}
-        lowers the entry cost to the Avalanche Subnets ecosystem{" "}
-        <b>for all the participants</b>.
+        is the one-stop shop for <b>Avalanche services management</b>.
       </>
     ),
   },
   {
-    title: "Decentralized infrastructure",
-    Svg: require("@site/static/img/undraw-ash-p2p.svg").default,
-    description: (
-      <>
-        Ash nodes are funded through <b>liquid staking</b> and run by a{" "}
-        <b>decentralized network</b> of node operators. Governance and
-        operations are <b>tracked on-chain</b>.
-      </>
-    ),
-  },
-  {
-    title: "Open Source tooling",
+    title: "Ash toolkit",
     Svg: require("@site/static/img/undraw-open-source.svg").default,
     description: (
       <>
-        The Ash teams maintains a set of{" "}
-        <a href="docs/tools">open-source tools</a> that{" "}
-        <b>boost the productivity</b> of Avalanche <b>node operators</b> and{" "}
-        <b>developers</b>.
+        The Ash team maintains an{" "}
+        <Link to="/docs/toolkit">open-source toolkit</Link> that enable{" "}
+        <b>node operators</b> and <b>developers</b> to setup{" "}
+        <b>self-hosted trustless</b> infrastructure.
       </>
+    ),
+  },
+  {
+    title: "Professional Services",
+    Svg: require("@site/static/img/undraw-ash-p2p.svg").default,
+    description: (
+      <>Our team can help you with all your Avalanche related needs.</>
     ),
   },
 ];
@@ -64,7 +60,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
 
 export default function HomepageFeatures(): JSX.Element {
   return (
-    <section className={styles.features}>
+    <section className={clsx("hero hero--secondary", styles.features)}>
       <div className="container">
         <div className="row">
           {FeatureList.map((props, idx) => (
