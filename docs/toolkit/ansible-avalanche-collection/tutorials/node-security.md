@@ -43,7 +43,7 @@ ansible-playbook ash.avalanche.provision_nodes -i inventories/local
 
 After enabling HTTPS, all curl commands have to provide the `--cacert` option to specify the CA certificate used to sign the TLS certificate:
 
-```bash {1}
+```bash
 curl --cacert files/https/ca.crt -X POST --data '{
   "jsonrpc": "2.0",
   "id"     : 1,
