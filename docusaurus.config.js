@@ -87,15 +87,15 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Contents",
+            title: "Documentation",
             items: [
               {
                 label: "Console",
                 to: "/docs/console",
               },
               {
-                label: "Tools",
-                to: "/docs/tools",
+                label: "Toolkit",
+                to: "/docs/toolkit",
               },
             ],
           },

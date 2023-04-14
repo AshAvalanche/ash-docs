@@ -17,7 +17,7 @@ const FeatureList: FeatureItem[] = [
       <>
         The{" "}
         <b>
-          <a href="docs/console">Ash Console</a>
+          <Link to="/docs/console">Ash Console</Link>
         </b>{" "}
         is the one-stop shop for <b>Avalanche services management</b>.
       </>
