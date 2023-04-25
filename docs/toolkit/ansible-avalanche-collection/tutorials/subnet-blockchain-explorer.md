@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# Subnet Block Explorer
+# Subnet Blockchain Explorer
 
 In this section, we will learn how to use the `ash.avalanche.blockscout` role to deploy a [Blockscout](https://www.blockscout.com/) instance for an EVM blockchain.
 
