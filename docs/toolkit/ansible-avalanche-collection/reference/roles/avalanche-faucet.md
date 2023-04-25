@@ -6,6 +6,8 @@ sidebar_position: 4
 
 This Ansible role allows to deploy the [Avalanche Faucet](https://github.com/ava-labs/avalanche-faucet) as a Docker service.
 
+## Role variables
+
 | Variable                         | Comment                                                                                                              | Default value                       |
 | -------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
 | `avalanche_faucet_image`         | Base image of the Avalanche faucet                                                                                   | `ghcr.io/ashavalanche/faucet-image` |
@@ -25,4 +27,4 @@ This Ansible role allows to deploy the [Avalanche Faucet](https://github.com/ava
 
 ## How to?
 
-See the [Subnet faucet](https://docs.ash.center/docs/tools/ansible-avalanche-collection/tutorials/subnet-faucet) tutorial to learn how to deploy the Avalanche Faucet.
+See the [Subnet faucet](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-faucet) tutorial to learn how to deploy the Avalanche Faucet.

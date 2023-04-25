@@ -14,7 +14,7 @@ We should also have created a Subnet and a blockchain, see [Blockchain managemen
 
 ## Requirements
 
-The `ash.avalanche.faucet` role uses Docker and the `ash.avalanche.install_faucet_docker` installs Docker through the [geerlingguy.docker](https://galaxy.ansible.com/geerlingguy/docker).
+The `ash.avalanche.faucet` role uses Docker and the `ash.avalanche.install_faucet_docker` playbook installs Docker through the [geerlingguy.docker](https://galaxy.ansible.com/geerlingguy/docker).
 
 We can make this role available locally with:
 
