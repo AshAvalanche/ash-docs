@@ -24,7 +24,7 @@ ansible-galaxy install -r ansible_collections/ash/avalanche/requirements.yml
 
 ## Configure the faucet
 
-The Avalanche Faucet will be installed as a [Docker Compose](https://docs.docker.com/compose/) service on the node targeted by the `faucet` Ansible group. In [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started), it is `validator01` by default. You can change this by editing the [`hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/hosts) file.
+The Avalanche Faucet will be installed as a [Docker Compose](https://docs.docker.com/compose/) service on the node targeted by the `faucet` Ansible group. In [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started), it is `frontend` by default. You can change this by editing the [`hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/hosts) file.
 
 We need to set the blockchain configuration using the `avalanche_faucet_chains` variable. Let's modify [`faucet.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/faucet.yml) (the `group_vars` file associated with our hosts' group):
 
@@ -35,7 +35,7 @@ avalanche_faucet_chains:
     TOKEN: SUBNET
     RPC: http://192.168.60.11:9650/ext/bc/2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL/rpc
     CHAINID: 13213
-    EXPLORER: http://192.168.60.11:4000
+    EXPLORER: http://192.168.60.19:4000
     IMAGE: https://docs.ash.center/img/ash-logo.svg
     MAX_PRIORITY_FEE: 2000000000
     MAX_FEE: 100000000000
@@ -59,7 +59,7 @@ Running the `ash.avalanche.install_faucet_docker` will install Docker and the do
 ansible-playbook ash.avalanche.install_faucet_docker -i inventories/local
 ```
 
-The Faucet should then be available at [http://192.168.60.11:8000](http://192.168.60.11:8000)
+The Faucet should then be available at [http://192.168.60.19:8000](http://192.168.60.19:8000)
 
 <figure>
 
