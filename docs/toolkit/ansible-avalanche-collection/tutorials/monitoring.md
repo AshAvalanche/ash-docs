@@ -2,9 +2,9 @@
 sidebar_position: 9
 ---
 
-# Monitoring
+# Nodes monitoring
 
-In this section, we will learn how to use the `ash.avalanche.install_monitoring_stack` playbook to deploy a monitoring stack for Avalanche.
+In this section, we will learn how to use the `ash.avalanche.install_monitoring_stack` playbook to deploy a monitoring stack for Avalanche nodes.
 
 The monitoring stack is comprised of:
 
@@ -28,7 +28,7 @@ ansible-galaxy install -r ansible_collections/ash/avalanche/requirements.yml
 
 ## Install the monitoring stack
 
-Grafana will be installed on the node targeted by the `grafana` Ansible group and Prometheus on the `prometheus` Ansible group. In [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started), it is `frontend` by default. You can change this by editing the [`hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/hosts) file.
+Grafana will be installed on the nodes of the `grafana` Ansible group and Prometheus on the `prometheus` Ansible group. In [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started), it is the `frontend` node by default. You can change this by editing the [`hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/hosts) file.
 
 Prometheus Node Exporter will be installed on all nodes in the `avalanche_nodes` Ansible group.
 

@@ -24,7 +24,7 @@ ansible-galaxy install -r ansible_collections/ash/avalanche/requirements.yml
 
 ## Configure the faucet
 
-The Avalanche Faucet will be installed as a [Docker Compose](https://docs.docker.com/compose/) service on the node targeted by the `faucet` Ansible group. In [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started), it is `frontend` by default. You can change this by editing the [`hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/hosts) file.
+The Avalanche Faucet will be installed as a [Docker Compose](https://docs.docker.com/compose/) service on the nodes of the `faucet` Ansible group. In [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started), it is the `frontend` node by default. You can change this by editing the [`hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/hosts) file.
 
 We need to set the blockchain configuration using the `avalanche_faucet_chains` variable. Let's modify [`faucet.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/faucet.yml) (the `group_vars` file associated with our hosts' group):
 
