@@ -24,14 +24,14 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: "Ash toolkit",
+    title: "Ash open-source toolkit",
     Svg: require("@site/static/img/undraw-open-source.svg").default,
     description: (
       <>
-        The Ash team maintains an{" "}
-        <Link to="/docs/toolkit">open-source toolkit</Link> that enable{" "}
-        <b>node operators</b> and <b>developers</b> to setup{" "}
-        <b>self-hosted trustless</b> infrastructure.
+        The Ash team provides an{" "}
+        <Link to="/docs/toolkit">open-source toolkit</Link> to{" "}
+        <b>develop Avalanche Subnets</b> and operate{" "}
+        <b>self-hosted Avalanche nodes</b>.
       </>
     ),
   },

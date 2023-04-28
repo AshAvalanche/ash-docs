@@ -2,6 +2,9 @@
 sidebar_position: 3
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Node Upgrade
 
 In this section, we will learn how to upgrade the [AvalancheGo](https://github.com/ava-labs/avalanchego) version on many nodes simultaneously with a single command.
@@ -12,25 +15,53 @@ For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ans
 
 ## Check the current AvalancheGo version
 
+<Tabs>
+  <TabItem value="ash-cli" label="Using Ash CLI" default>
+
+Let's start by checking the current version of my node(s) with the Ash CLI:
+
+```bash
+ash avalanche node info --http-host 192.168.60.11
+```
+
+The output should look like this:
+
+```bash {6}
+Node '192.168.60.11:9650':
+  ID:            NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg
+  Public IP:     192.168.60.11
+  Stacking port: 9651
+  Versions:
+    AvalancheGo: avalanche/1.9.6
+    [...]
+```
+
+  </TabItem>
+  <TabItem value="curl" label="Using cURL">
+
 Let's start by checking the current version of my node(s) with an API call:
 
 ```bash
-curl -X POST --data '{
+curl -s -X POST --data '{
     "jsonrpc":"2.0",
     "id"     :1,
     "method" :"info.getNodeVersion"
-}' -H 'content-type:application/json;' http://192.168.60.11:9650/ext/info
+}' -H 'content-type:application/json;' http://192.168.60.11:9650/ext/info |
+jq -r '.result.version'
 ```
-
-:::tip
-The `192.168.60.11` matches the validator01 VM IP in the [Vagrantfile](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/Vagrantfile#L8) of [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started).
-:::
 
 The output should look like this:
 
 ```bash
-{"jsonrpc":"2.0","result":{"version":"avalanche/1.9.6","databaseVersion":"v1.4.5","rpcProtocolVersion":"22","gitCommit":"e153cf55236751112f9bf108279447a9dfb6de88","vmVersions":{"avm":"v1.9.6","evm":"v0.11.5","platform":"v1.9.6"}},"id":1}
+avalanche/1.9.6
 ```
+
+  </TabItem>
+</Tabs>
+
+:::tip
+The `192.168.60.11` matches the validator01 VM IP in the [Vagrantfile](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/Vagrantfile#L8) of [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started).
+:::
 
 As we can see above, our node is currently running AvalancheGo version `1.9.6`. This is what's expected because of the Ansible role variable `avalanchego_version: 1.9.6` set at [avalanche_nodes.yml](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/avalanche_nodes.yml#L4) in our inventory.
 
@@ -50,18 +81,46 @@ ansible-playbook ash.avalanche.provision_nodes -i inventories/local
 
 ## Verify the new AvalancheGo version
 
+<Tabs>
+  <TabItem value="ash-cli" label="Using Ash CLI" default>
+
+By running the same command as previously:
+
+```bash
+ash avalanche node info --http-host 192.168.60.11
+```
+
+We can confirm that our node is now running AvalancheGo 1.9.9:
+
+```bash {6}
+Node '192.168.60.11:9650':
+  ID:            NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg
+  Public IP:     192.168.60.11
+  Stacking port: 9651
+  Versions:
+    AvalancheGo: avalanche/1.9.9
+    [...]
+```
+
+  </TabItem>
+  <TabItem value="curl" label="Using cURL">
+
 By running the same API call as previously:
 
 ```bash
-curl -X POST --data '{
+curl -s -X POST --data '{
     "jsonrpc":"2.0",
     "id"     :1,
     "method" :"info.getNodeVersion"
-}' -H 'content-type:application/json;' http://192.168.60.11:9650/ext/info
+}' -H 'content-type:application/json;' http://192.168.60.11:9650/ext/info |
+jq -r '.result.version'
 ```
 
 We can confirm that our node is now running AvalancheGo 1.9.9:
 
 ```bash
-{"jsonrpc":"2.0","result":{"version":"avalanche/1.9.9","databaseVersion":"v1.4.5","rpcProtocolVersion":"23","gitCommit":"d755f872a4bf0de12297b3994b729ea684f78519","vmVersions":{"avm":"v1.9.9","evm":"v0.11.7","platform":"v1.9.9"}},"id":1}
+avalanche/1.9.9
 ```
+
+  </TabItem>
+</Tabs>

@@ -17,7 +17,7 @@ export default function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/toolkit"
           >
-            Get started
+            🚀 Get started
           </Link>
           {/* <Link
             className="button button--secondary button--lg"
