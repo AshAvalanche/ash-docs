@@ -40,7 +40,7 @@ ash conf init --config ~/.config/ash/my-custom-config.yaml
 
 The generated file contains the default list of networks. You can then edit it to add your own networks.
 
-Once the configuration file is ready, you can use it with the `--config` option or the `ASH_CONFIG` environment variable:
+Once the configuration file is ready, you can use it with the `--config` option or with the `ASH_CONFIG` environment variable:
 
 ```bash
 ash avalanche subnet list --config ~/.config/ash/my-custom-config.yaml --network my-network

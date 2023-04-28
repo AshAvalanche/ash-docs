@@ -98,10 +98,10 @@ Several factors motivated us to create the Ash CLI:
 
 **The need of an easy and scriptable way to explore Avalanche networks from the command line**
 
-- A network information is accessible through [AvalancheGo JSON-RPC APIs](https://docs.avax.network/apis/avalanchego/apis/issuing-api-calls), that are not made to be queried directly by developers. Extra development is required to reach an acceptable level of usability (don't tell me you like querying JSON-RPC endpoints with cURL 😬).
+- A network information is accessible through [AvalancheGo JSON-RPC APIs](https://docs.avax.network/apis/avalanchego/apis/issuing-api-calls), that are not made to be queried directly by developers. Extra development is required to reach an acceptable level of usability (don't tell us you like querying JSON-RPC endpoints with cURL 😬).
 - The **API layout is not optimal for all queries** and sometimes requires multiple calls to get the desired information. The Ash CLI abstracts this complexity and provides a single command to get the information you need.
 
-Example command for listing all the blockchains of the `Vn3aX6hNRstj5VHHm63TCgPNaeGnRSqCYXQqemSqDd2TQH4qJ` Subnet:
+Let's see how easy it is to list all the blockchains of the `Vn3aX6hNRstj5VHHm63TCgPNaeGnRSqCYXQqemSqDd2TQH4qJ` Subnet using Ash CLI vs cURL:
 
 <Tabs>
   <TabItem value="curl" label="Using cURL" default>

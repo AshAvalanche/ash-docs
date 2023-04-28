@@ -6,13 +6,13 @@ sidebar_position: 2
 
 The Ash CLI is written in Rust and can therefore be installed on any platform supported by Rust.
 
-:::info
+:::tip
 The CLI is **installed and pre-configured** on the Avalanche nodes by default when using the [Ansible Avalanche Collection](/docs/toolkit/ansible-avalanche-collection/introduction)!
 :::
 
 ## Rust native method: cargo install
 
-:::tip
+:::info
 The installation can take a few minutes as it will compile the CLI and all its dependencies.
 :::
 
