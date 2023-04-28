@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Create a Local Test Network
+# Local Test Network Creation
 
 In this section, we will learn how to use the [ash.avalanche](https://github.com/AshAvalanche/ansible-avalanche-collection) Ansible collection to provision a local [Avalanche](https://docs.avax.network/) test network on [VirtualBox](https://www.virtualbox.org/) virtual machines.
 
@@ -16,6 +16,13 @@ In this section, we will learn how to use the [ash.avalanche](https://github.com
 - For Fuji/Mainnet:
   - Remote servers that fit [Avalanche requirements](https://docs.avax.network/build/tutorials/nodes-and-staking/run-avalanche-node#requirements) (for Fuji, 200 GB of storage are enough)
   - SSH access to this servers (Ansible will use your key from `~/.ssh` by default)
+- For filtering outputs:
+  - [jq](https://stedolan.github.io/jq/) (see [Installation](https://stedolan.github.io/jq/download/))
+
+:::note
+We recommend installing the Ash CLI to easily get information about your nodes and Subnets. See [Ash CLI - Installation](/docs/toolkit/ash-cli/installation).  
+The tutorials still provide the snippets to query the Avalanche APIs with cURL.
+:::
 
 ## Installation
 

@@ -8,7 +8,7 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title} docs`}
+      title={`${siteConfig.title} website`}
       description="Get more from your Avalanche infrastructure"
     >
       <main>
