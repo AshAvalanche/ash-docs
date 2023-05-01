@@ -22,8 +22,8 @@ An Ansible collection to manage Avalanche nodes, Subnets, blockchains and more!
 
 A CLI to empower any Avalanche enthusiast, from retail users to node operators and Subnet developers!
 
-| 🤓 [Introduction](/docs/toolkit/ash-cli/introduction) | 🚀 [Get started](/docs/toolkit/ash-cli/tutorials/network-exploration) | 🐙 [GitHub repository](https://github.com/AshAvalanche/ash-rs) |
-| ----------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------- |
+| 🤓 [Introduction](/docs/toolkit/ash-cli/introduction) | [📦 Installation](/docs/toolkit/ash-cli/installation) | 🚀 [Get started](/docs/toolkit/ash-cli/tutorials/network-exploration) | 🐙 [GitHub repository](https://github.com/AshAvalanche/ash-rs) |
+| ----------------------------------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------- |
 
 ## Ash Rust SDK
 

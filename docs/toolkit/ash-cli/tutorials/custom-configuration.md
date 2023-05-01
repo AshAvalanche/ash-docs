@@ -6,6 +6,10 @@ sidebar_position: 2
 
 The CLI relies on YAML configuration files that contains the list of known Avalanche networks. This is very convenient to quickly **switch between environments** and to **share configurations with other developers**.
 
+:::note
+See [Installation](/docs/toolkit/ash-cli/installation) for installation instructions on your platform.
+:::
+
 ## Configuration file layout
 
 For each network, at least **the P-Chain configuration has to be provided** (in the Primary Network) with its ID and RPC endpoint. All the other Subnets/blockchains will be retrieved/enriched from the P-Chain.
