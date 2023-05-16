@@ -1,23 +1,19 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
 
-# Modules
+# ash.avalanche.tx
 
-The collection provides the following modules:
+The `ash.avalanche.tx` module submits a transaction to an Avalanche network
 
-- [ash.avalanche.tx](#ashavalanchetx) (alias: `ash.avalanche.transaction`): submit a transaction to an Avalanche network
-- [ash.avalanche.eth_call](#ashavalancheeth_call): `eth_call` a smart contract's function on an EVM Avalanche network
-
-## ash.avalanche.tx
-
-### Supported API methods
+## Supported API methods
 
 - [Platform Chain (P-Chain) API](https://docs.avax.network/build/avalanchego-apis/p-chain): all the methods that create a transaction
 - [Exchange Chain (X-Chain) API](https://docs.avax.network/build/avalanchego-apis/x-chain): all the methods that create a transaction
 - [Contract Chain (C-Chain) API](https://docs.avax.network/build/avalanchego-apis/c-chain): only **Avalanche specific methods** (see [Avalanche Specific APIs](https://docs.avax.network/build/avalanchego-apis/c-chain/#avalanche-specific-apis)) that create a transaction
 
-**Note:** You can identify transaction methods by looking at its signature: **it returns a `txID`**. E.g. for the `avm.import` method of the X-Chain:
+:::note
+You can identify transaction methods by looking at its signature: **it returns a `txID`**. E.g. for the `avm.import` method of the X-Chain:
 
 ```cpp
 avm.import({
@@ -29,8 +25,9 @@ avm.import({
 	txID: string // This tells us that avm.import() creates a transaction
 }
 ```
+:::
 
-### Module arguments
+## Module arguments
 
 | Argument                | Required | Type   | Default value | Comment                                                                                                  |
 | ----------------------- | -------- | ------ | ------------- | -------------------------------------------------------------------------------------------------------- |
@@ -47,9 +44,11 @@ avm.import({
 | `wait_validation`       | No       | `bool` | `False`       | Wait for the transaction to be validated by the network                                                  |
 | `wait_timeout`          | No       | `int`  | `300`         | Timeout when waiting for the transaction's validation                                                    |
 
-**Note:** `username` and `password` are not redacted in the module output (replaced by `VALUE_SPECIFIED_IN_NO_LOG_PARAMETER`).
+:::note
+`username` and `password` are not redacted in the module output (replaced by `VALUE_SPECIFIED_IN_NO_LOG_PARAMETER`).
+:::
 
-### JSON RPC endpoint construction
+## JSON RPC endpoint construction
 
 The JSON RPC endpoint used for the API calls is constructed as follows:
 
@@ -63,22 +62,6 @@ Some blockchains, like the C-Chain, have multiple RPC endpoints (see [Contract C
 blockchain: C/avax
 ```
 
-### Example playbook
+## Example playbook
 
 The playbook `ash.avalanche.transfer_avax` is provided as an example of how to use the `ash.avalanche.tx` module. See [Avalanche Transactions](../tutorials/avalanche-transactions.md) for more.
-
-## ash.avalanche.eth_call
-
-### Module arguments
-
-| Argument        | Required | Type  | Default value | Comment                                                                                 |
-| --------------- | -------- | ----- | ------------- | --------------------------------------------------------------------------------------- |
-| `rpc_url`       | Yes      | `str` | `None`        | RPC endpoint to call                                                                    |
-| `contract_addr` | Yes      | `str` | `None`        | Address of the smart contract to query (in `0x...` format)                              |
-| `abi`           | Yes      | `str` | `None`        | JSON ABI of the smart contract. Can be retrieved from [Snowtrace](https://snowtrace.io) |
-| `function_sig`  | Yes      | `str` | `None`        | Signature of the function to call. Looks like `foo(uint32,bool)`                        |
-| `parameters`    | Yes      | `raw` | `None`        | List of parameters of the functions.                                                    |
-
-### Example playbook
-
-The playbook `ash.avalanche.node/ash-node` makes use of this plugin to enrich the node configuration with on-chain data.
