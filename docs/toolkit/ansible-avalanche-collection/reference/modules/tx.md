@@ -45,7 +45,7 @@ avm.import({
 | `wait_timeout`          | No       | `int`  | `300`         | Timeout when waiting for the transaction's validation                                                    |
 
 :::note
-`username` and `password` are not redacted in the module output (replaced by `VALUE_SPECIFIED_IN_NO_LOG_PARAMETER`).
+`username` and `password` are redacted in the module output (replaced by `VALUE_SPECIFIED_IN_NO_LOG_PARAMETER`).
 :::
 
 ## JSON RPC endpoint construction
@@ -64,4 +64,4 @@ blockchain: C/avax
 
 ## Example playbook
 
-The playbook `ash.avalanche.transfer_avax` is provided as an example of how to use the `ash.avalanche.tx` module. See [Avalanche Transactions](../tutorials/avalanche-transactions.md) for more.
+The playbook `ash.avalanche.transfer_avax` is provided as an example of how to use the `ash.avalanche.tx` module. See [Avalanche Transactions](/docs/toolkit/ansible-avalanche-collection/tutorials/avalanche-transactions) for more.
