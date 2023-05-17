@@ -46,6 +46,9 @@ This Ansible role allows to bootstrap Avalanche nodes:
 | `avalanche_prefunded_password`        | The password for `avalanche_prefunded_username`                                                                                                                                                                                                                       | `I_l1ve_@_Endor`                                                   |
 | `avalanche_prefunded_private_key`     | The private key used to access pre-funded addresses                                                                                                                                                                                                                   | `PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN`     |
 
+:::note
+All config arguments are passed to AvalancheGo through a JSON config file stored at `avalanchego_config_dir`.
+:::
 
 ## Inventory requirements
 
