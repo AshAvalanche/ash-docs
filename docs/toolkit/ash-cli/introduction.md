@@ -28,6 +28,8 @@ Commands:
   node       Interact with Avalanche nodes
   subnet     Interact with Avalanche Subnets
   validator  Interact with Avalanche validators
+  x          Interact with Avalanche X-Chain
+  wallet     Interact with Avalanche wallets
   help       Print this message or the help of the given subcommand(s)
 ```
 
@@ -38,16 +40,15 @@ Commands:
   <summary>Support for <b>any Avalanche network</b> with custom configuration üìù</summary>
   <div>
 
-See the [Custom Configuration](/docs/toolkit/ash-cli/tutorials/custom-configuration) tutorial
+See [Create a Local Test Network]he [Custom Configuration](/docs/toolkit/ash-cli/tutorials/custom-configuration) tutorial
 
-```yaml {3,12} title="~/.config/ash/my-custom-config.yaml"
+```yaml {3,11} title="~/.config/ash/my-custom-config.yml"
 ---
 avalancheNetworks:
   - name: my-network
     subnets:
       - id: 11111111111111111111111111111111LpoYY
-        controlKeys: []
-        threshold: 0
+        subnetType: PrimaryNetwork
         blockchains:
           - id: 11111111111111111111111111111111LpoYY
             name: P-Chain
@@ -74,10 +75,10 @@ Coming soon! Stay tuned by following [@ash_avax](https://twitter.com/ash_avax) 
 
 ```bash
 export AVALANCHE_NETWORK=my-network
-export ASH_CONFIG_PATH=~/.config/ash/my-network.yaml
+export ASH_CONFIG=~/.config/ash/my-network.yml
 export ASH_JSON=true
 
-ash avalanche validator info --id NodeID-CskPetRMvtH5Xr6gLa5cwfY4hR34UgkM5 | jq '.uptime'
+ash avalanche validator info NodeID-CskPetRMvtH5Xr6gLa5cwfY4hR34UgkM5 | jq '.uptime'
 ```
 
   </div>
@@ -120,7 +121,7 @@ jq '.result.blockchains[] | select(.subnetID == "Vn3aX6hNRstj5VHHm63TCgPNaeGnRSq
   <TabItem value="ash-cli" label="Using Ash CLI">
 
 ```bash
-ash avalanche subnet info --id Vn3aX6hNRstj5VHHm63TCgPNaeGnRSqCYXQqemSqDd2TQH4qJ
+ash avalanche subnet info Vn3aX6hNRstj5VHHm63TCgPNaeGnRSqCYXQqemSqDd2TQH4qJ
 ```
 
   </TabItem>
@@ -136,6 +137,6 @@ ash avalanche subnet info --id Vn3aX6hNRstj5VHHm63TCgPNaeGnRSqCYXQqemSqDd2TQH4qJ
 The `--json` flag is available on all Ash CLI commands, making it super easy to filter the output with tools like [jq](https://stedolan.github.io/jq/):
 
 ```bash {1}
-ash avalanche validator info --id NodeID-CskPetRMvtH5Xr6gLa5cwfY4hR34UgkM5 --json | jq '.uptime'
+ash avalanche validator info NodeID-CskPetRMvtH5Xr6gLa5cwfY4hR34UgkM5 --json | jq '.uptime'
 99.9911
 ```
