@@ -116,9 +116,9 @@ ash avalanche wallet info 0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -
 
 ```bash
 Wallet information:
-  X-Chain address:  X-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk
-  P-Chain address:  P-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk
-  Ethereum address: 0xE8eeF4A23106f11DFf676a41Eb1A58E585546aca
+  X-Chain address: X-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk
+  P-Chain address: P-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk
+  EVM address:     0xE8eeF4A23106f11DFf676a41Eb1A58E585546aca
 ```
 
 :::info

@@ -40,7 +40,7 @@ Commands:
   <summary>Support for <b>any Avalanche network</b> with custom configuration 📝</summary>
   <div>
 
-See [Create a Local Test Network]he [Custom Configuration](/docs/toolkit/ash-cli/tutorials/custom-configuration) tutorial
+See the [Custom Configuration](/docs/toolkit/ash-cli/tutorials/custom-configuration) tutorial.
 
 ```yaml {3,11} title="~/.config/ash/my-custom-config.yml"
 ---
