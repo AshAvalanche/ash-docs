@@ -2,16 +2,16 @@
 sidebar_position: 3
 ---
 
-# ash.avalanche.ash_cli
+# ash.avalanche.ash_cmd
 
-The `ash.avalanche.ash_cli` module is a [Ash CLI](/docs/toolkit/ash-cli/introduction) wrapper.
+The `ash.avalanche.ash_cmd` module is a [Ash CLI](/docs/toolkit/ash-cli/introduction) wrapper.
 
 ## Usage
 
 ```yaml
 - name: Get node info with Ash CLI
-  ash.avalanche.ash_cli:
-    command: avalanche node info
+  ash.avalanche.ash_cmd:
+    command: ["avalanche", "node", "info"]
     options:
       http-host: 192.168.60.11
       http-port: 9650
@@ -22,7 +22,7 @@ The `ash.avalanche.ash_cli` module is a [Ash CLI](/docs/toolkit/ash-cli/introduc
     msg: "{{ ash_cli_command.output.id }}"
 
 - name: Get list of Subnets on Fuji with Ash CLI
-  ash.avalanche.ash_cli:
+  ash.avalanche.ash_cmd:
     command: avalanche subnet list
     options:
       network: fuji
@@ -37,7 +37,7 @@ The `ash.avalanche.ash_cli` module is a [Ash CLI](/docs/toolkit/ash-cli/introduc
 
 | Parameter | Required | Type   | Default              | Description                                                                                             |
 | --------- | -------- | ------ | -------------------- | ------------------------------------------------------------------------------------------------------- |
-| command   | Yes      | string |                      | The command to run                                                                                      |
+| command   | Yes      | list   |                      | The command to run as a list of strings (e.g.: `["avalanche", "node", "info"]`)                         |
 | options   | No       | dict   | {}                   | The options to pass to the command. See [Ash CLI](/docs/toolkit/ash-cli/introduction) for more details. |
 | ash_path  | No       | string | "/usr/local/bin/ash" | The path to the Ash CLI binary.                                                                         |
-| no_json   | No       | bool   | False                | If `True`, output will not be rendered in JSON                                                          |
+| json      | No       | bool   | True                 | If `False`, output will not be rendered in JSON                                                         |
