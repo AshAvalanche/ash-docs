@@ -19,18 +19,18 @@ The `ash.avalanche.ash_cli` module is a [Ash CLI](/docs/toolkit/ash-cli/introduc
 
 - name: Print node Id from Ash CLI output
   debug:
-    msg: "{{ ash_cli_command['output']['id'] }}"
+    msg: "{{ ash_cli_command.output.id }}"
 
 - name: Get list of Subnets on Fuji with Ash CLI
   ash.avalanche.ash_cli:
     command: avalanche subnet list
     options:
       network: fuji
-  register: ash_cli_output
+  register: ash_cli_command
 
 - name: Print number of Subnets on Fuji from Ash CLI output
   debug:
-    msg: "There are {{ ash_cli_output['output'] | length }} Subnets on Fuji"
+    msg: "There are {{ ash_cli_command.output | length }} Subnets on Fuji"
 ```
 
 ## Parameters
