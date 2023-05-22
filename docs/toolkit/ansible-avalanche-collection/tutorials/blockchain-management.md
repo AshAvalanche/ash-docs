@@ -7,7 +7,7 @@ sidebar_position: 6
 In this section, we will learn how to use the `ash.avalanche.blockchain` role to create blockchains in Subnets.
 
 :::note
-For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a local test network](./local-test-network) for details.
+For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a Local Test Network](./local-test-network) for details.
 
 Make sure to have gone through [VM management](./vm-management) as we need the Subnet EVM binary installed on our nodes.
 

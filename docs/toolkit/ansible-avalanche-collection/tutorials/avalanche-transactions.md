@@ -7,7 +7,7 @@ sidebar_position: 7
 In this section, we will learn how to use the `ash.avalanche.tx` module of the [Ansible Avalanche Collection](https://github.com/AshAvalanche/ansible-avalanche-collection) to submit transactions to an Avalanche network.
 
 :::note
-For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a local test network](./local-test-network) for details.
+For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a Local Test Network](./local-test-network) for details.
 :::
 
 ## Perform an AVAX transfer from the X-Chain to the P-Chain

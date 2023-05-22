@@ -95,7 +95,7 @@ The other nodes expose the APIs on there localhost address `127.0.0.1` so you wo
 
 ## Pre-funded account
 
-A user with access to the default pre-funded account (see [Fund a Local Test Network](https://docs.avax.network/build/tutorials/platform/fund-a-local-test-network)) is automatically created on `validator01-local`:
+A user with access to the default pre-funded account (see [Import the Local Network's Pre-funded Address](https://docs.avax.network/apis/avalanchejs/create-an-asset-on-the-x-chain#import-the-local-networks-pre-funded-address) is automatically created on `validator01-local`:
 
 - Username: `ewoq`
 - Password: `I_l1ve_@_Endor`

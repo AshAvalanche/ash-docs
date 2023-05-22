@@ -2,12 +2,16 @@
 sidebar_position: 1
 ---
 
-# Network Exploration
+# Avalanche Networks Exploration
 
 The Ash CLI is **the perfect tool to explore Avalanche networks** from the command line. Here are some examples of what you can do with it.
 
 :::note
 See [Installation](/docs/toolkit/ash-cli/installation) for installation instructions on your platform.
+:::
+
+:::tip
+This tutorial does not go through all the commands! You can find the full list of commands available with the `ash avalanche help` command.
 :::
 
 ## List available networks
@@ -45,15 +49,13 @@ ash avalanche subnet list --network fuji
 ```bash
 Found 2011 Subnet(s) on 'fuji':
 ------------------------------------------------------
-- 7o2ywrBRa7EerWrKTHvaE1YSKWwWrQfVtHenLiqXmvcB2FN4j:
-    Number of blockchains: 1
-    Control keys:          ["P-fuji1ncfxrmzxfwmjtq5dyfujt42rgkgv8uxxxkdacx"]
-    Threshold:             1
-    Blockchains:
-   - MovoEVM:
-      ID:      xPUagXQMwXQ9wmAcQFS1oKN7QQf7RkeiqVQpYWwep3utGxa7o
-      VM type:
-      RPC URL:
+- XHLRR9cvMtCR8KZsjU8nLxg1JbV7aS23AcLVeBMVHLKkSBriS:
+  Type: Permissioned
+  Control keys: ["P-fuji1apckely9e4ue26gds6mdmyf7ys7e4tv4l2cr9j"]
+  Threshold:    1
+  Blockchains list (1):
+  - DFK Chain:
+     ID:      32sexHqc3tBQsik8h7WP5F2ruL5svqhX5opeTgXCRVX8HpbKF
 [...]
 ```
 
@@ -62,21 +64,22 @@ Found 2011 Subnet(s) on 'fuji':
 To get detailed information about a Subnet, including its list of validators, you can use the `subnet info` command:
 
 ```bash
-ash avalanche subnet info --network fuji --id 9m6a3Qte8FaRbLZixLhh8Ptdkemm4csNaLwQeKkENx5wskbWP
+ash avalanche subnet info -n fuji \
+  9m6a3Qte8FaRbLZixLhh8Ptdkemm4csNaLwQeKkENx5wskbWP
 ```
 
 ```bash
 Subnet '9m6a3Qte8FaRbLZixLhh8Ptdkemm4csNaLwQeKkENx5wskbWP':
-  Number of blockchains: 1
-  Control keys:          ["P-fuji1n3f5zmv6md96glq9sevnzmmtur5ugvfaghj3jh"]
-  Threshold:             1
-  Blockchains:
+  Type: Permissioned
+  Control keys: ["P-fuji1n3f5zmv6md96glq9sevnzmmtur5ugvfaghj3jh"]
+  Threshold:    1
+  Blockchains list (1):
   - main:
      ID:      XuEPnCE59rtutASDPCDeYw8geQaGWwteWjkDXYLWvssfuirde
      VM type:
      RPC URL:
-  Validators:
-  - NodeID-FkbkPTVMLbZZJKFHYUKZTt1Z3quNUurV
+  Validators list (4):
+  - NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob
   [...]
 ```
 
@@ -85,7 +88,10 @@ Subnet '9m6a3Qte8FaRbLZixLhh8Ptdkemm4csNaLwQeKkENx5wskbWP':
 To get detailed information about one Subnet validator, you can use the `validator info` command:
 
 ```bash
-ash avalanche validator info --network fuji --id NodeID-FkbkPTVMLbZZJKFHYUKZTt1Z3quNUurV --subnet-id 9m6a3Qte8FaRbLZixLhh8Ptdkemm4csNaLwQeKkENx5wskbWP
+# On a permissioned Subnet
+ash avalanche validator info -n fuji  \
+  NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob \
+  --subnet-id 9m6a3Qte8FaRbLZixLhh8Ptdkemm4csNaLwQeKkENx5wskbWP
 ```
 
 ```bash
@@ -93,18 +99,33 @@ Validator 'NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob' on Subnet '9m6a3Qte8FaRbLZi
   Tx ID:            6qQdasWo9xyQ1kctTd1AGzdbrrL1HkSriSR7aCap51qivH1GU
   Start time:       1672859120
   End time:         1688481650
-  Stake amount:     1000
   Weight:           1000
-  Potential reward: 0
-  Delegation fee:   0
-  Connected:        false
-  Uptime:           0
-  [...]
 ```
 
-:::tip
-Some information is not available for validators on permissioned Subnets (e.g. `Potential reward`, `Connected`, `Uptime`).
-:::
+Some properties are only returned for validators on **elastic (or PoS) Subnets** like the [Primary Network](https://docs.avax.network/learn/avalanche/avalanche-platform) (e.g. `Potential reward`, `Connected`, `Uptime`. See [platform.getCurrentValidators](https://docs.avax.network/apis/avalanchego/apis/p-chain#platformgetcurrentvalidators)):
+
+```bash
+# On an elastic Subnet
+ash avalanche validator info -n fuji \
+  NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob \
+  --subnet-id 11111111111111111111111111111111LpoYY
+```
+
+```bash
+Validator 'NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob' on Subnet '11111111111111111111111111111111LpoYY':
+  Tx ID:            sWWFFk64LAVEHWzyW3LZEHVqcrA84Djv1qYSCMwrwCXTxLiEr
+  Start time:       1672842965
+  End time:         1688481650
+  Connected:        true
+  Uptime:           99.9951
+  Stake amount:     1000000000
+  Potential reward: 50570835
+  Validation reward owner: [...]
+  Delegator count:  0
+  Delegator weight: 0
+  Delegation fee:   2%
+  Delegation reward owner: [...]
+```
 
 ## Filter the CLI output using jq
 
