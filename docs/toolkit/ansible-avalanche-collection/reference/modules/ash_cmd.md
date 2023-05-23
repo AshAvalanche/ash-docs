@@ -37,7 +37,7 @@ The `ash.avalanche.ash_cmd` module is a [Ash CLI](/docs/toolkit/ash-cli/introduc
 
 | Parameter | Required | Type   | Default              | Description                                                                                             |
 | --------- | -------- | ------ | -------------------- | ------------------------------------------------------------------------------------------------------- |
-| command   | Yes      | list   |                      | The command to run as a list of strings (e.g.: `["avalanche", "node", "info"]`)                         |
+| command   | Yes      | list   |                      | The command to run as a string (e.g. `avalanche node info`) or a list of strings (e.g.: `["avalanche", "node", "info"]`)                         |
 | options   | No       | dict   | {}                   | The options to pass to the command. See [Ash CLI](/docs/toolkit/ash-cli/introduction) for more details. |
 | ash_path  | No       | string | "/usr/local/bin/ash" | The path to the Ash CLI binary.                                                                         |
-| json      | No       | bool   | True                 | If `False`, output will not be rendered in JSON                                                         |
+| json      | No       | bool   | True                 | If `True`, output will be rendered in JSON                                                         |
