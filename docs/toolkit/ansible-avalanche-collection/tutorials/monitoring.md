@@ -55,6 +55,30 @@ The default admin credentials to log in Grafana in the [`local`](https://github.
 
 In the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory, Grafana is configured to connect with the Prometheus instance and comes with pre-built dashboards (see [`grafana.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/grafana.yml)). The list of available dashboards can be found in the [dashboards](https://github.com/AshAvalanche/ansible-avalanche-collection/tree/main/files/dashboard) directory.
 
+#### Subnet dashboard
+
+If you created a [Subnet EVM](https://github.com/ava-labs/subnet-evm) blockchains in the [Blockchain management](./blockchain-management) tutorial, you can configure the Grafana role to install a pre-configured dashboard for it.
+
+To do so, define the `grafana_subnets_dashboard_variables` variable (in the [`grafana.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/grafana.yml) file for the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local)):
+
+```yaml
+grafana_subnets_dashboard_variables:
+  - text: Subnet EVM
+    value: 2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL
+    selected: true
+```
+
+<figure>
+
+![Ash Grafana](/img/ash-subnets-dashboard.png)
+
+<figcaption style={{textAlign: 'center'}}>Fig.2 - Subnets dashboard</figcaption>
+</figure>
+
+:::tip
+If you deployed multiple Subnet EVM blockchains, you can define them all in the `grafana_subnets_dashboard_variables` variable, Grafana will display a dropdown menu to select the blockchain to display.
+:::
+
 ### Prometheus
 
 Prometheus is also available at [http://192.168.60.19:9090](http://192.168.60.19:9090)
@@ -63,7 +87,7 @@ Prometheus is also available at [http://192.168.60.19:9090](http://192.168.60.19
 
 ![Ash prometheus](/img/ash-prometheus.png)
 
-<figcaption style={{textAlign: 'center'}}>Fig.2 - Prometheus</figcaption>
+<figcaption style={{textAlign: 'center'}}>Fig.3 - Prometheus</figcaption>
 </figure>
 
 #### Targets
