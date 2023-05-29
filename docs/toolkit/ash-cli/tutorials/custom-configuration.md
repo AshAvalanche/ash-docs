@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 The Ash CLI relies on YAML configuration files that contains the list of known Avalanche networks. This is very convenient to quickly **switch between environments** and to **share configurations with other developers**.
 
 :::note
-See [Installation](/docs/toolkit/ash-cli/installation) for installation instructions on your platform.
+See [Installation](/docs/toolkit/ash-cli/installation) for the Ash CLI installation instructions on your platform.
 :::
 
 ## Configuration file layout
@@ -27,7 +27,7 @@ avalancheNetworks:
         blockchains:
           - id: 11111111111111111111111111111111LpoYY
             name: P-Chain
-            vmType: PVM
+            vmType: PlatformVM
             rpcUrl: http://validator01.ash.local:9650/ext/bc/P
           [...]
 ```

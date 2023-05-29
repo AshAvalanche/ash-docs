@@ -52,7 +52,7 @@ avalancheNetworks:
         blockchains:
           - id: 11111111111111111111111111111111LpoYY
             name: P-Chain
-            vmType: PVM
+            vmType: PlatformVM
             rpcUrl: http://validator01.ash.local:9650/ext/bc/P
           [...]
 ```
@@ -64,7 +64,19 @@ avalancheNetworks:
   <summary>Create Subnets and blockchains 🛠️, 100% <b>compatible with Avalanche CLI</b> wizard</summary>
   <div>
 
-Coming soon! Stay tuned by following [@ash_avax](https://twitter.com/ash_avax) 🐦!
+Use the Avalanche CLI wizard to configure the Subnet and Ash CLI to create it. See the [Local Subnet Creation](/docs/toolkit/ash-cli/tutorials/local-subnet) tutorial.
+
+```bash {1-4}
+ash avalanche blockchain create testSubnetEVM \
+  --subnet-id GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk \
+  --vm-type SubnetEVM \
+  --genesis-file /tmp/encoded-genesis.json -w
+Waiting for transaction to be accepted...
+Blockchain created! (Tx ID: 'i2ZXw8NbVFxUK3kMjpwPtF2T3mtyoc6VWuH41rMfbc1NWE1Pb')
+Blockchain 'testSubnetEVM':
+  ID:      i2ZXw8NbVFxUK3kMjpwPtF2T3mtyoc6VWuH41rMfbc1NWE1Pb
+  VM type: SubnetEVM
+```
 
   </div>
 </details>
