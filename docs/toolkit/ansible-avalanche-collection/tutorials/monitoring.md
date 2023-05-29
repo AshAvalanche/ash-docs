@@ -2,9 +2,9 @@
 sidebar_position: 9
 ---
 
-# Nodes monitoring
+# Monitoring
 
-In this section, we will learn how to use the `ash.avalanche.install_monitoring_stack` playbook to deploy a monitoring stack for Avalanche nodes.
+In this section, we will learn how to use the `ash.avalanche.install_monitoring_stack` playbook to deploy a monitoring stack for Avalanche nodes and Subnets.
 
 The monitoring stack is comprised of:
 
@@ -51,7 +51,7 @@ Grafana should be available at [http://192.168.60.19:3000](http://192.168.60.19:
 The default admin credentials to log in Grafana in the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) are `admin:admin123`. You can change it in [`grafana.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/grafana.yml).
 :::
 
-#### Dashboards
+#### Nodes dashboards
 
 In the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory, Grafana is configured to connect with the Prometheus instance and comes with pre-built dashboards (see [`grafana.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/grafana.yml)). The list of available dashboards can be found in the [dashboards](https://github.com/AshAvalanche/ansible-avalanche-collection/tree/main/files/dashboard) directory.
 
