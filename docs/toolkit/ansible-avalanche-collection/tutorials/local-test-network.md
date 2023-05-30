@@ -89,10 +89,6 @@ The output should like this:
 {"jsonrpc":"2.0","result":{"isBootstrapped":true},"id":1}
 ```
 
-:::note
-The other nodes expose the APIs on there localhost address `127.0.0.1` so you would have to `vagrant ssh` into the VM to query them.
-:::
-
 ## Pre-funded account
 
 A user with access to the default pre-funded account (see [Import the Local Network's Pre-funded Address](https://docs.avax.network/apis/avalanchejs/create-an-asset-on-the-x-chain#import-the-local-networks-pre-funded-address) is automatically created on `validator01-local`:

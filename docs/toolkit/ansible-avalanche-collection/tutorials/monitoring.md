@@ -2,9 +2,9 @@
 sidebar_position: 9
 ---
 
-# Nodes monitoring
+# Monitoring
 
-In this section, we will learn how to use the `ash.avalanche.install_monitoring_stack` playbook to deploy a monitoring stack for Avalanche nodes.
+In this section, we will learn how to use the `ash.avalanche.install_monitoring_stack` playbook to deploy a monitoring stack for Avalanche nodes and Subnets.
 
 The monitoring stack is comprised of:
 
@@ -51,9 +51,39 @@ Grafana should be available at [http://192.168.60.19:3000](http://192.168.60.19:
 The default admin credentials to log in Grafana in the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) are `admin:admin123`. You can change it in [`grafana.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/grafana.yml).
 :::
 
-#### Dashboards
+#### Nodes dashboards
 
 In the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory, Grafana is configured to connect with the Prometheus instance and comes with pre-built dashboards (see [`grafana.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/grafana.yml)). The list of available dashboards can be found in the [dashboards](https://github.com/AshAvalanche/ansible-avalanche-collection/tree/main/files/dashboard) directory.
+
+#### Subnet dashboard
+
+If you created a [Subnet EVM](https://github.com/ava-labs/subnet-evm) blockchains in the [Blockchain management](./blockchain-management) tutorial, you can configure the Grafana role to install a pre-configured dashboard for it.
+
+To do so, define the `grafana_subnets_dashboard_variables` variable (in the [`grafana.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/grafana.yml) file for the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local)):
+
+```yaml
+grafana_subnets_dashboard_variables:
+  - text: Subnet EVM
+    value: 2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL
+    selected: true
+```
+
+Then rerun the `install_monitoring_stack` playbook:
+
+```bash
+ansible-playbook ash.avalanche.install_monitoring_stack -i inventories/local
+```
+
+<figure>
+
+![Ash Grafana](/img/ash-subnets-dashboard.png)
+
+<figcaption style={{textAlign: 'center'}}>Fig.2 - Subnets dashboard</figcaption>
+</figure>
+
+:::tip
+If you deployed multiple Subnet EVM blockchains, you can define them all in the `grafana_subnets_dashboard_variables` variable, Grafana will display a dropdown menu to select the blockchain to display.
+:::
 
 ### Prometheus
 
@@ -63,7 +93,7 @@ Prometheus is also available at [http://192.168.60.19:9090](http://192.168.60.19
 
 ![Ash prometheus](/img/ash-prometheus.png)
 
-<figcaption style={{textAlign: 'center'}}>Fig.2 - Prometheus</figcaption>
+<figcaption style={{textAlign: 'center'}}>Fig.3 - Prometheus</figcaption>
 </figure>
 
 #### Targets
