@@ -7,7 +7,7 @@ sidebar_position: 1
 The Ash CLI is **the perfect tool to explore Avalanche networks** from the command line. Here are some examples of what you can do with it.
 
 :::note
-See [Installation](/docs/toolkit/ash-cli/installation) for installation instructions on your platform.
+See [Installation](/docs/toolkit/ash-cli/installation) for the Ash CLI installation instructions on your platform.
 :::
 
 :::tip
