@@ -68,6 +68,12 @@ grafana_subnets_dashboard_variables:
     selected: true
 ```
 
+Then rerun the `install_monitoring_stack` playbook:
+
+```bash
+ansible-playbook ash.avalanche.install_monitoring_stack -i inventories/local
+```
+
 <figure>
 
 ![Ash Grafana](/img/ash-subnets-dashboard.png)
