@@ -10,26 +10,22 @@ import TabItem from '@theme/TabItem';
 The Ash CLI allows to **create Subnets and blockchains**, and to **add validators** to Subnets (including the Primary Network).
 
 :::caution
-The Ash CLI uses **plain-text private keys** to interact with wallets. **It should never be used on the mainnet**. If you try do so, your command will fail with: `AvalancheNetwork error: wallet creation is not allowed on network 'mainnet'`.
+The Ash CLI uses **plain-text private keys** to interact with wallets. **It should never be used on the mainnet**. If you try do so, the command will fail with: `AvalancheNetwork error: wallet creation is not allowed on network 'mainnet'`.
 
-To interact with wallets on the mainnet (e.g. to create Subnets and blockchains), you should use the [Avalanche CLI](https://docs.avax.network/subnets/create-a-mainnet-subnet) that is compatible with Ledger devices.
+To interact with wallets on the mainnet (e.g. to create Subnets and blockchains), you should use the [Avalanche CLI](https://docs.avax.network/subnets/create-a-mainnet-subnet) which is compatible with Ledger devices.
 :::
 
 <br/>
 
 In this tutorial, we will see how to create **a new Subnet with a Subnet EVM blockchain** on a local test network (see [Local Test Network Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/local-test-network) for more information on how to deploy such an environment).
 
-:::note
-See [Installation](/docs/toolkit/ash-cli/installation) for the Ash CLI installation instructions on your platform.
-:::
-
 ## Prerequisites
 
 - **A deployed local network**. You can use:
   - The **Ansible Avalanche Collection**. See [Local Test Network Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/local-test-network).
   - Or the **Avalanche Network Runner** via Avalanche CLI: `avalanche network start`
-- **A wallet with some AVAX** on it. See [Wallet Funding](/docs/toolkit/ash-cli/tutorials/wallet-funding).
-- **Ash CLI installed and configured** for your network. See [Configuration the Ash CLI for your network](/docs/toolkit/ash-cli/tutorials/wallet-funding#configuration-the-ash-cli-for-your-network).
+- A wallet with **some AVAX on the P-Chain**. See [Wallet Funding](/docs/toolkit/ash-cli/tutorials/wallet-funding).
+- **Ash CLI installed and configured** for your network. See [Installation](/docs/toolkit/ash-cli/installation) and [Configure the Ash CLI for your network](/docs/toolkit/ash-cli/tutorials/wallet-funding#configure-the-ash-cli-for-your-network).
 - **Avalanche CLI installed**. We use it to create the Subnet EVM genesis configuration using a nice wizard. See [Install Avalanche CLI](https://docs.avax.network/subnets/install-avalanche-cli).
 
 ## Create the Subnet
@@ -98,7 +94,7 @@ At blockchain creation, we need to provide the byte-encoded genesis data. We use
 ```bash
 # Encode the genesis data
 ash avalanche vm encode-genesis \
-  "~/.avalanche-cli/subnets/testSubnetEVM/genesis.json" --json > /tmp/encoded-genesis.json
+  ~/.avalanche-cli/subnets/testSubnetEVM/genesis.json --json > /tmp/encoded-genesis.json
 
 # Display the encoded genesis data
 cat /tmp/encoded-genesis.json
@@ -147,6 +143,8 @@ Blockchain 'testSubnetEVM':
 
 ## Add validators to the Subnet
 
+Our Subnet has been created but we still need to add some validators to it.
+
 ### Get validator IDs
 
 First, we need to get the validator IDs of the validators we want to add to the Subnet. We can use the `subnet info` command to get the list of validators on the Primary Network:
@@ -169,10 +167,6 @@ Subnet '11111111111111111111111111111111LpoYY':
 
 ### Submit the validator add transactions
 
-:::tip
-The `start-time` and `end-time` arguments should follow the RFC 3339 format: `YYYY-MM-DDTHH:MM:SSZ`. You can use the `date` command to generate them.
-:::
-
 Let's add a first validator with a weight of `100` to the Subnet using the `validator add` command. It takes a lot of arguments:
 
 ```bash
@@ -192,7 +186,11 @@ End time:         2023-05-31 16:27:12
 Weight:           100
 ```
 
-The validation period will start 2 minutes after the transaction is accepted and will end 2 days after.
+:::tip
+The `start-time` and `end-time` arguments should follow the RFC 3339 format: `YYYY-MM-DDTHH:MM:SSZ`. You can use the `date` command as above to generate them.
+:::
+
+In this example validation period will start 2 minutes after the transaction is accepted and will end 2 days after.
 
 :::info
 See [platform.addSubnetValidator](https://docs.avax.network/apis/avalanchego/apis/p-chain#platformaddsubnetvalidator) for more information about **the weight parameter**.
@@ -226,6 +224,10 @@ Subnet 'GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk':
 
 :::tip
 You can use the `--extended` flag to get more information about the validators, notably their weight and the start/end time of their validation period.
+:::
+
+:::caution
+Don't forget that the validator nodes should be **configured to track the Subnet**, otherwise you will not be able to issue transactions. See [Track the Subnet with the validators](http://localhost:3000/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-management#track-the-subnet-with-the-validators).
 :::
 
 ## Connect to the Subnet and start issuing transactions

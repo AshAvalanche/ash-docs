@@ -10,9 +10,9 @@ import TabItem from '@theme/TabItem';
 The Ash CLI allows to interact with wallets and issue transactions with them on the [Primary Network](https://docs.avax.network/learn/avalanche/avalanche-platform).
 
 :::caution
-The Ash CLI uses **plain-text private keys** to interact with wallets. **It should never be used on the mainnet**. If you try do so, your command will fail with: `AvalancheNetwork error: wallet creation is not allowed on network 'mainnet'`.
+The Ash CLI uses **plain-text private keys** to interact with wallets. **It should never be used on the mainnet**. If you try do so, the command will fail with: `AvalancheNetwork error: wallet creation is not allowed on network 'mainnet'`.
 
-To interact with wallets on the mainnet (e.g. to create Subnets and blockchains), you should use the [Avalanche CLI](https://docs.avax.network/subnets/create-a-mainnet-subnet) that is compatible with Ledger devices.
+To interact with wallets on the mainnet (e.g. to create Subnets and blockchains), you should use the [Avalanche CLI](https://docs.avax.network/subnets/create-a-mainnet-subnet) which is compatible with Ledger devices.
 :::
 
 <br/>
@@ -26,14 +26,14 @@ In this tutorial, we will see how to **create and fund a new wallet** on:
 See [Installation](/docs/toolkit/ash-cli/installation) for the Ash CLI installation instructions on your platform.
 :::
 
-## Configuration the Ash CLI for your network
+## Configure the Ash CLI for your network
 
-Prior to using the CLI, we will use a configuration file and environment variables to configure it for our target Avalanche network ([Custom Configuration](/docs/toolkit/ash-cli/tutorials/custom-configuration) for more information).
+Prior to using the CLI, we will use a configuration file and environment variables to configure it for our target Avalanche network (see [Custom Configuration](/docs/toolkit/ash-cli/tutorials/custom-configuration) for more information).
 
 <Tabs>
   <TabItem value="local" label="Local test network" default>
 
-Create the file `~/.config/ash/local-test-network.yml` with the following content (see ):
+Create the file `~/.config/ash/local-test-network.yml` with the following content:
 
 ```yaml title="~/.config/ash/local-test-network.yml"
 avalancheNetworks:
@@ -205,4 +205,44 @@ Follow the official tutorial: [Get a Drip from the Fuji Faucet](https://docs.ava
   </TabItem>
 </Tabs>
 
-Great! We can now use this wallet to interact with blockchains on the network. See the [Avalanche wallet FAQ](https://support.avax.network/en/collections/3439750-avalanche-wallet-wallet-avax-network) to transfer AVAX between the X-Chain, P-Chain and C-Chain.
+Great! We can now use this wallet to interact with blockchains on the network.
+
+## Transfer AVAX to the P-Chain
+
+In order to perform Subnet-related operations (e.g. create Subnets/blockchains, add validators), we need to transfer some AVAX to the P-Chain. We will use [Avalanche Wallet](https://wallet.avax.network/) to do so.
+
+### Connect to the wallet with Avalanche Wallet
+
+Open a new tab in your browser and open: https://wallet.avax.network/
+
+<Tabs>
+  <TabItem value="local" label="Local test network" default>
+
+#### Add a custom network
+
+On the top right corner, click on the `🟢 Mainnet` and then `Add Custom`. Use the following values:
+
+**Network Name**: `Ash Local Network`  
+**URL**: `http://127.0.0.1:9661`  
+**Explorer API**: `N/A`  
+**Explorer Site**: `N/A`
+
+Then click `Add Network` and select it.
+
+  </TabItem>
+  <TabItem value="fuji" label="Fuji testnet">
+
+#### Select the Fuji network
+
+On the top right corner, click on the `🟢 Mainnet` and then select `Fuji`.
+
+  </TabItem>
+</Tabs>
+
+#### Access the wallet
+
+Click on `Access Wallet` and select `Private Key`. Paste the private key of the wallet and click `Access Wallet`.
+
+### Transfer AVAX to the P-Chain
+
+Follow the [Avalanche Wallet FAQ](https://support.avax.network/en/collections/3439750-avalanche-wallet-wallet-avax-network) to transfer AVAX to the P-Chain from the X-Chain or C-Chain.
