@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Subnet Blockchain Explorer
 
-In this section, we will learn how to use the `ash.avalanche.blockscout` role to deploy a [Blockscout](https://www.blockscout.com/) instance for an EVM blockchain.
+In this section, we will learn how to use the `ash.avalanche.evm.blockscout` role to deploy a [Blockscout](https://www.blockscout.com/) instance for an EVM blockchain.
 
 :::note
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a Local Test Network](./local-test-network) for details.
@@ -35,7 +35,7 @@ blockscout_rpc: http://192.168.60.11:9650/ext/bc/2qySivgXbE13Guu3icudmMj5HTnDiXn
 The blockchain ID (`2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL` in our case) should be the one created in the [Blockchain management](./blockchain-management) tutorial.
 
 :::tip
-If you went through all the tutorials with the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory and the default variables, you should be good to go! Otherwise, check out the other variables at [`ash.avalanche.blockscout`](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-blockscout).
+If you went through all the tutorials with the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory and the default variables, you should be good to go! Otherwise, check out the other variables at [`ash.avalanche.evm.blockscout`](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-blockscout).
 :::
 
 ## Install Blockscout
@@ -56,5 +56,5 @@ Blockscout should then be available at [http://192.168.60.19:4000](http://192.16
 </figure>
 
 :::caution
-The `ash.avalanche.blockscout` role is not yet compatible with secured HTTP API endpoints (see [Node security](./node-security) for details).
+The `ash.avalanche.evm.blockscout` role is not yet compatible with secured HTTP API endpoints (see [Node security](./node-security) for details).
 :::

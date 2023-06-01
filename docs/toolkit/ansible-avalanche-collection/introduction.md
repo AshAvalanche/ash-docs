@@ -43,7 +43,7 @@ Follow the [tutorials](/docs/toolkit/ansible-avalanche-collection/tutorials/loca
 - [ash.avalanche.subnet](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-subnet): create Avalanche subnets
 - [ash.avalanche.blockchain](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-blockchain): create Avalanche blockchains
 - [ash.avalanche.faucet](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-faucet): create Avalanche Faucet instances
-- [ash.avalanche.blockscout](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-blockscout): create Blockscout instances
+- [ash.avalanche.evm.blockscout](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-blockscout): create Blockscout instances
 - [ash.avalanche.ash_cli](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-ash-cli): install and configure the Ash CLI
 
 ### Modules
@@ -68,4 +68,3 @@ Follow the [tutorials](/docs/toolkit/ansible-avalanche-collection/tutorials/loca
 - [ash.avalanche.install_blockscout_docker](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/install_blockscout_docker.yml): installs a Blockscout instance over a Subnet EVM blockchain using Docker
 - [ash.avalanche.install_faucet_docker](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/install_faucet_docker.yml): installs an Avalache Faucet instance over a Subnet EVM blockchain using Docker
 - [ash.avalanche.install_monitoring_stack](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/install_monitoring_stack.yml): installs and configures Grafana, Prometheus and Node Exporter to monitor Avalanche nodes
-
