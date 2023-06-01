@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+sidebar_label: Overview
 ---
 
-# Ash Toolkit Overview
+# Ash Toolkit
 
 The Ash team provides an open-source toolkit for Avalanche node operators and Subnet developers.
 We use those tools on a daily basis to operate our validator nodes!

@@ -11,7 +11,9 @@ export default function HomepageHeader() {
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">
+          Get more from your Avalanche infrastructure
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
@@ -19,12 +21,12 @@ export default function HomepageHeader() {
           >
             🚀 Get started
           </Link>
-          {/* <Link
+          <Link
             className="button button--secondary button--lg"
-            to="/docs/toolkit"
+            to="https://calendly.com/antoine-e36knots/book-a-meeting-with-ash"
           >
-            Read the docs
-          </Link> */}
+            💬 Contact us
+          </Link>
         </div>
       </div>
     </header>

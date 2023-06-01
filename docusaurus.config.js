@@ -76,10 +76,33 @@ const config = {
             label: "Toolkit docs",
           },
           {
+            type: "doc",
+            docId: "professional-services/index",
+            position: "left",
+            label: "Professional services",
+          },
+          {
             href: "https://github.com/AshAvalanche/ash-docs",
             position: "right",
             className: "header-github-link",
             "aria-label": "GitHub repository",
+          },
+          {
+            href: "https://twitter.com/ash_avax",
+            position: "right",
+            className: "header-twitter-link",
+            "aria-label": "Twitter account",
+          },
+          {
+            href: "https://discord.gg/7xSEzC2n7v",
+            position: "right",
+            className: "header-discord-link",
+            "aria-label": "Discord server",
+          },
+          {
+            href: "https://linktr.ee/ash.center",
+            position: "right",
+            label: "Linktree",
           },
         ],
       },
@@ -87,7 +110,7 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Documentation",
+            title: "Content",
             items: [
               {
                 label: "Console",
@@ -96,6 +119,19 @@ const config = {
               {
                 label: "Toolkit",
                 to: "/docs/toolkit",
+              },
+              {
+                label: "Professional services",
+                to: "/docs/professional-services",
+              },
+            ],
+          },
+          {
+            title: "Developers",
+            items: [
+              {
+                label: "GitHub",
+                href: "https://github.com/AshAvalanche/ash-docs",
               },
             ],
           },
@@ -106,14 +142,13 @@ const config = {
                 label: "Twitter",
                 href: "https://twitter.com/ash_avax",
               },
-            ],
-          },
-          {
-            title: "More",
-            items: [
               {
-                label: "GitHub",
-                href: "https://github.com/AshAvalanche/ash-docs",
+                label: "Discord",
+                href: "https://discord.gg/7xSEzC2n7v",
+              },
+              {
+                label: "YouTube",
+                href: "https://www.youtube.com/@ash_avax",
               },
             ],
           },
