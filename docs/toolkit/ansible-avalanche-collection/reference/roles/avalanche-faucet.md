@@ -18,7 +18,7 @@ This Ansible role allows to deploy the [Avalanche Faucet](https://github.com/ava
 | `avalanche_faucet_group`         | Group of the user running the faucet                                                                                 | `faucet`                            |
 | `avalanche_faucet_docker_group`  | Docker group of the target host                                                                                      | `docker`                            |
 | `avalanche_faucet_port`          | Port on which the faucet will attach on the target host                                                              | `8000`                              |
-| `avalanche_faucet_chains`        | Config file for the faucet (see [docs](https://github.com/ava-labs/avalanche-faucet#setup-evm-chain-configurations)) | NA                                  |
+| `avalanche_faucet_evmchains`     | Config file for the faucet (see [docs](https://github.com/ava-labs/avalanche-faucet#setup-evm-chain-configurations)) | NA                                  |
 | `avalanche_faucet_env`           | Env file for the faucet (see [docs](https://github.com/ava-labs/avalanche-faucet#setup-environment-variables))       | NA                                  |
 
 ## Inventory requirements
