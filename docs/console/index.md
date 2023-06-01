@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+sidebar_label: Overview
 ---
 
-# Ash Console Overview
+# Ash Console
 
 :::caution
 🚧 Page under construction

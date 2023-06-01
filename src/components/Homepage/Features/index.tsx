@@ -30,8 +30,7 @@ const FeatureList: FeatureItem[] = [
       <>
         The Ash team provides an{" "}
         <Link to="/docs/toolkit">open-source toolkit</Link> to{" "}
-        <b>develop Avalanche Subnets</b> and operate{" "}
-        <b>self-hosted Avalanche nodes</b>.
+        <b>develop Avalanche Subnets</b> and <b>operate Avalanche nodes</b>.
       </>
     ),
   },
@@ -39,7 +38,11 @@ const FeatureList: FeatureItem[] = [
     title: "Professional Services",
     Svg: require("@site/static/img/undraw-ash-p2p.svg").default,
     description: (
-      <>Our team can help you with all your Avalanche related needs.</>
+      <>
+        Our team can help you with all your <b>Avalanche-related</b> needs,
+        including <b>private blockchain</b> networks.{" "}
+        <Link to="/docs/professional-services">Learn more</Link>.
+      </>
     ),
   },
 ];
