@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Local Test Network Creation
@@ -13,9 +13,6 @@ In this section, we will learn how to use the [ash.avalanche](https://github.com
   - 6+ GB of free RAM
   - Vagrant (see [Installing Vagrant](https://www.vagrantup.com/docs/installation))
   - VirtualBox (see [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads))
-- For Fuji/Mainnet:
-  - Remote servers that fit [Avalanche requirements](https://docs.avax.network/build/tutorials/nodes-and-staking/run-avalanche-node#requirements) (for Fuji, 200 GB of storage are enough)
-  - SSH access to this servers (Ansible will use your key from `~/.ssh` by default)
 - For filtering outputs:
   - [jq](https://stedolan.github.io/jq/) (see [Installation](https://stedolan.github.io/jq/download/))
 
