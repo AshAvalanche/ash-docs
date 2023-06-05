@@ -58,7 +58,7 @@ The tutorials still provide the snippets to query the Avalanche APIs with cURL.
    ```
 
 :::note
-This command will create the resources defined in the `main.tf` including a `t2.2xlarge` EC2 instance with `300GiB` of storage, an associated [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) and a [security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) configured to allow SSH (port 22) and default AVAX ports (9650 for HTTP and 9651 for staking) as well as all outbound traffic.
+This command will create the resources defined in the [`main.tf`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/main.tf) including a `t2.2xlarge` EC2 instance with `300GiB` of storage, an associated [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) and a [security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) configured to allow SSH (port 22) and default AVAX ports (9650 for HTTP and 9651 for staking) as well as all outbound traffic.
 :::
 
 3. Save the IP of the newly created EC2 instance:
@@ -67,7 +67,7 @@ This command will create the resources defined in the `main.tf` including a `t2.
    terraform output fuji_node_ip
    ```
 
-4. Update the [`fuji-aws/hosts.yml`](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/inventories/fuji-aws/hosts.yml) file with the IP of your EC2 instance. E.g.:
+4. Update the [`fuji-aws/hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/fuji-aws/hosts) file with the IP of your EC2 instance. E.g.:
 
    ```yaml
    aws-fuji-node ansible_host=35.171.27.213 ansible_user=ubuntu ansible_ssh_private_key_file=files/ansible_key.pem
@@ -77,7 +77,7 @@ This command will create the resources defined in the `main.tf` including a `t2.
    ```
 
 :::tip
-Creating the EC2 instance with Terraform is not the only way to go, you can also create it manually using the AWS console or CLI. Just make sure to update the `fuji-aws/hosts` file so that Ansible knows how to connect to your EC2 instance.
+Creating the EC2 instance with Terraform is not the only way to go, you can also create it manually using the AWS console or CLI. Just make sure to update the [`fuji-aws/hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/fuji-aws/hosts) file so that Ansible knows how to connect to your EC2 instance.
 :::
 
 ## Provision Fuji node
