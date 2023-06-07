@@ -37,11 +37,14 @@ The Ash team maintains a AvalancheGo / Ava Labs' VMs [compatibility matrix](../r
 
 The VM binary can then be found on the Avalanche node at `/opt/avalanche/avalanchego/current/plugins/`:
 
-```bash {2,4}
+```bash {2} title="Command"
 # First SSH to the node
 vagrant ssh validator01-local
 
 ll /opt/avalanche/avalanchego/current/plugins/
+```
+
+```bash title="Output"
 total 8
 drwxr-xr-x 2 avalanche avalanche 4096 Mar 10 18:30 ./
 drwxr-xr-x 3 avalanche avalanche 4096 Mar  9 16:10 ../
@@ -69,8 +72,13 @@ ansible-playbook ash.avalanche.provision_nodes -i inventories/local
 
 `/opt/avalanche/avalanchego/current/plugins/` has been updated accordingly:
 
-```bash {1}
+```bash {1} title="Command"
+vagrant ssh validator01-local
+
 ll /opt/avalanche/avalanchego/current/plugins/
+```
+
+```bash title="Output"
 total 8
 drwxr-xr-x 2 avalanche avalanche 4096 Mar 10 18:32 ./
 drwxr-xr-x 3 avalanche avalanche 4096 Mar  9 16:10 ../

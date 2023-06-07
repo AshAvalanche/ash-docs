@@ -1,8 +1,12 @@
 ---
-sidebar_position: 7
+sidebar_position: 10
 ---
 
 # Avalanche Transactions
+
+:::danger
+The `ash.avalanche.tx` module is deprecated and will be removed in a future release. Please use the [ash.avalanche.ash_cmd](/docs/toolkit/ansible-avalanche-collection/reference/modules/ash_cmd) module instead.
+:::
 
 In this section, we will learn how to use the `ash.avalanche.tx` module of the [Ansible Avalanche Collection](https://github.com/AshAvalanche/ansible-avalanche-collection) to submit transactions to an Avalanche network.
 

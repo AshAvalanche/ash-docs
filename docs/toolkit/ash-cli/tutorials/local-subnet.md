@@ -227,7 +227,7 @@ You can use the `--extended` flag to get more information about the validators, 
 :::
 
 :::caution
-Don't forget that the validator nodes should be **configured to track the Subnet**, otherwise you will not be able to issue transactions. See [Track the Subnet with the validators](http://localhost:3000/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-management#track-the-subnet-with-the-validators).
+Don't forget that the validator nodes should be **configured to track the Subnet**, otherwise you will not be able to issue transactions. See [Track the Subnet with the validators](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation#track-the-subnet-with-the-validators).
 :::
 
 ## Connect to the Subnet and start issuing transactions

@@ -2,6 +2,9 @@
 sidebar_position: 2
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Create a Fuji node on AWS
 
 In this section, we will learn how to use the [ash.avalanche](https://github.com/AshAvalanche/ansible-avalanche-collection) Ansible collection to provision a Fuji [Avalanche](https://docs.avax.network/) node on a [AWS](https://aws.amazon.com) EC2 instance.
@@ -145,6 +148,20 @@ avalanchego_chains_configs:
 
 The node `aws-fuji-node` exposes AvalancheGo APIs on it's public IP: you can query any [Avalanche API](https://docs.avax.network/build/avalanchego-apis/) from your terminal. For example, to check if the P-Chain is done bootstrapping:
 
+<Tabs>
+  <TabItem value="ash-cli" label="Using Ash CLI" default>
+
+```bash title="Command"
+ash avalanche node is-bootstrapped C --http-host $YOUR_EC2_INSTANCE_IP
+```
+
+```bash title="Output"
+Chain 'C' on node '$YOUR_EC2_INSTANCE_IP:9650': Bootstrapped ✓
+```
+
+  </TabItem>
+  <TabItem value="curl" label="Using cURL">
+
 ```bash title="Command"
 curl -X POST --data '{
   "jsonrpc": "2.0",
@@ -159,6 +176,9 @@ curl -X POST --data '{
 ```bash title="Output"
 {"jsonrpc":"2.0","result":{"isBootstrapped":true},"id":1}
 ```
+
+  </TabItem>
+</Tabs>
 
 ## Stop or start AvalancheGo
 

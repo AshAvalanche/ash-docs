@@ -84,12 +84,16 @@ curl -X POST --data '{
 {"jsonrpc":"2.0","result":{"isBootstrapped":true},"id":1}
 ```
 
+## Ash CLI configuration
+
+To use the Ash CLI with the local network, we need to add the network to our configuration. See [Configure the Ash CLI for your network](/docs/toolkit/ash-cli/tutorials/wallet-funding#configure-the-ash-cli-for-your-network).
+
 ## Pre-funded account
 
 On local Avalanche networks, a pre-funded account is available with the following private key:
 
 - CB58 encoded: `PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN`
-- Hex encoded: `56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027`
+- Hex encoded: `0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027`
 
 We will use this account in the next tutorials.
 
