@@ -20,13 +20,11 @@ For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ans
 
 Let's start by checking the current version of my node(s) with the Ash CLI:
 
-```bash
+```bash title="Command"
 ash avalanche node info --http-host 192.168.60.11
 ```
 
-The output should look like this:
-
-```bash {6}
+```bash {6} title="Output"
 Node '192.168.60.11:9650':
   ID:            NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg
   Public IP:     192.168.60.11
@@ -41,7 +39,7 @@ Node '192.168.60.11:9650':
 
 Let's start by checking the current version of my node(s) with an API call:
 
-```bash
+```bash title="Command"
 curl -s -X POST --data '{
     "jsonrpc":"2.0",
     "id"     :1,
@@ -50,9 +48,7 @@ curl -s -X POST --data '{
 jq -r '.result.version'
 ```
 
-The output should look like this:
-
-```bash
+```bash title="Output"
 avalanche/1.9.6
 ```
 

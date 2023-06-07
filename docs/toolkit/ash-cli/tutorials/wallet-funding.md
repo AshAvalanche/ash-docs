@@ -44,12 +44,11 @@ avalancheNetworks:
         blockchains:
           - id: 11111111111111111111111111111111LpoYY
             name: P-Chain
-            vmId: 11111111111111111111111111111111LpoYY
+            vmID: 11111111111111111111111111111111LpoYY
             vmType: PlatformVM
             rpcUrl: http://192.168.60.11:9650/ext/bc/P
-          - id: 2oYMBNV4eNHyqk2fjjV5nVQLDbtmNJzq5s3qs3Lo6ftnC6FByM
-            name: X-Chain
-            vmId: jvYyfQTxGMJLuGWa55kdP2p2zSUYsQ5Raupu4TW34ZAUBAbtq
+          - name: X-Chain
+            vmID: jvYyfQTxGMJLuGWa55kdP2p2zSUYsQ5Raupu4TW34ZAUBAbtq
             vmType: AvalancheVM
             rpcUrl: http://192.168.60.11:9650/ext/bc/X
 ```
@@ -77,11 +76,11 @@ export AVALANCHE_NETWORK=fuji
 
 Creating a wallet is actually **generating a new private key**. We can do it with the `wallet generate` command:
 
-```bash
+```bash title="Command"
 ash avalanche wallet generate
 ```
 
-```bash
+```bash title="Output"
 Private key (CB58): PrivateKey-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 Private key (hex):  0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
@@ -120,21 +119,21 @@ You can get the list of the wallet's addresses with the `wallet info` command:
 <Tabs>
   <TabItem value="env var" label="Using AVALANCHE_PRIVATE_KEY" default>
 
-```bash
+```bash title="Command"
 ash avalanche wallet info
 ```
 
   </TabItem>
   <TabItem value="argument" label="Passing the private key as argument (unsafe)">
 
-```bash
+```bash title="Command"
 ash avalanche wallet info PrivateKey-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
   </TabItem>
 </Tabs>
 
-```bash
+```bash title="Output"
 Wallet information:
   X-Chain address: X-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk
   P-Chain address: P-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk
@@ -160,11 +159,11 @@ Now that we have a wallet and its addresses, we can **transfer some AVAX to it**
 
 Let's use the `x balance` command to check the wallet's balance on our local network:
 
-```bash
+```bash title="Command"
 ash avalanche x balance X-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk
 ```
 
-```bash
+```bash title="Output"
 Balance of 'X-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk' on X-Chain (asset 'AVAX'):  0
 ```
 
@@ -172,12 +171,12 @@ Balance of 'X-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk' on X-Chain (asset 'A
 
 Let's use the `x transfer` command to transfer 2 AVAX to our new wallet (from the pre-funded account):
 
-```bash
+```bash title="Command"
 ash avalanche x transfer 2 X-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk \
   -p PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN -w
 ```
 
-```bash
+```bash title="Output"
 Waiting for transaction to be accepted...
 Transfered 2 of asset 'AVAX' to 'X-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk'!
 Transaction ID: BoLhWiiwfA7b2rq7WUyNTQrZ54nRqCYVSLt6oYWKc2AX5Lmpu
@@ -189,11 +188,11 @@ We used the `-w` flag to wait for the transaction to be accepted.
 
 ### Check the wallet balance after the transfer
 
-```bash
+```bash title="Command"
 ash avalanche x balance X-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk
 ```
 
-```bash
+```bash title="Output"
 Balance of 'X-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk' on X-Chain (asset 'AVAX'):  2
 ```
 

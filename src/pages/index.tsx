@@ -10,10 +10,7 @@ import styles from "./styles.module.css";
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Get more from your Avalanche infrastructure"
-    >
+    <Layout title={`${siteConfig.title}`} description={`${siteConfig.tagline}`}>
       <main>
         <HomepageHeader />
         <HomepageFeatures />

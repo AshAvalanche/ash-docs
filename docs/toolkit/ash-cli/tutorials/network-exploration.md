@@ -18,11 +18,11 @@ This tutorial does not go through all the commands! You can find the full list o
 
 The CLI comes with a list of networks that you can use out of the box. You can list them with the `network list` command:
 
-```bash
+```bash title="Command"
 ash avalanche network list
 ```
 
-```bash
+```bash title="Output"
 Available Avalanche networks:
   - 'mainnet'
   - 'fuji'
@@ -42,11 +42,11 @@ The `mainnet` and `fuji` networks use [Avalanche public API servers](https://doc
 
 You can get the list of Subnets and their blockchains with the `subnet list` command:
 
-```bash
+```bash title="Command"
 ash avalanche subnet list --network fuji
 ```
 
-```bash
+```bash title="Output"
 Found 2011 Subnet(s) on 'fuji':
 ------------------------------------------------------
 - XHLRR9cvMtCR8KZsjU8nLxg1JbV7aS23AcLVeBMVHLKkSBriS:
@@ -63,21 +63,21 @@ Found 2011 Subnet(s) on 'fuji':
 
 To get detailed information about a Subnet, including its list of validators, you can use the `subnet info` command:
 
-```bash
+```bash title="Command"
 ash avalanche subnet info -n fuji \
   9m6a3Qte8FaRbLZixLhh8Ptdkemm4csNaLwQeKkENx5wskbWP
 ```
 
-```bash
+```bash title="Output"
 Subnet '9m6a3Qte8FaRbLZixLhh8Ptdkemm4csNaLwQeKkENx5wskbWP':
   Type: Permissioned
   Control keys: ["P-fuji1n3f5zmv6md96glq9sevnzmmtur5ugvfaghj3jh"]
   Threshold:    1
   Blockchains list (1):
   - main:
-     ID:      XuEPnCE59rtutASDPCDeYw8geQaGWwteWjkDXYLWvssfuirde
-     VM type:
-     RPC URL:
+    ID:      XuEPnCE59rtutASDPCDeYw8geQaGWwteWjkDXYLWvssfuirde
+    VM ID:   spePNvBxaWSYL2tB5e2xMmMNBQkXMN8z2XEbz1ML2Aahatwoc
+    VM type: SubnetEVM
   Validators list (4):
   - NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob
   [...]
@@ -87,14 +87,14 @@ Subnet '9m6a3Qte8FaRbLZixLhh8Ptdkemm4csNaLwQeKkENx5wskbWP':
 
 To get detailed information about one Subnet validator, you can use the `validator info` command:
 
-```bash
+```bash title="Command"
 # On a permissioned Subnet
 ash avalanche validator info -n fuji  \
   NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob \
   --subnet-id 9m6a3Qte8FaRbLZixLhh8Ptdkemm4csNaLwQeKkENx5wskbWP
 ```
 
-```bash
+```bash title="Output"
 Validator 'NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob' on Subnet '9m6a3Qte8FaRbLZixLhh8Ptdkemm4csNaLwQeKkENx5wskbWP':
   Tx ID:            6qQdasWo9xyQ1kctTd1AGzdbrrL1HkSriSR7aCap51qivH1GU
   Start time:       1672859120
@@ -104,14 +104,14 @@ Validator 'NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob' on Subnet '9m6a3Qte8FaRbLZi
 
 Some properties are only returned for validators on **elastic (or PoS) Subnets** like the [Primary Network](https://docs.avax.network/learn/avalanche/avalanche-platform) (e.g. `Potential reward`, `Connected`, `Uptime`. See [platform.getCurrentValidators](https://docs.avax.network/apis/avalanchego/apis/p-chain#platformgetcurrentvalidators)):
 
-```bash
+```bash title="Command"
 # On an elastic Subnet
 ash avalanche validator info -n fuji \
   NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob \
   --subnet-id 11111111111111111111111111111111LpoYY
 ```
 
-```bash
+```bash title="Output"
 Validator 'NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob' on Subnet '11111111111111111111111111111111LpoYY':
   Tx ID:            sWWFFk64LAVEHWzyW3LZEHVqcrA84Djv1qYSCMwrwCXTxLiEr
   Start time:       1672842965
@@ -133,11 +133,11 @@ All commands of the Ash CLI can output JSON data. Combined with [jq](https://ste
 
 For example, get the IDs of all the Subnets that have at least one blockchain on the mainnet:
 
-```bash
+```bash title="Command"
 ash avalanche subnet list --json | jq -r '.[] | select((.blockchains | length) > 0) | .id'
 ```
 
-```bash
+```bash title="Output"
 yDxaSh2hoVxQKRHmacV1xFpuSgHf6Q6cCMu4v3GoLQnqQWk6L
 D3YwWGVE7MxBkiHq6s9Qkd978QyCBDxAMcJeBqsEyVRZf4XGh
 [...]
