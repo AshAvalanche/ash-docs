@@ -243,7 +243,7 @@ Use the following settings to connect to the Subnet:
 **New RPC URL**: `https://192.168.60.11:9650/ext/bc/${YOUR_BLOCKCHAIN_ID}/rpc`  
 **Chain ID**: The one entered during `avalanche subnet create`. Can be found via `avalanche subnet describe testSubnetEVM`  
 **Symbol**: Whatever you want to name your token  
-**Explorer URL**: `N/A`
+**Explorer URL**: NA
 
   </TabItem>
   <TabItem value="avalanche-cli" label="Avalanche Network Runner">
@@ -252,7 +252,7 @@ Use the following settings to connect to the Subnet:
 **New RPC URL**: `https://127.0.0.1:9650/ext/bc/${YOUR_BLOCKCHAIN_ID}/rpc`  
 **Chain ID**: The one entered during `avalanche subnet create`. Can be found via `avalanche subnet describe testSubnetEVM`  
 **Symbol**: Whatever you want to name your token  
-**Explorer URL**: `N/A`
+**Explorer URL**: NA
 
   </TabItem>
 </Tabs>

@@ -43,7 +43,7 @@ There are 2 ways to add validators to the Subnet:
 You need to have SSH access to the nodes to use this method.
 :::
 
-Add validators to the `subnet_validators` group in the inventory. This is the **most convenient way** because the validators' node IDs are automatically resolved on each host.
+Add validators to the `subnet_validators` group in the inventory. This is the **most convenient way** because the validators' node IDs are automatically resolved on each host (in the [`ash.avalanche.node.add-validator`](https://github.com/AshAvalanche/ansible-avalanche-collection/tree/main/roles/node/tasks/add-validator.yml) playbook).
 
 In the `local` inventory, the `subnet_validators` group is already configured with all the nodes:
 
@@ -86,10 +86,6 @@ Run the [ash.avalanche.create_subnet](https://github.com/AshAvalanche/ansible-av
 ansible-playbook ash.avalanche.create_subnet -i inventories/local
 ```
 
-## Track the Subnet with the validators
-
-The `ash.avalanche.subnet` role does not handle Subnet tracking on validator nodes. The list of tracked Subnets is handled by the `avalanchego_track_subnets` variable in the `ash.avalanche.node` role.
-
 At the end of the Subnet creation, information about the new Subnet is displayed:
 
 ```yaml
@@ -99,6 +95,19 @@ ok: [validator01] =>
     Make sure to add the Subnet ID to the `avalanchego_track_subnets` list of each validator.
     Subnet ID = p4jUwqZsA2LuSftroCd3zb4ytH8W99oXKuKVZdsty7eQ3rXD6
 ```
+
+:::info
+
+This playbook calls
+
+1. The `ash.avalanche.subnet` role to create the Subnet, the blockchains and add the validators from the `subnet_validators_list` variable
+2. The `ash.avalanche.node.add-validator` playbook to add the validators from the `subnet_validators` group
+
+:::
+
+## Track the Subnet with the validators
+
+The `ash.avalanche.subnet` role does not handle Subnet tracking on validator nodes. The list of tracked Subnets is handled by the `avalanchego_track_subnets` variable in the `ash.avalanche.node` role.
 
 To track the Subnet on our nodes:
 
@@ -192,7 +201,7 @@ The Subnet is now ready to be used! You can connect any EVM-compatible wallet (e
 Use the following settings to connect to the Subnet:
 
 **Network name**: `AshLocalEVM`  
-**New RPC URL**: `https://192.168.60.11:9650/ext/bc/2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac/rpc`  
-**Chain ID**: The one entered during `avalanche subnet create`. Can be found via `avalanche subnet describe testSubnetEVM`  
-**Symbol**: Whatever you want to name your token  
-**Explorer URL**: `N/A`
+**New RPC URL**: `http://192.168.60.11:9650/ext/bc/2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac/rpc`  
+**Chain ID**: `66666`  
+**Symbol**: `ASH`  
+**Explorer URL**: http://192.168.60.19:4000

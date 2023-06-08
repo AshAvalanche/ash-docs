@@ -22,9 +22,10 @@ avm.import({
     username: string,
     password: string,
 }) -> {
-	txID: string // This tells us that avm.import() creates a transaction
+  txID: string // This tells us that avm.import() creates a transaction
 }
 ```
+
 :::
 
 ## Module arguments

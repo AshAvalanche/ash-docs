@@ -28,13 +28,13 @@ The Avalanche Faucet will be installed as a [Docker Compose](https://docs.docker
 
 We need to set the blockchain configuration using the `avalanche_faucet_evmchains` variable. Let's modify [`faucet.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/faucet.yml) (the `group_vars` file associated with our hosts' group):
 
-```yaml
+```yaml title="inventories/local/group_vars/faucet.yml"
 avalanche_faucet_evmchains:
   - ID: ASH
-    NAME: Subnet-EVM Local Subnet
-    TOKEN: SUBNET
-    RPC: http://192.168.60.11:9650/ext/bc/2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL/rpc
-    CHAINID: 13213
+    NAME: AshLocalEVM
+    TOKEN: ASH
+    RPC: http://192.168.60.11:9650/ext/bc/2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac/rpc
+    CHAINID: 66666
     EXPLORER: http://192.168.60.19:4000
     IMAGE: https://docs.ash.center/img/ash-logo.svg
     MAX_PRIORITY_FEE: 2000000000
@@ -45,7 +45,7 @@ avalanche_faucet_evmchains:
       WINDOW_SIZE: 1440
 ```
 
-The blockchain ID (`2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL` in our case) should be the one created in the [Blockchain management](./blockchain-management) tutorial.
+The blockchain ID (`2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac` in our case) should be the one created in the [Blockchain management](./blockchain-management) tutorial.
 
 :::tip
 If you went through all the tutorials with the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory and the default variables, you should be good to go! Otherwise, check out the other variables at [`ash.avalanche.faucet`](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-faucet).

@@ -64,7 +64,7 @@ To do so, define the `grafana_subnets_dashboard_variables` variable (in [`grafan
 ```yaml
 grafana_subnets_dashboard_variables:
   - text: Subnet EVM
-    value: 2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL
+    value: 2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac
     selected: true
 ```
 
