@@ -9,7 +9,7 @@ In this section, we will learn how to use the `ash.avalanche.faucet` role to dep
 :::note
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a Local Test Network](./local-test-network) for details.
 
-We should also have created a Subnet and a blockchain, see [Blockchain management](./blockchain-management) for details.
+We should also have created a Subnet and a blockchain, see [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) for details.
 :::
 
 ## Requirements
@@ -45,7 +45,7 @@ avalanche_faucet_evmchains:
       WINDOW_SIZE: 1440
 ```
 
-The blockchain ID (`2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac` in our case) should be the one created in the [Blockchain management](./blockchain-management) tutorial.
+The blockchain ID (`2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac` in our case) should be the one created in the [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) tutorial.
 
 :::tip
 If you went through all the tutorials with the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory and the default variables, you should be good to go! Otherwise, check out the other variables at [`ash.avalanche.faucet`](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-faucet).

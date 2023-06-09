@@ -40,15 +40,13 @@ Follow the [tutorials](/docs/toolkit/ansible-avalanche-collection/tutorials/loca
 ### Roles
 
 - [ash.avalanche.node](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-node): install, configure and upgrade Avalanche nodes
-- [ash.avalanche.subnet](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-subnet): create Avalanche subnets
-- [ash.avalanche.blockchain](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-blockchain): create Avalanche blockchains
+- [ash.avalanche.subnet](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-subnet): create Avalanche Subnets and blockchains
 - [ash.avalanche.faucet](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-faucet): create Avalanche Faucet instances
 - [ash.avalanche.evm.blockscout](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-evm-blockscout): create Blockscout instances
 - [ash.avalanche.ash_cli](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-ash-cli): install and configure the Ash CLI
 
 ### Modules
 
-- [ash.avalanche.tx](/docs/toolkit/ansible-avalanche-collection/reference/modules/tx): submit a transaction to an Avalanche network
 - [ash.avalanche.eth_call](/docs/toolkit/ansible-avalanche-collection/reference/modules/eth_call): `eth_call` a smart contract's function on an EVM Avalanche network
 
 ### Filters
@@ -60,11 +58,9 @@ Follow the [tutorials](/docs/toolkit/ansible-avalanche-collection/tutorials/loca
 
 - [ash.avalanche.bootstrap_local_network](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/bootstrap_local_network.yml): bootstrap a local test network (`avalanchego_network_id: local`)
 - [ash.avalanche.provision_nodes](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/provision_nodes.yml): provision nodes for Fuji or Mainnet (`avalanchego_network_id: fuji|mainnet`)
-- [ash.avalanche.create_local_subnet](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/create_local_subnet.yml): create a Subnet on a local test network (**do not** use in production)
-- [ash.avalanche.create_local_blockchains](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/create_local_blockchains.yml): create blockchains in a Subnet on a local test network (**do not** use in production)
-- [ash.avalanche.transfer_avax](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/transfer_avax.yml): example of how to transfer AVAX from the X-Chain to the C-Chain (**do not** use in production)
-- [ash.avalanche.create_admin_user](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/create_admin_user.yml): create an admin user on a node using the `/ext/keystore` API (**do not** use in production)
-- [ash.avalanche.add_validator](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/add_validator.yml): starts a validation cycle using the `platform.addValidator` API (**do not** use in production)
+- [ash.avalanche.create_subnet](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/create_subnet.yml): create a Subnet and its blockchains, and add validators to it (`avalanchego_network_id: local|fuji`)
+- [ash.avalanche.create_blockchains](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/create_local_blockchains.yml): create a blockchain in an existing Subnet (`avalanchego_network_id: local|fuji`)
+- [ash.avalanche.add_network_validator](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/add_validator.yml): starts a validation cycle on the Primary Network (`avalanchego_network_id: local|fuji`)
 - [ash.avalanche.install_blockscout_docker](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/install_blockscout_docker.yml): installs a Blockscout instance over a Subnet EVM blockchain using Docker
 - [ash.avalanche.install_faucet_docker](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/install_faucet_docker.yml): installs an Avalache Faucet instance over a Subnet EVM blockchain using Docker
 - [ash.avalanche.install_monitoring_stack](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/playbooks/install_monitoring_stack.yml): installs and configures Grafana, Prometheus and Node Exporter to monitor Avalanche nodes
