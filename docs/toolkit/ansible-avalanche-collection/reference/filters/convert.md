@@ -12,9 +12,9 @@ This filter is useful to submit transactions without errors in the number of zer
 
 ```yaml
 ash.avalanche.tx:
-  ...
+  [...]
   params:
-  	...
+    [...]
     amount: "{{ 25 | ash.avalanche.convert('AVAX', 'nAVAX') | int }}"
 ```
 

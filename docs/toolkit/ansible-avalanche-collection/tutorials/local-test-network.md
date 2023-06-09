@@ -69,7 +69,7 @@ It's done! We now have a ready to use 5 nodes Avalanche local test network.
 
 The node `validator01-local` exposes AvalancheGo APIs on it's public IP: you can query any [Avalanche API](https://docs.avax.network/build/avalanchego-apis/) at `192.168.60.11:9650` from your terminal. For example, to check if the P-Chain is done bootstrapping:
 
-```bash
+```bash title="Command"
 curl -X POST --data '{
   "jsonrpc": "2.0",
   "id"     : 1,
@@ -80,27 +80,32 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' http://192.168.60.11:9650/ext/info
 ```
 
-The output should like this:
-
-```bash
+```bash title="Output"
 {"jsonrpc":"2.0","result":{"isBootstrapped":true},"id":1}
 ```
 
+## Ash CLI configuration
+
+To use the Ash CLI with the local network, we need to add the network to our configuration. See [Configure the Ash CLI for your network](/docs/toolkit/ash-cli/tutorials/wallet-funding#configure-the-ash-cli-for-your-network).
+
+:::note
+It is done automatically in the VMs of the `inventories/local` environment.
+:::
+
 ## Pre-funded account
 
-A user with access to the default pre-funded account (see [Import the Local Network's Pre-funded Address](https://docs.avax.network/apis/avalanchejs/create-an-asset-on-the-x-chain#import-the-local-networks-pre-funded-address) is automatically created on `validator01-local`:
+On local Avalanche networks, a pre-funded account is available with the following private key:
 
-- Username: `ewoq`
-- Password: `I_l1ve_@_Endor`
-- Private key: `PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN`
+- CB58 encoded: `PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN`
+- Hex encoded: `0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027`
+
+We will use this account in the next tutorials.
 
 ## Customization
 
 Different aspects of the installation can be customized:
 
 - To customize the VMs specs: edit the [Vagrantfile](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/Vagrantfile) and the [`hosts` file](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/hosts) accordingly
-- To customize AvalancheGo installation: edit the variables in `inventories/local/group_vars`:
-  - [avalanche_nodes.yml](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml) is applied to all nodes
-  - [bootstrap_node.yml](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/bootstrap_node.yml) is only applied to the bootstrap node
+- To customize AvalancheGo installation: edit the variables in [`inventories/local/group_vars/avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml).
 
 For a list of all available variables, see [ash.avalanche.node reference](../reference/roles/avalanche-node.md).

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 6
 ---
 
 # Subnet Blockchain Explorer
@@ -26,13 +26,15 @@ ansible-galaxy install -r ansible_collections/ash/avalanche/requirements.yml
 
 The Blockscout instance will be installed as a [Docker Compose](https://docs.docker.com/compose/) service on the nodes of the `blockscout` Ansible group. In [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started), it is the `frontend` node by default. You can change this by editing the [`hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/hosts) file.
 
-We need to set the blockchain configuration using the `blockscout_rpc` variable. Let's modify [`blockscout.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/blockscout.yml) (the `group_vars` file associated with our hosts' group):
+We need to set the Subnet EVM information in [`blockscout.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/blockscout.yml) (the `group_vars` file associated with our hosts' group):
 
-```yaml
-blockscout_rpc: http://192.168.60.11:9650/ext/bc/2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL/rpc
+```yaml title="inventories/local/group_vars/blockscout.yml"
+blockscout_rpc: http://192.168.60.11:9650/ext/bc/2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac/rpc
+blockscout_env_vars:
+  CHAIN_ID: 66666
 ```
 
-The blockchain ID (`2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL` in our case) should be the one created in the [Blockchain management](./blockchain-management) tutorial.
+The blockchain ID (`2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac` in our case) should be the one created in the [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) tutorial.
 
 :::tip
 If you went through all the tutorials with the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory and the default variables, you should be good to go! Otherwise, check out the other variables at [`ash.avalanche.evm.blockscout`](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-evm-blockscout).

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 8
 ---
 
 # Monitoring
@@ -59,12 +59,12 @@ In the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-start
 
 If you created a [Subnet EVM](https://github.com/ava-labs/subnet-evm) blockchains in the [Blockchain management](./blockchain-management) tutorial, you can configure the Grafana role to install a pre-configured dashboard for it.
 
-To do so, define the `grafana_subnets_dashboard_variables` variable (in the [`grafana.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/grafana.yml) file for the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local)):
+To do so, define the `grafana_subnets_dashboard_variables` variable (in [`grafana.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/grafana.yml) for the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory):
 
 ```yaml
 grafana_subnets_dashboard_variables:
   - text: Subnet EVM
-    value: 2qySivgXbE13Guu3icudmMj5HTnDiXnJHznLd22JZSWCCA3tbL
+    value: 2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac
     selected: true
 ```
 

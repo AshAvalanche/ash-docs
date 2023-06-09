@@ -4,24 +4,83 @@ sidebar_position: 2
 
 # ash.avalanche.subnet
 
-This Ansible role allows to create an Avalanche Subnet.
+This Ansible role allows to create an Avalanche Subnet, its blockchains and add validators to it.
+
+:::caution
+This role uses Ash CLI under the hood.
+
+The Ash CLI uses **plain-text private keys** to interact with wallets. **It should never be used on the mainnet**. If you try do so, commands will fail with: `AvalancheNetwork error: wallet creation is not allowed on network 'mainnet'`.
+
+To interact with wallets on the mainnet (e.g. to create Subnets and blockchains), you should use the [Avalanche CLI](https://docs.avax.network/subnets/create-a-mainnet-subnet) which is compatible with Ledger devices.
+:::
 
 ## Role variables
 
-| Variable                        | Comment                                                                                                        | Default value                                           |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| `avalanchego_http_host`         | [--http-host](https://docs.avax.network/build/references/avalanchego-config-flags#--http-host-string) argument | `127.0.0.1`                                             |
-| `avalanchego_http_port`         | [--http-port](https://docs.avax.network/build/references/avalanchego-config-flags#--http-port-int) argument    | `9650`                                                  |
-| `avalanchego_https_enabled`     | Whether the HTTP API endpoints are using TLS or not                                                            | `false`                                                 |
-| `subnet_control_username`       | Username of the user that has control over the `subnet_control_keys`                                           | `ewoq`                                                  |
-| `subnet_control_password`       | Password of the user that has control over the `subnet_control_keys`                                           | `I_l1ve_@_Endor`                                        |
-| `subnet_control_keys_threshold` | The number of control keys needed to operate the Subnet                                                        | `2`                                                     |
-| `subnet_control_keys`           | The list of control keys's addresses                                                                           | `[]`                                                    |
-| `subnet_validators_weight`      | The weight to give to each validator of the Subnet                                                             | `1`                                                     |
-| `subnet_validators_starttime`   | The time when validators start validating the Subnet                                                           | `'{{ lookup(''pipe'', ''date -d "5 minutes" +%s'') }}'` |
-| `subnet_validators_endtime`     | The time when validators stop validating the Subnet                                                            | `'{{ lookup(''pipe'', ''date -d "1 month" +%s'') }}'`   |
+| Variable                           | Comment                                                                                                                                           | Default value                                                                                          |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `subnet_avalanche_network_id`      | The [Network ID](https://docs.avax.network/build/references/avalanchego-config-flags/#network-id) in which to create the Subnet                   | `local`                                                                                                |
+| `subnet_txs_private_key`           | The private key used to sign all Subnet related transactions. The P-Chain address of the account will also be used as control key for the Subnet. | `PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN`                                         |
+| `subnet_txs_key_encoding`          | Encoding of the private key. Can be `cb58` or `hex`.                                                                                              | `cb58`                                                                                                 |
+| `subnet_blockchains_check_name`    | Whether to fail if a blockchain with the same name already exists                                                                                 | `true`                                                                                                 |
+| `subnet_blockchains_list`          | List of blockchains to create in the Subnet. See [Blockchain configuration](#blockchain-configuration) for the list structure.                    | NA                                                                                                     |
+| `subnet_validators_add`:           | Whether to add the validatores from `subnet_validators_ids_list` to the Subnet                                                                    | `true`                                                                                                 |
+| `subnet_validators_ids_list`       | List of node IDs to add to the Subnet (useful for third-party nodes)                                                                              | `[]`                                                                                                   |
+| `subnet_validator_start_time`      | Start time of the validation in RFC 3339 format: `YYYY-MM-DDTHH:MM:SSZ` format                                                                    | `'{{ lookup("pipe", "date -d ''2 minutes'' --rfc-3339=seconds").replace(" ", "T")  }}' # in 2 minutes` |
+| `subnet_validator_end_time`        | End time of the validation in RFC 3339 format: `YYYY-MM-DDTHH:MM:SSZ` format                                                                      | `'{{ lookup("pipe", "date -d ''1 week'' --rfc-3339=seconds").replace(" ", "T")  }}' # in 1 week`       |
+| `subnet_validator_stake_or_weight` | Stake (for elastic Subnets) or weight (for permissioned Subnets) of validators                                                                    | `1`                                                                                                    |
+| `subnet_validator_delegation_fee`  | Delegation fee in percentage.                                                                                                                     | `2`                                                                                                    |
 
 ## Inventory requirements
 
-- **The node used to make API calls** have to be in the `subnet_control_node` group.
+- **The node used to issue transactions** has to be in the `subnet_txs_host` group.
 - **The nodes to be added as validators** to the Subnet have to be in the `subnet_validators` group. The Ansible host has to be able to connect to those nodes via SSH.
+
+## Blockchain configuration
+
+Each blockchain in `subnet_blockchains_list` is defined by a dictionary with the following keys:
+
+- `name`: Name of the blockchain
+- `vm`: Name of the VM in the collection to use for the blockchain. See [Supported VMs and AvalancheGo compatibility](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-node#supported-vms-and-avalanchego-compatibility) for the list of supported VMs.
+- `genesis_data`: Genesis data of the blockchain. The structure of the genesis data is different for each VM:
+  - For the `subnet-evm`:
+    ```yaml
+    config:
+      chainId: 66666
+      homesteadBlock: 0
+      eip150Block: 0
+      eip150Hash: "0x2086799aeebeae135c246c65021c82b4e15a2c451340993aacfd2751886514f0"
+      eip155Block: 0
+      eip158Block: 0
+      byzantiumBlock: 0
+      constantinopleBlock: 0
+      petersburgBlock: 0
+      istanbulBlock: 0
+      muirGlacierBlock: 0
+      subnetEVMTimestamp: 0
+      feeConfig:
+        gasLimit: 8000000
+        minBaseFee: 25000000000
+        targetGas: 15000000
+        baseFeeChangeDenominator: 36
+        minBlockGasCost: 0
+        maxBlockGasCost: 1000000
+        targetBlockRate: 2
+        blockGasCostStep: 200000
+    alloc:
+      8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC:
+        balance: "0x295BE96E64066972000000"
+    nonce: "0x0"
+    timestamp: "0x0"
+    extraData: "0x00"
+    gasLimit: "0x7A1200"
+    difficulty: "0x0"
+    mixHash: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    coinbase: "0x0000000000000000000000000000000000000000"
+    number: "0x0"
+    gasUsed: "0x0"
+    parentHash: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    ```
+
+:::tip
+To generate the genesis data for a new blockchain, you can use the Avalanche CLI wizard. See [Create the Subnet EVM blockchain configuration](/docs/toolkit/ash-cli/tutorials/local-subnet#create-the-subnet-evm-blockchain-configuration).
+:::

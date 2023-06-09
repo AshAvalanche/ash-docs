@@ -2,6 +2,9 @@
 sidebar_position: 2
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Create a Fuji node on AWS
 
 In this section, we will learn how to use the [ash.avalanche](https://github.com/AshAvalanche/ansible-avalanche-collection) Ansible collection to provision a Fuji [Avalanche](https://docs.avax.network/) node on a [AWS](https://aws.amazon.com) EC2 instance.
@@ -45,7 +48,6 @@ The tutorials still provide the snippets to query the Avalanche APIs with cURL.
 
 1. Setup AWS keys environment variables:
 
-
    ```bash
    export AWS_SECRET_ACCESS_KEY="XXXXXXXXXXXXXXXXXXXXXXXXXX"
    export AWS_ACCESS_KEY_ID="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
@@ -58,7 +60,7 @@ The tutorials still provide the snippets to query the Avalanche APIs with cURL.
    ```
 
 :::note
-This command will create the resources defined in the [`main.tf`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/main.tf) including a `t2.2xlarge` EC2 instance with `300GiB` of storage, an associated [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) and a [security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) configured to allow SSH (port 22) and default AVAX ports (9650 for HTTP and 9651 for staking) as well as all outbound traffic.
+This command will create the resources defined in [`main.tf`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/main.tf) including a `t2.2xlarge` EC2 instance with `300GiB` of storage, an associated [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) and a [security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) configured to allow SSH (port 22) and default AVAX ports (9650 for HTTP and 9651 for staking) as well as all outbound traffic.
 :::
 
 3. Save the IP of the newly created EC2 instance:
@@ -67,9 +69,9 @@ This command will create the resources defined in the [`main.tf`](https://github
    terraform output fuji_node_ip
    ```
 
-4. Update the [`fuji-aws/hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/fuji-aws/hosts) file with the IP of your EC2 instance. E.g.:
+4. Update [`inventories/fuji-aws/hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/fuji-aws/hosts) with the IP of your EC2 instance. E.g.:
 
-   ```yaml
+   ```yaml title="inventories/fuji-aws/hosts"
    aws-fuji-node ansible_host=35.171.27.213 ansible_user=ubuntu ansible_ssh_private_key_file=files/ansible_key.pem
 
    [avalanche_nodes]
@@ -77,7 +79,7 @@ This command will create the resources defined in the [`main.tf`](https://github
    ```
 
 :::tip
-Creating the EC2 instance with Terraform is not the only way to go, you can also create it manually using the AWS console or CLI. Just make sure to update the [`fuji-aws/hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/fuji-aws/hosts) file so that Ansible knows how to connect to your EC2 instance.
+Creating the EC2 instance with Terraform is not the only way to go, you can also create it manually using the AWS console or CLI. Just make sure to update [`inventories/fuji-aws/hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/fuji-aws/hosts) so that Ansible knows how to connect to your EC2 instance.
 :::
 
 ## Provision Fuji node
@@ -89,20 +91,21 @@ ansible-playbook ash.avalanche.provision_nodes -i inventories/fuji-aws
 ```
 
 :::tip
-The [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/fuji-aws/group_vars/avalanche_nodes.yml) file holds the configuration for the `ash.avalanche.node` role. We only override the `avalanchego_version` and `avalanchego_network_id` variables, leaving the others as default. For a list of all available variables, see [ash.avalanche.node reference](../reference/roles/avalanche-node.md).
+The [`inventories/fuji-aws/group_vars/avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/fuji-aws/group_vars/avalanche_nodes.yml) file holds the configuration for the `ash.avalanche.node` role. We only override the `avalanchego_version` and `avalanchego_network_id` variables, leaving the others as default. For a list of all available variables, see [ash.avalanche.node reference](../reference/roles/avalanche-node.md).
 :::
 
 ## Monitor bootstrapping
 
 We can SSH to our EC2 instance to follow the synchronization of the P, X and C chains. For example with the P-chain:
 
-```bash {1}
+```bash {1} title="Commands"
 ssh -i ./files/ansible_key.pem ubuntu@$YOUR_EC2_INSTANCE_IP
+
 cd /var/log/avalanche/avalanchego
 tail C.log
 ```
 
-```
+```text title="Output"
 [06-02|09:16:47.131] INFO <P Chain> platformvm/vm.go:205 initializing last accepted {"blkID": "99BWrAqUMvTp9nXKXyjPsCqjGwDqVFqssTRQbu58af57Cf9VG"}
 [06-02|09:16:47.132] INFO <P Chain> snowman/transitive.go:90 initializing consensus engine
 [06-02|09:16:47.133] INFO <P Chain> bootstrap/bootstrapper.go:115 starting bootstrapper
@@ -131,20 +134,35 @@ Logs should look like this once the chain is bootstrapped:
 ```
 
 :::tip
-By default, AvalancheGo is configured to use [State Sync](https://docs.avax.network/nodes/maintain/chain-config-flags#state-sync) for faster node bootstrapping. If you want to run an **archival node**, you need to disable State Sync on the C-chain. This is configurable through the Ansible Avalanche Collection by adding the following keys to the [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/fuji-aws/group_vars/avalanche_nodes.yml) file:
+By default, AvalancheGo is configured to use [State Sync](https://docs.avax.network/nodes/maintain/chain-config-flags#state-sync) for faster node bootstrapping. If you want to run an **archival node**, you need to disable State Sync on the C-chain. This is configurable through the Ansible Avalanche Collection by adding the following keys to [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/fuji-aws/group_vars/avalanche_nodes.yml):
 
-```yaml
+```yaml title="inventories/fuji-aws/group_vars/avalanche_nodes.yml"
 avalanchego_chains_configs:
   C:
     state-sync-enabled: false
 ```
+
 :::
 
 ## API calls
 
 The node `aws-fuji-node` exposes AvalancheGo APIs on it's public IP: you can query any [Avalanche API](https://docs.avax.network/build/avalanchego-apis/) from your terminal. For example, to check if the P-Chain is done bootstrapping:
 
-```bash
+<Tabs>
+  <TabItem value="ash-cli" label="Using Ash CLI" default>
+
+```bash title="Command"
+ash avalanche node is-bootstrapped C --http-host $YOUR_EC2_INSTANCE_IP
+```
+
+```bash title="Output"
+Chain 'C' on node '$YOUR_EC2_INSTANCE_IP:9650': Bootstrapped ✓
+```
+
+  </TabItem>
+  <TabItem value="curl" label="Using cURL">
+
+```bash title="Command"
 curl -X POST --data '{
   "jsonrpc": "2.0",
   "id"     : 1,
@@ -155,11 +173,12 @@ curl -X POST --data '{
 }' -H 'content-type:application/json;' http://$YOUR_EC2_INSTANCE_IP:9650/ext/info
 ```
 
-The output should look like this:
-
-```bash
+```bash title="Output"
 {"jsonrpc":"2.0","result":{"isBootstrapped":true},"id":1}
 ```
+
+  </TabItem>
+</Tabs>
 
 ## Stop or start AvalancheGo
 
@@ -177,8 +196,8 @@ systemctl start avalanchego
 
 Different aspects of the installation can be customized:
 
-- To customize the EC2 instance specs (e.g.: instance type, storage capacity, etc.): edit the [`main.tf`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/main.tf) file.
-- To customize AvalancheGo installation: edit the variables in the [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/fuji-aws/group_vars/avalanche_nodes.yml) file.
+- To customize the EC2 instance specs (e.g.: instance type, storage capacity, etc.): edit [`main.tf`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/main.tf).
+- To customize AvalancheGo installation: edit the variables in [`inventories/fuji-aws/group_vars/avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/fuji-aws/group_vars/avalanche_nodes.yml).
 
 ## Where to go next?
 

@@ -18,13 +18,11 @@ For now only the [Subnet EVM](https://github.com/ava-labs/subnet-evm) is support
 
 The VMs are managed by the `avalanchego_vms_install` role variable which is empty by default ([`avalanchego_vms_install: []`](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/roles/node/defaults/main.yml#L42)).
 
-To add a new VM that will be installed on our validator nodes, we just have to update the `avalanchego_vms_install` variable. For the next example, we will install Ava Labs' [Subnet EVM](https://github.com/ava-labs/subnet-evm) in version 0.4.9. The variable we are should be added to `inventories/local/group_vars/avalanche_nodes.yml`:
+To add a new VM that will be installed on our validator nodes, we just have to update the `avalanchego_vms_install` variable. For the next example, we will install Ava Labs' [Subnet EVM](https://github.com/ava-labs/subnet-evm) in version 0.4.9. The variable we are should be added to [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml):
 
-```yml
-[...]
+```yml title="inventories/local/group_vars/avalanche_nodes.yml"
 avalanchego_vms_install:
   - subnet-evm=0.4.9
-[...]
 ```
 
 We can then install this VM to all the nodes defined in our Ansible inventory by running the `provision_nodes` playbook again:
@@ -39,11 +37,14 @@ The Ash team maintains a AvalancheGo / Ava Labs' VMs [compatibility matrix](../r
 
 The VM binary can then be found on the Avalanche node at `/opt/avalanche/avalanchego/current/plugins/`:
 
-```bash {2,4}
+```bash {2} title="Command"
 # First SSH to the node
 vagrant ssh validator01-local
 
 ll /opt/avalanche/avalanchego/current/plugins/
+```
+
+```bash title="Output"
 total 8
 drwxr-xr-x 2 avalanche avalanche 4096 Mar 10 18:30 ./
 drwxr-xr-x 3 avalanche avalanche 4096 Mar  9 16:10 ../
@@ -58,11 +59,9 @@ Upgrading a VM is as simple as updating the `avalanchego_vms_install` variable.
 
 For example, if we want to upgrade the `subnet-evm` from version 0.4.9 to 0.4.10:
 
-```yml
-[...]
+```yml title="inventories/local/group_vars/avalanche_nodes.yml"
 avalanchego_vms_install:
   - subnet-evm=0.4.10
-[...]
 ```
 
 Re-run the `provision_nodes` playbook:
@@ -73,8 +72,13 @@ ansible-playbook ash.avalanche.provision_nodes -i inventories/local
 
 `/opt/avalanche/avalanchego/current/plugins/` has been updated accordingly:
 
-```bash {1}
+```bash {1} title="Command"
+vagrant ssh validator01-local
+
 ll /opt/avalanche/avalanchego/current/plugins/
+```
+
+```bash title="Output"
 total 8
 drwxr-xr-x 2 avalanche avalanche 4096 Mar 10 18:32 ./
 drwxr-xr-x 3 avalanche avalanche 4096 Mar  9 16:10 ../

@@ -35,21 +35,21 @@ We use the `subnet create` command to create a new Subnet:
 <Tabs>
   <TabItem value="env var" label="Using AVALANCHE_PRIVATE_KEY" default>
 
-```bash
+```bash title="Command"
 ash avalanche subnet create -w
 ```
 
   </TabItem>
   <TabItem value="argument" label="Passing the private key as argument (unsafe)">
 
-```bash
+```bash title="Command"
 ash avalanche subnet create -w -p PrivateKey-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
   </TabItem>
 </Tabs>
 
-```bash
+```bash title="Output"
 Waiting for transaction to be accepted...
 Subnet created! (Tx ID: 'GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk')
 Subnet 'GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk':
@@ -70,11 +70,11 @@ Avalanche CLI provides an awesome wizard to create the Subnet EVM blockchain gen
 
 This will create a `genesis.json` file at `~/.avalanche-cli/subnets/$YOUR_SUBNET` where `$YOUR_SUBNET` is the name you chose for your Subnet (e.g. `testSubnetEVM`):
 
-```bash
+```bash title="Command"
 cat ~/.avalanche-cli/subnets/testSubnetEVM/genesis.json
 ```
 
-```json
+```json title="Output"
 {
   "config": {
     "chainId": 11111,
@@ -91,7 +91,7 @@ cat ~/.avalanche-cli/subnets/testSubnetEVM/genesis.json
 
 At blockchain creation, we need to provide the byte-encoded genesis data. We use the `vm encode-genesis` command and store the output to a temporary JSON file:
 
-```bash
+```bash title="Commands"
 # Encode the genesis data
 ash avalanche vm encode-genesis \
   ~/.avalanche-cli/subnets/testSubnetEVM/genesis.json --json > /tmp/encoded-genesis.json
@@ -100,7 +100,7 @@ ash avalanche vm encode-genesis \
 cat /tmp/encoded-genesis.json
 ```
 
-```json
+```json title="Output"
 { "genesisBytes": "0x7b22636f6e666967223a..." }
 ```
 
@@ -111,7 +111,7 @@ Use the `blockchain create` command to create the Subnet EVM blockchain in the S
 <Tabs>
   <TabItem value="env var" label="Using AVALANCHE_PRIVATE_KEY" default>
 
-```bash
+```bash title="Command"
 ash avalanche blockchain create testSubnetEVM \
   --subnet-id GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk \
   --vm-type SubnetEVM \
@@ -121,7 +121,7 @@ ash avalanche blockchain create testSubnetEVM \
   </TabItem>
   <TabItem value="argument" label="Passing the private key as argument (unsafe)">
 
-```bash
+```bash title="Command"
 ash avalanche blockchain create testSubnetEVM \
   -p PrivateKey-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
   --subnet-id GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk \
@@ -132,13 +132,13 @@ ash avalanche blockchain create testSubnetEVM \
   </TabItem>
 </Tabs>
 
-```bash
+```bash title="Output"
 Waiting for transaction to be accepted...
 Blockchain created! (Tx ID: 'i2ZXw8NbVFxUK3kMjpwPtF2T3mtyoc6VWuH41rMfbc1NWE1Pb')
 Blockchain 'testSubnetEVM':
   ID:      i2ZXw8NbVFxUK3kMjpwPtF2T3mtyoc6VWuH41rMfbc1NWE1Pb
+  VM ID:   spePNvBxaWSYL2tB5e2xMmMNBQkXMN8z2XEbz1ML2Aahatwoc
   VM type: SubnetEVM
-  RPC URL:
 ```
 
 ## Add validators to the Subnet
@@ -149,11 +149,11 @@ Our Subnet has been created but we still need to add some validators to it.
 
 First, we need to get the validator IDs of the validators we want to add to the Subnet. We can use the `subnet info` command to get the list of validators on the Primary Network:
 
-```bash
+```bash title="Command"
 ash avalanche subnet info 11111111111111111111111111111111LpoYY
 ```
 
-```bash
+```bash title="Output"
 Subnet '11111111111111111111111111111111LpoYY':
   Type: PrimaryNetwork
   Blockchains list (3): [...]
@@ -169,7 +169,7 @@ Subnet '11111111111111111111111111111111LpoYY':
 
 Let's add a first validator with a weight of `100` to the Subnet using the `validator add` command. It takes a lot of arguments:
 
-```bash
+```bash title="Command"
 #                           | Node ID of the validator to add        | Validator weight
 ash avalanche validator add NodeID-P7oB2McjBGgW2NXXWVYjV8JEDFoW9xDE5 100 \
   --subnet-id GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk \
@@ -177,7 +177,7 @@ ash avalanche validator add NodeID-P7oB2McjBGgW2NXXWVYjV8JEDFoW9xDE5 100 \
   --end-time "$(date -d '2 days' --rfc-3339=seconds | sed 's/ /T/')"
 ```
 
-```bash
+```bash title="Output"
 Initiated validator addition to Subnet! (Tx ID: 'NodeID-P7oB2McjBGgW2NXXWVYjV8JEDFoW9xDE5')
 Validator 'NodeID-P7oB2McjBGgW2NXXWVYjV8JEDFoW9xDE5' on Subnet 'GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk':
 Tx ID:            UcreXaaf5nt9Chy3nXSvJEAKHW9eqCQSjWB21KLxFBiUzuQvM
@@ -202,18 +202,18 @@ We can now **repeat the process** for the 4 other validators.
 
 After 2 minutes, we can check the validators list of the Subnet:
 
-```bash
+```bash title="Command"
 ash avalanche subnet info GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk
 ```
 
-```bash
+```bash title="Output"
 Subnet 'GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk':
   Type: Subnet
   Blockchains list (1):
   - testSubnetEVM:
       ID:      i2ZXw8NbVFxUK3kMjpwPtF2T3mtyoc6VWuH41rMfbc1NWE1Pb
+      VM ID:   spePNvBxaWSYL2tB5e2xMmMNBQkXMN8z2XEbz1ML2Aahatwoc
       VM type: SubnetEVM
-      RPC URL:
   Validators list (5):
   - NodeID-P7oB2McjBGgW2NXXWVYjV8JEDFoW9xDE5
   - NodeID-GWPcbFJZFfZreETSoWjPimr846mXEKCtu
@@ -227,7 +227,7 @@ You can use the `--extended` flag to get more information about the validators, 
 :::
 
 :::caution
-Don't forget that the validator nodes should be **configured to track the Subnet**, otherwise you will not be able to issue transactions. See [Track the Subnet with the validators](http://localhost:3000/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-management#track-the-subnet-with-the-validators).
+Don't forget that the validator nodes should be **configured to track the Subnet**, otherwise you will not be able to issue transactions. See [Track the Subnet with the validators](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation#track-the-subnet-with-the-validators).
 :::
 
 ## Connect to the Subnet and start issuing transactions
@@ -243,7 +243,7 @@ Use the following settings to connect to the Subnet:
 **New RPC URL**: `https://192.168.60.11:9650/ext/bc/${YOUR_BLOCKCHAIN_ID}/rpc`  
 **Chain ID**: The one entered during `avalanche subnet create`. Can be found via `avalanche subnet describe testSubnetEVM`  
 **Symbol**: Whatever you want to name your token  
-**Explorer URL**: `N/A`
+**Explorer URL**: NA
 
   </TabItem>
   <TabItem value="avalanche-cli" label="Avalanche Network Runner">
@@ -252,7 +252,7 @@ Use the following settings to connect to the Subnet:
 **New RPC URL**: `https://127.0.0.1:9650/ext/bc/${YOUR_BLOCKCHAIN_ID}/rpc`  
 **Chain ID**: The one entered during `avalanche subnet create`. Can be found via `avalanche subnet describe testSubnetEVM`  
 **Symbol**: Whatever you want to name your token  
-**Explorer URL**: `N/A`
+**Explorer URL**: NA
 
   </TabItem>
 </Tabs>
