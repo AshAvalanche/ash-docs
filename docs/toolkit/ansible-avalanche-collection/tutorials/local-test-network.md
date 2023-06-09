@@ -88,6 +88,10 @@ curl -X POST --data '{
 
 To use the Ash CLI with the local network, we need to add the network to our configuration. See [Configure the Ash CLI for your network](/docs/toolkit/ash-cli/tutorials/wallet-funding#configure-the-ash-cli-for-your-network).
 
+:::note
+It is done automatically in the VMs of the `inventories/local` environment.
+:::
+
 ## Pre-funded account
 
 On local Avalanche networks, a pre-funded account is available with the following private key:

@@ -15,7 +15,7 @@ For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ans
 
 ## Configure the Subnet
 
-All the transactions related to the Subnet creation will be **issued from the `subnet_txs_host` node**. Thus, we configure the Subnet in [`inventories/local/group_vars/subnet_txs_host.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/subnet_txs_host.yml).
+All the transactions related to the Subnet creation will be **issued from the `subnet_txs_host` node** of the Ansible inventory. Thus, we configure the Subnet in [`inventories/local/group_vars/subnet_txs_host.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/subnet_txs_host.yml).
 
 ### Configure the blockchains
 
@@ -37,7 +37,7 @@ subnet_blockchains_list:
 
 There are 2 ways to add validators to the Subnet:
 
-#### The `subnet_validators` group
+#### With the `subnet_validators` Ansible group
 
 :::info
 You need to have SSH access to the nodes to use this method.
@@ -52,7 +52,7 @@ In the `local` inventory, the `subnet_validators` group is already configured wi
 validator0[1:5]
 ```
 
-##### The `subnet_validators_list` variable
+##### With the `subnet_validators_list` variable
 
 Add validators to the `subnet_validators_list` variable. This is especially usefull to **include third-party nodes** to which you don't have SSH access.
 
@@ -64,7 +64,7 @@ For this tutorial, we will not use this method.
 The wallet P-Chain address will be used as the Subnet control key.
 :::
 
-Creating Subnet, blockchains and adding validators requires using a wallet to **pay for transaction fees**. The private key of the wallet is configured with the `subnet_txs_private_key` variable:
+Creating Subnets, blockchains and adding validators requires using a wallet to **pay for transaction fees**. The private key of the wallet is configured with the `subnet_txs_private_key` variable:
 
 ```yaml title="inventories/local/group_vars/subnet_txs_host.yml"
 # Private key of the pre-funded account
@@ -205,3 +205,7 @@ Use the following settings to connect to the Subnet:
 **Chain ID**: `66666`  
 **Symbol**: `ASH`  
 **Explorer URL**: http://192.168.60.19:4000
+
+:::note
+See the [Subnet Blockchain Explorer](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-blockchain-explorer) tutorial to install the block explorer!
+:::

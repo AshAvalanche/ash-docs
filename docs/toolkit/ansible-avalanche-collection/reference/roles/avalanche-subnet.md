@@ -7,7 +7,7 @@ sidebar_position: 2
 This Ansible role allows to create an Avalanche Subnet, its blockchains and add validators to it.
 
 :::caution
-This role uses Ash CLI in the background.
+This role uses Ash CLI under the hood.
 
 The Ash CLI uses **plain-text private keys** to interact with wallets. **It should never be used on the mainnet**. If you try do so, commands will fail with: `AvalancheNetwork error: wallet creation is not allowed on network 'mainnet'`.
 
@@ -32,7 +32,7 @@ To interact with wallets on the mainnet (e.g. to create Subnets and blockchains)
 
 ## Inventory requirements
 
-- **The node used to issue transactions** have to be in the `subnet_txs_host` group.
+- **The node used to issue transactions** has to be in the `subnet_txs_host` group.
 - **The nodes to be added as validators** to the Subnet have to be in the `subnet_validators` group. The Ansible host has to be able to connect to those nodes via SSH.
 
 ## Blockchain configuration

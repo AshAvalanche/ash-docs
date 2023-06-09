@@ -197,7 +197,7 @@ systemctl start avalanchego
 Different aspects of the installation can be customized:
 
 - To customize the EC2 instance specs (e.g.: instance type, storage capacity, etc.): edit [`main.tf`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/main.tf).
-- To customize AvalancheGo installation: edit the variables in [`inventories/fuji-aws/group_vars/avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/nveintories/fuji-aws/group_vars/avalanche_nodes.yml).
+- To customize AvalancheGo installation: edit the variables in [`inventories/fuji-aws/group_vars/avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/fuji-aws/group_vars/avalanche_nodes.yml).
 
 ## Where to go next?
 

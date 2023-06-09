@@ -21,17 +21,12 @@ This Ansible role allows to install and configure the [Ash CLI](/docs/toolkit/as
 
 This role allows to add custom networks to the CLI configuration. You can see an example in the [avalanche/node/tasks/main.yml](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/roles/node/tasks/main.yml) playbook where the `local` network is added to the CLI configuration.
 
-Each network is defined by a name and the endpoints to use for the info, P-Chain, C-Chain and X-Chain APIs:
+Each network is defined by a name and the endpoints to use for the P-Chain, C-Chain and X-Chain APIs:
 
 ```yaml title="local network definition"
 ash_cli_custom_networks:
   local:
-    info_rpc_url: "http://127.0.0.1:9650/ext/info"
     pchain_rpc_url: "http://127.0.0.1:9650/ext/bc/P"
     cchain_rpc_url: "http://127.0.0.1:9650/ext/bc/C/rpc"
     xchain_rpc_url: "http://127.0.0.1:9650/ext/bc/X"
 ```
-
-:::note
-The info and P-Chain APIs have to be accessible at the time of the CLI installation/configuration.
-:::
