@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # ash.avalanche.node
 
-This Ansible role allows to bootstrap Avalanche nodes:
+This Ansible role allows to manage Avalanche nodes:
 
 - Install and configure [AvalancheGo](https://github.com/ava-labs/avalanchego) following Linux best practices
 - Install Virtual Machines that can later be used to create blockchains
@@ -38,7 +38,7 @@ This Ansible role allows to bootstrap Avalanche nodes:
 | `avalanchego_staking_use_local_certs` | If `true` will upload TLS certificatesfrom `avalanchego_staking_local_certs_dir`. If `false` AvalancheGo will automatically create new certs.                                                                                                                         | `false`                                                            |
 | `avalanchego_staking_local_certs_dir` | Where to find the existing certificateson the Ansible host                                                                                                                                                                                                            | `"{{ playbook_dir }}/files/staking"`                               |
 | `avalanchego_network_id`              | See [Network ID](https://docs.avax.network/build/references/avalanchego-config-flags/#network-id)                                                                                                                                                                     | `fuji`                                                             |
-| `avalanchego_bootstrap_node_id`       | The node ID of the bootstrap node                                                                                                                                                                                                                                     | `NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg`                         |
+| `avalanchego_bootstrap_nodes_id`      | Node IDs of the bootstrap nodes on networks other than `mainnet` and `fuji`                                                                                                                                                                                           | `['NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg']`                     |
 | `avalanchego_bootstrap_db`            | The local path to a snapshot of Avalanche database                                                                                                                                                                                                                    | `""`                                                               |
 | `avalanchego_track_subnets`           | The list of tracked subnets that the node can validate. See [Subnet Tracking](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#subnet-tracking)                                                                                                      | `[]`                                                               |
 | `avalanchego_vms_install`             | The list of VMs to install on the node with their versions. VM names and versions are separated by `=`. See [VMs install](#vms-installation).                                                                                                                         | `[]`                                                               |
@@ -68,7 +68,7 @@ All config arguments are passed to AvalancheGo through a JSON config file stored
 ## Inventory requirements
 
 - **All the nodes** on which to install avalanchego have to be in the `avalanche_nodes` group.
-- For local networks, **one of the nodes** has to be in the `bootstrap_node` group. This node has to **be started first to serve as bootstrap node** for the others. For an example of how to do that, see the `bootstrap_local_network.yml` playbook.
+- For local networks, **at least one of the nodes** has to be in the `bootstrap_nodes` group. This nodes have to **be started first to serve as bootstrap nodes** for the others. For an example of how to do that, see the `bootstrap_local_network.yml` playbook.
 
 ## Installation folders
 
