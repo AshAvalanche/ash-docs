@@ -26,12 +26,10 @@ ansible-galaxy install -r ansible_collections/ash/avalanche/requirements.yml
 
 The Blockscout instance will be installed as a [Docker Compose](https://docs.docker.com/compose/) service on the nodes of the `blockscout` Ansible group. In [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started), it is the `frontend` node by default. You can change this by editing the [`hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/hosts) file.
 
-We need to set the Subnet EVM information in [`blockscout.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/blockscout.yml) (the `group_vars` file associated with our hosts' group):
+Set the blockchain ID in [`blockscout.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/blockscout.yml) (the `group_vars` file associated with our hosts' group):
 
 ```yaml title="inventories/local/group_vars/blockscout.yml"
-blockscout_rpc: http://192.168.60.11:9650/ext/bc/2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac/rpc
-blockscout_env_vars:
-  CHAIN_ID: 66666
+blockchain_id: 2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac
 ```
 
 The blockchain ID (`2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac` in our case) should be the one created in the [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) tutorial.
@@ -48,7 +46,15 @@ Running the `ash.avalanche.install_blockscout_docker` will install Docker and th
 ansible-playbook ash.avalanche.install_blockscout_docker -i inventories/local
 ```
 
-Blockscout should then be available at [http://192.168.60.19:4000](http://192.168.60.19:4000)
+Generate the Blockscout URL and open it in your browser:
+
+```bash title="Command"
+echo "http://$(terraform -chdir=terraform/multipass output -raw frontend_ip):4000"
+```
+
+```bash title="Sample output"
+http://10.117.207.108:4000
+```
 
 <figure>
 

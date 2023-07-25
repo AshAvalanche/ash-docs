@@ -13,7 +13,10 @@ In this section, we will learn how to use the [ash.avalanche](https://github.com
 
 - Python >=3.9 with `venv` module installed
 - AWS account and access key (see [AWS docs](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html)) with correct permissions to manage EC2 instances (e.g.: `AmazonEC2FullAccess`)
-- [Terraform](https://www.terraform.io/) installed
+- Terraform installed (see [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli))
+  :::info
+  [Terraform](https://terraform.io) is an infrastructure as code tool that lets you build, change, and version infrastructure safely and efficiently
+  :::
 - For filtering outputs:
   - [jq](https://stedolan.github.io/jq/) (see [Installation](https://stedolan.github.io/jq/download/))
 
@@ -22,7 +25,7 @@ We recommend installing the Ash CLI to easily get information about your nodes a
 The tutorials still provide the snippets to query the Avalanche APIs with cURL.
 :::
 
-## Installation
+## Setup the environment
 
 1. Clone the Getting Started repository:
 
@@ -44,6 +47,12 @@ The tutorials still provide the snippets to query the Avalanche APIs with cURL.
    ansible-galaxy collection install git+https://github.com/AshAvalanche/ansible-avalanche-collection.git
    ```
 
+4. Initialize the Terraform modules:
+
+   ```bash
+   terraform -chdir=terraform/aws init
+   ```
+
 ## Create EC2 instance with Terraform
 
 1. Setup AWS keys environment variables:
@@ -56,17 +65,17 @@ The tutorials still provide the snippets to query the Avalanche APIs with cURL.
 2. Created the resources with Terraform:
 
    ```bash
-   terraform apply
+   terraform -chdir=terraform/aws apply
    ```
 
 :::note
-This command will create the resources defined in [`main.tf`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/main.tf) including a `t2.2xlarge` EC2 instance with `300GiB` of storage, an associated [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) and a [security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) configured to allow SSH (port 22) and default AVAX ports (9650 for HTTP and 9651 for staking) as well as all outbound traffic.
+This command will create the resources defined in [`main.tf`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/terraform/aws/main.tf) including a `t2.2xlarge` EC2 instance with `300GiB` of storage, an associated [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) and a [security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) configured to allow SSH (port 22) and default AVAX ports (9650 for HTTP and 9651 for staking) as well as all outbound traffic.
 :::
 
 3. Save the IP of the newly created EC2 instance:
 
    ```bash
-   terraform output fuji_node_ip
+   terraform -chdir=terraform/aws output fuji_node_ip
    ```
 
 4. Update [`inventories/fuji-aws/hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/fuji-aws/hosts) with the IP of your EC2 instance. E.g.:
@@ -99,7 +108,7 @@ The [`inventories/fuji-aws/group_vars/avalanche_nodes.yml`](https://github.com/A
 We can SSH to our EC2 instance to follow the synchronization of the P, X and C chains. For example with the P-chain:
 
 ```bash {1} title="Commands"
-ssh -i ./files/ansible_key.pem ubuntu@$YOUR_EC2_INSTANCE_IP
+ssh -i ./files/ansible_key.pem "ubuntu@$YOUR_EC2_INSTANCE_IP"
 
 cd /var/log/avalanche/avalanchego
 tail C.log
@@ -144,7 +153,7 @@ avalanchego_chains_configs:
 
 :::
 
-## API calls
+## Issue API calls
 
 The node `aws-fuji-node` exposes AvalancheGo APIs on it's public IP: you can query any [Avalanche API](https://docs.avax.network/build/avalanchego-apis/) from your terminal. For example, to check if the P-Chain is done bootstrapping:
 
@@ -152,7 +161,7 @@ The node `aws-fuji-node` exposes AvalancheGo APIs on it's public IP: you can que
   <TabItem value="ash-cli" label="Using Ash CLI" default>
 
 ```bash title="Command"
-ash avalanche node is-bootstrapped C --http-host $YOUR_EC2_INSTANCE_IP
+ash avalanche node is-bootstrapped C --http-host "$YOUR_EC2_INSTANCE_IP"
 ```
 
 ```bash title="Output"
@@ -170,7 +179,7 @@ curl -X POST --data '{
   "params": {
     "chain": "C"
   }
-}' -H 'content-type:application/json;' http://$YOUR_EC2_INSTANCE_IP:9650/ext/info
+}' -H 'content-type:application/json;' "http://$YOUR_EC2_INSTANCE_IP:9650/ext/info"
 ```
 
 ```bash title="Output"
@@ -185,7 +194,7 @@ curl -X POST --data '{
 The [ash.avalanche](https://github.com/AshAvalanche/ansible-avalanche-collection) collection creates a [systemd](https://github.com/systemd/systemd) service to manage AvalancheGo. It can be stopped or started using the following commands:
 
 ```bash {1}
-ssh -i ./files/ansible_key.pem ubuntu@$YOUR_EC2_INSTANCE_IP
+ssh -i ./files/ansible_key.pem "ubuntu@$YOUR_EC2_INSTANCE_IP"
 # Stop AvalancheGo
 systemctl stop avalanchego
 # Start AvalancheGo
@@ -196,7 +205,7 @@ systemctl start avalanchego
 
 Different aspects of the installation can be customized:
 
-- To customize the EC2 instance specs (e.g.: instance type, storage capacity, etc.): edit [`main.tf`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/main.tf).
+- To customize the EC2 instance specs (e.g.: instance type, storage capacity, etc.): edit [`terraform/aws/main.tf`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/terraform/aws/main.tf).
 - To customize AvalancheGo installation: edit the variables in [`inventories/fuji-aws/group_vars/avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/fuji-aws/group_vars/avalanche_nodes.yml).
 
 ## Where to go next?
