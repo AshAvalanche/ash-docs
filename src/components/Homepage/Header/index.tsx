@@ -21,7 +21,7 @@ export default function HomepageHeader() {
           </Link>
           <Link
             className="button button--secondary button--lg"
-            to="https://calendly.com/antoine-e36knots/book-a-meeting-with-ash"
+            to="https://calendly.com/ash-e36knots"
           >
             💬 Contact us
           </Link>

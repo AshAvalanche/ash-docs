@@ -69,6 +69,6 @@ We can organize **training sessions** for your team to get them up to speed with
 
 ## Get in touch
 
-[Book a call](https://calendly.com/antoine-e36knots/book-a-meeting-with-ash) to discuss your needs and how we can help you.
+[Book a call](https://calendly.com/ash-e36knots) to discuss your needs and how we can help you.
 
 [DM us on Twitter](https://twitter.com/ash_avax) or [send us an email](mailto:contact@e36knots.com) if you have any question.
