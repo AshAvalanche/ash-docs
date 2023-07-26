@@ -38,7 +38,15 @@ ansible-playbook ash.avalanche.install_monitoring_stack -i inventories/local
 
 ### Grafana
 
-Grafana should be available at [http://192.168.60.19:3000](http://192.168.60.19:3000)
+Generate the Grafana URL and open it in your browser:
+
+```bash title="Command"
+echo "http://$(terraform -chdir=terraform/multipass output -raw frontend_ip):3000"
+```
+
+```bash title="Sample output"
+http://10.117.207.108:3000
+```
 
 <figure>
 
@@ -57,7 +65,7 @@ In the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-start
 
 #### Subnet dashboard
 
-If you created a [Subnet EVM](https://github.com/ava-labs/subnet-evm) blockchains in the [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) tutorial, you can configure the Grafana role to install a pre-configured dashboard for it.
+If you created [Subnet EVM](https://github.com/ava-labs/subnet-evm) blockchains in the [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) tutorial, you can configure the Grafana role to install a pre-configured dashboard for them.
 
 To do so, define the `grafana_subnets_dashboard_variables` variable (in [`grafana.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/grafana.yml) for the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory):
 
@@ -87,7 +95,15 @@ If you deployed multiple Subnet EVM blockchains, you can define them all in the 
 
 ### Prometheus
 
-Prometheus is also available at [http://192.168.60.19:9090](http://192.168.60.19:9090)
+Generate the Prometheus URL and open it in your browser:
+
+```bash title="Command"
+echo "http://$(terraform -chdir=terraform/multipass output -raw frontend_ip):9090"
+```
+
+```bash title="Sample output"
+http://10.117.207.108:9090
+```
 
 <figure>
 

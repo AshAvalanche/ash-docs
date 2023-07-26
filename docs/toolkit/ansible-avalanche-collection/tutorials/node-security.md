@@ -43,16 +43,33 @@ ansible-playbook ash.avalanche.provision_nodes -i inventories/local
 
 After enabling HTTPS, all curl commands have to provide the `--cacert` option to specify the CA certificate used to sign the TLS certificate:
 
-```bash
-curl --cacert files/https/ca.crt -X POST --data '{
-  "jsonrpc": "2.0",
-  "id"     : 1,
-  "method" : "info.isBootstrapped",
-  "params": {
-    "chain": "P"
-  }
-}' -H 'content-type:application/json;' https://192.168.60.11:9650/ext/info
-```
+1. Make sure that `validator01.ash.local` is resolvable by adding it to your `/etc/hosts` file:
+
+   1. Generate the line to add:
+      ```bash title="Command"
+      echo "$(terraform -chdir=terraform/multipass output -json validators_ips | jq -r '.[0]')  validator01.ash.local"
+      ```
+      ```bash title="Sample output"
+      10.117.207.160  validator01.ash.local
+      ```
+   2. Add it to your `/etc/hosts` file
+   3. Ping `validator01.ash.local` to make sure it's resolvable:
+      ```bash
+      ping validator01.ash.local
+      ```
+
+2. Issue an API call using the node FQDN and the `--cacert` option:
+
+   ```bash
+   curl --cacert files/https/ca.crt -X POST --data '{
+     "jsonrpc": "2.0",
+     "id"     : 1,
+     "method" : "info.isBootstrapped",
+     "params": {
+       "chain": "P"
+     }
+   }' -H 'content-type:application/json;' "https://validator01.ash.local:9650/ext/info"
+   ```
 
 :::caution
 We recommend using different CA certificates for the HTTP API endpoints and staking. By doing so, you have the **flexibility of migrating a node to different server** without having to change its node ID.

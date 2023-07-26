@@ -126,7 +126,7 @@ To track the Subnet on our nodes:
 
 ## Check the Subnet validators
 
-After 2 minutes, we can check the validators list of the Subnet:
+**After 2 minutes**, we can check the validators list of the Subnet:
 
 <Tabs>
   <TabItem value="ash-cli" label="Using Ash CLI" default>
@@ -136,7 +136,7 @@ If not already done, configure the Ash CLI for local Avalanche network by follow
 :::
 
 ```bash title="Command"
-ash avalanche subnet info p4jUwqZsA2LuSftroCd3zb4ytH8W99oXKuKVZdsty7eQ3rXD6 -n local
+multipass exec validator01 -- ash avalanche subnet info p4jUwqZsA2LuSftroCd3zb4ytH8W99oXKuKVZdsty7eQ3rXD6
 ```
 
 ```bash title="Output"
@@ -201,10 +201,25 @@ The Subnet is now ready to be used! You can connect any EVM-compatible wallet (e
 Use the following settings to connect to the Subnet:
 
 **Network name**: `AshLocalEVM`  
-**New RPC URL**: `http://192.168.60.11:9650/ext/bc/2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac/rpc`  
+**New RPC URL**: `http://${VALIDATOR01_IP}:9650/ext/bc/${BLOCKCHAIN_ID}/rpc`  
 **Chain ID**: `66666`  
 **Symbol**: `ASH`  
-**Explorer URL**: http://192.168.60.19:4000
+**Explorer URL**: `http://${FRONTEND_IP}:4000`
+
+To get the public IP addresses of the nodes, you can use the following command:
+
+```bash
+# For VALIDATOR01
+terraform -chdir=terraform/multipass output -json validators_ips | jq '.[0]'
+# For FRONTEND
+terraform -chdir=terraform/multipass output frontend_ip
+```
+
+To get the blockchain ID, you can use the following command:
+
+```bash
+multipass exec validator01 -- ash avalanche subnet info "$SUBNET_ID" -j | jq '.blockchains[0].id'
+```
 
 :::note
 See the [Subnet Blockchain Explorer](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-blockchain-explorer) tutorial to install the block explorer!

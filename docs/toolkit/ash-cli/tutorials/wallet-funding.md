@@ -33,30 +33,12 @@ Prior to using the CLI, we will use a configuration file and environment variabl
 <Tabs>
   <TabItem value="local" label="Local test network" default>
 
-Create the file `~/.config/ash/local-test-network.yml` with the following content:
+The file `terraform/multipass/local-test-network.yml` is templated by Terraform.
 
-```yaml title="~/.config/ash/local-test-network.yml"
-avalancheNetworks:
-  - name: local
-    subnets:
-      - id: 11111111111111111111111111111111LpoYY
-        subnetType: PrimaryNetwork
-        blockchains:
-          - id: 11111111111111111111111111111111LpoYY
-            name: P-Chain
-            vmID: 11111111111111111111111111111111LpoYY
-            vmType: PlatformVM
-            rpcUrl: http://192.168.60.11:9650/ext/bc/P
-          - name: X-Chain
-            vmID: jvYyfQTxGMJLuGWa55kdP2p2zSUYsQ5Raupu4TW34ZAUBAbtq
-            vmType: AvalancheVM
-            rpcUrl: http://192.168.60.11:9650/ext/bc/X
-```
-
-Then set the `ASH_CONFIG` and the `AVALANCHE_NETWORK` environment variables to use this configuration:
+Set the `ASH_CONFIG` and the `AVALANCHE_NETWORK` environment variables to use this configuration:
 
 ```bash
-export ASH_CONFIG=~/.config/ash/local-test-network.yml
+export ASH_CONFIG=terraform/multipass/local-test-network.yml
 export AVALANCHE_NETWORK=local
 ```
 
