@@ -19,7 +19,10 @@ const FeatureList: FeatureItem[] = [
         <b>
           <Link to="/docs/console">Ash Console</Link>
         </b>{" "}
-        is the one-stop shop for <b>Avalanche services management</b>.
+        is the one-stop shop for <b>Appchain development and operation</b> on
+        Avalanche.
+        <br />
+        100% <b>cloud-agnostic</b>.
       </>
     ),
   },
@@ -40,7 +43,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Our team can help you with all your <b>Avalanche-related</b> needs,
-        including <b>private blockchain</b> networks.{" "}
+        including <b>Appchain design</b>.<br />
         <Link to="/docs/professional-services">Learn more</Link>.
       </>
     ),

@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Ash",
-  tagline: "Get more from your Avalanche infrastructure",
+  tagline: "Appchain-as-a-Service platform",
   favicon: "img/ash-logo.svg",
 
   // Set the production url of your site here
@@ -153,7 +153,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} E36 Knots - Built with Docusaurus`,
+        copyright: `Copyright © 2022-${new Date().getFullYear()} E36 Knots - Built with Docusaurus`,
       },
       prism: {
         theme: lightCodeTheme,
