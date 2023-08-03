@@ -44,7 +44,7 @@ This Ansible role allows to manage Avalanche nodes:
 | `avalanchego_vms_install`             | The list of VMs to install on the node with their versions. VM names and versions are separated by `=`. See [VMs install](#vms-installation).                                                                                                                         | `[]`                                                               |
 | `avalanchego_node_json`               | The AvalancheGo node configuration that will be templated to `node.json` addresses                                                                                                                                                                                    | NA                                                                 |
 | `avalanchego_subnets_configs`         | The configuration of each subnet. See [Subnet Configs](https://docs.avax.network/nodes/maintain/subnet-configs).                                                                                                                                                      | `{}`                                                               |
-| `avalanchego_chain_aliases`           | The aliases of each chain. See [chain-aliases-file](https://docs.avax.network/nodes/configure/avalanchego-config-flags#--chain-aliases-file-string).                                                                                                                  | `{ C: { state-sync-enabled: true }}`                               |
+| `avalanchego_chain_aliases`           | The aliases of each chain. See [chain-aliases-file](https://docs.avax.network/nodes/configure/avalanchego-config-flags#--chain-aliases-file-string).                                                                                                                  | `{}`                                                               |
 | `avalanchego_chain_configs`           | The configuration of each chain. See [Chain Configs](https://docs.avax.network/nodes/maintain/chain-config-flags).                                                                                                                                                    | `{ C: { state-sync-enabled: true }}`                               |
 | `validator_txs_private_key`           | The private key used to sign the `addValidator` transactions                                                                                                                                                                                                          | `PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN`     |
 | `validator_txs_key_encoding`          | Encoding of the private key. Can be `cb58` or `hex`.                                                                                                                                                                                                                  | `cb58`                                                             |
@@ -113,7 +113,8 @@ Here is the compatibility matrix with AvalancheGo versions:
 | `23`         | `1.9.9`         | `0.4.9-0.4.10`  |
 | `24`         | `1.9.10-1.9.16` | `0.4.11-0.4.12` |
 | `25`         | `1.10.0`        | `0.5.0`         |
-| `26`         | `1.10.1-1.10.3` | `0.5.1-0.5.2`   |
+| `26`         | `1.10.1-1.10.4` | `0.5.1-0.5.2`   |
+| `27`         | `1.10.5-1.10.7` | `0.5.3-0.5.4`   |
 
 :::tip
 If a versions incompatibility is detected, an error message will be prompted and the role execution will stop.
