@@ -29,7 +29,7 @@ The Blockscout instance will be installed as a [Docker Compose](https://docs.doc
 Set the blockchain ID in [`blockscout.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/blockscout.yml) (the `group_vars` file associated with our hosts' group):
 
 ```yaml title="inventories/local/group_vars/blockscout.yml"
-blockchain_id: 2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac
+blockscout_blockchain_id: 2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac
 ```
 
 The blockchain ID (`2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac` in our case) should be the one created in the [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) tutorial.
