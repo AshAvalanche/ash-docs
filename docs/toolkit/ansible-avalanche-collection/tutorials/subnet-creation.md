@@ -52,11 +52,23 @@ In the `local` inventory, the `subnet_validators` group is already configured wi
 validator0[1:5]
 ```
 
-##### With the `subnet_validators_list` variable
+#### With the `subnet_validators_params` variable
 
-Add validators to the `subnet_validators_list` variable. This is especially usefull to **include third-party nodes** to which you don't have SSH access.
+Add validators to the `subnet_validators_params` variable. This is especially useful:
 
-For this tutorial, we will not use this method.
+- To **include third-party nodes** to which you don't have SSH access
+- To **customize validations parameters** for each validator (e.g. the start and end times, the weight, etc.)
+
+For this tutorial, we will not use this method but we configured the **first validator as an example**:
+
+```yaml title="inventories/local/group_vars/subnet_txs_host.yml"
+subnet_validators_params:
+  - node_id: NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg
+    start_time: "{{ subnet_validator_start_time }}"
+    end_time: "{{ subnet_validator_end_time }}"
+    stake_or_weight: 100
+    delegation_fee: 2
+```
 
 ### Configure the Subnet transactions wallet
 
