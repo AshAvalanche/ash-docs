@@ -24,11 +24,11 @@ To interact with wallets on the mainnet (e.g. to create Subnets and blockchains)
 | `subnet_blockchains_check_name`    | Whether to fail if a blockchain with the same name already exists                                                                                 | `true`                                                         |
 | `subnet_blockchains_list`          | List of blockchains to create in the Subnet. See [Blockchain configuration](#blockchain-configuration) for the list structure.                    | NA                                                             |
 | `subnet_validators_add`:           | Whether to add the validatores from `subnet_validators_ids_list` to the Subnet                                                                    | `true`                                                         |
-| `subnet_validators_ids_list`       | List of node IDs to add to the Subnet (useful for third-party nodes)                                                                              | `[]`                                                           |
-| `subnet_validator_start_time`      | Start time of the validation in RFC 3339 format: `YYYY-MM-DDTHH:MM:SSZ` format                                                                    | 2 min from now                                                 |
-| `subnet_validator_end_time`        | End time of the validation in RFC 3339 format: `YYYY-MM-DDTHH:MM:SSZ` format                                                                      | 1 week from now                                                |
-| `subnet_validator_stake_or_weight` | Stake (for elastic Subnets) or weight (for permissioned Subnets) of validators                                                                    | `1`                                                            |
-| `subnet_validator_delegation_fee`  | Delegation fee in percentage.                                                                                                                     | `2`                                                            |
+| `subnet_validators_params`         | Validation parameters for each validator to add to the Subnet. See [Validators parameters](#validators-parameters).                               | `[]`                                                           |
+| `subnet_validator_start_time`      | Default start time of the validation in RFC 3339 format: `YYYY-MM-DDTHH:MM:SSZ` format                                                            | 2 min from now                                                 |
+| `subnet_validator_end_time`        | Default end time of the validation in RFC 3339 format: `YYYY-MM-DDTHH:MM:SSZ` format                                                              | 1 week from now                                                |
+| `subnet_validator_stake_or_weight` | Default stake (for elastic Subnets) or weight (for permissioned Subnets) of validators                                                            | `100`                                                          |
+| `subnet_validator_delegation_fee`  | Default delegation fee in percentage.                                                                                                             | `2`                                                            |
 
 ## Inventory requirements
 
@@ -84,3 +84,24 @@ Each blockchain in `subnet_blockchains_list` is defined by a dictionary with the
 :::tip
 To generate the genesis data for a new blockchain, you can use the Avalanche CLI wizard. See [Create the Subnet EVM blockchain configuration](/docs/toolkit/ash-cli/tutorials/local-subnet#create-the-subnet-evm-blockchain-configuration).
 :::
+
+## Validators parameters
+
+Each validator can have its own validation parameters. The parameters are defined by a dictionary with the following keys:
+
+- `node_id`: ID of the node to add as validator
+- `start_time`: Start time of the validation in RFC 3339 format: `YYYY-MM-DDTHH:MM:SSZ` format
+- `end_time`: End time of the validation in RFC 3339 format: `YYYY-MM-DDTHH:MM:SSZ` format
+- `stake_or_weight`: Stake (for elastic Subnets) or weight (for permissioned Subnets) of the validator
+- `delegation_fee`: Delegation fee in percentage
+
+Default values are available as variables, e.g. `subnet_validator_start_time`.
+
+```yaml
+subnet_validators_params:
+  - node_id: NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg
+    start_time: "{{ subnet_validator_start_time }}"
+    end_time: "{{ subnet_validator_end_time }}"
+    stake_or_weight: 100
+    delegation_fee: 2
+```

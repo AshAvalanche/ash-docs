@@ -29,7 +29,7 @@ The Avalanche Faucet will be installed as a [Docker Compose](https://docs.docker
 Set the blockchain ID in [`faucet.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/faucet.yml) (the `group_vars` file associated with our hosts' group):
 
 ```yaml title="inventories/local/group_vars/faucet.yml"
-blockchain_id: 2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac
+faucet_blockchain_id: 2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac
 ```
 
 The blockchain ID (`2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac` in our case) should be the one created in the [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) tutorial.
