@@ -17,19 +17,46 @@ export default function HomepageHeader() {
           leveraging Avalanche Subnets
         </p>
         <p className="hero__subtitle"></p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/toolkit"
-          >
-            🚀 Get started
-          </Link>
-          <Link
-            className="button button--secondary button--lg"
-            to="https://calendly.com/ash-e36knots"
-          >
-            💬 Contact us
-          </Link>
+
+        <div className="container">
+          <div className="row">
+            <div className={clsx("col col--4")} />
+            <div className={clsx("col col--2")}>
+              <div className={styles.buttons}>
+                <Link
+                  className="button button--secondary button--lg"
+                  to="/docs/toolkit"
+                >
+                  🚀 Get started
+                </Link>
+              </div>
+            </div>
+            <div className={clsx("col col--2")}>
+              <div className={styles.buttons}>
+                <Link
+                  className="button button--secondary button--lg"
+                  to="https://calendly.com/ash-e36knots"
+                >
+                  💬 Contact us
+                </Link>
+              </div>
+            </div>
+            <div className={clsx("col col--4")} />
+          </div>
+          <div className="row">
+            <div className={clsx("col col--4")} />
+            <div className={clsx("col col--4")}>
+              <div className={styles.buttons}>
+                <Link
+                  className="button button--secondary button--lg"
+                  to="https://forms.gle/m66KkKT8FC2Jb9Y97"
+                >
+                  ✍️ Register for the alpha!
+                </Link>
+              </div>
+            </div>
+            <div className={clsx("col col--4")} />
+          </div>
         </div>
       </div>
     </header>
