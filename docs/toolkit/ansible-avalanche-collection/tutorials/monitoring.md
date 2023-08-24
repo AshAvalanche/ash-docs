@@ -16,6 +16,10 @@ The monitoring stack is comprised of:
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a Local Test Network](./local-test-network) for details.
 :::
 
+:::tip
+Always make sure you have the latest version of the collection installed. See [Installation and upgrade](/docs/toolkit/ansible-avalanche-collection/installation).
+:::
+
 ## Requirements
 
 The `ash.avalanche.install_monitoring_stack` playbook installs Prometheus and Grafana through the [prometheus.prometheus](https://galaxy.ansible.com/prometheus/prometheus) collection and the [cloudalchemy.grafana](https://galaxy.ansible.com/cloudalchemy/grafana) role.

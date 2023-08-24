@@ -45,7 +45,7 @@ curl -sSfL "https://github.com/AshAvalanche/ash-rs/releases/download/${ASH_VERSI
 # Verify binary checksum
 curl -sSfL "https://github.com/AshAvalanche/ash-rs/releases/download/${ASH_VERSION}/ash-${OS}-${ARCH}-${ASH_VERSION}.tar.gz.sha512" | sha512sum -c
 # Extract the binary
-tar -xzf ash-linux-amd64-${ASH_VERSION}.tar.gz
+tar -xzf "ash-${OS}-amd64-${ASH_VERSION}.tar.gz"
 # Make the binary executable
 chmod +x ash
 ```

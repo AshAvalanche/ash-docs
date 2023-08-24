@@ -13,6 +13,10 @@ In this section, we will learn how to use the `ash.avalanche.subnet` role to cre
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a Local Test Network](./local-test-network) for details.
 :::
 
+:::tip
+Always make sure you have the latest version of the collection installed. See [Installation and upgrade](/docs/toolkit/ansible-avalanche-collection/installation).
+:::
+
 ## Configure the Subnet
 
 All the transactions related to the Subnet creation will be **issued from the `subnet_txs_host` node** of the Ansible inventory. Thus, we configure the Subnet in [`inventories/local/group_vars/subnet_txs_host.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/subnet_txs_host.yml).
