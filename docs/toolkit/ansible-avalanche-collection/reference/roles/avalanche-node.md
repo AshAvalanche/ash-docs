@@ -114,7 +114,7 @@ Here is the compatibility matrix with AvalancheGo versions:
 | `24`         | `1.9.10-1.9.16` | `0.4.11-0.4.12` |
 | `25`         | `1.10.0`        | `0.5.0`         |
 | `26`         | `1.10.1-1.10.4` | `0.5.1-0.5.2`   |
-| `27`         | `1.10.5-1.10.7` | `0.5.3-0.5.4`   |
+| `27`         | `1.10.5-1.10.8` | `0.5.3-0.5.4`   |
 
 :::tip
 If a versions incompatibility is detected, an error message will be prompted and the role execution will stop.

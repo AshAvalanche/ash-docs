@@ -31,7 +31,7 @@ Node '127.0.0.1:9650':
   Public IP:     10.117.207.160
   Staking port:  9651
   Versions:
-    AvalancheGo:  avalanche/1.10.1
+    AvalancheGo:  avalanche/1.10.8
     [...]
 ```
 
@@ -50,20 +50,24 @@ jq -r '.result.version'
 ```
 
 ```bash title="Output"
-avalanche/1.10.1
+avalanche/1.10.8
 ```
 
   </TabItem>
 </Tabs>
 
-As we can see above, our node is currently running AvalancheGo version `1.10.1`. This is what's expected because of the Ansible role variable `avalanchego_version: 1.10.1` set at [avalanche_nodes.yml](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/avalanche_nodes.yml#L4) in our inventory.
+As we can see above, our node is currently running AvalancheGo version `1.10.8`. This is what's expected because of the Ansible role variable `avalanchego_version: 1.10.8` set at [avalanche_nodes.yml](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/avalanche_nodes.yml#L4) in our inventory.
 
 ## Upgrade the AvalancheGo version
 
-Let's upgrade our nodes by changing the `avalanchego_version` Ansible variable to `1.10.3` with the following command:
+:::caution
+As of 08/24/2023, AvalancheGo `v1.10.9` has not been released yet. Please ignore the following steps until it is released (check [AvalancheGo releases](https://github.com/ava-labs/avalanchego/releases)).
+:::
+
+Let's upgrade our nodes by changing the `avalanchego_version` Ansible variable to `1.10.9` with the following command:
 
 ```bash
-sed -i 's/avalanchego_version: 1.10.1/avalanchego_version: 1.10.3/' inventories/local/group_vars/avalanche_nodes.yml
+sed -i 's/avalanchego_version: 1.10.8/avalanchego_version: 1.10.9/' inventories/local/group_vars/avalanche_nodes.yml
 ```
 
 We can then upgrade all the nodes defined in our Ansible inventory by running the `provision_nodes` playbook again:
@@ -83,7 +87,7 @@ By running the same command as previously:
 multipass exec validator01 -- ash avalanche node info
 ```
 
-We can confirm that our node is now running AvalancheGo 1.10.3:
+We can confirm that our node is now running AvalancheGo 1.10.9:
 
 ```bash {7}
 Node '127.0.0.1:9650':
@@ -92,7 +96,7 @@ Node '127.0.0.1:9650':
   Public IP:     10.117.207.160
   Staking port:  9651
   Versions:
-    AvalancheGo:  avalanche/1.10.3
+    AvalancheGo:  avalanche/1.10.9
     [...]
 ```
 
@@ -110,10 +114,10 @@ multipass exec validator01 -- curl -s -X POST --data '{
 jq -r '.result.version'
 ```
 
-We can confirm that our node is now running AvalancheGo 1.10.3:
+We can confirm that our node is now running AvalancheGo 1.10.9:
 
 ```bash
-avalanche/1.10.3
+avalanche/1.10.9
 ```
 
   </TabItem>
