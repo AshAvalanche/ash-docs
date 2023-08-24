@@ -64,10 +64,6 @@ As we can see above, our node is currently running AvalancheGo version `1.10.8`.
 
 ## Upgrade the AvalancheGo version
 
-:::caution
-As of 08/24/2023, AvalancheGo `v1.10.9` has not been released yet. Please ignore the following steps until it is released (check [AvalancheGo releases](https://github.com/ava-labs/avalanchego/releases)).
-:::
-
 Let's upgrade our nodes by changing the `avalanchego_version` Ansible variable to `1.10.9` with the following command:
 
 ```bash
