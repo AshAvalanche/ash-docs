@@ -10,6 +10,10 @@ In this section, we will learn how to secure Avalanche nodes installed by the [A
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a Local Test Network](./local-test-network) for details.
 :::
 
+:::tip
+Always make sure you have the latest version of the collection installed. See [Installation and upgrade](/docs/toolkit/ansible-avalanche-collection/installation).
+:::
+
 ## Enable HTTPS for API endpoints
 
 By default, the HTTP API endpoints are **not secured**. This is fine for testing purposes but **not recommended for mainnet deployments**.

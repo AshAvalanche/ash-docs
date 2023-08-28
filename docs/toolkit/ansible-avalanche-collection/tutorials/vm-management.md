@@ -10,6 +10,10 @@ In this section, we will learn how to use the [Ansible Avalanche Collection](htt
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a Local Test Network](./local-test-network) for details.
 :::
 
+:::tip
+Always make sure you have the latest version of the collection installed. See [Installation and upgrade](/docs/toolkit/ansible-avalanche-collection/installation).
+:::
+
 ## Install a VM
 
 :::note
@@ -18,11 +22,11 @@ For now only the [Subnet EVM](https://github.com/ava-labs/subnet-evm) is support
 
 The VMs are managed by the `avalanchego_vms_install` role variable which is empty by default ([`avalanchego_vms_install: []`](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/roles/node/defaults/main.yml#L42)).
 
-To add a new VM that will be installed on our validator nodes, we just have to update the `avalanchego_vms_install` variable. For the next example, we will install Ava Labs' [Subnet EVM](https://github.com/ava-labs/subnet-evm) in version 0.5.2. The variable we are should be added to [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml):
+To add a new VM that will be installed on our validator nodes, we just have to update the `avalanchego_vms_install` variable. For the next example, we will install Ava Labs' [Subnet EVM](https://github.com/ava-labs/subnet-evm) in version 0.5.3. The variable we are should be added to [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml):
 
 ```yml title="inventories/local/group_vars/avalanche_nodes.yml"
 avalanchego_vms_install:
-  - subnet-evm=0.5.1
+  - subnet-evm=0.5.3
 ```
 
 We can then install this VM to all the nodes defined in our Ansible inventory by running the `provision_nodes` playbook again:
@@ -48,20 +52,24 @@ ll /opt/avalanche/avalanchego/current/plugins/
 total 8
 drwxr-xr-x 2 avalanche avalanche 4096 Jul 25 11:21 ./
 drwxr-xr-x 3 avalanche avalanche 4096 Jul 25 11:05 ../
-lrwxrwxrwx 1 root      root        58 Jul 25 11:21 subnet-evm -> /opt/avalanche/vms/subnet-evm/subnet-evm-v0.5.1/subnet-evm*
+lrwxrwxrwx 1 root      root        58 Jul 25 11:21 subnet-evm -> /opt/avalanche/vms/subnet-evm/subnet-evm-v0.5.3/subnet-evm*
 ```
 
 AvalancheGo has been automatically restarted and the VM is ready to be used.
 
 ## Upgrade a VM
 
+:::caution
+As of 08/24/2023, Subnet EVM `v0.5.4` has not been released yet. Please ignore the following steps until it is released (check [Subnet EVM releases](https://github.com/ava-labs/subnet-evm/releases)).
+:::
+
 Upgrading a VM is as simple as updating the `avalanchego_vms_install` variable.
 
-For example, if we want to upgrade the `subnet-evm` from version 0.5.1 to 0.5.2:
+For example, if we want to upgrade the `subnet-evm` from version 0.5.3 to 0.5.4:
 
 ```yml title="inventories/local/group_vars/avalanche_nodes.yml"
 avalanchego_vms_install:
-  - subnet-evm=0.5.2
+  - subnet-evm=0.5.4
 ```
 
 Re-run the `provision_nodes` playbook:
@@ -82,7 +90,7 @@ ll /opt/avalanche/avalanchego/current/plugins/
 total 8
 drwxr-xr-x 2 avalanche avalanche 4096 Jul 25 11:22 ./
 drwxr-xr-x 3 avalanche avalanche 4096 Jul 25 11:05 ../
-lrwxrwxrwx 1 root      root        58 Jul 25 11:22 subnet-evm -> /opt/avalanche/vms/subnet-evm/subnet-evm-v0.5.2/subnet-evm*
+lrwxrwxrwx 1 root      root        58 Jul 25 11:22 subnet-evm -> /opt/avalanche/vms/subnet-evm/subnet-evm-v0.5.4/subnet-evm*
 ```
 
 ## Uninstall a VM

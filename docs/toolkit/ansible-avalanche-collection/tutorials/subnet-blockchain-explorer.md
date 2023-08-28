@@ -12,6 +12,10 @@ For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ans
 We should also have created a Subnet and a blockchain, see [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) for details.
 :::
 
+:::tip
+Always make sure you have the latest version of the collection installed. See [Installation and upgrade](/docs/toolkit/ansible-avalanche-collection/installation).
+:::
+
 ## Requirements
 
 The `ash.avalanche.faucet` role uses Docker and the `ash.avalanche.install_blockscout_docker` playbook installs Docker through the [geerlingguy.docker](https://galaxy.ansible.com/geerlingguy/docker).

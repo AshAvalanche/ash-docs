@@ -48,6 +48,7 @@ Follow the [tutorials](/docs/toolkit/ansible-avalanche-collection/tutorials/loca
 ### Modules
 
 - [ash.avalanche.eth_call](/docs/toolkit/ansible-avalanche-collection/reference/modules/eth_call): `eth_call` a smart contract's function on an EVM Avalanche network
+- [ash.avalanche.ash_cmd](/docs/toolkit/ansible-avalanche-collection/reference/modules/ash_cmd): run an Ash CLI command
 
 ### Filters
 

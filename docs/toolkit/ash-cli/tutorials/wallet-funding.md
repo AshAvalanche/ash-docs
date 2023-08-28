@@ -199,12 +199,29 @@ Open a new tab in your browser and open: https://wallet.avax.network/
 <Tabs>
   <TabItem value="local" label="Local test network" default>
 
+#### Forward the Avalanche HTTP API port using socat
+
+Modern browsers don't allow to connect to other addresses than `127.0.0.1` from the Avalanche Wallet. We will use [socat](http://www.dest-unreach.org/socat/) to forward the Avalanche HTTP API port of `validator01` to the host:
+
+1. Install socat
+   ```bash
+   # On Ubuntu
+   sudo apt install socat
+   # On macOS
+   brew install socat
+   ```
+2. Forward the port
+   ```bash
+   sudo socat TCP-LISTEN:9650,fork "TCP:$(terraform -chdir=terraform/multipass output -json validators_ips | jq -r '.[0]'):9650"
+   ```
+3. Keep the terminal open and go back to the browser tab.
+
 #### Add a custom network
 
 On the top right corner, click on the `🟢 Mainnet` and then `Add Custom`. Use the following values:
 
 **Network Name**: `Ash Local Network`  
-**URL**: `http://127.0.0.1:9661`  
+**URL**: `http://127.0.0.1:9650`  
 **Explorer API**: `N/A`  
 **Explorer Site**: `N/A`
 
