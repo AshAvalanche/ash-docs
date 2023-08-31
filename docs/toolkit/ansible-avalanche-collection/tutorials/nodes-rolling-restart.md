@@ -18,7 +18,7 @@ Always make sure you have the latest version of the collection installed. See [I
 
 By default, **any change to the node/VMs versions or configurations** will trigger a restart of AvalancheGo. This is fine for testing purposes but **not recommended for Subnet validators**, (especially for a small-size permissioned Subnet where each validator has a high weight).
 
-To disable automatic restarts, set `avalanchego_auto_restart` to `false` in the `avalanche_nodes.yml` group variables file:
+To disable automatic restarts, set `avalanchego_auto_restart` to `false` in the [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml) group variables file:
 
 ```yml
 avalanchego_auto_restart: false
