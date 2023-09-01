@@ -82,6 +82,11 @@ const config = {
             label: "Professional services",
           },
           {
+            href: "https://ashavax.hashnode.dev",
+            position: "left",
+            label: "Blog",
+          },
+          {
             href: "https://github.com/AshAvalanche/ash-docs",
             position: "right",
             className: "header-github-link",
