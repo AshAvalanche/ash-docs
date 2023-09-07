@@ -22,7 +22,7 @@ Our team maintains multiple [open-source tools](/docs/toolkit/) tailored for Ava
 
 See examples of the team contributions:
 
-- [Ava Labs repositories](https://github.com/issues?q=is%3Aissue+involves%3ANuttymoon+involves%3Aleopaul36+archived%3Afalse+org%3Aava-labs+)
+- [Ava Labs repositories](https://github.com/issues?q=involves%3ANuttymoon+involves%3Aleopaul36+archived%3Afalse+org%3Aava-labs)
 
 #### Node operating
 
