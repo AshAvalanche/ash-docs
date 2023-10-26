@@ -131,7 +131,7 @@ jq '.result.blockchains[] | select(.subnetID == "Vn3aX6hNRstj5VHHm63TCgPNaeGnRSq
 ```
 
   </TabItem>
-  <TabItem value="ash-cli" label="Using Ash CLI">
+  <TabItem value="ash-cli" label="Using the Ash CLI">
 
 ```bash
 ash avalanche subnet info Vn3aX6hNRstj5VHHm63TCgPNaeGnRSqCYXQqemSqDd2TQH4qJ

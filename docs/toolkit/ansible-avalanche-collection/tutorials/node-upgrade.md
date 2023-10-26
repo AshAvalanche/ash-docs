@@ -19,8 +19,8 @@ Always make sure you have the latest version of the collection installed. See [I
 
 ## Check the current AvalancheGo version
 
-<Tabs>
-  <TabItem value="ash-cli" label="Using Ash CLI" default>
+<Tabs groupId="cli-tool">
+  <TabItem value="ash-cli" label="Using the Ash CLI" default>
 
 Let's start by checking the current version of my node(s) with the Ash CLI:
 
@@ -78,8 +78,8 @@ ansible-playbook ash.avalanche.provision_nodes -i inventories/local
 
 ## Verify the new AvalancheGo version
 
-<Tabs>
-  <TabItem value="ash-cli" label="Using Ash CLI" default>
+<Tabs groupId="cli-tool">
+  <TabItem value="ash-cli" label="Using the Ash CLI" default>
 
 By running the same command as previously:
 

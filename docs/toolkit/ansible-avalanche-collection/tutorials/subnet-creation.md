@@ -145,7 +145,7 @@ To track the Subnet on our nodes:
 **After 2 minutes**, we can check the validators list of the Subnet:
 
 <Tabs>
-  <TabItem value="ash-cli" label="Using Ash CLI" default>
+  <TabItem value="ash-cli" label="Using the Ash CLI" default>
 
 :::note
 If not already done, configure the Ash CLI for local Avalanche network by following [Configure the Ash CLI for your network](/docs/toolkit/ash-cli/tutorials/wallet-funding#configure-the-ash-cli-for-your-network).
