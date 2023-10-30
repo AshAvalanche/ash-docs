@@ -158,7 +158,7 @@ avalanchego_chains_configs:
 The node `aws-fuji-node` exposes AvalancheGo APIs on it's public IP: you can query any [Avalanche API](https://docs.avax.network/build/avalanchego-apis/) from your terminal. For example, to check if the P-Chain is done bootstrapping:
 
 <Tabs>
-  <TabItem value="ash-cli" label="Using Ash CLI" default>
+  <TabItem value="ash-cli" label="Using the Ash CLI" default>
 
 ```bash title="Command"
 ash avalanche node is-bootstrapped C --http-host "$YOUR_EC2_INSTANCE_IP"

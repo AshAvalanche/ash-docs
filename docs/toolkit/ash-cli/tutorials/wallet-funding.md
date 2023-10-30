@@ -30,7 +30,7 @@ See [Installation](/docs/toolkit/ash-cli/installation) for the Ash CLI installat
 
 Prior to using the CLI, we will use a configuration file and environment variables to configure it for our target Avalanche network (see [Custom Configuration](/docs/toolkit/ash-cli/tutorials/custom-configuration) for more information).
 
-<Tabs>
+<Tabs groupId="avalanche-network">
   <TabItem value="local" label="Local test network" default>
 
 The file `terraform/multipass/local-test-network.yml` is templated by Terraform.
@@ -134,7 +134,7 @@ Now that we have a wallet and its addresses, we can **transfer some AVAX to it**
 - On local Avalanche networks, we will transfer AVAX on the X-Chain from the pre-funded account (see [Pre-funded account](/docs/toolkit/ansible-avalanche-collection/tutorials/local-test-network#pre-funded-account) for more information).
 - On the Fuji testnet, we will use the official [Fuji Faucet](https://faucet.avax.network/) to request a 2-AVAX airdrop on the C-Chain.
 
-<Tabs>
+<Tabs groupId="avalanche-network">
   <TabItem value="local" label="Local test network" default>
 
 ### Check the wallet balance before the transfer
@@ -196,7 +196,7 @@ In order to perform Subnet-related operations (e.g. create Subnets/blockchains, 
 
 Open a new tab in your browser and open: https://wallet.avax.network/
 
-<Tabs>
+<Tabs groupId="avalanche-network">
   <TabItem value="local" label="Local test network" default>
 
 #### Forward the Avalanche HTTP API port using socat

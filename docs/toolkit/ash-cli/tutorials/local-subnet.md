@@ -32,7 +32,7 @@ In this tutorial, we will see how to create **a new Subnet with a Subnet EVM blo
 
 We use the `subnet create` command to create a new Subnet:
 
-<Tabs>
+<Tabs groupId="pkey-arg">
   <TabItem value="env var" label="Using AVALANCHE_PRIVATE_KEY" default>
 
 ```bash title="Command"
@@ -108,7 +108,7 @@ cat /tmp/encoded-genesis.json
 
 Use the `blockchain create` command to create the Subnet EVM blockchain in the Subnet we created earlier:
 
-<Tabs>
+<Tabs groupId="pkey-arg">
   <TabItem value="env var" label="Using AVALANCHE_PRIVATE_KEY" default>
 
 ```bash title="Command"
