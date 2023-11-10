@@ -162,7 +162,7 @@ Project updated successfully!
   </TabItem>
   <TabItem value="ash-api" label="Using the Ash Console API">
 
-The only propery that can be updated is the project name by sending a `PATCH` the `projects/${projectId}` endpoint:
+The only propery that can be updated is the project name by sending a `PATCH` to the `projects/${projectId}` endpoint:
 
 ```bash title="Command"
 curl -X PATCH http://localhost:8080/projects/c84c4a2f-9a65-46a2-b7b9-be8eeceaa2b1 \

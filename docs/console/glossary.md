@@ -294,11 +294,11 @@ A `Resource` is managed by a `User` (later an `Organization`) inside a `Project`
 
 A `Resource` can be:
 
-- An `AvalancheNode`
-- An `AvalancheSubnet`
-- An `AvalancheFaucet` (Not implemented in alpha)
-- A `BlockExplorer` (Not implemented in alpha)
-- A `MonitoringStack` (Not implemented in alpha)
+- An `avalancheNode`
+- An `avalancheSubnet`
+- An `avalancheFaucet` (Not implemented in alpha)
+- A `blockExplorer` (Not implemented in alpha)
+- A `monitoringStack` (Not implemented in alpha)
 
 **A `Resource` belongs to only one `Project` and one `CloudRegion`.**
 

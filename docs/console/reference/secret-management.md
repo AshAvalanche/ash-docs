@@ -134,7 +134,7 @@ Secret updated successfully!
   </TabItem>
   <TabItem value="ash-api" label="Using the Ash Console API">
 
-The properties that can be updated **depend on the secret type**. For example, you can update a `generic` secret's `name` and `content` by sending a `PATCH` the `secrets/${secretId}` endpoint:
+The properties that can be updated **depend on the secret type**. For example, you can update a `generic` secret's `name` and `content` by sending a `PATCH` to the `secrets/${secretId}` endpoint:
 
 ```bash title="Command"
 curl -X PATCH http://localhost:8080/secrets/465a6c24-5640-46d4-963f-98c0990484e1 \

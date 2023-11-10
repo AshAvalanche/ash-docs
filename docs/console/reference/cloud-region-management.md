@@ -17,6 +17,12 @@ The [resources](/docs/console/glossary#resource) of a [project](/docs/console/gl
 The Ash Console alpha supports **AWS, Azure, and Google Cloud**.
 :::
 
+:::note
+**Cloud regions live under a project**. To manage cloud regions, you need to have **at least one project**.
+
+See [Project Management](/docs/console/reference/project-management).
+:::
+
 ## List a project's cloud regions
 
 <Tabs groupId="ash-console-client">
@@ -126,6 +132,10 @@ Use the `/regions` endpoint to get the list of regions available for each cloud 
 
 :::caution
 Removing a region from a project will recursively delete **all the resources** that belong to it!
+:::
+
+:::info
+**Removing a cloud region is not instantaneous**. The cloud region will be in status `destroying` for a few seconds/minutes before it is completely removed.
 :::
 
 <Tabs groupId="ash-console-client">
