@@ -100,7 +100,7 @@ ansible-playbook ash.avalanche.provision_nodes -i inventories/fuji-aws
 ```
 
 :::tip
-The [`inventories/fuji-aws/group_vars/avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/fuji-aws/group_vars/avalanche_nodes.yml) file holds the configuration for the `ash.avalanche.node` role. We only override the `avalanchego_version` and `avalanchego_network_id` variables, leaving the others as default. For a list of all available variables, see [ash.avalanche.node reference](../reference/roles/avalanche-node.md).
+The [`inventories/fuji-aws/group_vars/avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/fuji-aws/group_vars/avalanche_nodes.yml) file holds the configuration for the `ash.avalanche.node` role. We only override the `avalanchego_version` and `avalanchego_network_id` variables, leaving the others as default. For a list of all available variables, see [ash.avalanche.node reference](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-node).
 :::
 
 ## Monitor bootstrapping

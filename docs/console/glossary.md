@@ -81,13 +81,13 @@ A `Secret` is an encrypted piece of information which can be used in:
 - `Resource`s configuration keys
 - `CloudRegion`s creation
 - A `Secret` can be one of:
-  - `Generic`
-  - `NodeId`
-  - `Wallet`
-  - `AwsCredentials`
-  - `AzureCredentials`
-  - `GcpCredentials`
-  - `LxdCredentials` (Not implemented in alpha)
+  - `generic`: contains any arbitrary value
+  - `wallet`: contains a wallet's private key, used to sign transactions
+  - `nodeId`: contains a [NodeID](https://docs.avax.network/nodes/maintain/node-backup-and-restore#nodeid) with its related TLS certificate and key, used to spin up an Avalanche node
+  - `awsCredentials`: contains AWS credentials, used to manage resources in an AWS cloud region
+  - `azureCredentials`: contains Azure credentials, used to manage resources in an Azure cloud region
+  - `googleCredentials`: contains GCP credentials, used to manage resources in a Google cloud region
+  - `lxdCredentials` (Not implemented in alpha)
 
 A `Secret` can be used across `Project`s by multiple `Resource`s, and `CloudRegion`s.
 

@@ -36,7 +36,7 @@ ansible-playbook ash.avalanche.provision_nodes -i inventories/local
 ```
 
 :::tip
-The Ash team maintains a AvalancheGo / Ava Labs' VMs [compatibility matrix](../reference/roles/avalanche-node.md#supported-vms-and-avalanchego-compatibility) that keeps you from mistakenly add a VM that is not compatible with your current AvalancheGo version which could cause a critical node failure.
+The Ash team maintains a AvalancheGo / Ava Labs' VMs [compatibility matrix](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-node#supported-vms-and-avalanchego-compatibility) that keeps you from mistakenly add a VM that is not compatible with your current AvalancheGo version which could cause a critical node failure.
 :::
 
 The VM binary can then be found on the Avalanche node at `/opt/avalanche/avalanchego/current/plugins/`:
