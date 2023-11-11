@@ -421,8 +421,10 @@ To create a new `googleCredentials` secret, use the `create secret` command and 
 The `privateKey` can be provided as a PEM key file path (or as a base-64 encoded string):
 
 ```bash title="Command"
-ash console secret create '{"name": "my-google-credentials", "secretType": "googleCredentials", "projectId": "***", "clientEmail": "ash-console-creds-01@my-project.iam.gserviceaccount.com", "clientId": "***", "privateKey": "~/Downloads/ash-console-creds-01.key"}'
+ash console secret create '{"name": "my-google-credentials", "secretType": "googleCredentials", "projectId": "***", "clientEmail": "ash-console-creds-01@***.iam.gserviceaccount.com", "clientId": "***", "privateKey": "~/Downloads/ash-console-creds-01.key"}'
 ```
+
+**Note:** Make sure to replace `***` to the name of the Google Cloud project in which you created the service account in the `clientEmail` field.
 
 ```bash title="Output"
 Secret created successfully!
