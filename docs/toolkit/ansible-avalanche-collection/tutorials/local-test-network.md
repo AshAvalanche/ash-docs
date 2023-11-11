@@ -156,7 +156,7 @@ Different aspects of the installation can be customized:
 - To customize the VMs specs: edit [`terraform/multipass/main.tf`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/terraform/multipass/main.tf)
 - To customize AvalancheGo installation: edit the variables in [`inventories/local/group_vars/avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml).
 
-For a list of all available variables, see [ash.avalanche.node reference](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-node.md).
+For a list of all available variables, see [ash.avalanche.node reference](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-node).
 
 ## Use Multipass to manage the VMs
 

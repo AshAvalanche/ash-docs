@@ -1,11 +1,15 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Project Management
+
+:::caution
+The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+:::
 
 The first step for an Ash Console user is to create a [project](/docs/console/glossary#project): a logical set of [resources](/docs/console/glossary#resource) that are deployed in [cloud regions](/docs/console/glossary#cloud-region).
 
@@ -158,7 +162,7 @@ Project updated successfully!
   </TabItem>
   <TabItem value="ash-api" label="Using the Ash Console API">
 
-The only propery that can be updated is the project name by sending a `PATCH` the `projects/${projectId}` endpoint:
+The only propery that can be updated is the project name by sending a `PATCH` to the `projects/${projectId}` endpoint:
 
 ```bash title="Command"
 curl -X PATCH http://localhost:8080/projects/c84c4a2f-9a65-46a2-b7b9-be8eeceaa2b1 \
