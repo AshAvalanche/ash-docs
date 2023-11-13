@@ -9,4 +9,4 @@ sidebar_label: Overview
 🚧 Page under construction
 :::
 
-The Ash Console is the one-stop shop for Avalanche services management.
+The Ash Console is the one-stop shop for **Appchain development and operation** on Avalanche.

@@ -19,7 +19,7 @@ Manage Subnets and blockchains.
 
 ### Networks
 
-Ash supports running Avalanche validator nodes in a private network, on the Fuji testnet, or on the mainnet (only in the Pro plans).
+Ash supports running Avalanche validator nodes in a private devnet network, on the Fuji testnet, or on the mainnet (only for paid plans).
 
 ### Monitoring
 
@@ -56,10 +56,6 @@ Our service is infrastructure agnostic, use bare metal machines or BYOC (Bring Y
 ### Subnet benchmarking
 
 Stress test your Subnet with our customizable on-demand Subnet benchmarking tool.
-
-### RPC Auth
-
-Secure your validators or Subnets with an authentication layer. Define RBAC to control the access to the RPCs.
 
 :::info
 Most of the features powering the Ash Console are open-source as part of the [Ash toolkit](/docs/toolkit).

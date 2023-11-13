@@ -87,19 +87,14 @@ Each resource type has specific requirements, e.g. a `nodeId` secret is required
 {
   "name": "my-avalanche-node",
   "resourceType": "avalancheNode",
+  "cloudRegionId": "ff69b281-917e-4ebb-b1e0-f5dc1da297fa",
   "nodeIdSecretId": "4cc8f792-83af-475d-8be0-20c35efc1bd4",
   "size": "small",
   "nodeConfig": {
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": { "public-ip": "" }
+      "avalanchego_version": "1.10.10"
     }
   }
 }
@@ -129,15 +124,7 @@ ash console resource create '{
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version":"1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": {
-        "public-ip":""
-      }
+      "avalanchego_version":"1.10.10"
     }
   }
 }'
@@ -175,13 +162,7 @@ curl -X POST http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": { "public-ip": "" }
+      "avalanchego_version": "1.10.10"
     }
   }
 }'
@@ -204,15 +185,7 @@ curl -X POST http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": {
-        "public-ip": ""
-      }
+      "avalanchego_version": "1.10.10"
     }
   },
   "nodeStatus": {
@@ -232,16 +205,18 @@ curl -X POST http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0
   </TabItem>
 </Tabs>
 
+**Note:** See [Resource sizes](/docs/console/reference/resource-management#resource-sizes) for a list of available resource sizes.
+
 ## Get a resource and its status
 
 A resource can be in one of the following statuses:
 
-- `pending`
-- `running`
-- `configuring`
-- `stopped`
-- `error`
-- `destroying`
+- `pending`: the resource is pending for a machine to be allocated in the cloud region
+- `configuring`: the resource is being configured
+- `running`: the resource is running
+- `stopped`: the resource is stopped
+- `error`: the resource is in an error state
+- `destroying`: the resource is being destroyed
 
 <Tabs groupId="ash-console-client">
   <TabItem value="ash-cli" label="Using the Ash CLI" default>
@@ -292,15 +267,7 @@ curl http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resourc
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": {
-        "public-ip": ""
-      }
+      "avalanchego_version": "1.10.10"
     }
   },
   "nodeStatus": {
@@ -377,15 +344,7 @@ curl -X PATCH http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": {
-        "public-ip": ""
-      }
+      "avalanchego_version": "1.10.10"
     }
   },
   "nodeStatus": {
@@ -462,15 +421,7 @@ curl -X POST http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": {
-        "public-ip": ""
-      }
+      "avalanchego_version": "1.10.10"
     }
   },
   "nodeStatus": {
@@ -518,7 +469,7 @@ curl -X DELETE http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babf
   -H "Authorization: Bearer ${access_token}"
 ```
 
-```bash title="Output"
+```json title="Output"
 {
   "id": "157f2652-8282-4738-937f-b11e8dcb7f38",
   "cloudRegionId": "ff69b281-917e-4ebb-b1e0-f5dc1da297fa",
@@ -535,15 +486,7 @@ curl -X DELETE http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babf
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": {
-        "public-ip": ""
-      }
+      "avalanchego_version": "1.10.10"
     }
   },
   "nodeStatus": {
@@ -562,3 +505,15 @@ curl -X DELETE http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babf
 
   </TabItem>
 </Tabs>
+
+## Resource sizes
+
+The `size` property of a resource is used to determine **the machine type** to use. The available sizes depend on the cloud provider.
+
+Here are the available sizes and their corresponding machine types in each cloud provider:
+
+| Size     | RAM  | CPU | Disk     | Azure VM type   | AWS EC2 instance type | GCP machine type |
+| -------- | ---- | --- | -------- | --------------- | --------------------- | ---------------- |
+| `small`  | 1GB  | 1   | 50 GiB   | `Standard_B1s`  | `t2.micro`            | `e2-micro`       |
+| `medium` | 4GB  | 2   | 200 GiB  | `Standard_B2s`  | `t2.medium`           | `e2-medium`      |
+| `large`  | 32GB | 8   | 1000 GiB | `Standard_B8ms` | `t2.2xlarge`          | `e2-standard-8`  |

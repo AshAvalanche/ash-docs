@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Introduction
 
-The Ash CLI aims to **boost Avalanche developers' productivity** by providing a set of commands to interact with Avalanche.
+The Ash CLI aims to **boost Avalanche developers' productivity** by providing a set of commands to interact with Avalanche and Ash services.
 
 ## Features
 
