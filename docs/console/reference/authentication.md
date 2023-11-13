@@ -35,9 +35,9 @@ ash console auth login
 The CLI will prompt you an URL and a code to enter in the browser:
 
 ```bash title="Prompt"
-Logging in to the Ash Console at http://localhost:8080
+Logging in to the Ash Console at https://api.console.ash.center
 Please open the following URL in your browser:
-http://localhost:8090/realms/jeeo/device
+https://auth.console.ash.center/realms/jeeo/device
 and enter the code: CGAX-GSVT
 ```
 
@@ -66,7 +66,7 @@ curl -X POST -d "client_id=cf83e1357eefb8bd" \
   -d "username=alice" \
   -d "password=password4alice" \
   -d "grant_type=password" \
-  "http://localhost:8090/realms/jeeo/protocol/openid-connect/token" | jq
+  "https://auth.console.ash.center/realms/jeeo/protocol/openid-connect/token" | jq
 ```
 
 The `access_token` has to be used in the `Authorization` header of Ash Console API requests:
@@ -82,7 +82,7 @@ You can use the `refresh_token` to get a new `access_token` when the current one
 curl -X POST -d "client_id=cf83e1357eefb8bd" \
   -d "refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3NGY4MzgyYi00NTVkLTQ1Y2QtODA3NS05YmZkM2Q4ZjZlYWEifQ.eyJleHAiOjE2OTgyMDQ2NTIsImlhdCI6MTY5ODE2ODY1MiwianRpIjoiMmQ1MTA1YzgtNWRkNy00OWFjLThlZmItOTY4ZjlkNjBjYTY4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDkwL3JlYWxtcy9qZWVvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDkwL3JlYWxtcy9qZWVvIiwic3ViIjoiMjg3MDkwZWUtN2ZhZS00YmQ3LTkyNjMtZDY5MDk1OWVkYzI2IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImNmODNlMTM1N2VlZmI4YmQiLCJzZXNzaW9uX3N0YXRlIjoiMWY1Yjk3MmMtMWZlMC00MjU0LTlmMTctNjNkZmM1YTZkYTViIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiMWY1Yjk3MmMtMWZlMC00MjU0LTlmMTctNjNkZmM1YTZkYTViIn0.lKbwKZwqMLqk-K6T_iLwT-b3zw80Q1cOSuAgy0wEt2w" \
   -d "grant_type=refresh_token" \
-  "http://localhost:8090/realms/jeeo/protocol/openid-connect/token" | jq
+  "https://auth.console.ash.center/realms/jeeo/protocol/openid-connect/token" | jq
 ```
 
 :::note
@@ -107,7 +107,7 @@ ash console auth show-token
 ```
 
 ```bash title="Output"
-Showing access token for the Ash Console at http://localhost:8080
+Showing access token for the Ash Console at https://api.console.ash.center
 Access token (valid):
 eyJ...WcA
 ```
@@ -119,7 +119,7 @@ ash console auth refresh-token
 ```
 
 ```bash title="Output"
-Refreshing access token for the Ash Console at http://localhost:8080
+Refreshing access token for the Ash Console at https://api.console.ash.center
 
 Access token refreshed successfully!
 ```

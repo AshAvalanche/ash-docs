@@ -60,7 +60,7 @@ See [Authentication](/docs/console/tutorials/authentication?ash-console-auth-cli
 The secret API endpoint is `/secrets`.:
 
 ```bash title="Command"
-curl http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources \
+curl https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources \
   -H "Authorization: Bearer ${access_token}"
 ```
 
@@ -149,7 +149,7 @@ Resource successfully created in project '399b6f5b-eed2-4713-8b68-993643babfd0'!
 To create a new resource, you have to send a `POST` request with the required secret properties as JSON:
 
 ```bash title="Command"
-curl -X POST http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources \
+curl -X POST https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{
@@ -246,7 +246,7 @@ Resource '70877036-e8df-4ad3-af95-c0f085a094a6' of project '399b6f5b-eed2-4713-8
 You can get information about a resource, including its status by sending a `GET` to the `projects/${projectId}/resources/${resourceId}` endpoint:
 
 ```bash title="Command"
-curl http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
+curl https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
   -H "Authorization: Bearer ${access_token}"
 ```
 
@@ -321,7 +321,7 @@ Resource updated successfully!
 The properties that can be updated **depend on the resource type**. For example, you can update an `avalancheNode` resource's `name` and `nodeConfig` by sending a `PATCH` to the `projects/${projectId}/resources/${resourceId}` endpoint:
 
 ```bash title="Command"
-curl -X PATCH http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
+curl -X PATCH https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{"name": "my-avalanche-node-v2"}'
@@ -400,7 +400,7 @@ Resource updated successfully!
 A resource can be restarted by sending a `POST` to the `projects/${projectId}/resources/${resourceId}/restart` endpoint:
 
 ```bash title="Command"
-curl -X POST http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38/restart \
+curl -X POST https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38/restart \
   -H "Authorization: Bearer ${access_token}"
 ```
 
@@ -465,7 +465,7 @@ Resource deleted successfully!
   <TabItem value="ash-api" label="Using the Ash Console API">
 
 ```bash title="Command"
-curl -X DELETE http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
+curl -X DELETE https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
   -H "Authorization: Bearer ${access_token}"
 ```
 
