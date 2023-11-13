@@ -39,13 +39,13 @@ ash console project list
   <TabItem value="ash-api" label="Using the Ash Console API">
 
 :::tip
-See [Authentication](/docs/console/tutorials/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
+See [Authentication](/docs/console/reference/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
 :::
 
 The project API endpoint is `/projects`.:
 
 ```bash title="Command"
-curl http://localhost:8080/projects \
+curl https://api.console.ash.center/projects \
   -H "Authorization: Bearer ${access_token}"
 ```
 
@@ -84,7 +84,7 @@ Switched to project 'my-devnet-project' (1c464e44-1e2c-46de-a08c-79ac58f6e632)!
 To create a new project, you have to send a `POST` request with the required project properties as JSON:
 
 ```bash title="Command"
-curl -X POST http://localhost:8080/projects \
+curl -X POST https://api.console.ash.center/projects \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{"name": "my-devnet-project", "network": "local"}'
@@ -165,7 +165,7 @@ Project updated successfully!
 The only propery that can be updated is the project name by sending a `PATCH` to the `projects/${projectId}` endpoint:
 
 ```bash title="Command"
-curl -X PATCH http://localhost:8080/projects/c84c4a2f-9a65-46a2-b7b9-be8eeceaa2b1 \
+curl -X PATCH https://api.console.ash.center/projects/c84c4a2f-9a65-46a2-b7b9-be8eeceaa2b1 \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{"name": "my-devnet-project-updated"}'
@@ -209,7 +209,7 @@ Project deleted successfully!
   <TabItem value="ash-api" label="Using the Ash Console API">
 
 ```bash title="Command"
-curl -X DELETE http://localhost:8080/projects/c84c4a2f-9a65-46a2-b7b9-be8eeceaa2b1 \
+curl -X DELETE https://api.console.ash.center/projects/c84c4a2f-9a65-46a2-b7b9-be8eeceaa2b1 \
   -H "Authorization: Bearer ${access_token}"
 ```
 

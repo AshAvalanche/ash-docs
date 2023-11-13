@@ -326,13 +326,13 @@ Secret created successfully!
 <TabItem value="ash-api" label="Using the Ash Console API">
 
 :::tip
-See [Authentication](/docs/console/tutorials/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
+See [Authentication](/docs/console/reference/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
 :::
 
 To create a new `awsCredentials` secret, you have to send a `POST` request with the required secret properties as JSON:
 
 ```bash title="Command"
-curl -X POST http://localhost:8080/secrets \
+curl -X POST https://api.console.ash.center/secrets \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{"name": "my-aws-credentials", "secretType": "awsCredentials", "accessKey": "***", "secretKey": "***"}'
@@ -381,13 +381,13 @@ Secret created successfully!
 <TabItem value="ash-api" label="Using the Ash Console API">
 
 :::tip
-See [Authentication](/docs/console/tutorials/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
+See [Authentication](/docs/console/reference/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
 :::
 
 To create a new `azureCredentials` secret, you have to send a `POST` request with the required secret properties as JSON:
 
 ```bash title="Command"
-curl -X POST http://localhost:8080/secrets \
+curl -X POST https://api.console.ash.center/secrets \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{"name": "my-azure-credentials", "secretType": "azureCredentials", "subscriptionId": "4f23aeac-34f9-4f26-9d52-44d6ca1f1abc", "applicationId": "6c6d0fa9-6f58-46f7-88c9-5248450147dc", "applicationPassword": "***"}'
@@ -439,7 +439,7 @@ Secret created successfully!
 <TabItem value="ash-api" label="Using the Ash Console API">
 
 :::tip
-See [Authentication](/docs/console/tutorials/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
+See [Authentication](/docs/console/reference/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
 :::
 
 To create a new `googleCredentials` secret, you have to send a `POST` request with the required secret properties as JSON.
@@ -450,7 +450,7 @@ The `privateKey` can be provided as a base-64 encoded string:
 # Encode the private key as a base-64 string
 export google_key=$(cat ~/Downloads/ash-console-creds-01.key | base64 -w 0)
 
-curl -X POST http://localhost:8080/secrets \
+curl -X POST https://api.console.ash.center/secrets \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d "{\"name\": \"my-google-credentials\", \"secretType\": \"googleCredentials\", \"projectId\": \"***\", \"clientEmail\": \"ash-console-creds-01@my-project.iam.gserviceaccount.com\", \"clientId\": \"***\", \"privateKey\": \"${google_key}\"}"

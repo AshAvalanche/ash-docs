@@ -43,13 +43,13 @@ ash console secret list
   <TabItem value="ash-api" label="Using the Ash Console API">
 
 :::tip
-See [Authentication](/docs/console/tutorials/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
+See [Authentication](/docs/console/reference/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
 :::
 
 The secret API endpoint is `/secrets`.:
 
 ```bash title="Command"
-curl http://localhost:8080/secrets \
+curl https://api.console.ash.center/secrets \
   -H "Authorization: Bearer ${access_token}"
 ```
 
@@ -90,7 +90,7 @@ Secret created successfully!
 To create a new secret, you have to send a `POST` request with the required secret properties as JSON:
 
 ```bash title="Command"
-curl -X POST http://localhost:8080/secrets \
+curl -X POST https://api.console.ash.center/secrets \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{"name": "my-secret", "secretType": "generic", "content": "***"}'
@@ -137,7 +137,7 @@ Secret updated successfully!
 The properties that can be updated **depend on the secret type**. For example, you can update a `generic` secret's `name` and `content` by sending a `PATCH` to the `secrets/${secretId}` endpoint:
 
 ```bash title="Command"
-curl -X PATCH http://localhost:8080/secrets/465a6c24-5640-46d4-963f-98c0990484e1 \
+curl -X PATCH https://api.console.ash.center/secrets/465a6c24-5640-46d4-963f-98c0990484e1 \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{"name": "my-secret-updated", "content": "****"}'
@@ -182,7 +182,7 @@ Secret deleted successfully!
   <TabItem value="ash-api" label="Using the Ash Console API">
 
 ```bash title="Command"
-curl -X DELETE http://localhost:8080/secrets/465a6c24-5640-46d4-963f-98c0990484e1 \
+curl -X DELETE https://api.console.ash.center/secrets/465a6c24-5640-46d4-963f-98c0990484e1 \
   -H "Authorization: Bearer ${access_token}"
 ```
 

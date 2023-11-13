@@ -50,13 +50,13 @@ Cloud regions of project 'f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b':
   <TabItem value="ash-api" label="Using the Ash Console API">
 
 :::tip
-See [Authentication](/docs/console/tutorials/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
+See [Authentication](/docs/console/reference/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
 :::
 
 The secret API endpoint is `/project/${projectId}/regions`.:
 
 ```bash title="Command"
-curl http://localhost:8080/projects/f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b/regions \
+curl https://api.console.ash.center/projects/f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b/regions \
   -H "Authorization: Bearer ${access_token}"
 ```
 
@@ -101,7 +101,7 @@ Use `ash console region available` to get the list of regions available for each
 To create a new secret, you have to send a `POST` request with the required secret properties as JSON:
 
 ```bash title="Command"
-curl -X POST http://localhost:8080/projects/f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b/regions \
+curl -X POST https://api.console.ash.center/projects/f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b/regions \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{"cloudProvider": "aws", "region": "us-east-2", "cloudCredentialsSecretId": "4447cba1-e43c-45a4-8a9d-dbebef81bac1"}'
@@ -158,7 +158,7 @@ Cloud region removed successfully!
 The `/` in the region name is replaced with `_` in the API endpoint:
 
 ```bash title="Command"
-curl -X DELETE http://localhost:8080/projects/f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b/regions/aws_us-east-2 \
+curl -X DELETE https://api.console.ash.center/projects/f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b/regions/aws_us-east-2 \
   -H "Authorization: Bearer ${access_token}"
 ```
 

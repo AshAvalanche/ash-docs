@@ -54,13 +54,13 @@ Resources of project '399b6f5b-eed2-4713-8b68-993643babfd0':
   <TabItem value="ash-api" label="Using the Ash Console API">
 
 :::tip
-See [Authentication](/docs/console/tutorials/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
+See [Authentication](/docs/console/reference/authentication?ash-console-auth-client=ash-api) for more information on how to get an access token.
 :::
 
 The secret API endpoint is `/secrets`.:
 
 ```bash title="Command"
-curl http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources \
+curl https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources \
   -H "Authorization: Bearer ${access_token}"
 ```
 
@@ -87,19 +87,14 @@ Each resource type has specific requirements, e.g. a `nodeId` secret is required
 {
   "name": "my-avalanche-node",
   "resourceType": "avalancheNode",
+  "cloudRegionId": "ff69b281-917e-4ebb-b1e0-f5dc1da297fa",
   "nodeIdSecretId": "4cc8f792-83af-475d-8be0-20c35efc1bd4",
   "size": "small",
   "nodeConfig": {
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": { "public-ip": "" }
+      "avalanchego_version": "1.10.10"
     }
   }
 }
@@ -129,15 +124,7 @@ ash console resource create '{
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version":"1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": {
-        "public-ip":""
-      }
+      "avalanchego_version":"1.10.10"
     }
   }
 }'
@@ -162,7 +149,7 @@ Resource successfully created in project '399b6f5b-eed2-4713-8b68-993643babfd0'!
 To create a new resource, you have to send a `POST` request with the required secret properties as JSON:
 
 ```bash title="Command"
-curl -X POST http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources \
+curl -X POST https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{
@@ -175,13 +162,7 @@ curl -X POST http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": { "public-ip": "" }
+      "avalanchego_version": "1.10.10"
     }
   }
 }'
@@ -204,15 +185,7 @@ curl -X POST http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": {
-        "public-ip": ""
-      }
+      "avalanchego_version": "1.10.10"
     }
   },
   "nodeStatus": {
@@ -232,16 +205,18 @@ curl -X POST http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0
   </TabItem>
 </Tabs>
 
+**Note:** See [Resource sizes](/docs/console/reference/resource-management#resource-sizes) for a list of available resource sizes.
+
 ## Get a resource and its status
 
 A resource can be in one of the following statuses:
 
-- `pending`
-- `running`
-- `configuring`
-- `stopped`
-- `error`
-- `destroying`
+- `pending`: the resource is pending for a machine to be allocated in the cloud region
+- `configuring`: the resource is being configured
+- `running`: the resource is running
+- `stopped`: the resource is stopped
+- `error`: the resource is in an error state
+- `destroying`: the resource is being destroyed
 
 <Tabs groupId="ash-console-client">
   <TabItem value="ash-cli" label="Using the Ash CLI" default>
@@ -271,7 +246,7 @@ Resource '70877036-e8df-4ad3-af95-c0f085a094a6' of project '399b6f5b-eed2-4713-8
 You can get information about a resource, including its status by sending a `GET` to the `projects/${projectId}/resources/${resourceId}` endpoint:
 
 ```bash title="Command"
-curl http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
+curl https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
   -H "Authorization: Bearer ${access_token}"
 ```
 
@@ -292,15 +267,7 @@ curl http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resourc
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": {
-        "public-ip": ""
-      }
+      "avalanchego_version": "1.10.10"
     }
   },
   "nodeStatus": {
@@ -354,7 +321,7 @@ Resource updated successfully!
 The properties that can be updated **depend on the resource type**. For example, you can update an `avalancheNode` resource's `name` and `nodeConfig` by sending a `PATCH` to the `projects/${projectId}/resources/${resourceId}` endpoint:
 
 ```bash title="Command"
-curl -X PATCH http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
+curl -X PATCH https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{"name": "my-avalanche-node-v2"}'
@@ -377,15 +344,7 @@ curl -X PATCH http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": {
-        "public-ip": ""
-      }
+      "avalanchego_version": "1.10.10"
     }
   },
   "nodeStatus": {
@@ -441,7 +400,7 @@ Resource updated successfully!
 A resource can be restarted by sending a `POST` to the `projects/${projectId}/resources/${resourceId}/restart` endpoint:
 
 ```bash title="Command"
-curl -X POST http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38/restart \
+curl -X POST https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38/restart \
   -H "Authorization: Bearer ${access_token}"
 ```
 
@@ -462,15 +421,7 @@ curl -X POST http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": {
-        "public-ip": ""
-      }
+      "avalanchego_version": "1.10.10"
     }
   },
   "nodeStatus": {
@@ -514,11 +465,11 @@ Resource deleted successfully!
   <TabItem value="ash-api" label="Using the Ash Console API">
 
 ```bash title="Command"
-curl -X DELETE http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
+curl -X DELETE https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
   -H "Authorization: Bearer ${access_token}"
 ```
 
-```bash title="Output"
+```json title="Output"
 {
   "id": "157f2652-8282-4738-937f-b11e8dcb7f38",
   "cloudRegionId": "ff69b281-917e-4ebb-b1e0-f5dc1da297fa",
@@ -535,15 +486,7 @@ curl -X DELETE http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babf
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
       "avalanchego_network_id": "local",
-      "avalanchego_version": "1.10.10",
-      "avalanchego_http_host": "0.0.0.0",
-      "avalanchego_http_port": 9650,
-      "avalanchego_staking_port": 9651,
-      "avalanchego_staking_use_local_certs": true,
-      "avalanchego_staking_local_certs_dir": "{{inventory_dir}}/../files/staking",
-      "avalanchego_node_json": {
-        "public-ip": ""
-      }
+      "avalanchego_version": "1.10.10"
     }
   },
   "nodeStatus": {
@@ -562,3 +505,15 @@ curl -X DELETE http://localhost:8080/projects/399b6f5b-eed2-4713-8b68-993643babf
 
   </TabItem>
 </Tabs>
+
+## Resource sizes
+
+The `size` property of a resource is used to determine **the machine type** to use. The available sizes depend on the cloud provider.
+
+Here are the available sizes and their corresponding machine types in each cloud provider:
+
+| Size     | RAM  | CPU | Disk     | Azure VM type   | AWS EC2 instance type | GCP machine type |
+| -------- | ---- | --- | -------- | --------------- | --------------------- | ---------------- |
+| `small`  | 1GB  | 1   | 50 GiB   | `Standard_B1s`  | `t2.micro`            | `e2-micro`       |
+| `medium` | 4GB  | 2   | 200 GiB  | `Standard_B2s`  | `t2.medium`           | `e2-medium`      |
+| `large`  | 32GB | 8   | 1000 GiB | `Standard_B8ms` | `t2.2xlarge`          | `e2-standard-8`  |
