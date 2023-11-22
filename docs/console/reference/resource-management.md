@@ -93,7 +93,6 @@ Each resource type has specific requirements, e.g. a `nodeId` secret is required
   "nodeConfig": {
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
-      "avalanchego_network_id": "local",
       "avalanchego_version": "1.10.10"
     }
   }
@@ -123,7 +122,6 @@ ash console resource create '{
   "nodeConfig": {
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
-      "avalanchego_network_id": "local",
       "avalanchego_version":"1.10.10"
     }
   }
@@ -161,7 +159,6 @@ curl -X POST https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993
   "nodeConfig": {
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
-      "avalanchego_network_id": "local",
       "avalanchego_version": "1.10.10"
     }
   }
@@ -184,7 +181,6 @@ curl -X POST https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993
     "ansibleAvalancheCollectionVersion": "v0.8.9",
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
-      "avalanchego_network_id": "local",
       "avalanchego_version": "1.10.10"
     }
   },
@@ -266,7 +262,6 @@ curl https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd
     "ansibleAvalancheCollectionVersion": "v0.8.9",
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
-      "avalanchego_network_id": "local",
       "avalanchego_version": "1.10.10"
     }
   },
@@ -343,7 +338,6 @@ curl -X PATCH https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-99
     "ansibleAvalancheCollectionVersion": "v0.8.9",
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
-      "avalanchego_network_id": "local",
       "avalanchego_version": "1.10.10"
     }
   },
@@ -420,7 +414,6 @@ curl -X POST https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993
     "ansibleAvalancheCollectionVersion": "v0.8.9",
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
-      "avalanchego_network_id": "local",
       "avalanchego_version": "1.10.10"
     }
   },
@@ -485,7 +478,6 @@ curl -X DELETE https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-9
     "ansibleAvalancheCollectionVersion": "v0.8.9",
     "isBootstrapNode": true,
     "avalancheNodeConfig": {
-      "avalanchego_network_id": "local",
       "avalanchego_version": "1.10.10"
     }
   },
@@ -510,10 +502,12 @@ curl -X DELETE https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-9
 
 The `size` property of a resource is used to determine **the machine type** to use. The available sizes depend on the cloud provider.
 
-Here are the available sizes and their corresponding machine types in each cloud provider:
+Here are the available sizes per resource type and their corresponding machine types in each cloud provider:
 
-| Size     | RAM  | CPU | Disk     | Azure VM type   | AWS EC2 instance type | GCP machine type |
-| -------- | ---- | --- | -------- | --------------- | --------------------- | ---------------- |
-| `small`  | 1GB  | 1   | 50 GiB   | `Standard_B1s`  | `t2.micro`            | `e2-micro`       |
-| `medium` | 4GB  | 2   | 200 GiB  | `Standard_B2s`  | `t2.medium`           | `e2-medium`      |
-| `large`  | 32GB | 8   | 1000 GiB | `Standard_B8ms` | `t2.2xlarge`          | `e2-standard-8`  |
+### AvalancheNode
+
+| Size     | RAM   | CPU | Disk                                    | Azure VM type   | AWS EC2 instance type | GCP machine type |
+| -------- | ----- | --- | --------------------------------------- | --------------- | --------------------- | ---------------- |
+| `small`  | 1-2GB | 1-2 | 8-32 (OS) + 50 GiB (resource storage)   | `Standard_B1s`  | `t2.micro`            | `e2-small`       |
+| `medium` | 4GB   | 2   | 8-32 (OS) + 200 GiB (resource storage)  | `Standard_B2s`  | `t2.medium`           | `e2-medium`      |
+| `large`  | 32GB  | 8   | 8-32 (OS) + 1000 GiB (resource storage) | `Standard_B8ms` | `t2.2xlarge`          | `e2-standard-8`  |

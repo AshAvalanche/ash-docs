@@ -21,9 +21,7 @@ We can finally deploy our Avalanche node [resource](/docs/console/glossary#resou
      "nodeIdSecretId": "0b3ab7f4-c355-4971-b9d1-74f67414abc0",
      "size": "medium",
      "nodeConfig": {
-       "isBootstrapNode": true,
        "avalancheNodeConfig": {
-         "avalanchego_network_id": "fuji",
          "avalanchego_version":"1.10.12"
        }
      }
@@ -44,6 +42,8 @@ We can finally deploy our Avalanche node [resource](/docs/console/glossary#resou
    ```
 
    **Note:** By default, [state sync](https://docs.avax.network/nodes/configure/chain-config-flags#state-sync) is enabled on the C-Chain.
+
+   **Note:** See [Resource sizes](/docs/console/reference/resource-management#resource-sizes) for available resource sizes.
 
 3. It will take some time before the node is `Bootstrapped` and `Healthy`. You can get its updated status with the `console resource info` command:
 
