@@ -67,19 +67,19 @@ const config = {
             type: "doc",
             docId: "console/index",
             position: "left",
-            label: "Console docs",
+            label: "Console Docs",
           },
           {
             type: "doc",
             docId: "toolkit/index",
             position: "left",
-            label: "Toolkit docs",
+            label: "Toolkit Docs",
           },
           {
             type: "doc",
             docId: "professional-services/index",
             position: "left",
-            label: "Professional services",
+            label: "Professional Services",
           },
           {
             href: "https://ashavax.hashnode.dev",
@@ -90,19 +90,19 @@ const config = {
             href: "https://github.com/AshAvalanche/ash-docs",
             position: "right",
             className: "header-github-link",
-            "aria-label": "GitHub repository",
+            "aria-label": "GitHub Repository",
           },
           {
             href: "https://twitter.com/ash_avax",
             position: "right",
             className: "header-twitter-link",
-            "aria-label": "Twitter account",
+            "aria-label": "Twitter Account",
           },
           {
             href: "https://discord.gg/7xSEzC2n7v",
             position: "right",
             className: "header-discord-link",
-            "aria-label": "Discord server",
+            "aria-label": "Discord Server",
           },
           {
             href: "https://linktr.ee/ash.center",
@@ -126,7 +126,7 @@ const config = {
                 to: "/docs/toolkit",
               },
               {
-                label: "Professional services",
+                label: "Professional Services",
                 to: "/docs/professional-services",
               },
             ],
@@ -154,6 +154,15 @@ const config = {
               {
                 label: "YouTube",
                 href: "https://www.youtube.com/@ash_avax",
+              },
+            ],
+          },
+          {
+            title: "Legal",
+            items: [
+              {
+                label: "General Conditions of Use",
+                to: "/docs/terms-and-conditions/general-conditions-of-use",
               },
             ],
           },
