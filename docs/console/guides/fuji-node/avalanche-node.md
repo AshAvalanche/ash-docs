@@ -10,7 +10,7 @@ The Ash Console is currently in alpha and **not production-ready**. It is under 
 
 We can finally deploy our Avalanche node [resource](/docs/console/glossary#resource)!
 
-1. Gather the node ID secret ID and cloud credentials secret ID from the previous steps.
+1. Gather the node ID secret ID and cloud region ID from the previous steps.
 2. Create the `avalancheNode` resource with the `console resource create` command:
 
    ```bash title="Command"
