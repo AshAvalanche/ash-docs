@@ -17,7 +17,7 @@ Always make sure you have the latest version of the collection installed. See [I
 ## Install a VM
 
 :::note
-For now only the [Subnet EVM](https://github.com/ava-labs/subnet-evm) is supported by the collection.
+For now only the [Subnet EVM](https://github.com/ava-labs/subnet-evm) is supported by the collection, see section [Install a custom VM](#install-a-custom-vm) if you want to use the collection to install your own VM.
 :::
 
 The VMs are managed by the `avalanchego_vms_install` role variable which is empty by default ([`avalanchego_vms_install: []`](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/roles/node/defaults/main.yml#L42)).
@@ -92,3 +92,53 @@ lrwxrwxrwx 1 root      root        58 Jul 25 11:22 subnet-evm -> /opt/avalanche/
 ## Uninstall a VM
 
 Uninstalling a VM can be done by removing it from the `avalanchego_vms_install` variable and re-running the `provision_nodes` playbook.
+
+## Install a custom VM
+
+You can use the Ansible Avalanche Collection to install your own VMs by extending the [compatibility matrix](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-node#supported-vms-and-avalanchego-compatibility).
+
+In this example, we will add [Movement Labs](https://movementlabs.xyz/)'s [M1](https://github.com/movemntdev/M1), a VM bringing an [Aptos](https://aptoslabs.com/)-compatible blockchain for the Subnet ecosystem.
+
+```yaml
+# List of VMs supported by the collection
+avalanchego_vms_list:
+  m1:
+    download_url: https://github.com/AshAvalanche/M1/releases/download
+    id: qCP4kDnEWVorqyoUmcAtAmJybm8gXZzhHZ7pZibrJJEWECooU
+    ash_vm_type: Custom
+    aliases:
+      - m1
+    versions_comp:
+      0.1.0:
+        ge: 1.10.9
+        le: 1.10.12
+```
+
+Here are some details about the variables:
+- `m1`: The name of the VM.
+- `download_url`: URL where the VM binary archive and checksum can be downloaded from.
+- `id`: The VM ID (see [Installing a VM](https://docs.avax.network/build/vm/intro#installing-a-vm)).
+- `ash_vm_type`: The VM type used by the [Ash CLI](/docs/toolkit/ash-cli/introduction). `Custom` for a custom VM.
+- `aliases`: Used by the collection to template the `aliases.json` file. See [VM Aliases](https://docs.avax.network/build/vm/create/golang-vm-simple#vm-aliases).
+- `versions_comp`: AvalancheGo version boundaries for which the VM is compatible. `le` is for "less or equal" and `ge` for "greater or equal".
+
+:::tip
+By defining the `m1` VM with the variables above, the collection will download the VM binary archive from `https://github.com/AshAvalanche/M1/releases/download/v0.1.0/m1_0.1.0_linux_amd64.tar.gz`, validate its SHA-256 checksum with `https://github.com/AshAvalanche/M1/releases/download/v0.1.0/m1_0.1.0_checksums.txt` and extract the `m1` VM binary.
+:::
+
+With the example above, we can now install the M1 VM to our nodes by adding the following to [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml):
+
+```yml title="inventories/local/group_vars/avalanche_nodes.yml"
+avalanchego_vms_install:
+  - m1=0.1.0
+```
+
+We can then install this VM to all the nodes defined in our Ansible inventory by running the `provision_nodes` playbook again:
+
+```bash
+ansible-playbook ash.avalanche.provision_nodes -i inventories/local
+```
+
+:::caution
+For security reasons, the collection will checksum test the downloaded VM. The checksum file must be available at the same location as the VM binary archive. The standard follows is the same as Ava Lab's [Subnet EVM](https://github.com/ava-labs/subnet-evm) (see release [v0.5.3](https://github.com/ava-labs/subnet-evm/releases/tag/v0.5.3) for an example.).
+:::
