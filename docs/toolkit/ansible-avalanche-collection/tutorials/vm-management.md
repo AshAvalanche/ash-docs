@@ -97,7 +97,9 @@ Uninstalling a VM can be done by removing it from the `avalanchego_vms_install` 
 
 You can use the Ansible Avalanche Collection to install your own VMs by extending the [compatibility matrix](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-node#supported-vms-and-avalanchego-compatibility).
 
-In this example, we will add [Movement Labs](https://movementlabs.xyz/)'s [M1](https://github.com/movemntdev/M1), a VM bringing an [Aptos](https://aptoslabs.com/)-compatible blockchain for the Subnet ecosystem.
+In this example, we will add [Movement Labs](https://movementlabs.xyz/)'s [M1](https://github.com/movemntdev/M1), a VM bringing an [Aptos](https://aptoslabs.com/)-compatible blockchain to the Subnet ecosystem.
+
+The compatibility matrix is managed by the `avalanchego_vms_list` role variable. We can extend the list by adding the following to [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml).
 
 ```yaml
 # List of VMs supported by the collection
