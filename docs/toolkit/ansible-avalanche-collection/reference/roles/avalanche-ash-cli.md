@@ -13,6 +13,8 @@ This Ansible role allows to install and configure the [Ash CLI](/docs/toolkit/as
 | `ash_cli_version`            | CLI version                                                                                                               | `0.1.1`                          |
 | `ash_cli_install_dir`        | Base directory to install CLI                                                                                             | `/opt/avalanche/ash-cli`         |
 | `ash_cli_conf_dir`           | Where to store the default CLI configuration                                                                              | `/etc/avalanche/ash-cli/conf`    |
+| `ash_cli_owner`              | The user of the Ash Cli dirs and binary                                                                                   | `root`                           |
+| `ash_cli_group`              | The group of the Ash Cli dirs and binary                                                                                  | `root`                           |
 | `avalanche_network_id`       | The default network of the CLI. Can be `fuji`, `mainnet` or `local`.                                                      | `fuji`                           |
 | `avalanche_pchain_local_url` | If `avalanche_network_id` is `local`, this URL will be used as `rpcUrl` for the P-Chain in the CLI default configuration. | `http://127.0.0.1:9650/ext/bc/P` |
 | `ash_cli_custom_networks`    | Custom networks to add to the CLI configuration. See [Custom networks](#custom-networks).                                 | NA                               |
