@@ -108,8 +108,7 @@ avalanchego_vms_list:
     download_url: https://github.com/AshAvalanche/M1/releases/download
     id: qCP4kDnEWVorqyoUmcAtAmJybm8gXZzhHZ7pZibrJJEWECooU
     ash_vm_type: Custom
-    aliases:
-      - m1
+    binary_filename: m1
     versions_comp:
       0.1.0:
         ge: 1.10.9
@@ -117,11 +116,12 @@ avalanchego_vms_list:
 ```
 
 Here are some details about the variables:
+
 - `m1`: The name of the VM.
 - `download_url`: URL where the VM binary archive and checksum can be downloaded from.
 - `id`: The VM ID (see [Installing a VM](https://docs.avax.network/build/vm/intro#installing-a-vm)).
 - `ash_vm_type`: The VM type used by the [Ash CLI](/docs/toolkit/ash-cli/introduction). `Custom` for a custom VM.
-- `aliases`: Used by the collection to template the `aliases.json` file. See [VM Aliases](https://docs.avax.network/build/vm/create/golang-vm-simple#vm-aliases).
+- `binary_filename`: The name of the VM binary (will be used to generate the archive filename, the checksum filename and the extracted binary filename)
 - `versions_comp`: AvalancheGo version boundaries for which the VM is compatible. `le` is for "less or equal" and `ge` for "greater or equal".
 
 :::tip
