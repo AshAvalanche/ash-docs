@@ -72,7 +72,7 @@ A secret **sensitive values can never be retrieved** from the Ash Console! Make 
 To create a new secret, use the `create secret` command and provide the required secret properties as JSON:
 
 ```bash title="Command"
-ash console secret create '{"name": "my-secret", "secretType": "generic", "content": "***"}'
+ash console secret create '{name: my-secret, secretType: generic, content: "***"}'
 ```
 
 ```bash title="Output"
@@ -113,13 +113,17 @@ curl -X POST https://api.console.ash.center/secrets \
 
 ## Update a secret
 
+:::tip
+You can also provide the secret name instead of its ID.
+:::
+
 <Tabs groupId="ash-console-client">
   <TabItem value="ash-cli" label="Using the Ash CLI" default>
 
 The properties that can be updated **depend on the secret type**. For example, you can update a `generic` secret's `name` and `content`:
 
 ```bash title="Command"
-ash console secret update ed8a3653-b6cc-4cd4-899f-ceee4159f545 '{"name": "my-secret-updated", "content": "****"}'
+ash console secret update ed8a3653-b6cc-4cd4-899f-ceee4159f545 '{name: my-secret-updated, content: "****"}'
 ```
 
 ```bash title="Output"
@@ -170,7 +174,7 @@ Deleting a secret is not allowed if it used by another entity.
 The CLI will ask for confirmation before deleting the secret. To skip the confirmation, use the `--yes` flag.
 
 ```bash title="Command"
-ash console secret delete ed8a3653-b6cc-4cd4-899f-ceee4159f545
+ash console secret delete my-secret-updated
 ```
 
 ```bash title="Output"
@@ -182,7 +186,7 @@ Secret deleted successfully!
   <TabItem value="ash-api" label="Using the Ash Console API">
 
 ```bash title="Command"
-curl -X DELETE https://api.console.ash.center/secrets/465a6c24-5640-46d4-963f-98c0990484e1 \
+curl -X DELETE https://api.console.ash.center/secrets/my-secret-updated \
   -H "Authorization: Bearer ${access_token}"
 ```
 

@@ -10,35 +10,39 @@ The Ash Console is currently in alpha and **not production-ready**. It is under 
 
 We can finally deploy our Avalanche node [resource](/docs/console/glossary#resource)!
 
+:::tip
+The Ash Console subcommands support both JSON and YAML.
+:::
+
 1. Gather the node ID secret ID and cloud region ID from the previous steps.
 2. Create the `avalancheNode` resource with the `console resource create` command:
 
    ```bash title="Command"
    ash console resource create '{
-     "name": "avalanche-node-01",
-     "resourceType": "avalancheNode",
-     "cloudRegionId": "0c102d85-4e75-414d-abfe-b0679ab0adc7",
-     "nodeIdSecretId": "0b3ab7f4-c355-4971-b9d1-74f67414abc0",
-     "size": "medium",
-     "nodeConfig": {
-       "avalancheNodeConfig": {
-         "avalanchego_version":"1.10.12"
+     name: avalanche-node-01,
+     resourceType: avalancheNode,
+     cloudRegionId: azure/francecentral,
+     nodeIdSecretId: fuji-node-id-01,
+     size: medium,
+     nodeConfig: {
+       avalancheNodeConfig: {
+         avalanchego_version: 1.10.12
        }
      }
    }'
    ```
 
    ```bash title="Output"
-   Resource successfully created in project '399b6f5b-eed2-4713-8b68-993643babfd0'!
-   +--------------------------------------+-------------------+---------------+--------------------------------------+--------+------------------+---------+--------------------------+
-   | Resource ID                          | Name              | Type          | Cloud region ID                      | Size   | Created at       | Status  | Resource specific        |
-   +======================================+===================+===============+======================================+========+==================+=========+==========================+
-   | dfa1e029-bf0b-4333-b45d-be0454536d26 | avalanche-node-01 | AvalancheNode | 0c102d85-4e75-414d-abfe-b0679ab0adc7 | Medium | 2023-11-12T10:41 | Pending |  IP address   | pending  |
-   |                                      |                   |               |                                      |        |                  |         |  Running      | false    |
-   |                                      |                   |               |                                      |        |                  |         |  Bootstrapped | [false]  |
-   |                                      |                   |               |                                      |        |                  |         |  Healthy      | [false]  |
-   |                                      |                   |               |                                      |        |                  |         |  Restart req. | false    |
-   +--------------------------------------+-------------------+---------------+--------------------------------------+--------+------------------+---------+--------------------------+
+   Resource successfully created in project 'fuji-node-guide'!
+   +-------------------+-------------+---------------+-----------------+--------+------------------+---------+--------------------------+
+   | Resource name     | Resource ID | Type          | Cloud region ID | Size   | Created at       | Status  | Resource specific        |
+   +===================+=============+===============+=================+========+==================+=========+==========================+
+   | avalanche-node-01 | 1dda...b457 | AvalancheNode | 3975...8ab1     | Medium | 2023-12-21T11:21 | Pending |  IP address   | None     |
+   |                   |             |               |                 |        |                  |         |  Running      | false    |
+   |                   |             |               |                 |        |                  |         |  Bootstrapped | [false]  |
+   |                   |             |               |                 |        |                  |         |  Healthy      | [false]  |
+   |                   |             |               |                 |        |                  |         |  Restart req. | false    |
+   +-------------------+-------------+---------------+-----------------+--------+------------------+---------+--------------------------+
    ```
 
    **Note:** By default, [state sync](https://docs.avax.network/nodes/configure/chain-config-flags#state-sync) is enabled on the C-Chain.
@@ -48,48 +52,52 @@ We can finally deploy our Avalanche node [resource](/docs/console/glossary#resou
 3. It will take some time before the node is `Bootstrapped` and `Healthy`. You can get its updated status with the `console resource info` command:
 
    ```bash title="Command"
-    ash console resource info dfa1e029-bf0b-4333-b45d-be0454536d26
+    ash console resource info avalanche-node-01
    ```
 
    ```bash title="Output"
-   +--------------------------------------+-------------------+---------------+--------------------------------------+--------+------------------+---------+------------------------------+
-   | Resource ID                          | Name              | Type          | Cloud region ID                      | Size   | Created at       | Status  | Resource specific            |
-   +======================================+===================+===============+======================================+========+==================+=========+==============================+
-   | dfa1e029-bf0b-4333-b45d-be0454536d26 | avalanche-node-01 | AvalancheNode | 0c102d85-4e75-414d-abfe-b0679ab0adc7 | Medium | 2023-11-12T10:41 | Running |  IP address   | 20.74.16.34  |
-   |                                      |                   |               |                                      |        |                  |         |  Running      | true         |
-   |                                      |                   |               |                                      |        |                  |         |  Bootstrapped | [false]      |
-   |                                      |                   |               |                                      |        |                  |         |  Healthy      | [false]      |
-   |                                      |                   |               |                                      |        |                  |         |  Restart req. | false        |
-   +--------------------------------------+-------------------+---------------+--------------------------------------+--------+------------------+---------+------------------------------+
+   Resource 'avalanche-node-01' of project 'fuji-node-guide':
+   +-------------------+-------------+---------------+-----------------+--------+------------------+-------------+--------------------------------+
+   | Resource name     | Resource ID | Type          | Cloud region ID | Size   | Created at       | Status      | Resource specific              |
+   +===================+=============+===============+=================+========+==================+=============+================================+
+   | avalanche-node-01 | 1dda...b457 | AvalancheNode | 3975...8ab1     | Medium | 2023-12-21T11:21 | Configuring |  IP address   | 20.199.59.152  |
+   |                   |             |               |                 |        |                  |             |  Running      | false          |
+   |                   |             |               |                 |        |                  |             |  Bootstrapped | [false]        |
+   |                   |             |               |                 |        |                  |             |  Healthy      | [false]        |
+   |                   |             |               |                 |        |                  |             |  Restart req. | false          |
+   +-------------------+-------------+---------------+-----------------+--------+------------------+-------------+--------------------------------+
    ```
 
-4. You can already query the node `info` endpoint with the `avalanche node info` command:
+4. Once the node is `Running`, can already query the node `info` endpoint with the `avalanche node info` command:
 
    ```bash title="Command"
-   ash avalanche node info -n 20.74.16.34
+   ash avalanche node info -n 20.199.59.152
    ```
 
+   :::note
+   Your node IP address will be different.
+   :::
+
    ```bash title="Output"
-   Node '20.74.16.34:9650':
-     ID:            NodeID-Bdf7YwriWbpY15CPcXH5791uDTqtCYyjw
+   Node '20.199.59.152:9650':
+     ID:            NodeID-6BbSeHZcmHzN2MAXvQu83FHostsxVGvHC
      Network:       fuji
-     Public IP:     20.74.16.34
+     Public IP:     20.199.59.152
      Staking port:  9651
      Versions:
        AvalancheGo:  avalanche/1.10.12
        Database:     v1.4.5
        RPC Protocol: 28
-       Git commit:   e70a17d9d988b5067f3ef5c4a057f15ae1271ac4
+       Git commit:   145dfb0dc179d688f45ad44067ef6f9821148b36
        VMs:
-         AvalancheVM: v1.10.8
+         AvalancheVM: v1.10.12
          Coreth:      v0.12.5
-         PlatformVM:  v1.10.8
+         PlatformVM:  v1.10.12
+         Subnet VMs:  []
      Uptime:
-       Rewarding stake:  99.9935%
-       Weighted average: 99.8935%
+       Rewarding stake:  0%
+       Weighted average: 0%
    ```
-
-   **Note:** Your node IP address will be different.
 
 :::note
 See the [reference](/docs/console/reference/resource-management) for more information about resources lifecycle management.

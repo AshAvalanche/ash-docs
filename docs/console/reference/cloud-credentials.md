@@ -313,7 +313,12 @@ jq -r '.private_key' ./${project_id}-${key_id}.json > ash-console-creds-01.key
 To create a new `awsCredentials` secret, use the `create secret` command and provide the required secret properties as JSON:
 
 ```bash title="Command"
-ash console secret create '{"name": "my-aws-credentials", "secretType": "awsCredentials", "accessKey": "***", "secretKey": "***"}'
+ash console secret create '{
+  name: my-aws-credentials,
+  secretType: awsCredentials,
+  accessKey: "***",
+  secretKey: "***"
+}'
 ```
 
 ```bash title="Output"
@@ -368,7 +373,13 @@ You can now use the secret upon [cloud region](/docs/console/glossary#cloud-regi
 To create a new `azureCredentials` secret, use the `create secret` command and provide the required secret properties as JSON:
 
 ```bash title="Command"
-ash console secret create '{"name": "my-azure-credentials", "secretType": "azureCredentials", "subscriptionId": "4f23aeac-34f9-4f26-9d52-44d6ca1f1abc", "applicationId": "6c6d0fa9-6f58-46f7-88c9-5248450147dc", "applicationPassword": "***"}'
+ash console secret create '{
+  name: my-azure-credentials,
+  secretType: azureCredentials,
+  subscriptionId: 4f23aeac-34f9-4f26-9d52-44d6ca1f1abc,
+  applicationId: 6c6d0fa9-6f58-46f7-88c9-5248450147dc,
+  applicationPassword: "***"
+}'
 ```
 
 ```bash title="Output"
@@ -424,7 +435,14 @@ To create a new `googleCredentials` secret, use the `create secret` command and 
 The `privateKey` can be provided as a PEM key file path (or as a base-64 encoded string):
 
 ```bash title="Command"
-ash console secret create '{"name": "my-google-credentials", "secretType": "googleCredentials", "projectId": "***", "clientEmail": "ash-console-creds-01@***.iam.gserviceaccount.com", "clientId": "***", "privateKey": "~/Downloads/ash-console-creds-01.key"}'
+ash console secret create '{
+  name: my-google-credentials,
+  secretType: googleCredentials,
+  projectId: ***,
+  clientEmail: ash-console-creds-01@***.iam.gserviceaccount.com,
+  clientId: ***,
+  privateKey: "~/Downloads/ash-console-creds-01.key"
+}'
 ```
 
 **Note:** Make sure to replace `***` to the name of the Google Cloud project in which you created the service account in the `clientEmail` field.

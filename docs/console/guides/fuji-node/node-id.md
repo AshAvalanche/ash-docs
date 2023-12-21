@@ -32,7 +32,9 @@ The Node ID is stored as a [secret](/docs/console/glossary#secret) in the Consol
    Certificate and key files written to 'node-id/node.crt' and 'node-id/node.key'
    ```
 
-   **Note:** Your node ID will be different.
+   :::note
+   Your node ID will be different.
+   :::
 
 3. Make sure to **keep a backup of the certificate and key files** in a safe place. If an outage occurs, you will need them to recreate a node with the same ID.
 4. **Save the Node ID** for later use. You can also compute it from the node certificate with the `avalanche node id` command:
@@ -47,25 +49,30 @@ The Node ID is stored as a [secret](/docs/console/glossary#secret) in the Consol
 
 ## Create the node ID secret
 
-Use the certificate and key files to create a `nodeId` secret with the `console secret create` command:
+:::tip
+The Ash Console subcommands support both JSON and YAML.
+:::
+
+Use the certificate and key files to create a `nodeId` secret with the `console secret create` command.  
+Don't forget to **replace the Node ID** with yours:
 
 ```bash title="Command"
 ash console secret create '{
-  "name": "node-id-01",
-  "secretType": "nodeId",
-  "nodeId": "NodeID-Bdf7YwriWbpY15CPcXH5791uDTqtCYyjw",
-  "nodeCert": "node-id/node.crt",
-  "nodeKey": "node-id/node.key"
+  name: fuji-node-id-01,
+  secretType: nodeId,
+  nodeId: NodeID-Bdf7YwriWbpY15CPcXH5791uDTqtCYyjw,
+  nodeCert: node-id/node.crt,
+  nodeKey: node-id/node.key
 }'
 ```
 
 ```bash title="Output"
 Secret created successfully!
-+--------------------------------------+-------------+------------+---------+------------------+---------+
-| Secret ID                            | Owner ID    | Name       | Type    | Created at       | Used by |
-+======================================+=============+===========+=========+==================+=========+
-| 0b3ab7f4-c355-4971-b9d1-74f67414abc0 | 2870...dc26 | node-id-01 | NodeId  | 2023-11-12T10:35 | 0       |
-+--------------------------------------+-------------+------------+---------+------------------+---------+
++-----------------+-------------+--------+------------------+---------+
+| Secret name     | Secret ID   | Type   | Created at       | Used by |
++=================+=============+========+==================+=========+
+| fuji-node-id-01 | 41ea...c755 | NodeId | 2023-12-21T11:05 | 0       |
++-----------------+-------------+--------+------------------+---------+
 ```
 
 :::note

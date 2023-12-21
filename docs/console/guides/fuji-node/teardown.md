@@ -13,14 +13,26 @@ This section will guide you through the steps to delete the resources created in
 ## Delete resource
 
 ```bash title="Command"
-ash console resource delete -y dfa1e029-bf0b-4333-b45d-be0454536d26
+ash console resource delete -y avalanche-node-01
 ```
 
 ```bash title="Output"
 Resource deleted successfully!
 ```
 
-**Note:** Replace `dfa1e029-bf0b-4333-b45d-be0454536d26` with the resource ID from step [4. Avalanche Node Deployment](/docs/console/guides/fuji-node/avalanche-node).
+Wait for the resource to be deleted (removed from the list):
+
+```bash title="Command"
+ash console resource list
+```
+
+```bash title="Output"
+Resources of project 'fuji-node-guide':
++---------------+-------------+------+-----------------+------+------------+--------+-------------------+
+| Resource name | Resource ID | Type | Cloud region ID | Size | Created at | Status | Resource specific |
++===============+=============+======+=================+======+============+========+===================+
++---------------+-------------+------+-----------------+------+------------+--------+-------------------+
+```
 
 ## Delete cloud region
 
@@ -32,13 +44,25 @@ ash console region remove -y azure/francecentral
 Cloud region removed successfully!
 ```
 
+Wait for the cloud region to be removed (removed from the list):
+
+```bash title="Command"
+ash console region list
+```
+
+```bash title="Output"
+Cloud regions of project 'fuji-node-guide':
++--------------+-----------+-----------------------+------------+--------+
+| Cloud region | Region ID | Cloud creds secret ID | Created at | Status |
++==============+===========+=======================+============+========+
++--------------+-----------+-----------------------+------------+--------+
+```
+
 ## Delete Node ID secret
 
 ```bash title="Command"
-ash console secret delete -y 0b3ab7f4-c355-4971-b9d1-74f67414abc0
+ash console secret delete -y fuji-node-id-01
 ```
-
-**Note:** Replace `0b3ab7f4-c355-4971-b9d1-74f67414abc0` with the secret ID from step [2. Node ID Secret Generation](/docs/console/guides/fuji-node/node-id).
 
 ```bash title="Output"
 Secret deleted successfully!
@@ -49,11 +73,9 @@ Secret deleted successfully!
 Delete the project:
 
 ```bash title="Command"
-ash console project delete -y 1c464e44-1e2c-46de-a08c-79ac58f6e632
+ash console project delete -y fuji-node-guide
 ```
 
 ```bash title="Output"
 Project deleted successfully!
 ```
-
-**Note:** Replace `1c464e44-1e2c-46de-a08c-79ac58f6e632` with the project ID from step [3. Project and Cloud Region Creation](/docs/console/guides/fuji-node/project-region).
