@@ -41,11 +41,12 @@ This Ansible role allows to manage Avalanche nodes:
 | `avalanchego_bootstrap_node_ids`      | Node IDs of the bootstrap nodes on networks other than `mainnet` and `fuji`                                                                                                                                                                                           | `['NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg']`                     |
 | `avalanchego_bootstrap_db`            | The local path to a snapshot of Avalanche database                                                                                                                                                                                                                    | `""`                                                               |
 | `avalanchego_track_subnets`           | The list of tracked subnets that the node can validate. See [Subnet Tracking](https://docs.avax.network/nodes/maintain/avalanchego-config-flags#subnet-tracking)                                                                                                      | `[]`                                                               |
-| `avalanchego_vms_install`             | The list of VMs to install on the node with their versions. VM names and versions are separated by `=`. See [VMs install](#vms-installation).                                                                                                                         | `[]`                                                               |
+| `avalanchego_vms_install`             | A dictionary of VMs to install on the node with their versions. The key is the VM name and the value its version. See [VMs install](#vms-installation).                                                                                                               | `[]`                                                               |
 | `avalanchego_node_json`               | The AvalancheGo node configuration that will be templated to `node.json` addresses                                                                                                                                                                                    | NA                                                                 |
 | `avalanchego_subnets_configs`         | The configuration of each subnet. See [Subnet Configs](https://docs.avax.network/nodes/maintain/subnet-configs).                                                                                                                                                      | `{}`                                                               |
 | `avalanchego_chain_aliases`           | The aliases of each chain. See [chain-aliases-file](https://docs.avax.network/nodes/configure/avalanchego-config-flags#--chain-aliases-file-string).                                                                                                                  | `{}`                                                               |
 | `avalanchego_chain_configs`           | The configuration of each chain. See [Chain Configs](https://docs.avax.network/nodes/maintain/chain-config-flags).                                                                                                                                                    | `{ C: { state-sync-enabled: true }}`                               |
+| `avalanchego_chain_upgrades`          | The list of upgrades of each chain. See [Network Upgrades](https://docs.avax.network/build/subnet/upgrade/customize-a-subnet#network-upgrades-enabledisable-precompiles).                                                                                             | `{}`                                                               |
 | `validator_txs_private_key`           | The private key used to sign the `addValidator` transactions                                                                                                                                                                                                          | `PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN`     |
 | `validator_txs_key_encoding`          | Encoding of the private key. Can be `cb58` or `hex`.                                                                                                                                                                                                                  | `cb58`                                                             |
 | `validator_start_time_command`        | Command used to dynamically compute `start_time_command_output`                                                                                                                                                                                                       | 2 minutes from now using `date`                                    |
@@ -92,11 +93,7 @@ This differs from AvalancheGo default setup that stores the database and configu
 
 ## VMs installation
 
-To install a VM on the node, add it to `avalanchego_vms_install` following `VM_NAME=VM_VERSION` format (e.g. `timestampvm=1.2.0`).
-
-:::caution
-If `avalanchego_vms_install` is specified in your inventory, you have to list **all the VMs** to be installed (there isn't any merge with the default list).
-:::
+To install a VM on the node, add it to `avalanchego_vms_install` following `VM_NAME: VM_VERSION` format (e.g. `timestampvm: 1.2.0`).
 
 ### Supported VMs and AvalancheGo compatibility
 
@@ -109,15 +106,17 @@ List of VMs supported by the collection:
 
 Here is the compatibility matrix with AvalancheGo versions:
 
-| RPC protocol | AvalancheGo      | `subnet-evm`    |
-| ------------ | ---------------- | --------------- |
-| `22`         | `1.9.6-1.9.8`    | `0.4.8`         |
-| `23`         | `1.9.9`          | `0.4.9-0.4.10`  |
-| `24`         | `1.9.10-1.9.16`  | `0.4.11-0.4.12` |
-| `25`         | `1.10.0`         | `0.5.0`         |
-| `26`         | `1.10.1-1.10.4`  | `0.5.1-0.5.2`   |
-| `27`         | `1.10.5-1.10.8`  | `0.5.3`         |
-| `28`         | `1.10.9-1.10.12` | `0.5.5-0.5.6`   |
+| RPC protocol | AvalancheGo       | `subnet-evm`    |
+| ------------ | ----------------- | --------------- |
+| `22`         | `1.9.6-1.9.8`     | `0.4.8`         |
+| `23`         | `1.9.9`           | `0.4.9-0.4.10`  |
+| `24`         | `1.9.10-1.9.16`   | `0.4.11-0.4.12` |
+| `25`         | `1.10.0`          | `0.5.0`         |
+| `26`         | `1.10.1-1.10.4`   | `0.5.1-0.5.2`   |
+| `27`         | `1.10.5-1.10.8`   | `0.5.3`         |
+| `28`         | `1.10.9-1.10.12`  | `0.5.5-0.5.6`   |
+| `29`         | `1.10.13-1.10.14` | `0.5.7-0.5.8`   |
+| `30`         | `1.10.15-1.10.17` | `0.5.9-0.5.10`  |
 
 :::tip
 If a versions incompatibility is detected, an error message will be prompted and the role execution will stop.

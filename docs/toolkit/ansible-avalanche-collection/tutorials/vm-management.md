@@ -20,13 +20,13 @@ Always make sure you have the latest version of the collection installed. See [I
 For now only the [Subnet EVM](https://github.com/ava-labs/subnet-evm) is supported by the collection, see section [Install a custom VM](#install-a-custom-vm) if you want to use the collection to install your own VM.
 :::
 
-The VMs are managed by the `avalanchego_vms_install` role variable which is empty by default ([`avalanchego_vms_install: []`](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/roles/node/defaults/main.yml#L42)).
+The VMs are managed by the `avalanchego_vms_install` role variable which is empty by default ([`avalanchego_vms_install: {}`](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/roles/node/defaults/main.yml#L42)).
 
 To add a new VM that will be installed on our validator nodes, we just have to update the `avalanchego_vms_install` variable. For the next example, we will install Ava Labs' [Subnet EVM](https://github.com/ava-labs/subnet-evm) in version `0.5.5`. The variable we are should be added to [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml):
 
 ```yml title="inventories/local/group_vars/avalanche_nodes.yml"
 avalanchego_vms_install:
-  - subnet-evm=0.5.5
+  subnet-evm: 0.5.5
 ```
 
 We can then install this VM to all the nodes defined in our Ansible inventory by running the `provision_nodes` playbook again:
@@ -65,7 +65,7 @@ For example, if we want to upgrade the `subnet-evm` from version `0.5.5` to `0.5
 
 ```yml title="inventories/local/group_vars/avalanche_nodes.yml"
 avalanchego_vms_install:
-  - subnet-evm=0.5.6
+  subnet-evm: 0.5.6
 ```
 
 Re-run the `provision_nodes` playbook:
@@ -132,7 +132,7 @@ With the example above, we can now install the M1 VM to our nodes by adding the 
 
 ```yml title="inventories/local/group_vars/avalanche_nodes.yml"
 avalanchego_vms_install:
-  - m1=0.1.0
+  m1: 0.1.0
 ```
 
 We can then install this VM to all the nodes defined in our Ansible inventory by running the `provision_nodes` playbook again:
