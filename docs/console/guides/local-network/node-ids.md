@@ -64,7 +64,7 @@ ash console blueprint apply local-node-ids.yaml
 ```bash title="Confirmation prompt"
 Blueprint summary
 Secrets
-  4 to create: local-node-id-01, local-node-id-02, local-node-id-03, local-node-id-04, local-node-id-05
+  5 to create: local-node-id-01, local-node-id-02, local-node-id-03, local-node-id-04, local-node-id-05
   0 to update:
 Projects
   0 to create:
@@ -83,15 +83,17 @@ ash console secret list
 +------------------+-------------+----------------+------------------+---------+
 | Secret name      | Secret ID   | Type           | Created at       | Used by |
 +==================+=============+================+==================+=========+
-| local-node-id-01 | 5064...9550 | NodeId         | 2023-12-21T14:54 | 0       |
+| local-node-id-01 | 7738...a900 | NodeId         | 2023-12-21T15:53 | 0       |
 +------------------+-------------+----------------+------------------+---------+
-| local-node-id-02 | 47fb...5531 | NodeId         | 2023-12-21T14:54 | 0       |
+| local-node-id-02 | d577...a0bd | NodeId         | 2023-12-21T15:54 | 0       |
 +------------------+-------------+----------------+------------------+---------+
-| local-node-id-03 | ac71...9ada | NodeId         | 2023-12-21T14:54 | 0       |
+| local-node-id-03 | 6cf7...db9d | NodeId         | 2023-12-21T15:54 | 0       |
 +------------------+-------------+----------------+------------------+---------+
-| local-node-id-04 | 8f6a...879f | NodeId         | 2023-12-21T14:54 | 0       |
+| local-node-id-04 | 7221...fa0c | NodeId         | 2023-12-21T15:54 | 0       |
 +------------------+-------------+----------------+------------------+---------+
-| local-node-id-05 | d5a0...d676 | NodeId         | 2023-12-21T14:54 | 0       |
+| local-node-id-05 | 36a1...59b8 | NodeId         | 2023-12-21T15:54 | 0       |
++------------------+-------------+----------------+------------------+---------+
+| my-aws-creds     | 2a29...fde2 | AwsCredentials | 2023-12-21T15:55 | 0       |
 +------------------+-------------+----------------+------------------+---------+
 ```
 

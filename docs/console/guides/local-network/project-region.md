@@ -23,10 +23,10 @@ Project created successfully!
 +--------------+-------------+---------+---------------+------------------+
 | Project name | Project ID  | Network | Cloud regions | Created at       |
 +==============+=============+=========+===============+==================+
-| devnet-guide | 08a7...82a8 | Local   |               | 2023-12-21T14:55 |
+| devnet-guide | ac00...6673 | Local   |               | 2023-12-21T15:55 |
 +--------------+-------------+---------+---------------+------------------+
 
-Switched to project 'devnet-guide' (08a7a46c-19f2-4ce6-94e5-7ec16e5682a8)!
+Switched to project 'devnet-guide' (ac00583b-7b98-4a3a-9a43-2402f8796673)!
 ```
 
 :::note
@@ -52,7 +52,7 @@ Cloud region successfully added to project 'devnet-guide'!
 +---------------+-------------+-----------------------+------------------+-----------+
 | Cloud region  | Region ID   | Cloud creds secret ID | Created at       | Status    |
 +===============+=============+=======================+==================+===========+
-| aws/us-east-1 | 2433...98ad | 9954...ac4b           | 2023-12-21T14:57 | Available |
+| aws/us-east-1 | 634d...c9d9 | 2a29...fde2           | 2023-12-21T15:56 | Available |
 +---------------+-------------+-----------------------+------------------+-----------+
 ```
 

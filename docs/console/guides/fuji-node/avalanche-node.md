@@ -26,7 +26,7 @@ The Ash Console subcommands support both JSON and YAML.
      size: medium,
      nodeConfig: {
        avalancheNodeConfig: {
-         avalanchego_version: 1.10.12
+         avalanchego_version: 1.10.17
        }
      }
    }'
@@ -85,14 +85,14 @@ The Ash Console subcommands support both JSON and YAML.
      Public IP:     20.199.59.152
      Staking port:  9651
      Versions:
-       AvalancheGo:  avalanche/1.10.12
+       AvalancheGo:  avalanche/1.10.17
        Database:     v1.4.5
        RPC Protocol: 28
        Git commit:   145dfb0dc179d688f45ad44067ef6f9821148b36
        VMs:
-         AvalancheVM: v1.10.12
+         AvalancheVM: v1.10.17
          Coreth:      v0.12.5
-         PlatformVM:  v1.10.12
+         PlatformVM:  v1.10.17
          Subnet VMs:  []
      Uptime:
        Rewarding stake:  0%
