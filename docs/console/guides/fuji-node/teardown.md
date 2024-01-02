@@ -10,7 +10,7 @@ The Ash Console is currently in alpha and **not production-ready**. It is under 
 
 This section will guide you through the steps to delete the entities created in the previous sections.
 
-## Delete resource
+## Delete the resource
 
 ```bash title="Command"
 ash console resource delete -y avalanche-node-01
@@ -30,7 +30,7 @@ Resources of project 'fuji-node-guide':
 +---------------+-------------+------+-----------------+------+------------+--------+-------------------+
 ```
 
-## Delete cloud region
+## Delete the cloud region
 
 ```bash title="Command"
 ash console region remove -y azure/francecentral
@@ -50,15 +50,13 @@ Cloud regions of project 'fuji-node-guide':
 +--------------+-----------+-----------------------+------------+--------+
 ```
 
-## Delete Node ID secret
+## Delete the `nodeId` secret
 
 ```bash title="Command"
 ash console secret delete -y fuji-node-id-01
 ```
 
-## Delete project
-
-Delete the project:
+## Delet the project
 
 ```bash title="Command"
 ash console project delete -y fuji-node-guide

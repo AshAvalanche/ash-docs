@@ -24,7 +24,7 @@ The Node ID secrets need to match the hardcoded Node IDs in the [`genesis_local.
 Learn more about blueprints in the [Console Blueprints](/docs/console/reference/blueprints) reference.
 :::
 
-We will use the [local-node-ids.yaml blueprint](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yaml) to create the node ID secrets for the 5 nodes of our Avalanche devnet.
+We will use the [local-node-ids.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yml) blueprint to create the node ID secrets for the 5 nodes of our Avalanche devnet.
 
 1. If not already done, create a folder for this guide and navigate to it:
 
@@ -33,15 +33,15 @@ We will use the [local-node-ids.yaml blueprint](https://github.com/AshAvalanche/
    cd ash-console-guides/devnet-network
    ```
 
-2. Fetch the blueprint from the [`ash-rs`](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yaml) repository:
+2. Fetch the blueprint from the [`ash-rs`](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yml) repository:
 
    ```bash
-   curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yaml -o local-node-ids.yaml
+   curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yml -o local-node-ids.yml
    ```
 
 3. Take a look at the blueprint. You will see that it defines 5 secrets of type `nodeId` with their TLS keys and certificates:
    ```bash title="Command"
-   cat local-node-ids.yaml
+   cat local-node-ids.yml
    ```
    ```yaml title="Output"
    secrets:
@@ -58,7 +58,7 @@ We will use the [local-node-ids.yaml blueprint](https://github.com/AshAvalanche/
 Apply the blueprint with the `console blueprint apply` command to create the node ID secrets:
 
 ```bash title="Command"
-ash console blueprint apply local-node-ids.yaml
+ash console blueprint apply ./local-node-ids.yml
 ```
 
 ```bash title="Confirmation prompt"

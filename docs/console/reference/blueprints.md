@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
-The Ash CLI provides a powerful blueprint features that allows to **create and/or update Ash Console entities** (projects, cloud regions, resources, etc.) using **declarative configuration files**.
+The Ash CLI provides a powerful blueprint features that allows to **create and/or update Ash Console entities** (projects, cloud regions, resources, etc.) using **declarative configuration files**. These files can be easily version controlled and shared with your team, enabling **infrastructure-as-code** workflows.
 
 ## Blueprints structure
 
@@ -63,10 +63,10 @@ Blueprints have some nice features:
 
 ## Apply a blueprint
 
-Applyin a blueprint is as simple as running the `blueprint apply` command and providing the blueprint path:
+Applying a blueprint is as simple as running the `blueprint apply` command and providing the blueprint path:
 
 ```bash title="Command"
-ash console blueprint apply ./blueprint.yaml
+ash console blueprint apply ./blueprint.yml
 ```
 
 The Ash CLI will display a summary of the changes that will be applied and ask for confirmation:
@@ -157,7 +157,7 @@ projects:
 ```
 
 ```bash title="Command"
-ash console blueprint apply ./blueprint.yaml
+ash console blueprint apply ./blueprint.yml
 ```
 
 ```bash title="Confirmation prompt"

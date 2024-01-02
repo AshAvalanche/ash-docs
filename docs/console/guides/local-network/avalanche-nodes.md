@@ -12,7 +12,7 @@ We can finally deploy our 5 Avalanche node [resources](/docs/console/glossary#re
 
 ## Set shared configuration at the project level
 
-It is common that **resources of the same type share some configuration**. For example, all the Avalanche nodes of our devnet will have the **same AvalancheGo version**.
+It is common that **resources of the same project share some configuration**. For example, all the Avalanche nodes of our devnet will have the **same AvalancheGo version**.
 
 We will use the `sharedResourceConfig` field of the project to set this shared configuration:
 
@@ -113,7 +113,7 @@ done
 
 :::caution
 
-- The above command takes about ~30 seconds to complete.
+- The above command takes about 1 minute to complete.
 - Providing a `nodeBootstrapResourceId` is only supported for resources created in the **same cloud region** as the bootstrap node.
 
 :::
