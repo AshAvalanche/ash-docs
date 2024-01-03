@@ -73,13 +73,17 @@ curl https://api.console.ash.center/projects/f3cbcada-8ba7-4ce8-b0ef-e4874b24da2
 Prior to adding a cloud region, you need to **create a _cloud credentials_ secret**. See [Cloud Credentials](/docs/console/reference/cloud-credentials) for how to create appropriate credentials for each cloud provider.
 :::
 
+:::tip
+You can also provide the cloud credentials secret name instead of its ID in the `cloudCredentialsSecretId` field.
+:::
+
 <Tabs groupId="ash-console-client">
   <TabItem value="ash-cli" label="Using the Ash CLI" default>
 
 To add a cloud region to the current project, use the `region add` command and provide the required secret properties as JSON:
 
 ```bash title="Command"
-ash console region add '{"cloudProvider": "aws", "region": "us-east-1", "cloudCredentialsSecretId": "4447cba1-e43c-45a4-8a9d-dbebef81bac1"}'
+ash console region add '{cloudProvider: aws, region: us-east-1, cloudCredentialsSecretId: 4447cba1-e43c-45a4-8a9d-dbebef81bac1}'
 ```
 
 ```bash title="Output"

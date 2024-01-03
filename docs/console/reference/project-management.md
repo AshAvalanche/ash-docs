@@ -64,7 +64,7 @@ curl https://api.console.ash.center/projects \
 To create a new project, use the `create project` command and provide the required project properties as JSON:
 
 ```bash title="Command"
-ash console project create '{"name": "my-devnet-project", "network": "local"}'
+ash console project create '{name: my-devnet-project, network: local}'
 ```
 
 ```bash title="Output"
@@ -124,7 +124,7 @@ Current project: 'my-devnet-project' (1c464e44-1e2c-46de-a08c-79ac58f6e632)
 You can switch between projects:
 
 ```bash title="Command"
-ash console project select 1c464e44-1e2c-46de-a08c-79ac58f6e632
+ash console project select my-devnet-project
 ```
 
 ```bash title="Output"
@@ -141,13 +141,17 @@ This feature does not exist in the Ash Console API.
 
 ## Update a project
 
+:::tip
+You can also provide the project name instead of its ID.
+:::
+
 <Tabs groupId="ash-console-client">
   <TabItem value="ash-cli" label="Using the Ash CLI" default>
 
 The only propery that can be updated is the project name:
 
 ```bash title="Command"
-ash console project update 1c464e44-1e2c-46de-a08c-79ac58f6e632 '{"name": "my-devnet-project-updated"}'
+ash console project update 1c464e44-1e2c-46de-a08c-79ac58f6e632 '{name: my-devnet-project-updated}'
 ```
 
 ```bash title="Output"
@@ -197,7 +201,7 @@ Deleting a project will recursively delete **all the cloud regions and resources
 The CLI will ask for confirmation before deleting the project. To skip the confirmation, use the `--yes` flag.
 
 ```bash title="Command"
-ash console project delete 1c464e44-1e2c-46de-a08c-79ac58f6e632
+ash console project delete my-devnet-project-updated
 ```
 
 ```bash title="Output"
@@ -209,7 +213,7 @@ Project deleted successfully!
   <TabItem value="ash-api" label="Using the Ash Console API">
 
 ```bash title="Command"
-curl -X DELETE https://api.console.ash.center/projects/c84c4a2f-9a65-46a2-b7b9-be8eeceaa2b1 \
+curl -X DELETE https://api.console.ash.center/projects/my-devnet-project-updated \
   -H "Authorization: Bearer ${access_token}"
 ```
 

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 7
+sidebar_position: 5
 ---
 
-# 5. Teardown
+# 3. Teardown
 
 :::caution
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
@@ -14,7 +14,7 @@ This section will guide you through the steps to delete the entities created in 
 
 ```bash title="Command"
 for i in {1..5}; do
-  ash console resource delete -y avalanche-node-0$i
+  ash console resource delete -y local-node-0$i
 done
 ```
 
@@ -25,7 +25,7 @@ ash console resource list
 ```
 
 ```bash title="Output"
-Resources of project 'devnet-guide':
+Resources of project 'ash-devnet':
 +---------------+-------------+------+-----------------+------+------------+--------+-------------------+
 | Resource name | Resource ID | Type | Cloud region ID | Size | Created at | Status | Resource specific |
 +===============+=============+======+=================+======+============+========+===================+
@@ -35,7 +35,7 @@ Resources of project 'devnet-guide':
 ## Delete the cloud region
 
 ```bash title="Command"
-ash console region remove -y aws/us-east-1
+ash console region remove -y "$CLOUD_PROVIDER/$CLOUD_REGION"
 ```
 
 Wait for the cloud region to be removed (removed from the list):
@@ -45,7 +45,7 @@ ash console region list
 ```
 
 ```bash title="Output"
-Cloud regions of project 'devnet-guide':
+Cloud regions of project 'ash-devnet':
 +--------------+-----------+-----------------------+------------+--------+
 | Cloud region | Region ID | Cloud creds secret ID | Created at | Status |
 +==============+===========+=======================+============+========+
@@ -67,5 +67,5 @@ You can also keep the `nodeId` secrets for later use as they will be used for al
 ## Delete the project
 
 ```bash title="Command"
-ash console project delete -y devnet-guide
+ash console project delete -y ash-devnet
 ```

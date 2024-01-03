@@ -15,43 +15,45 @@ The Avalanche node [resources](/docs/console/glossary#resource) will be deployed
 Create a project on the `local` network for this guide with the `console project create` command:
 
 ```bash title="Command"
-ash console project create '{"name": "devnet-guide", "network": "local"}'
+ash console project create '{name: devnet-guide, network: local}'
 ```
 
 ```bash title="Output"
 Project created successfully!
-+--------------------------------------+-------------+---------------------+---------+---------------+------------------+
-| Project ID                           | Owner ID    | Name                | Network | Cloud regions | Created at       |
-+======================================+=============+=====================+=========+===============+==================+
-| 70228a47-5ab1-493b-b921-5c22b83bfbf7 | fce8...3695 | devnet-guide        | Local   |               | 2023-11-23T15:08 |
-+--------------------------------------+-------------+---------------------+---------+---------------+------------------+
++--------------+-------------+---------+---------------+------------------+
+| Project name | Project ID  | Network | Cloud regions | Created at       |
++==============+=============+=========+===============+==================+
+| devnet-guide | ac00...6673 | Local   |               | 2023-12-21T15:55 |
++--------------+-------------+---------+---------------+------------------+
 
-Switched to project 'local-network-guide' (70228a47-5ab1-493b-b921-5c22b83bfbf7)!
+Switched to project 'devnet-guide' (ac00583b-7b98-4a3a-9a43-2402f8796673)!
 ```
 
 :::note
 See the [reference](/docs/console/reference/project-management) for more information about projects lifecycle management.
 :::
 
-**Note:** Your project ID will be different.
-
 ## Add a cloud region to the project
 
 Add a cloud region of your choice to the project with the `console region add` ([list of supported regions](/docs/console/glossary#cloud-region))
 
-**Note:** You need the **ID of the cloud credentials secret** created in [step 1.](/docs/console/guides/local-network/cloud-credentials)
+**Note:** You need the **name of the cloud credentials secret** created in [step 1.](/docs/console/guides/local-network/cloud-credentials)
 
 ```bash title="Command"
-ash console region add '{"cloudProvider": "aws", "region": "us-east-1", "cloudCredentialsSecretId": "69ba9d5e-9454-449f-848c-de14005e68d4"}'
+ash console region add '{
+	cloudProvider: aws,
+	region: us-east-1,
+	cloudCredentialsSecretId: my-aws-creds
+}'
 ```
 
 ```bash title="Output"
-Cloud region successfully added to project '70228a47-5ab1-493b-b921-5c22b83bfbf7'!
-+--------------------------------------+----------------+--------------+-----------------------+------------------+-----------+
-| Region ID                            | Cloud provider | Cloud region | Cloud creds secret ID | Created at       | Status    |
-+======================================+================+==============+=======================+==================+===========+
-| 08183731-869f-4099-8725-9fe3b56cf0bf | aws            | us-east-1    | 69ba...68d4           | 2023-11-23T15:12 | Available |
-+--------------------------------------+----------------+--------------+-----------------------+------------------+-----------+
+Cloud region successfully added to project 'devnet-guide'!
++---------------+-------------+-----------------------+------------------+-----------+
+| Cloud region  | Region ID   | Cloud creds secret ID | Created at       | Status    |
++===============+=============+=======================+==================+===========+
+| aws/us-east-1 | 634d...c9d9 | 2a29...fde2           | 2023-12-21T15:56 | Available |
++---------------+-------------+-----------------------+------------------+-----------+
 ```
 
 :::note

@@ -107,6 +107,10 @@ You can pass any variable available in the [ash.avalanche.node](/docs/toolkit/an
 </div>
 </details>
 
+:::tip
+You can provide the secrets' or cloud regions' names instead of their IDs.
+:::
+
 <Tabs groupId="ash-console-client">
   <TabItem value="ash-cli" label="Using the Ash CLI" default>
 
@@ -114,15 +118,15 @@ To create a new resource, use the `create resource` command and provide the requ
 
 ```bash title="Command"
 ash console resource create '{
-  "name": "my-avalanche-node",
-  "resourceType": "avalancheNode",
-  "cloudRegionId": "ff69b281-917e-4ebb-b1e0-f5dc1da297fa",
-  "nodeIdSecretId": "4cc8f792-83af-475d-8be0-20c35efc1bd4",
-  "size": "small",
-  "nodeConfig": {
-    "isBootstrapNode": true,
-    "avalancheNodeConfig": {
-      "avalanchego_version":"1.10.10"
+  name: my-avalanche-node,
+  resourceType: avalancheNode,
+  cloudRegionId: ff69b281-917e-4ebb-b1e0-f5dc1da297fa,
+  nodeIdSecretId: my-node-id,
+  size: small,
+  nodeConfig: {
+    isBootstrapNode: true,
+    avalancheNodeConfig: {
+      avalanchego_version: 1.10.10
     }
   }
 }'
@@ -214,6 +218,10 @@ A resource can be in one of the following statuses:
 - `error`: the resource is in an error state
 - `destroying`: the resource is being destroyed
 
+:::tip
+You can also provide the resource name instead of its ID.
+:::
+
 <Tabs groupId="ash-console-client">
   <TabItem value="ash-cli" label="Using the Ash CLI" default>
 
@@ -294,7 +302,7 @@ For some resource types, updates will not take effect until the resource is rest
 The properties that can be updated **depend on the resource type**. For example, you can update an `avalancheNode` resource's `name` and `nodeConfig`:
 
 ```bash title="Command"
-ash console resource update 70877036-e8df-4ad3-af95-c0f085a094a6 '{"name": "my-avalanche-node-v2"}'
+ash console resource update my-avalanche-node '{name: my-avalanche-node-v2}'
 ```
 
 ```bash title="Output"
@@ -316,7 +324,7 @@ Resource updated successfully!
 The properties that can be updated **depend on the resource type**. For example, you can update an `avalancheNode` resource's `name` and `nodeConfig` by sending a `PATCH` to the `projects/${projectId}/resources/${resourceId}` endpoint:
 
 ```bash title="Command"
-curl -X PATCH https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/157f2652-8282-4738-937f-b11e8dcb7f38 \
+curl -X PATCH https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources/my-avalanche-node \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{"name": "my-avalanche-node-v2"}'

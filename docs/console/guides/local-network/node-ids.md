@@ -18,9 +18,13 @@ In this part of the guide, we will create **5 node ID secrets** for the 5 nodes 
 The Node ID secrets need to match the hardcoded Node IDs in the [`genesis_local.json`](https://github.com/ava-labs/avalanchego/blob/master/genesis/genesis_local.json#L47) file of the [AvalancheGo](https://github.com/ava-labs/avalanchego) codebase.
 :::
 
-## Fetch the 5 node IDs certificates
+## Fetch the node IDs blueprint
 
-The [Local Test Network Creation tutorial](/docs/toolkit/ansible-avalanche-collection/tutorials/local-test-network) uses the same certificates and keys for the 5 validator nodes. Let's fetch the certificate and key files from the [`ansible-avalanche-getting-started`](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository.
+:::info
+Learn more about blueprints in the [Console Blueprints](/docs/console/reference/blueprints) reference.
+:::
+
+We will use the [local-node-ids.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yml) blueprint to create the node ID secrets for the 5 nodes of our Avalanche devnet.
 
 1. If not already done, create a folder for this guide and navigate to it:
 
@@ -29,62 +33,69 @@ The [Local Test Network Creation tutorial](/docs/toolkit/ansible-avalanche-colle
    cd ash-console-guides/devnet-network
    ```
 
-2. Fetch the local nodes certificates and keys from the [`ansible-avalanche-getting-started`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/files/staking) repository:
+2. Fetch the blueprint from the [`ash-rs`](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yml) repository:
 
+   ```bash
+   curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yml -o local-node-ids.yml
+   ```
+
+3. Take a look at the blueprint. You will see that it defines 5 secrets of type `nodeId` with their TLS keys and certificates:
    ```bash title="Command"
-   for i in {1..5}; do
-     curl -sSL https://raw.githubusercontent.com/AshAvalanche/ansible-avalanche-getting-started/main/files/staking/validator0$i.crt -o node0$i.crt
-     curl -sSL https://raw.githubusercontent.com/AshAvalanche/ansible-avalanche-getting-started/main/files/staking/validator0$i.key -o node0$i.key
-   done
+   cat local-node-ids.yml
+   ```
+   ```yaml title="Output"
+   secrets:
+     - name: local-node-id-01
+       secretType: nodeId
+       nodeId: NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg
+       nodeCert: LS0tLS...
+       nodeKey: LS0tLS...
+     # ...
    ```
 
 ## Create the node ID secrets
 
-Use the certificate and key files to create a `nodeId` secret for each cert/key pair with the `console secret create` command:
+Apply the blueprint with the `console blueprint apply` command to create the node ID secrets:
 
 ```bash title="Command"
-# Node IDs
-nodeIds=("NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg" "NodeID-MFrZFVCXPv5iCn6M9K6XduxGTYp891xXZ" "NodeID-NFBbbJ4qCmNaCzeW7sxErhvWqvEQMnYcN" "NodeID-GWPcbFJZFfZreETSoWjPimr846mXEKCtu" "NodeID-P7oB2McjBGgW2NXXWVYjV8JEDFoW9xDE5")
-
-for i in {1..5}; do
-   secret_id_var=secret_id_0$i
-   eval $secret_id_var=$(ash console secret create "{
-      \"name\": \"node-id-0$i\",
-      \"secretType\": \"nodeId\",
-      \"nodeId\": \"${nodeIds[@]:$(($i - 1)):1}\",
-      \"nodeCert\": \"node0$i.crt\",
-      \"nodeKey\": \"node0$i.key\"
-   }" --json | jq .id)
-done
+ash console blueprint apply ./local-node-ids.yml
 ```
 
-:::tip
-The Node ID secrets' IDs have been saved in environment variables (e.g.: `$secret_id_01`), we will use them later in this guide!
-:::
+```bash title="Confirmation prompt"
+Blueprint summary
+Secrets
+  5 to create: local-node-id-01, local-node-id-02, local-node-id-03, local-node-id-04, local-node-id-05
+  0 to update:
+Projects
+  0 to create:
+  0 to update:
+? Are you sure you want to apply this blueprint? (y/N)
+[This action is irreversible!]
+```
 
-We can then confirm that the secrets have been created with the `console secret list` command:
+After the blueprint is done applying, we can then confirm that the secrets have been created with the `console secret list` command:
 
 ```bash title="Command"
 ash console secret list
 ```
 
 ```bash title="Output"
-+--------------------------------------+-------------+--------------------+----------------+------------------+---------+
-| Secret ID                            | Owner ID    | Name               | Type           | Created at       | Used by |
-+======================================+=============+====================+================+==================+=========+
-| 43a4743f-1f29-4815-9dc3-b12dfd7bfb55 | fce8...3695 | node-id-01         | NodeId         | 2023-11-23T14:54 | 0       |
-+--------------------------------------+-------------+--------------------+----------------+------------------+---------+
-| 7af586eb-627f-4fcb-8fc5-ab5fd7b6d0a1 | fce8...3695 | node-id-02         | NodeId         | 2023-11-23T14:54 | 0       |
-+--------------------------------------+-------------+--------------------+----------------+------------------+---------+
-| f951bd5b-c005-4d75-b710-7ade6b0c7f41 | fce8...3695 | node-id-03         | NodeId         | 2023-11-23T14:54 | 0       |
-+--------------------------------------+-------------+--------------------+----------------+------------------+---------+
-| a3748643-e94f-4cd1-be47-22ec6177dfb8 | fce8...3695 | node-id-04         | NodeId         | 2023-11-23T14:54 | 0       |
-+--------------------------------------+-------------+--------------------+----------------+------------------+---------+
-| ec23306c-0003-427d-9d78-b12a2f797e36 | fce8...3695 | node-id-05         | NodeId         | 2023-11-23T14:54 | 0       |
-+--------------------------------------+-------------+--------------------+----------------+------------------+---------+
++------------------+-------------+----------------+------------------+---------+
+| Secret name      | Secret ID   | Type           | Created at       | Used by |
++==================+=============+================+==================+=========+
+| local-node-id-01 | 7738...a900 | NodeId         | 2023-12-21T15:53 | 0       |
++------------------+-------------+----------------+------------------+---------+
+| local-node-id-02 | d577...a0bd | NodeId         | 2023-12-21T15:54 | 0       |
++------------------+-------------+----------------+------------------+---------+
+| local-node-id-03 | 6cf7...db9d | NodeId         | 2023-12-21T15:54 | 0       |
++------------------+-------------+----------------+------------------+---------+
+| local-node-id-04 | 7221...fa0c | NodeId         | 2023-12-21T15:54 | 0       |
++------------------+-------------+----------------+------------------+---------+
+| local-node-id-05 | 36a1...59b8 | NodeId         | 2023-12-21T15:54 | 0       |
++------------------+-------------+----------------+------------------+---------+
+| my-aws-creds     | 2a29...fde2 | AwsCredentials | 2023-12-21T15:55 | 0       |
++------------------+-------------+----------------+------------------+---------+
 ```
-
-**Note:** Your secret IDs will be different.
 
 :::note
 See the [reference](/docs/console/reference/secret-management) for more information about secrets lifecycle management.
