@@ -142,3 +142,85 @@ Projects
 ```
 
 Enter `y` and watch the magic happen!
+
+```bash title="Output"
+> Are you sure you want to apply this blueprint? Yes
+Creating entities...
+Creating secret: local-node-id-01
+Secret created successfully!
++------------------+-------------+--------+------------------+---------+
+| Secret name      | Secret ID   | Type   | Created at       | Used by |
++==================+=============+========+==================+=========+
+| local-node-id-01 | f906...0afc | NodeId | 2024-01-02T11:54 | 0       |
++------------------+-------------+--------+------------------+---------+
+# ...
+Creating resource: ash-devnet:local-node-05
+Resource successfully created in project 'ash-devnet'!
++---------------+-------------+---------------+-----------------+-------+------------------+---------+--------------------------+
+| Resource name | Resource ID | Type          | Cloud region ID | Size  | Created at       | Status  | Resource specific        |
++===============+=============+===============+=================+=======+==================+=========+==========================+
+| local-node-05 | cd99...0342 | AvalancheNode | 8d01...b4fc     | Small | 2024-01-02T11:56 | Pending |  IP address   | None     |
+|               |             |               |                 |       |                  |         |  Running      | false    |
+|               |             |               |                 |       |                  |         |  Bootstrapped | [false]  |
+|               |             |               |                 |       |                  |         |  Healthy      | [false]  |
+|               |             |               |                 |       |                  |         |  Restart req. | false    |
++---------------+-------------+---------------+-----------------+-------+------------------+---------+--------------------------+
+```
+
+## Health
+
+1. It will take a few minutes before the local network is `Bootstrapped` and `Healthy`. You can get its updated status with the `console resource info` command:
+
+   ```bash title="Command"
+    ash console resource info avalanche-node-01
+   ```
+
+   ```bash title="Output"
+   Resource 'avalanche-node-01' of project 'devnet-guide':
+   +-------------------+-------------+---------------+-----------------+-------+------------------+---------+--------------------------------+
+   | Resource name     | Resource ID | Type          | Cloud region ID | Size  | Created at       | Status  | Resource specific              |
+   +===================+=============+===============+=================+========+==================+=========+================================+
+   | avalanche-node-01 | 9419...6722 | AvalancheNode | 634d...c9d9     | Small | 2024-01-02T11:54 | Running |  IP address   | 3.210.183.166  |
+   |                   |             |               |                 |       |                  |         |  Running      | true           |
+   |                   |             |               |                 |       |                  |         |  Bootstrapped | [false]        |
+   |                   |             |               |                 |       |                  |         |  Healthy      | [false]        |
+   |                   |             |               |                 |       |                  |         |  Restart req. | false          |
+   +-------------------+-------------+---------------+-----------------+-------+------------------+---------+--------------------------------+
+   ```
+
+2. Once a node is `Running`, you can also query the node `info` endpoint with the `avalanche node info` command:
+
+   ```bash title="Command"
+   ash avalanche node info -n 3.210.183.166
+   ```
+
+   ```bash title="Output"
+    Node '3.210.183.166:9650':
+      ID:            NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg
+      Network:       local
+      Public IP:     3.210.183.166
+      Staking port:  9651
+      Versions:
+        AvalancheGo:  avalanche/1.10.17
+        Database:     v1.4.5
+        RPC Protocol: 28
+        Git commit:   145dfb0dc179d688f45ad44067ef6f9821148b36
+        VMs:
+          AvalancheVM: v1.10.17
+          Coreth:      v0.12.5
+          PlatformVM:  v1.10.17
+          Subnet VMs:  []
+      Uptime:
+        Rewarding stake:  100%
+        Weighted average: 100%
+   ```
+
+   :::note
+   Your node IP address will be different.
+   :::
+
+Your local Avalanche network is now up and running!
+
+:::note
+See the [reference](/docs/console/reference/resource-management) for more information about resources lifecycle management.
+:::
