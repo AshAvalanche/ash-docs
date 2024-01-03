@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
-We need to write a [blueprint](/docs/console/glossary#blueprint) that defines all the entities needed to deploy a 5-node Avalanche devnet. For convenience, we have prepared the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml) blueprint for you.
+We need to write a [blueprint](/docs/console/reference/blueprints) that defines all the entities needed to deploy a 5-node Avalanche devnet. For convenience, we have prepared the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml) blueprint for you.
 
 ## Download the blueprint
 
@@ -22,7 +22,7 @@ We need to write a [blueprint](/docs/console/glossary#blueprint) that defines al
    cd ash-console-guides/one-command-devnet
    ```
 
-2. Download the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml) blueprint from the [ash-rs GitHub repository](https://github.com/AshAvalanche/ash-rs).
+2. Download the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml) blueprint from the [ash-rs](https://github.com/AshAvalanche/ash-rs) GitHub repository.
 
    ```bash
    curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml -o devnet.yml
@@ -43,7 +43,7 @@ Let's take a look at the blueprint. You will see that it defines:
       nodeKey: LS0tLS...
     # ...
   ```
-- **1 project** named `ash-devnet` and tied to the `local` network. It is the **logical set** that will contain all the resource of our devnet:
+- **1 [project](/docs/console/glossary#project)** named `ash-devnet` and tied to the `local` network. It is the **logical set** that will contain all the resources of our devnet:
   ```yaml
   projects:
     - project:
@@ -56,7 +56,7 @@ Let's take a look at the blueprint. You will see that it defines:
   :::tip
   The project also defines `sharedResourceConfig.avalancheNodeConfig` that will be used by all the `avalancheNode` resources of the project.
   :::
-- **1 region** in the `ash-devnet` project. We will deploy all our resources in this region.
+- **1 [region](/docs/console/glossary#cloud-region)** in the `ash-devnet` project. We will deploy all our resources in this region.
   ```yaml
   regions:
     - cloudProvider: "${CLOUD_PROVIDER}}"
@@ -66,7 +66,7 @@ Let's take a look at the blueprint. You will see that it defines:
   :::tip
   Here we **reference environment variables** that we will define in the [next section](#define-environment-variables).
   :::
-- **5 `avalancheNode` resources** in the `ash-devnet` project. Each `avalancheNode` resource references a `nodeId` secret:
+- **5 `avalancheNode` [resources](/docs/console/glossary#resource)** in the `ash-devnet` project. Each `avalancheNode` resource references a `nodeId` secret:
   ```yaml
   resources:
     - name: local-node-01
@@ -77,7 +77,7 @@ Let's take a look at the blueprint. You will see that it defines:
     # ...
   ```
   :::tip
-  We **reference environment variables** to determine to which cloud region the resources will be deployed. We will define in the [next section](#define-environment-variables).
+  We **reference environment variables** to determine to which cloud region the resources will be deployed. We will define these variables in the [next section](#define-environment-variables).
   :::
 
 ## Define environment variables
