@@ -98,7 +98,7 @@ export CLOUD_CREDENTIALS_SECRET=aws-credentials
 
 ```bash
 export CLOUD_PROVIDER=azure
-export CLOUD_REGION=westus2
+export CLOUD_REGION=westus
 export CLOUD_CREDENTIALS_SECRET=azure-credentials
 ```
 

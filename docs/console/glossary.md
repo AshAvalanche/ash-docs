@@ -174,7 +174,6 @@ A `CloudRegion`'s format is always `cloudprovider/region`.
 - `azure/northeurope`
 - `azure/norwayeast`
 - `azure/norwaywest`
-- `azure/qatarcentral`
 - `azure/southafricanorth`
 - `azure/southafricawest`
 - `azure/southcentralus`
@@ -191,8 +190,6 @@ A `CloudRegion`'s format is always `cloudprovider/region`.
 - `azure/westeurope`
 - `azure/westindia`
 - `azure/westus`
-- `azure/westus2`
-- `azure/westus3`
 
 </div>
 </details>
