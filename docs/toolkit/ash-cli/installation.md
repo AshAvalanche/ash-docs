@@ -22,6 +22,15 @@ Prior to installing the CLI, you need to install Rust on your machine. Follow th
 cargo install ash_cli
 ```
 
+:::caution
+To install a version of the CLI that is compatible with the Ash Console alpha, you need to specify the `--version` flag:
+
+```bash
+cargo install ash_cli --version '~0.4.0-alpha'
+```
+
+:::
+
 This will make the `ash` command available in your terminal.
 
 ```bash
@@ -32,10 +41,10 @@ ash help
 
 The binary releases are available on the [GitHub releases page](https://github.com/AshAvalanche/ash-rs/releases).
 
-Download the latest release (e.g. `v0.2.1`) and make it executable:
+Download the latest release (e.g. `v0.4.0-alpha.5`) and make it executable:
 
 ```bash
-export ASH_VERSION=v0.2.1
+export ASH_VERSION=v0.4.0-alpha.5
 # Can be 'linux' or 'macos'
 export OS=linux
 # Can be 'amd64' or 'arm64'
@@ -45,7 +54,7 @@ curl -sSfL "https://github.com/AshAvalanche/ash-rs/releases/download/${ASH_VERSI
 # Verify binary checksum
 curl -sSfL "https://github.com/AshAvalanche/ash-rs/releases/download/${ASH_VERSION}/ash-${OS}-${ARCH}-${ASH_VERSION}.tar.gz.sha512" | sha512sum -c
 # Extract the binary
-tar -xzf "ash-${OS}-amd64-${ASH_VERSION}.tar.gz"
+tar -xzf "ash-${OS}-${ARCH}-${ASH_VERSION}.tar.gz"
 # Make the binary executable
 chmod +x ash
 ```
