@@ -14,7 +14,7 @@ This section will guide you through the steps to delete the entities created in 
 
 ```bash title="Command"
 for i in {1..5}; do
-  ash console resource delete -y avalanche-node-0$i
+  ash console resource delete -y local-node-0$i
 done
 ```
 
