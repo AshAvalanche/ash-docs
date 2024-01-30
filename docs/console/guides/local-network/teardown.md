@@ -1,8 +1,8 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 ---
 
-# 5. Teardown
+# 6. Teardown
 
 :::caution
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
@@ -16,6 +16,8 @@ This section will guide you through the steps to delete the entities created in 
 for i in {1..5}; do
   ash console resource delete -y local-node-0$i
 done
+# If you created a Subnet
+ash console resource delete -y my-subnet-evm
 ```
 
 Wait for the resources to be deleted (removed from the list):
