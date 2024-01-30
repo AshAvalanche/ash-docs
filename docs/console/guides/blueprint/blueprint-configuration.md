@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
-We need to write a [blueprint](/docs/console/reference/blueprints) that defines all the entities needed to deploy a 5-node Avalanche devnet. For convenience, we have prepared the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml) blueprint for you.
+We need to write a [blueprint](/docs/console/reference/blueprints) that defines all the entities needed to deploy a 5-node Avalanche devnet. For convenience, we have prepared the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml) and [devnet-evm-subnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet-evm-subnet.yml) blueprints for you.
 
-## Download the blueprint
+## Download the blueprints
 
 1. If not already done, create a folder for this guide and navigate to it:
 
@@ -22,15 +22,16 @@ We need to write a [blueprint](/docs/console/reference/blueprints) that defines 
    cd ash-console-guides/one-command-devnet
    ```
 
-2. Download the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml) blueprint from the [ash-rs](https://github.com/AshAvalanche/ash-rs) GitHub repository.
+2. Download the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml) and [devnet-evm-subnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet-evm-subnet.yml) blueprints from the [ash-rs](https://github.com/AshAvalanche/ash-rs) GitHub repository.
 
    ```bash
    curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml -o devnet.yml
+   curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet-evm-subnet.yml -o devnet-evm-subnet.yml
    ```
 
-## Review the blueprint
+## Review the blueprints
 
-Let's take a look at the blueprint. You will see that it defines:
+Let's take a look at the first blueprint, `devnet.yml`. You will see that it defines:
 
 - **5 `nodeId` secrets** for the 5 nodes of our Avalanche devnet (the node IDs of a `local` Avalanche network are hard-coded in AvalancheGo).  
   A `nodeId` [secret](/docs/console/glossary#secret) contains the TLS keys and certificates for an Avalanche node:
@@ -80,6 +81,43 @@ Let's take a look at the blueprint. You will see that it defines:
   We **reference environment variables** to determine to which cloud region the resources will be deployed. We will define these variables in the [next section](#define-environment-variables).
   :::
 
+The second blueprint, `devnet-evm-subnet.yml`, defines:
+
+- **1 `wallet` [secret](/docs/console/glossary#secret)**. This wallet will be use to sign the **Subnet transactions** (creation, validator management, etc.) and the P-Chain address will be used as the **control key** of the Subnet.
+  ```yaml
+  secrets:
+    # Local network pre-funded account wallet
+    - name: ewoq-key
+      secretType: wallet
+      pChainAddress: P-fuji18jma8ppw3nhx5r4ap8clazz0dps7rv5u6wmu4t
+      privateKey: PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN
+      privateKeyFormat: cb58
+  ```
+
+  :::warning
+  Do not use this wallet as control key in production!
+  :::
+
+- **1 `avalancheSubnet` [resource](/docs/console/glossary#resource)** in the `ash-devnet` project. It references the `ewoq-key` secret above and defines a [Subnet EVM](https://github.com/ava-labs/subnet-evm) blockchain to be created with a standard [genesis](https://docs.avax.network/build/subnet/upgrade/customize-a-subnet#genesis) configuration:
+  ```yaml
+  resources:
+    - name: ash-subnet
+      resourceType: avalancheSubnet
+      cloudRegionId: "${CLOUD_PROVIDER}/${CLOUD_REGION}"
+      subnetControlKeySecretId: ewoq-key
+      subnetConfig:
+        createSubnet: true
+        avalancheSubnetConfig:
+            subnet_blockchains_list:
+              - name: AshSubnetEVM
+                vm: subnet-evm
+    # ...
+  ```
+
+  :::tip
+  The `avalancheSubnetConfig` field is following the same structure as the [Ansible Avalanche Collection](/docs/toolkit/ansible-avalanche-collection/introduction)'s `ash.avalanche_subnet` role. See [Blockchain configuration](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-subnet#blockchain-configuration) for more information on how to generate a custom genesis configuration.
+  :::
+
 ## Define environment variables
 
 A blueprint is **very flexible thanks to the use of environment variables**. Here we can dynamically specify the cloud provider, region, and cloud credentials secret ID. Let's define them depending on your cloud provider you set up in [step 1](/docs/console/guides/blueprint/cloud-credentials):
@@ -116,9 +154,9 @@ export CLOUD_CREDENTIALS_SECRET=google-credentials
 
 Of course, pick the `CLOUD_REGION` of your choice.
 
-## Apply the blueprint
+## Apply the devnet blueprint
 
-Everything is ready to deploy our devnet! Let's apply the blueprint:
+Everything is ready to deploy our devnet! Let's apply the first blueprint:
 
 ```bash title="Command"
 ash console blueprint apply ./devnet.yml
@@ -220,6 +258,106 @@ Resource successfully created in project 'ash-devnet'!
    :::
 
 Your local Avalanche network is now up and running!
+
+## Apply the Subnet blueprint
+
+Now that we have a devnet ready to be used, we can apply the second blueprint, `devnet-evm-subnet.yml`:
+
+```bash title="Command"
+ash console blueprint apply ./devnet-evm-subnet.yml
+```
+
+The CLI will ask you to confirm the action:
+
+```bash title="Confirmation prompt"
+Blueprint summary
+Secrets
+  1 to create: ewoq-key
+  0 to update:
+Projects
+  0 to create:
+  1 to update:
+  - 'ash-devnet':
+      Resources: ash-subnet
+? Are you sure you want to apply this blueprint? (y/N)
+[This action is irreversible!]
+```
+
+Enter `y` and watch the magic happen!
+
+```bash title="Output"
+> Are you sure you want to apply this blueprint? Yes
+Creating entities...
+Creating secret: ewoq-key
+Secret created successfully!
++-------------+-------------+--------+------------------+---------+
+| Secret name | Secret ID   | Type   | Created at       | Used by |
++=============+=============+========+==================+=========+
+| ewoq-key    | e9b0...5e35 | Wallet | 2024-01-30T17:25 | 0       |
++-------------+-------------+--------+------------------+---------+
+
+Updating entities...
+Updating project: ash-devnet
+Project updated successfully!
++--------------+-------------+---------+-----------------+--------------------+------------------+
+| Project name | Project ID  | Network | Cloud regions   | Resources          | Created at       |
++==============+=============+=========+=================+====================+==================+
+| ash-devnet   | 3443...5326 | Local   |  aws/us-east-1  |  avalancheNode: 5  | 2024-01-30T13:21 |
++--------------+-------------+---------+-----------------+--------------------+------------------+
+
+Adding resource: ash-devnet:ash-subnet
+Resource successfully created in project 'ash-devnet'!
++---------------+-------------+-----------------+---------------+-------+------------------+---------+-------------------+
+| Resource name | Resource ID | Type            | Cloud region  | Size  | Created at       | Status  | Resource specific |
++===============+=============+=================+===============+=======+==================+=========+===================+
+| ash-subnet    | 396d...6cc8 | AvalancheSubnet | aws/us-east-1 | Small | 2024-01-30T17:26 | Pending |  ID         |     |
+|               |             |                 |               |       |                  |         |  Validators | 0   |
++---------------+-------------+-----------------+---------------+-------+------------------+---------+-------------------+
+```
+
+## Subnet ID
+
+After a few minutes, we can get the Subnet ID of our Subnet with the `console resource info` command:
+
+```bash title="Command"
+ash console resource info ash-subnet
+```
+
+```bash title="Output"
+Resource 'ash-subnet' of project 'ash-devnet':
++---------------+-------------+-----------------+---------------+-------+------------------+---------+-------------------------------------------------------------------+
+| Resource name | Resource ID | Type            | Cloud region  | Size  | Created at       | Status  | Resource specific                                                 |
++===============+=============+=================+===============+=======+==================+=========+===================================================================+
+| ash-subnet    | 396d...6cc8 | AvalancheSubnet | aws/us-east-1 | Small | 2024-01-30T17:26 | Running |  ID         | 2rArnpKkN9fKch9Q6ana3awAfVmM4HfLoNYrZZDkSumApEi8yZ  |
+|               |             |                 |               |       |                  |         |  Validators | 5                                                   |
++---------------+-------------+-----------------+---------------+-------+------------------+---------+-------------------------------------------------------------------+
+```
+
+## Blockchain ID
+
+From here, we can query one of our nodes to get information about the Subnet:
+
+```bash title="Command"
+ash avax subnet info 2rArnpKkN9fKch9Q6ana3awAfVmM4HfLoNYrZZDkSumApEi8yZ
+```
+
+```bash title="Output"
+Subnet '2rArnpKkN9fKch9Q6ana3awAfVmM4HfLoNYrZZDkSumApEi8yZ':
+  Type: Permissioned
+  Control keys: ["P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u"]
+  Threshold:    1
+  Blockchains list (1): 
+  - 'AshSubnetEVM':
+    ID:      2SZGABMprnB9Ux88WLYGodeWRFHJBogDrkncLDqsv5XhFnizT6
+    VM ID:   srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy
+    VM type: SubnetEVM
+  Validators list (5): 
+  - NodeID-MFrZFVCXPv5iCn6M9K6XduxGTYp891xXZ
+  - NodeID-P7oB2McjBGgW2NXXWVYjV8JEDFoW9xDE5
+  - NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg
+  - NodeID-GWPcbFJZFfZreETSoWjPimr846mXEKCtu
+  - NodeID-NFBbbJ4qCmNaCzeW7sxErhvWqvEQMnYcN
+```
 
 :::note
 See the [reference](/docs/console/reference/resource-management) for more information about resources lifecycle management.

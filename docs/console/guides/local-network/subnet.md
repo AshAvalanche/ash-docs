@@ -36,10 +36,12 @@ Secret created successfully!
 ```
 
 :::warning
-Do not use this wallet in production!
+Do not use this wallet as control key in production!
 :::
 
 ## Subnet creation
+
+The following command will create a [Subnet EVM](https://github.com/ava-labs/subnet-evm) blockchain with a standard [genesis](https://docs.avax.network/build/subnet/upgrade/customize-a-subnet#genesis) configuration.
 
 ```bash title="Command"
 ash console resource create '{
@@ -128,7 +130,7 @@ Unlike the `avalancheNode` resource, there is no concept of `size` for the `aval
 
 ## Subnet ID
 
-We can now get the Subnet ID of our Subnet with the `console resource info` command:
+After a few minutes, we can get the Subnet ID of our Subnet with the `console resource info` command:
 
 ```bash title="Command"
 ash console resource info my-subnet-evm
