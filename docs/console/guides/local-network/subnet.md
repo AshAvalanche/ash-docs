@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# 5. Subnet
+# 5. Subnet Creation
 
 :::caution
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
@@ -18,11 +18,11 @@ To make things easier, we will use the `ewoq` address which is pre-funded on the
 
 ```bash title="Command"
 ash console secret create '{
-  "name": "ewoq-key",
-  "secretType": "wallet",
-  "pChainAddress": "P-fuji18jma8ppw3nhx5r4ap8clazz0dps7rv5u6wmu4t",
-  "privateKey": "PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN",
-  "privateKeyFormat": "cb58"
+  name: ewoq-key,
+  secretType: wallet,
+  pChainAddress: P-fuji18jma8ppw3nhx5r4ap8clazz0dps7rv5u6wmu4t,
+  privateKey: PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN,
+  privateKeyFormat: cb58
 }'
 ```
 
