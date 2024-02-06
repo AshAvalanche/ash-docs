@@ -17,7 +17,7 @@ for i in {1..5}; do
   ash console resource delete -y local-node-0$i
 done
 # If you created a Subnet
-ash console resource delete -y my-subnet-evm
+ash console resource delete -y ash-subnet
 ```
 
 Wait for the resources to be deleted (removed from the list):
@@ -60,6 +60,8 @@ Cloud regions of project 'devnet-guide':
 for i in {1..5}; do
   ash console secret delete -y local-node-id-0$i
 done
+# If you created a Subnet
+ash console secret delete -y ewoq-key
 ```
 
 :::note

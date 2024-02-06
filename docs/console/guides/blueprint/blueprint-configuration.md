@@ -210,15 +210,15 @@ Resource successfully created in project 'ash-devnet'!
 1. It will take a few minutes before the local network is `Bootstrapped` and `Healthy`. You can get its updated status with the `console resource info` command:
 
    ```bash title="Command"
-    ash console resource info avalanche-node-01
+    ash console resource info local-node-01
    ```
 
    ```bash title="Output"
-   Resource 'avalanche-node-01' of project 'devnet-guide':
+   Resource 'local-node-01' of project 'devnet-guide':
    +-------------------+-------------+---------------+-----------------+-------+------------------+---------+--------------------------------+
    | Resource name     | Resource ID | Type          | Cloud region ID | Size  | Created at       | Status  | Resource specific              |
    +===================+=============+===============+=================+========+==================+=========+================================+
-   | avalanche-node-01 | 9419...6722 | AvalancheNode | 634d...c9d9     | Small | 2024-01-02T11:54 | Running |  IP address   | 3.210.183.166  |
+   | local-node-01     | 9419...6722 | AvalancheNode | 634d...c9d9     | Small | 2024-01-02T11:54 | Running |  IP address   | 3.210.183.166  |
    |                   |             |               |                 |       |                  |         |  Running      | true           |
    |                   |             |               |                 |       |                  |         |  Bootstrapped | [false]        |
    |                   |             |               |                 |       |                  |         |  Healthy      | [false]        |
@@ -315,48 +315,62 @@ Resource successfully created in project 'ash-devnet'!
 +---------------+-------------+-----------------+---------------+-------+------------------+---------+-------------------+
 ```
 
-## Subnet ID
+## Subnet information
 
-After a few minutes, we can get the Subnet ID of our Subnet with the `console resource info` command:
+After a few minutes, we can get the Subnet ID, control keys, blockchains, and validator nodes information from the `subnetStatus` field returned by the `console resource info` command:
 
 ```bash title="Command"
-ash console resource info ash-subnet
+ash console resource info ash-subnet --json | jq '.subnetStatus'
+```
+
+:::tip
+We use the `--json` flag to get the extended information about the Subnet. All those information cannot be displayed in a table format.
+:::
+
+```python title="Output"
+{
+  "blockchains": [
+    {
+      "id": "RfX8YRUHePxFENBZFwaNt1tP6CR6RQ4hJJ5AqYv49LRoSKniK",
+      "name": "AshLocalEVM",
+      "vm_id": "srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy",
+      "vm_type": "SubnetEVM"
+    }
+  ],
+  "controlKeys": [
+    "P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u"
+  ],
+  "id": "29uVeLPJB1eQJkzRemU8g8wZDw5uJRqpab5U2mX9euieVwiEbL",
+  "pendingValidators": [],
+  "subnetType": "Permissioned",
+  "threshold": 1,
+  "validators": [
+    {
+      "connected": true,
+      "end_time": 1707486609,
+      "node_id": "NodeID-MFrZFVCXPv5iCn6M9K6XduxGTYp891xXZ",
+      "stake_amount": 100,
+      "start_time": 1706881809,
+      "tx_id": "DhEgYijBur6QDUDgUMpmDAyF5XGyq6JwG919B8bkryDLijvua",
+      "uptime": 100,
+      "weight": 100
+    },
+    # ...
+  ]
+}
+```
+
+## Blockchain RPC endpoint
+
+The CLI provides a powerful helper to get the RPC endpoint that can be used to query the Subnet EVM blockchain (e.g. to connect a Web3 wallet). Provide the `avalancheNode` resource name to be used as RPC and the `avalancheSubnet` resource name:
+
+```bash title="Command"
+ash console helper rpc local-node-01 ash-subnet
 ```
 
 ```bash title="Output"
-Resource 'ash-subnet' of project 'ash-devnet':
-+---------------+-------------+-----------------+---------------+-------+------------------+---------+-------------------------------------------------------------------+
-| Resource name | Resource ID | Type            | Cloud region  | Size  | Created at       | Status  | Resource specific                                                 |
-+===============+=============+=================+===============+=======+==================+=========+===================================================================+
-| ash-subnet    | 396d...6cc8 | AvalancheSubnet | aws/us-east-1 | Small | 2024-01-30T17:26 | Running |  ID         | 2rArnpKkN9fKch9Q6ana3awAfVmM4HfLoNYrZZDkSumApEi8yZ  |
-|               |             |                 |               |       |                  |         |  Validators | 5                                                   |
-+---------------+-------------+-----------------+---------------+-------+------------------+---------+-------------------------------------------------------------------+
-```
-
-## Blockchain ID
-
-From here, we can query one of our nodes to get information about the Subnet:
-
-```bash title="Command"
-ash avax subnet info 2rArnpKkN9fKch9Q6ana3awAfVmM4HfLoNYrZZDkSumApEi8yZ
-```
-
-```bash title="Output"
-Subnet '2rArnpKkN9fKch9Q6ana3awAfVmM4HfLoNYrZZDkSumApEi8yZ':
-  Type: Permissioned
-  Control keys: ["P-local18jma8ppw3nhx5r4ap8clazz0dps7rv5u00z96u"]
-  Threshold:    1
-  Blockchains list (1): 
-  - 'AshSubnetEVM':
-    ID:      2SZGABMprnB9Ux88WLYGodeWRFHJBogDrkncLDqsv5XhFnizT6
-    VM ID:   srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy
-    VM type: SubnetEVM
-  Validators list (5): 
-  - NodeID-MFrZFVCXPv5iCn6M9K6XduxGTYp891xXZ
-  - NodeID-P7oB2McjBGgW2NXXWVYjV8JEDFoW9xDE5
-  - NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg
-  - NodeID-GWPcbFJZFfZreETSoWjPimr846mXEKCtu
-  - NodeID-NFBbbJ4qCmNaCzeW7sxErhvWqvEQMnYcN
+AshLocalEVM RCP endpoint:
+  http://44.223.28.33:9650/ext/bc/RfX8YRUHePxFENBZFwaNt1tP6CR6RQ4hJJ5AqYv49LRoSKniK/rpc
 ```
 
 :::note
