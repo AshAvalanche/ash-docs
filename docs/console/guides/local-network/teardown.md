@@ -1,8 +1,8 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 ---
 
-# 5. Teardown
+# 6. Teardown
 
 :::caution
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
@@ -14,8 +14,10 @@ This section will guide you through the steps to delete the entities created in 
 
 ```bash title="Command"
 for i in {1..5}; do
-  ash console resource delete -y avalanche-node-0$i
+  ash console resource delete -y local-node-0$i
 done
+# If you created a Subnet
+ash console resource delete -y ash-subnet
 ```
 
 Wait for the resources to be deleted (removed from the list):
@@ -58,6 +60,8 @@ Cloud regions of project 'devnet-guide':
 for i in {1..5}; do
   ash console secret delete -y local-node-id-0$i
 done
+# If you created a Subnet
+ash console secret delete -y ewoq-key
 ```
 
 :::note

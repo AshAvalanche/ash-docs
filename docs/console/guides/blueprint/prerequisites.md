@@ -20,7 +20,7 @@ During the Console alpha, **user accounts are created by the Ash team**. If you 
 
 To follow this guide, you will need:
 
-- The **[Ash CLI](/docs/toolkit/ash-cli/introduction) installed** in a version >= `0.4.0-alpha.5`. See [Ash CLI - Installation](/docs/toolkit/ash-cli/installation).
+- The **[Ash CLI](/docs/toolkit/ash-cli/introduction) installed** in a version >= `0.4.0`. See [Ash CLI - Installation](/docs/toolkit/ash-cli/installation).
 - A **user account** in the Ash Console and an open session in the CLI. See [Authentication](/docs/console/reference/authentication).
 - An account in one of the following cloud providers:
   - [AWS](https://aws.amazon.com/)

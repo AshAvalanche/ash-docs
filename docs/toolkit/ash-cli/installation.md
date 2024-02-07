@@ -22,15 +22,6 @@ Prior to installing the CLI, you need to install Rust on your machine. Follow th
 cargo install ash_cli
 ```
 
-:::caution
-To install a version of the CLI that is compatible with the Ash Console alpha, you need to specify the `--version` flag:
-
-```bash
-cargo install ash_cli --version '~0.4.0-alpha'
-```
-
-:::
-
 This will make the `ash` command available in your terminal.
 
 ```bash
@@ -41,10 +32,10 @@ ash help
 
 The binary releases are available on the [GitHub releases page](https://github.com/AshAvalanche/ash-rs/releases).
 
-Download the latest release (e.g. `v0.4.0-alpha.5`) and make it executable:
+Download the latest release (e.g. `v0.4.0`) and make it executable:
 
 ```bash
-export ASH_VERSION=v0.4.0-alpha.5
+export ASH_VERSION=v0.4.0
 # Can be 'linux' or 'macos'
 export OS=linux
 # Can be 'amd64' or 'arm64'

@@ -57,11 +57,11 @@ ash console project info devnet-guide --json | jq
 ## Bootstrap node creation
 
 1. Gather the cloud region secret ID from the previous steps.
-2. Create the `avalancheNode` "avalanche-node-01" resource with the `console resource create` command:
+2. Create the `avalancheNode` "local-node-01" resource with the `console resource create` command:
 
    ```bash title="Command"
    ash console resource create '{
-     name: avalanche-node-01,
+     name: local-node-01,
      resourceType: avalancheNode,
      cloudRegionId: aws/us-east-1,
      nodeIdSecretId: local-node-id-01,
@@ -77,7 +77,7 @@ ash console project info devnet-guide --json | jq
    +-------------------+-------------+---------------+-----------------+--------+------------------+---------+--------------------------+
    | Resource name     | Resource ID | Type          | Cloud region ID | Size   | Created at       | Status  | Resource specific        |
    +===================+=============+===============+=================+========+==================+=========+==========================+
-   | avalanche-node-01 | 9419...6722 | AvalancheNode | 634d...c9d9     | Medium | 2023-12-21T16:01 | Pending |  IP address   | None     |
+   | local-node-01     | 9419...6722 | AvalancheNode | 634d...c9d9     | Medium | 2023-12-21T16:01 | Pending |  IP address   | None     |
    |                   |             |               |                 |        |                  |         |  Running      | false    |
    |                   |             |               |                 |        |                  |         |  Bootstrapped | [false]  |
    |                   |             |               |                 |        |                  |         |  Healthy      | [false]  |
@@ -88,7 +88,7 @@ ash console project info devnet-guide --json | jq
    **Note:** See [Resource sizes](/docs/console/reference/resource-management#resource-sizes) for available resource sizes.
 
 :::tip
-`avalanche-node-01` is the "bootstrap" node. It has a different configuration than the other nodes of the local Avalanche network. See the [Create a resource](/docs/console/reference/resource-management#create-a-resource) for more information.
+`local-node-01` is the "bootstrap" node. It has a different configuration than the other nodes of the local Avalanche network. See the [Create a resource](/docs/console/reference/resource-management#create-a-resource) for more information.
 :::
 
 ## Other nodes creation
@@ -98,7 +98,7 @@ Create the 4 other `avalancheNode` resources with the `console resource create` 
 ```bash title="Command"
 for i in {2..5}; do
   ash console resource create "{
-    name: avalanche-node-0$i,
+    name: local-node-0$i,
     resourceType: avalancheNode,
     cloudRegionId: aws/us-east-1,
     nodeIdSecretId: local-node-id-0$i,
@@ -106,7 +106,7 @@ for i in {2..5}; do
     nodeConfig: {
       isBootstrapNode: false
     },
-    nodeBootstrapResourceId: avalanche-node-01
+    nodeBootstrapResourceId: local-node-01
   }"
 done
 ```
@@ -123,15 +123,15 @@ done
 1. It will take a few minutes before the local network is `Bootstrapped` and `Healthy`. You can get its updated status with the `console resource info` command:
 
    ```bash title="Command"
-    ash console resource info avalanche-node-01
+    ash console resource info local-node-01
    ```
 
    ```bash title="Output"
-   Resource 'avalanche-node-01' of project 'devnet-guide':
+   Resource 'local-node-01' of project 'devnet-guide':
    +-------------------+-------------+---------------+-----------------+--------+------------------+---------+--------------------------------+
    | Resource name     | Resource ID | Type          | Cloud region ID | Size   | Created at       | Status  | Resource specific              |
    +===================+=============+===============+=================+========+==================+=========+================================+
-   | avalanche-node-01 | 9419...6722 | AvalancheNode | 634d...c9d9     | Medium | 2023-12-21T16:01 | Running |  IP address   | 3.210.183.166  |
+   | local-node-01     | 9419...6722 | AvalancheNode | 634d...c9d9     | Medium | 2023-12-21T16:01 | Running |  IP address   | 3.210.183.166  |
    |                   |             |               |                 |        |                  |         |  Running      | true           |
    |                   |             |               |                 |        |                  |         |  Bootstrapped | [false]        |
    |                   |             |               |                 |        |                  |         |  Healthy      | [false]        |

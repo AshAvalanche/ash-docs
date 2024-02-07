@@ -8,7 +8,7 @@ sidebar_position: 1.2
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
-Similarly to the [Avalanche Devnet guide](/docs/console/guides/local-network/), this guide will walk you through setting up **a 5-node Avalanche devnet** ([local network](https://docs.avax.network/nodes/configure/avalanchego-config-flags#network-id)) with the Ash Console, but this time with **a single command**!
+Similarly to the [Avalanche Devnet guide](/docs/console/guides/local-network/), this guide will walk you through setting up **a 5-node Avalanche devnet** ([local network](https://docs.avax.network/nodes/configure/avalanchego-config-flags#network-id)) and a **[Subnet EVM](https://github.com/ava-labs/subnet-evm) blockchain** with the Ash Console, but this time with **a single command**! (well actually 2 commands in this guide, but we could do it in one)
 
 We will leverage the [blueprint](/docs/console/reference/blueprints) feature of the Ash CLI.
 
