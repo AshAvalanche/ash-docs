@@ -24,7 +24,7 @@ The Node ID secrets need to match the hardcoded Node IDs in the [`genesis_local.
 Learn more about blueprints in the [Console Blueprints](/docs/console/reference/blueprints) reference.
 :::
 
-We will use the [local-node-ids.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yml) blueprint to create the node ID secrets for the 5 nodes of our Avalanche devnet.
+We will use the [local-node-ids.yml](https://github.com/AshAvalanche/ash-rs/blob/main/crates/ash_cli/examples/console/blueprint/local-node-ids.yml) blueprint to create the node ID secrets for the 5 nodes of our Avalanche devnet.
 
 1. If not already done, create a folder for this guide and navigate to it:
 
@@ -33,7 +33,7 @@ We will use the [local-node-ids.yml](https://github.com/AshAvalanche/ash-rs/blob
    cd ash-console-guides/devnet-network
    ```
 
-2. Fetch the blueprint from the [`ash-rs`](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yml) repository:
+2. Fetch the blueprint from the [`ash-rs`](https://github.com/AshAvalanche/ash-rs/blob/main/crates/ash_cli/examples/console/blueprint/local-node-ids.yml) repository:
 
    ```bash
    curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yml -o local-node-ids.yml

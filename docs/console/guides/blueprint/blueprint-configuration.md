@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
-We need to write [blueprints](/docs/console/reference/blueprints) that define all the entities needed to deploy a 5-node Avalanche devnet and to create the Subnet. For convenience, we have prepared the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml) and [devnet-evm-subnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet-evm-subnet.yml) blueprints for you.
+We need to write [blueprints](/docs/console/reference/blueprints) that define all the entities needed to deploy a 5-node Avalanche devnet and to create the Subnet. For convenience, we have prepared the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/main/crates/ash_cli/examples/console/blueprint/devnet.yml) and [devnet-evm-subnet.yml](https://github.com/AshAvalanche/ash-rs/blob/main/crates/ash_cli/examples/console/blueprint/devnet-evm-subnet.yml) blueprints for you.
 
 ## Download the blueprints
 
@@ -22,11 +22,11 @@ We need to write [blueprints](/docs/console/reference/blueprints) that define al
    cd ash-console-guides/one-command-devnet
    ```
 
-2. Download the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml) and [devnet-evm-subnet.yml](https://github.com/AshAvalanche/ash-rs/blob/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet-evm-subnet.yml) blueprints from the [ash-rs](https://github.com/AshAvalanche/ash-rs) GitHub repository.
+2. Download the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/main/crates/ash_cli/examples/console/blueprint/devnet.yml) and [devnet-evm-subnet.yml](https://github.com/AshAvalanche/ash-rs/blob/main/crates/ash_cli/examples/console/blueprint/devnet-evm-subnet.yml) blueprints from the [ash-rs](https://github.com/AshAvalanche/ash-rs) GitHub repository.
 
    ```bash
-   curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet.yml -o devnet.yml
-   curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/ash-console-alpha/crates/ash_cli/examples/console/blueprint/devnet-evm-subnet.yml -o devnet-evm-subnet.yml
+   curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/main/crates/ash_cli/examples/console/blueprint/devnet.yml -o devnet.yml
+   curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/main/crates/ash_cli/examples/console/blueprint/devnet-evm-subnet.yml -o devnet-evm-subnet.yml
    ```
 
 ## Review the blueprints
