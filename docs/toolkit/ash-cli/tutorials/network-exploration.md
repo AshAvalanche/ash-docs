@@ -76,7 +76,7 @@ Subnet '9m6a3Qte8FaRbLZixLhh8Ptdkemm4csNaLwQeKkENx5wskbWP':
   Blockchains list (1):
   - main:
     ID:      XuEPnCE59rtutASDPCDeYw8geQaGWwteWjkDXYLWvssfuirde
-    VM ID:   spePNvBxaWSYL2tB5e2xMmMNBQkXMN8z2XEbz1ML2Aahatwoc
+    VM ID:   srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy
     VM type: SubnetEVM
   Validators list (4):
   - NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob

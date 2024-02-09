@@ -115,6 +115,7 @@ Use the `blockchain create` command to create the Subnet EVM blockchain in the S
 ash avalanche blockchain create testSubnetEVM \
   --subnet-id GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk \
   --vm-type SubnetEVM \
+  --vm-id srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy \
   --genesis-file /tmp/encoded-genesis.json -w
 ```
 
@@ -126,6 +127,7 @@ ash avalanche blockchain create testSubnetEVM \
   -p PrivateKey-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
   --subnet-id GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk \
   --vm-type SubnetEVM \
+  --vm-id srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy \
   --genesis-file /tmp/encoded-genesis.json -w
 ```
 
@@ -137,7 +139,7 @@ Waiting for transaction to be accepted...
 Blockchain created! (Tx ID: 'i2ZXw8NbVFxUK3kMjpwPtF2T3mtyoc6VWuH41rMfbc1NWE1Pb')
 Blockchain 'testSubnetEVM':
   ID:      i2ZXw8NbVFxUK3kMjpwPtF2T3mtyoc6VWuH41rMfbc1NWE1Pb
-  VM ID:   spePNvBxaWSYL2tB5e2xMmMNBQkXMN8z2XEbz1ML2Aahatwoc
+  VM ID:   srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy
   VM type: SubnetEVM
 ```
 
@@ -212,7 +214,7 @@ Subnet 'GQE4XUWgCR8ZryvhNdaCoyqVi25YNyh2nxyAjyCB3jXFL6gbk':
   Blockchains list (1):
   - testSubnetEVM:
       ID:      i2ZXw8NbVFxUK3kMjpwPtF2T3mtyoc6VWuH41rMfbc1NWE1Pb
-      VM ID:   spePNvBxaWSYL2tB5e2xMmMNBQkXMN8z2XEbz1ML2Aahatwoc
+      VM ID:   srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy
       VM type: SubnetEVM
   Validators list (5):
   - NodeID-P7oB2McjBGgW2NXXWVYjV8JEDFoW9xDE5
