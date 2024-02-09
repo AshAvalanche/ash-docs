@@ -516,6 +516,6 @@ Here are the available sizes per resource type and their corresponding machine t
 
 | Size     | RAM   | CPU | Disk                                    | Azure VM type   | AWS EC2 instance type | GCP machine type |
 | -------- | ----- | --- | --------------------------------------- | --------------- | --------------------- | ---------------- |
-| `small`  | 1-2GB | 1-2 | 8-32 (OS) + 50 GiB (resource storage)   | `Standard_B1s`  | `t2.micro`            | `e2-small`       |
-| `medium` | 4GB   | 2   | 8-32 (OS) + 200 GiB (resource storage)  | `Standard_B2s`  | `t2.medium`           | `e2-medium`      |
-| `large`  | 32GB  | 8   | 8-32 (OS) + 1000 GiB (resource storage) | `Standard_B8ms` | `t2.2xlarge`          | `e2-standard-8`  |
+| `small`  | 1-2GB | 1-2 | 8-32 (OS) + 50 GiB (resource storage)   | `Standard_B1ms` | `t2.small`            | `e2-small`       |
+| `medium` | 8GB   | 4   | 8-32 (OS) + 200 GiB (resource storage)  | `Standard_F4s`  | `c5.xlarge`           | `c2d-highcpu-4`  |
+| `large`  | 16GB  | 8   | 8-32 (OS) + 1000 GiB (resource storage) | `Standard_F8s`  | `c5.2xlarge`          | `c2d-highcpu-8`  |
