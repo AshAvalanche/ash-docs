@@ -75,7 +75,7 @@ Waiting for transaction to be accepted...
 Blockchain created! (Tx ID: 'i2ZXw8NbVFxUK3kMjpwPtF2T3mtyoc6VWuH41rMfbc1NWE1Pb')
 Blockchain 'testSubnetEVM':
   ID:      i2ZXw8NbVFxUK3kMjpwPtF2T3mtyoc6VWuH41rMfbc1NWE1Pb
-  VM ID:   spePNvBxaWSYL2tB5e2xMmMNBQkXMN8z2XEbz1ML2Aahatwoc
+  VM ID:   srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy
   VM type: SubnetEVM
 ```
 

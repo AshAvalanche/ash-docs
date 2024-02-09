@@ -163,7 +163,7 @@ Subnet 'p4jUwqZsA2LuSftroCd3zb4ytH8W99oXKuKVZdsty7eQ3rXD6':
   Blockchains list (1):
   - AshLocalEVM:
     ID:      2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac
-    VM ID:   spePNvBxaWSYL2tB5e2xMmMNBQkXMN8z2XEbz1ML2Aahatwoc
+    VM ID:   srEXiWaHuhNyGwPUi444Tu47ZEDwxTWrbQiuD7FmgSAQ6X7Dy
     VM type: SubnetEVM
   Validators list (5):
   - NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg
