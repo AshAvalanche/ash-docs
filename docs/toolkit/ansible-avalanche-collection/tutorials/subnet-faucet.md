@@ -68,5 +68,5 @@ http://10.117.207.108:8000
 </figure>
 
 :::caution
-The `ash.avalanche.faucet` role is not yet compatible with secured HTTP API endpoints (see [Node security](./node-security) for details).
+The `ash.avalanche.faucet` role is not yet compatible with secured HTTP API endpoints.
 :::
