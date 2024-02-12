@@ -8,7 +8,7 @@ This is a list of the known issues and their solutions.
 
 ## Issues
 
-### Multipass Instance already existing
+### Multipass instance already exists
 
 ```bash
 │ Error: Error from multipass
