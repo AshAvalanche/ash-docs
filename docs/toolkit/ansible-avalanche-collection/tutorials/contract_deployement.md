@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Smart Contract Deployement
 
-In this section, we will deploy a smart contract to launch the ASHToken ERC20 token on an Evm subnet deployed using the ash Ansible collection.
+In this section, we will deploy a smart contract to launch the ASHToken ERC20 token on an EVM Subnet deployed using the [ash.avalanche](https://github.com/AshAvalanche/ansible-avalanche-collection) Ansible collection.
 
 :::note
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a Local Test Network](./local-test-network) for details.
