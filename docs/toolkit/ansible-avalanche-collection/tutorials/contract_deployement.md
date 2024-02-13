@@ -24,6 +24,7 @@ We should also have created a Subnet and a blockchain, see [Subnet Creation](/do
 To compile the contract, we need to clone two dependencies into the `ash_token/lib` folder.
 
 ```bash title="Command"
+cd ash_token
 git clone https://github.com/foundry-rs/forge-std
 git clone https://github.com/OpenZeppelin/openzeppelin-contracts.git
 ```
