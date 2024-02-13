@@ -77,6 +77,6 @@ cast call $CONTRACT_ADDRESS "balanceOf(address)(uint256)" $BOB_ADDR --rpc-url $R
 To be connected on the correct blockchain, please refer to  [connect-to-the-subnet-and-start-issuing-transactions](http://localhost:3000/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation#connect-to-the-subnet-and-start-issuing-transactions) section.
 :::
 
-As every blockchain running an Evm, we can register a new token in a wallet (core in our case) to interact with. To do so, open the wallet, add a custom token and fill the contract address:
+Like every EVM-based blockchains, we can register a new token in a wallet ([Core](https://core.app/) in our case) to interact with it. To do so, open the wallet, add a custom token and fill the contract address:
 
 ![alt text](../../../../static/img/ash-workflow-ASHToken-Wallet.png)
