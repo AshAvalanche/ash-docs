@@ -25,8 +25,8 @@ To compile the contract, we need to clone two dependencies into the `ash_token/l
 
 ```bash title="Command"
 cd ash_token
-git clone https://github.com/foundry-rs/forge-std
-git clone https://github.com/OpenZeppelin/openzeppelin-contracts.git
+git clone https://github.com/foundry-rs/forge-std lib/forge-std
+git clone https://github.com/OpenZeppelin/openzeppelin-contracts.git lib/openzeppelin-contracts
 ```
 
 ## Deploy the contract
