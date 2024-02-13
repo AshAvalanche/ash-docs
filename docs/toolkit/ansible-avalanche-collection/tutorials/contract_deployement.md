@@ -17,7 +17,7 @@ We should also have created a Subnet and a blockchain, see [Subnet Creation](/do
 
 ## Requirements
 
-- Foundry installed. (see [Install foundry](https://book.getfoundry.sh/getting-started/installation).)
+- Foundry installed. (See [Install foundry](https://book.getfoundry.sh/getting-started/installation).)
 
 ## Configure the environement
 
@@ -51,8 +51,8 @@ forge create --rpc-url $RPC_URL --private-key $BOB_PRIVATE_KEY src/ASHToken.sol:
 
 ```bash title="Output"
 Compiler run successful!
- Deployer: 0x95AF400F4FDB27281bcc6Fc60Ad8aB5cD31dC35a
- Deployed to: 0x631a3621031d9483b2Ca0f34c3A6F0d0fEf17155
+ Deployer: 0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC
+ Deployed to: 0xa4DfF80B4a1D748BF28BC4A271eD834689Ea3407
  Transaction hash: 0xfeb4b67875c1daaf92be3cf7ffbb01fdfdbffcf81e81d4c9fd329397f492af99
 ```
 
@@ -62,8 +62,8 @@ Compiler run successful!
 
 Firstly we defind the followings variables for convegnence:
 ```bash title="command"
-export BOB_ADDR=0x95AF400F4FDB27281bcc6Fc60Ad8aB5cD31dC35a
-export CONTRACT_ADDRESS=0x631a3621031d9483b2Ca0f34c3A6F0d0fEf17155
+export BOB_ADDR=0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC
+export CONTRACT_ADDRESS=0xa4DfF80B4a1D748BF28BC4A271eD834689Ea3407
 ```
 
 As [forge](https://book.getfoundry.sh/reference/forge/), [cast](https://book.getfoundry.sh/reference/cast/) is a part of the [foundry](https://github.com/foundry-rs/foundry) suit which allow us to interact with the contract:
