@@ -48,6 +48,9 @@ Now, we can deploy our ERC20 with an initial supply of 200 tokens:
 ```bash title="Command"
 forge create --rpc-url $RPC_URL --private-key $BOB_PRIVATE_KEY src/ASHToken.sol:ASHToken --constructor-args 200000000000000000000
 ```
+:::info
+The [openzepplin's ERC20 template](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/ae1bafcb48fe220257d76bfd93a237db3ebaf3df/contracts/token/ERC20/ERC20.sol#L83) is implemented with 18 decimal places, that's why we multiply 200 by 1e18.
+:::
 
 ```bash title="Output"
 Compiler run successful!
