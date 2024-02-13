@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Smart Contract Deployement
 
-In this section, we will deploy a smart contract to launch the ASH ERC20 token on an Evm subnet.
+In this section, we will deploy a smart contract to launch the ASHToken ERC20 token on an Evm subnet deployed using the ash Ansible collection.
 
 :::note
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory provided by the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. See [Create a Local Test Network](./local-test-network) for details.
@@ -25,7 +25,7 @@ git clone https://github.com/foundry-rs/forge-std
 git clone https://github.com/OpenZeppelin/openzeppelin-contracts.git
 ```
 
-### Deploy the contract
+## Deploy the contract
 
 In order to deploy the ASH token we need to sign the trensaction and to know the rpc url. To do so, we will use the private key of the pre-funded account. (see [configure-the-subnet-transactions-wallet](https://ash.center/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation#configure-the-subnet-transactions-wallet))
 :::tip
@@ -39,10 +39,10 @@ export RPC_URL=http://${VALIDATOR01_IP}:9650/ext/bc/${BLOCKCHAIN_ID}/rpc
 export BOB_PRIVATE_KEY=0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027
 ```
 
-Now, we can deploy our ERC20 with an initial supply of 50 000 tokens:
+Now, we can deploy our ERC20 with an initial supply of 200 tokens:
 
 ```bash title="Command"
-forge create --rpc-url $RPC_URL --private-key $BOB_PRIVATE_KEY src/ASHToken.sol:ASHToken --constructor-args 50000
+forge create --rpc-url $RPC_URL --private-key $BOB_PRIVATE_KEY src/ASHToken.sol:ASHToken --constructor-args 200000000000000000000
 ```
 
 ```bash title="Output"
@@ -52,7 +52,9 @@ Compiler run successful!
  Transaction hash: 0xfeb4b67875c1daaf92be3cf7ffbb01fdfdbffcf81e81d4c9fd329397f492af99
 ```
 
-### Interact with the contract
+## Interact with the contract
+
+### Using cast
 
 Firstly we defind the followings variables for convegnence:
 ```bash title="command"
@@ -88,3 +90,12 @@ transactionIndex        0
 type                    2
 to                      0x631a…7155
 ```
+### Using your wallet
+
+:::tip
+To be connected on the correct blockchain, please refer to  [connect-to-the-subnet-and-start-issuing-transactions](http://localhost:3000/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation#connect-to-the-subnet-and-start-issuing-transactions) section.
+:::
+
+As every blockchain running an Evm, we can register a new token in a wallet (core in our case) to interact with. To do so, open the wallet, add a custom token and fill the contract address:
+
+![alt text](../../../../static/img/ash-workflow-ASHToken-Wallet.png)
