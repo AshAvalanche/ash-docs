@@ -15,10 +15,13 @@ For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ans
 We should also have created a Subnet and a blockchain, see [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) for details.
 :::
 
+## Requirements
+
+- Foundry installed. (see [Install foundry](https://book.getfoundry.sh/getting-started/installation).)
+
 ## Configure the environement
 
-For this tutorial, we will use the [Foundry suit](https://github.com/foundry-rs/foundry) which can be installed through their [tutorial](https://book.getfoundry.sh/getting-started/installation).
-To compile the contract, we need to clone two dependencies into the "ash_token/lib" folder.
+To compile the contract, we need to clone two dependencies into the `ash_token/lib` folder.
 
 ```bash title="Command"
 git clone https://github.com/foundry-rs/forge-std
