@@ -32,7 +32,7 @@ git clone https://github.com/OpenZeppelin/openzeppelin-contracts.git
 
 In order to deploy the ASH token we need to sign the transaction and to configure the RPC URL. To do so, we will use the private key of the pre-funded account (see [configure-the-subnet-transactions-wallet](https://ash.center/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation#configure-the-subnet-transactions-wallet)).
 :::tip
-This key is CB58-encoded which is not handled by forge commands. see [show-information-about-the-wallet](https://ash.center/docs/toolkit/ash-cli/tutorials/wallet-funding#show-information-about-the-wallet) to retrive the Hex-encoded version.
+This key is CB58-encoded which is not handled by forge commands. See [show-information-about-the-wallet](https://ash.center/docs/toolkit/ash-cli/tutorials/wallet-funding#show-information-about-the-wallet) to retrieve the Hex-encoded version.
 :::
 
 We also need the rpc url (see [connect-to-the-subnet-and-start-issuing-transactions](https://ash.center/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation#connect-to-the-subnet-and-start-issuing-transactions)) for each cmds.
