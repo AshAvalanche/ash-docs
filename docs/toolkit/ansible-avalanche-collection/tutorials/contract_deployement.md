@@ -60,7 +60,7 @@ Compiler run successful!
 
 ### Using cast
 
-Firstly we defind the followings variables for convegnence:
+Firstly we defind the followings variables for convegnence (Replace the contract address with the one indicated after deployment!):
 ```bash title="command"
 export BOB_ADDR=0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC
 export CONTRACT_ADDRESS=0xa4DfF80B4a1D748BF28BC4A271eD834689Ea3407
