@@ -36,17 +36,17 @@ In order to deploy the ASH token we need to sign the transaction and to configur
 This key is CB58-encoded which is not handled by forge commands. See [show-information-about-the-wallet](https://ash.center/docs/toolkit/ash-cli/tutorials/wallet-funding#show-information-about-the-wallet) to retrieve the Hex-encoded version.
 :::
 
-We also need the rpc url (see [connect-to-the-subnet-and-start-issuing-transactions](https://ash.center/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation#connect-to-the-subnet-and-start-issuing-transactions)) for each cmds.
+We also need the RPC URL (see [connect-to-the-subnet-and-start-issuing-transactions](https://ash.center/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation#connect-to-the-subnet-and-start-issuing-transactions)) for each command.
 
 ```bash title="Command"
 export RPC_URL=http://${VALIDATOR01_IP}:9650/ext/bc/${BLOCKCHAIN_ID}/rpc
-export BOB_PRIVATE_KEY=0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027
+export EWOQ_PRIVATE_KEY=0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027
 ```
 
 Now, we can deploy our ERC20 with an initial supply of 200 tokens:
 
 ```bash title="Command"
-forge create --rpc-url $RPC_URL --private-key $BOB_PRIVATE_KEY src/ASHToken.sol:ASHToken --constructor-args 200000000000000000000
+forge create --rpc-url $RPC_URL --private-key $EWOQ_PRIVATE_KEY src/ASHToken.sol:ASHToken --constructor-args 200000000000000000000
 ```
 :::info
 The [openzepplin's ERC20 template](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/ae1bafcb48fe220257d76bfd93a237db3ebaf3df/contracts/token/ERC20/ERC20.sol#L83) is implemented with 18 decimal places, that's why we multiply 200 by 1e18.
@@ -69,7 +69,7 @@ export BOB_ADDR=0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC
 export CONTRACT_ADDRESS=0xa4DfF80B4a1D748BF28BC4A271eD834689Ea3407
 ```
 
-As [forge](https://book.getfoundry.sh/reference/forge/), [cast](https://book.getfoundry.sh/reference/cast/) is a part of the [foundry](https://github.com/foundry-rs/foundry) suit which allow us to interact with the contract:
+Like [forge](https://book.getfoundry.sh/reference/forge/), [cast](https://book.getfoundry.sh/reference/cast/) is a part of the [foundry](https://github.com/foundry-rs/foundry) suit which allows us to interact with the contract:
 ```bash title="command"
 cast call $CONTRACT_ADDRESS "totalSupply()(uint256)" --rpc-url $RPC_URL
 cast call $CONTRACT_ADDRESS "balanceOf(address)(uint256)" $BOB_ADDR --rpc-url $RPC_URL
