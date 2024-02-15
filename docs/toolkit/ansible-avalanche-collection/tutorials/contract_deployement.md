@@ -65,7 +65,7 @@ Compiler run successful!
 
 First we define the followings variables for convenience (Replace the contract address with the one indicated after deployment!):
 ```bash title="command"
-export BOB_ADDR=0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC
+export EWOQ_ADDR=0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC
 export CONTRACT_ADDRESS=0xa4DfF80B4a1D748BF28BC4A271eD834689Ea3407
 ```
 
@@ -77,7 +77,7 @@ cast call $CONTRACT_ADDRESS "totalSupply()(uint256)" --rpc-url $RPC_URL
 200000000000000000000000000000000000000 [2e38]
 ```
 ```bash title="command"
-cast call $CONTRACT_ADDRESS "balanceOf(address)(uint256)" $BOB_ADDR --rpc-url $RPC_URL
+cast call $CONTRACT_ADDRESS "balanceOf(address)(uint256)" $EWOQ_ADDR --rpc-url $RPC_URL
 ```
 ```bash title="Output"
 200000000000000000000000000000000000000 [2e38]
