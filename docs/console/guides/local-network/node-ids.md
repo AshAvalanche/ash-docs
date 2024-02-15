@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# 2. Node ID Secrets Generation
+# 2. Node ID / BLS keys Secrets Generation
 
 :::caution
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
@@ -50,6 +50,7 @@ We will use the [local-node-ids.yml](https://github.com/AshAvalanche/ash-rs/blob
        nodeId: NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg
        nodeCert: LS0tLS...
        nodeKey: LS0tLS...
+       nodeBlsKey: U2fcxy...
      # ...
    ```
 

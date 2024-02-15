@@ -34,7 +34,7 @@ We need to write [blueprints](/docs/console/reference/blueprints) that define al
 Let's take a look at the first blueprint, `devnet.yml`. You will see that it defines:
 
 - **5 `nodeId` secrets** for the 5 nodes of our Avalanche devnet (the node IDs of a `local` Avalanche network are hard-coded in AvalancheGo).  
-  A `nodeId` [secret](/docs/console/glossary#secret) contains the TLS keys and certificates for an Avalanche node:
+  A `nodeId` [secret](/docs/console/glossary#secret) contains the TLS keys, certificates and BLS keys for an Avalanche node:
   ```yaml
   secrets:
     - name: local-node-id-01
@@ -42,6 +42,7 @@ Let's take a look at the first blueprint, `devnet.yml`. You will see that it def
       nodeId: NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg
       nodeCert: LS0tLS...
       nodeKey: LS0tLS...
+      nodeBlsKey: U2fcxy...
     # ...
   ```
 - **1 [project](/docs/console/glossary#project)** named `ash-devnet` and tied to the `local` network. It is the **logical set** that will contain all the resources of our devnet:
