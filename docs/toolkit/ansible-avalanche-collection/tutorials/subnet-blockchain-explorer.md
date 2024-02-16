@@ -68,5 +68,5 @@ http://10.117.207.108:4000
 </figure>
 
 :::caution
-The `ash.avalanche.evm.blockscout` role is not yet compatible with secured HTTP API endpoints (see [Node security](./node-security) for details).
+The `ash.avalanche.evm.blockscout` role is not yet compatible with secured HTTP API endpoints.
 :::

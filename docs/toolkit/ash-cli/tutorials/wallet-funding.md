@@ -117,9 +117,11 @@ ash avalanche wallet info PrivateKey-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ```bash title="Output"
 Wallet information:
-  X-Chain address: X-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk
-  P-Chain address: P-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk
-  EVM address:     0xE8eeF4A23106f11DFf676a41Eb1A58E585546aca
+  Hex private key:  0x56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027
+  CB58 private key: PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN
+  X-Chain address:  X-fuji18jma8ppw3nhx5r4ap8clazz0dps7rv5u6wmu4t
+  P-Chain address:  P-fuji18jma8ppw3nhx5r4ap8clazz0dps7rv5u6wmu4t
+  EVM address:      0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC
 ```
 
 :::info
