@@ -53,11 +53,11 @@ ansible-playbook ash.avalanche.install_blockscout_docker -i inventories/local
 Generate the Blockscout URL and open it in your browser:
 
 ```bash title="Command"
-echo "http://$(terraform -chdir=terraform/multipass output -raw frontend_ip):4000"
+echo "http://$(terraform -chdir=terraform/multipass output -raw frontend_ip)"
 ```
 
 ```bash title="Sample output"
-http://10.117.207.108:4000
+http://10.117.207.108
 ```
 
 <figure>
