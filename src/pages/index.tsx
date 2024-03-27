@@ -14,9 +14,9 @@ export default function Home(): JSX.Element {
       <main>
         <HomepageHeader />
         <HomepageFeatures />
-        <div className={styles.section}>
+        {/* <div className={styles.section}>
           <Video />
-        </div>
+        </div> */}
       </main>
     </Layout>
   );
