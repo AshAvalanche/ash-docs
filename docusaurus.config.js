@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Ash",
-  tagline: "Appchain-as-a-Service platform",
+  tagline: "Your chain, your rules",
   favicon: "img/ash-logo.svg",
 
   // Set the production url of your site here
@@ -117,7 +117,7 @@ const config = {
         ],
       },
       footer: {
-        style: "dark",
+        style: "light",
         links: [
           {
             title: "Content",

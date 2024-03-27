@@ -10,13 +10,15 @@ export default function HomepageHeader() {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
+        <img
+          className={styles.heroLogo}
+          src="/img/logotype-white.png"
+          alt="Ash logo"
+        ></img>
         <p className="hero__subtitle">
           {siteConfig.tagline}
           <br />
-          leveraging Avalanche Subnets
         </p>
-        <p className="hero__subtitle"></p>
 
         <div className="container">
           <div className="row">
