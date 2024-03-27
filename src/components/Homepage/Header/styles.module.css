@@ -8,6 +8,16 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    #ff0000 -6.32%,
+    #ff7200 98.01%,
+    #ff0000 202.34%
+  );
+}
+
+.heroSubtitle {
+  color: white;
 }
 
 @media screen and (max-width: 996px) {
