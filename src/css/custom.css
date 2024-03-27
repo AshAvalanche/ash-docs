@@ -17,15 +17,9 @@
   --ifm-color-primary-lighter: #fa8b3e;
   --ifm-color-primary-lightest: #fba365;
   /* --ifm-footer-background-color: #0A081C; */
-  /* --ifm-color-primary-dark: #be3434;
-  --ifm-color-primary-darker: #b63232;
-  --ifm-color-primary-darkest: #ae3030;
-  --ifm-color-primary-light: #ca3c3c;
-  --ifm-color-primary-lighter: #cc4444;
-  --ifm-color-primary-lightest: #ce4c4c; */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  
+
   .hero__subtitle {
     color: white;
   }
@@ -42,15 +36,12 @@
   --ifm-color-primary-lighter: #fa8b3e;
   --ifm-color-primary-lightest: #fba365;
   --ifm-font-color-base: #ffffff;
-  /* --ifm-color-primary-dark: #fa5858;
-  --ifm-color-primary-darker: #f94b4b;
-  --ifm-color-primary-darkest: #f93d3d;
-  --ifm-color-primary-light: #fa7474;
-  --ifm-color-primary-lighter: #fb8181;
-  --ifm-color-primary-lightest: #fb8f8f;
-  --ifm-color-secondary-darkest: #c63636; */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  .hero__subtitle {
+    color: white;
+  }
 }
 
 /* Header buttons */
