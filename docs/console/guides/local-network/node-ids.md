@@ -36,7 +36,7 @@ We will use the [local-node-ids.yml](https://github.com/AshAvalanche/ash-rs/blob
 2. Fetch the blueprint from the [`ash-rs`](https://github.com/AshAvalanche/ash-rs/blob/main/crates/ash_cli/examples/console/blueprint/local-node-ids.yml) repository:
 
    ```bash
-   curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/ash-console-alpha/crates/ash_cli/examples/console/blueprint/local-node-ids.yml -o local-node-ids.yml
+   curl -sSL https://raw.githubusercontent.com/AshAvalanche/ash-rs/main/crates/ash_cli/examples/console/blueprint/local-node-ids.yml -o local-node-ids.yml
    ```
 
 3. Take a look at the blueprint. You will see that it defines 5 secrets of type `nodeId` with their TLS keys and certificates:

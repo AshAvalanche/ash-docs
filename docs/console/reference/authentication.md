@@ -128,3 +128,10 @@ Access token refreshed successfully!
 
   </TabItem>
 </Tabs>
+
+:::tip
+Refresh and export the token access in one line using ash cli.
+```bash title="Command"
+ash console auth refresh-token;export access_token=$(ash console auth show-token | grep -)
+```
+:::

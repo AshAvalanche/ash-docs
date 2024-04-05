@@ -43,11 +43,11 @@ ash console resource list
 ```
 
 ```bash title="Output"
-Resources of project '399b6f5b-eed2-4713-8b68-993643babfd0':
-+-------------+------+------+-----------------+------+------------+--------+-------------------+
-| Resource ID | Name | Type | Cloud region ID | Size | Created at | Status | Resource specific |
-+=============+======+======+=================+======+============+========+===================+
-+-------------+------+------+-----------------+------+------------+--------+-------------------+
+Resources of project 'my-devnet-project':
++---------------+-------------+------+--------------+------+------------+--------+-------------------+
+| Resource name | Resource ID | Type | Cloud region | Size | Created at | Status | Resource specific |
++===============+=============+======+==============+======+============+========+===================+
++---------------+-------------+------+--------------+------+------------+--------+-------------------+
 ```
 
   </TabItem>
@@ -60,7 +60,7 @@ See [Authentication](/docs/console/reference/authentication?ash-console-auth-cli
 The secret API endpoint is `/secrets`.:
 
 ```bash title="Command"
-curl https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993643babfd0/resources \
+curl https://api.console.ash.center/projects/e05f4f15-f5ca-4ac7-b38c-0726e256c70b/resources \
   -H "Authorization: Bearer ${access_token}"
 ```
 

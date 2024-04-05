@@ -29,10 +29,10 @@ ash console project list
 ```
 
 ```bash title="Output"
-+------------+----------+------+---------+---------------+------------+
-| Project ID | Owner ID | Name | Network | Cloud regions | Created at |
-+============+==========+======+=========+===============+============+
-+------------+----------+------+---------+---------------+------------+
++--------------+------------+---------+---------------+-----------+------------+
+| Project name | Project ID | Network | Cloud regions | Resources | Created at |
++==============+============+=========+===============+===========+============+
++--------------+------------+---------+---------------+-----------+------------+
 ```
 
   </TabItem>
@@ -69,13 +69,13 @@ ash console project create '{name: my-devnet-project, network: local}'
 
 ```bash title="Output"
 Project created successfully!
-+--------------------------------------+-------------+-------------------+---------+---------------+------------------+
-| Project ID                           | Owner ID    | Name              | Network | Cloud regions | Created at       |
-+======================================+=============+===================+=========+===============+==================+
-| 1c464e44-1e2c-46de-a08c-79ac58f6e632 | 2870...dc26 | my-devnet-project | Local   |               | 2023-10-26T10:36 |
-+--------------------------------------+-------------+-------------------+---------+---------------+------------------+
++-------------------+-------------+---------+---------------+-----------+------------------+
+| Project name      | Project ID  | Network | Cloud regions | Resources | Created at       |
++===================+=============+=========+===============+===========+==================+
+| my-devnet-project | d11f...453e | Local   |               |           | 2024-04-04T15:04 |
++-------------------+-------------+---------+---------------+-----------+------------------+
 
-Switched to project 'my-devnet-project' (1c464e44-1e2c-46de-a08c-79ac58f6e632)!
+Switched to project 'my-devnet-project' (d11ff0c8-8f09-4991-9832-bd79df9b453e)!
 ```
 
   </TabItem>
@@ -92,12 +92,14 @@ curl -X POST https://api.console.ash.center/projects \
 
 ```json title="Output"
 {
-  "cloudRegionsIds": {},
-  "created": "2023-10-26T13:38:42.548836",
-  "id": "c84c4a2f-9a65-46a2-b7b9-be8eeceaa2b1",
-  "name": "my-devnet-project",
-  "network": "local",
-  "ownerId": "287090ee-7fae-4bd7-9263-d690959edc26"
+  "id": "5064c6a6-1542-43d9-b8bb-9ce9502347ff", 
+  "ownerId": "4d4dee2d-e943-432c-91ee-678975615caa", 
+  "name": "my-devnet-project", 
+  "network": "local", 
+  "sharedResourceConfig": {"avalancheNodeConfig": {}}, 
+  "created": "2024-04-04T15:15:10.022849", 
+  "cloudRegionsIds": {}, 
+  "resourcesIds": {}
 }
 ```
 
@@ -118,7 +120,7 @@ ash console project show
 ```
 
 ```bash title="Output"
-Current project: 'my-devnet-project' (1c464e44-1e2c-46de-a08c-79ac58f6e632)
+Current project: 'my-devnet-project' (5064c6a6-1542-43d9-b8bb-9ce9502347ff)
 ```
 
 You can switch between projects:
@@ -128,7 +130,7 @@ ash console project select my-devnet-project
 ```
 
 ```bash title="Output"
-Switched to project 'my-devnet-project' (1c464e44-1e2c-46de-a08c-79ac58f6e632)!
+Switched to project 'my-devnet-project' (5064c6a6-1542-43d9-b8bb-9ce9502347ff)!
 ```
 
   </TabItem>
@@ -151,16 +153,16 @@ You can also provide the project name instead of its ID.
 The only propery that can be updated is the project name:
 
 ```bash title="Command"
-ash console project update 1c464e44-1e2c-46de-a08c-79ac58f6e632 '{name: my-devnet-project-updated}'
+ash console project update 5064c6a6-1542-43d9-b8bb-9ce9502347ff '{name: my-devnet-project-updated}'
 ```
 
 ```bash title="Output"
 Project updated successfully!
-+--------------------------------------+-------------+---------------------------+---------+---------------+------------------+
-| Project ID                           | Owner ID    | Name                      | Network | Cloud regions | Created at       |
-+======================================+=============+===========================+=========+===============+==================+
-| 1c464e44-1e2c-46de-a08c-79ac58f6e632 | 2870...dc26 | my-devnet-project-updated | Local   |               | 2023-10-26T10:36 |
-+--------------------------------------+-------------+---------------------------+---------+---------------+------------------+
++---------------------------+-------------+---------+---------------+-----------+------------------+
+| Project name              | Project ID  | Network | Cloud regions | Resources | Created at       |
++===========================+=============+=========+===============+===========+==================+
+| my-devnet-project-updated | 5064...47ff | Local   |               |           | 2024-04-04T15:15 |
++---------------------------+-------------+---------+---------------+-----------+------------------+
 ```
 
   </TabItem>
@@ -169,7 +171,7 @@ Project updated successfully!
 The only propery that can be updated is the project name by sending a `PATCH` to the `projects/${projectId}` endpoint:
 
 ```bash title="Command"
-curl -X PATCH https://api.console.ash.center/projects/c84c4a2f-9a65-46a2-b7b9-be8eeceaa2b1 \
+curl -X PATCH https://api.console.ash.center/projects/5064c6a6-1542-43d9-b8bb-9ce9502347ff \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{"name": "my-devnet-project-updated"}'
@@ -177,12 +179,14 @@ curl -X PATCH https://api.console.ash.center/projects/c84c4a2f-9a65-46a2-b7b9-be
 
 ```json title="Output"
 {
-  "cloudRegionsIds": {},
-  "created": "2023-10-26T13:38:42.548836",
-  "id": "c84c4a2f-9a65-46a2-b7b9-be8eeceaa2b1",
-  "name": "my-devnet-project-updated",
-  "network": "local",
-  "ownerId": "287090ee-7fae-4bd7-9263-d690959edc26"
+  "id": "5064c6a6-1542-43d9-b8bb-9ce9502347ff", 
+  "ownerId": "4d4dee2d-e943-432c-91ee-678975615caa", 
+  "name": "my-devnet-project-updated", 
+  "network": "local", 
+  "sharedResourceConfig": {"avalancheNodeConfig": {}}, 
+  "created": "2024-04-04T15:15:10.022849", 
+  "cloudRegionsIds": {}, 
+  "resourcesIds": {}
 }
 ```
 
@@ -219,12 +223,14 @@ curl -X DELETE https://api.console.ash.center/projects/my-devnet-project-updated
 
 ```bash title="Output"
 {
-  "cloudRegionsIds": {},
-  "created": "2023-10-26T13:38:42.548836",
-  "id": "c84c4a2f-9a65-46a2-b7b9-be8eeceaa2b1",
-  "name": "my-devnet-project-updated",
-  "network": "local",
-  "ownerId": "287090ee-7fae-4bd7-9263-d690959edc26"
+  "id": "5064c6a6-1542-43d9-b8bb-9ce9502347ff", 
+  "ownerId": "4d4dee2d-e943-432c-91ee-678975615caa", 
+  "name": "my-devnet-project-updated", 
+  "network": "local", 
+  "sharedResourceConfig": {"avalancheNodeConfig": {}}, 
+  "created": "2024-04-04T15:15:10.022849", 
+  "cloudRegionsIds": {}, 
+  "resourcesIds": {}
 }
 ```
 

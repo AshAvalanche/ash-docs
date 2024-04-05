@@ -39,11 +39,11 @@ ash console region list
 ```
 
 ```bash title="Output"
-Cloud regions of project 'f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b':
-+-----------+----------------+--------------+-----------------------+------------+
-| Region ID | Cloud provider | Cloud region | Cloud creds secret ID | Created at |
-+===========+================+==============+=======================+============+
-+-----------+----------------+--------------+-----------------------+------------+
+Cloud regions of project 'my-devnet-project':
++--------------+-----------+-----------------------+------------+--------+
+| Cloud region | Region ID | Cloud creds secret ID | Created at | Status |
++==============+===========+=======================+============+========+
++--------------+-----------+-----------------------+------------+--------+
 ```
 
   </TabItem>
@@ -56,7 +56,7 @@ See [Authentication](/docs/console/reference/authentication?ash-console-auth-cli
 The secret API endpoint is `/project/${projectId}/regions`.:
 
 ```bash title="Command"
-curl https://api.console.ash.center/projects/f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b/regions \
+curl https://api.console.ash.center/projects/e05f4f15-f5ca-4ac7-b38c-0726e256c70b/regions \
   -H "Authorization: Bearer ${access_token}"
 ```
 
@@ -83,16 +83,16 @@ You can also provide the cloud credentials secret name instead of its ID in the 
 To add a cloud region to the current project, use the `region add` command and provide the required secret properties as JSON:
 
 ```bash title="Command"
-ash console region add '{cloudProvider: aws, region: us-east-1, cloudCredentialsSecretId: 4447cba1-e43c-45a4-8a9d-dbebef81bac1}'
+ash console region add '{cloudProvider: google, region: europe-west1, cloudCredentialsSecretId: c705551e-d74d-4d59-9010-4c9432394aa1}'
 ```
 
 ```bash title="Output"
-Cloud region successfully added to project 'f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b'!
-+--------------------------------------+----------------+--------------+-----------------------+------------------+
-| Region ID                            | Cloud provider | Cloud region | Cloud creds secret ID | Created at       |
-+======================================+================+==============+=======================+==================+
-| 0c102d85-4e75-414d-abfe-b0679ab0adc7 | aws            | us-east-1    | 4447...bac1           | 2023-11-07T16:52 |
-+--------------------------------------+----------------+--------------+-----------------------+------------------+
+Cloud region successfully added to project 'my-devnet-project'!
++---------------------+-------------+-----------------------+------------------+-----------+
+| Cloud region        | Region ID   | Cloud creds secret ID | Created at       | Status    |
++=====================+=============+=======================+==================+===========+
+| google/europe-west1 | 9e28...3164 | c705...4aa1           | 2024-04-04T15:53 | Available |
++---------------------+-------------+-----------------------+------------------+-----------+
 ```
 
 :::tip
@@ -105,23 +105,23 @@ Use `ash console region available` to get the list of regions available for each
 To create a new secret, you have to send a `POST` request with the required secret properties as JSON:
 
 ```bash title="Command"
-curl -X POST https://api.console.ash.center/projects/f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b/regions \
+curl -X POST https://api.console.ash.center/projects/e05f4f15-f5ca-4ac7-b38c-0726e256c70b/regions \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
-  -d '{"cloudProvider": "aws", "region": "us-east-2", "cloudCredentialsSecretId": "4447cba1-e43c-45a4-8a9d-dbebef81bac1"}'
+  -d '{"cloudProvider": "google", "region": "europe-west1", "cloudCredentialsSecretId": "c705551e-d74d-4d59-9010-4c9432394aa1"}'
 ```
 
 ```json title="Output"
 {
-  "cloudCredentialsSecretId": "4447cba1-e43c-45a4-8a9d-dbebef81bac1",
-  "cloudProvider": "aws",
-  "created": "2023-11-07T16:54:27.662311",
-  "id": "89b64711-8cf8-4634-8433-10652efecb95",
-  "name": "aws/us-east-2",
-  "ownerId": "287090ee-7fae-4bd7-9263-d690959edc26",
-  "projectId": "f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b",
-  "region": "us-east-2",
-  "status": "available"
+  "id": "9a1a3837-bf36-462b-9671-93f525284b95", 
+  "cloudProvider": "google", 
+  "region": "europe-west1", 
+  "cloudCredentialsSecretId": "c705551e-d74d-4d59-9010-4c9432394aa1", 
+  "status": "available", 
+  "ownerId": "4d4dee2d-e943-432c-91ee-678975615caa", 
+  "projectId": "e05f4f15-f5ca-4ac7-b38c-0726e256c70b", 
+  "created": "2024-04-04T15:58:33.636264", 
+  "name": "google/europe-west1"
 }
 ```
 
@@ -148,10 +148,17 @@ Removing a region from a project will recursively delete **all the resources** t
 The CLI will ask for confirmation before deleting the secret. To skip the confirmation, use the `--yes` flag.
 
 ```bash title="Command"
-ash console region remove aws/us-east-1
+ash console region remove google/europe-west1
 ```
 
 ```bash title="Output"
+Region 'google/europe-west1' of project 'my-devnet-project':
++---------------------+-------------+-----------------------+------------------+-----------+
+| Cloud region        | Region ID   | Cloud creds secret ID | Created at       | Status    |
++=====================+=============+=======================+==================+===========+
+| google/europe-west1 | d072...eb29 | c705...4aa1           | 2024-04-04T16:05 | Available |
++---------------------+-------------+-----------------------+------------------+-----------+
+
 > Are you sure you want to remove this region? Yes
 Cloud region removed successfully!
 ```
@@ -162,21 +169,21 @@ Cloud region removed successfully!
 The `/` in the region name is replaced with `_` in the API endpoint:
 
 ```bash title="Command"
-curl -X DELETE https://api.console.ash.center/projects/f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b/regions/aws_us-east-2 \
+curl -X DELETE https://api.console.ash.center/projects/e05f4f15-f5ca-4ac7-b38c-0726e256c70b/regions/europe_west1 \
   -H "Authorization: Bearer ${access_token}"
 ```
 
 ```bash title="Output"
 {
-  "cloudCredentialsSecretId": "4447cba1-e43c-45a4-8a9d-dbebef81bac1",
-  "cloudProvider": "aws",
-  "created": "2023-11-07T16:54:27.662311",
-  "id": "89b64711-8cf8-4634-8433-10652efecb95",
-  "name": "aws/us-east-2",
-  "ownerId": "287090ee-7fae-4bd7-9263-d690959edc26",
-  "projectId": "f3cbcada-8ba7-4ce8-b0ef-e4874b24da2b",
-  "region": "us-east-2",
-  "status": "available"
+  "id": "9a1a3837-bf36-462b-9671-93f525284b95", 
+  "cloudProvider": "google", 
+  "region": "europe-west1", 
+  "cloudCredentialsSecretId": "c705551e-d74d-4d59-9010-4c9432394aa1", 
+  "status": "available", 
+  "ownerId": "4d4dee2d-e943-432c-91ee-678975615caa", 
+  "projectId": "e05f4f15-f5ca-4ac7-b38c-0726e256c70b", 
+  "created": "2024-04-04T15:58:33.636264", 
+  "name": "google/europe-west1"
 }
 ```
 
