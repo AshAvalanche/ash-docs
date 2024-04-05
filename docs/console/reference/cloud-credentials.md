@@ -445,7 +445,7 @@ ash console secret create '{
 }'
 ```
 
-**Note:** Make sure to replace `***` with the appropriate field of the json file exported from google cloud.
+**Note:** Make sure to replace `***` with the appropriate field of the JSON file exported from Google Cloud.
 
 ```bash title="Output"
 Secret created successfully!
