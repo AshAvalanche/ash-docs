@@ -130,8 +130,10 @@ Access token refreshed successfully!
 </Tabs>
 
 :::tip
-Refresh and export the token access in one line using Ash CLI.
+If you plan to use the API directly, run:
 ```bash title="Command"
-ash console auth refresh-token;export access_token=$(ash console auth show-token | grep -)
+ash console auth refresh-token
+export access_token=$(ash console auth show-token | grep -)
 ```
+
 :::
