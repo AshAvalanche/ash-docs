@@ -33,10 +33,10 @@ ash console secret list
 ```
 
 ```bash title="Output"
-+-----------+----------+------+------+------------+---------+
-| Secret ID | Owner ID | Name | Type | Created at | Used by |
-+===========+==========+======+======+============+=========+
-+-----------+----------+------+------+------------+---------+
++-------------+-----------+------+------------+---------+
+| Secret name | Secret ID | Type | Created at | Used by |
++=============+===========+======+============+=========+
++-------------+-----------+------+------------+---------+
 ```
 
   </TabItem>
@@ -77,11 +77,11 @@ ash console secret create '{name: my-secret, secretType: generic, content: "***"
 
 ```bash title="Output"
 Secret created successfully!
-+--------------------------------------+-------------+-----------+---------+------------------+---------+
-| Secret ID                            | Owner ID    | Name      | Type    | Created at       | Used by |
-+======================================+=============+===========+=========+==================+=========+
-| ed8a3653-b6cc-4cd4-899f-ceee4159f545 | 2870...dc26 | my-secret | Generic | 2023-10-30T21:58 | 0       |
-+--------------------------------------+-------------+-----------+---------+------------------+---------+
++-------------+-------------+---------+------------------+---------+
+| Secret name | Secret ID   | Type    | Created at       | Used by |
++=============+=============+=========+==================+=========+
+| my-secret   | 5a46...fba3 | Generic | 2024-04-04T15:27 | 0       |
++-------------+-------------+---------+------------------+---------+
 ```
 
 </TabItem>
@@ -98,13 +98,13 @@ curl -X POST https://api.console.ash.center/secrets \
 
 ```json title="Output"
 {
-  "content": "**********",
-  "created": "2023-10-30T22:16:41.870842",
-  "id": "465a6c24-5640-46d4-963f-98c0990484e1",
-  "name": "my-secret",
-  "ownerId": "287090ee-7fae-4bd7-9263-d690959edc26",
-  "secretType": "generic",
-  "usedBy": {}
+  "id": "6c7f3c7a-7e15-4359-b7cf-3eaacb1938c2", 
+  "ownerId": "4d4dee2d-e943-432c-91ee-678975615caa", 
+  "name": "my-secret", 
+  "secretType": "generic", 
+  "created": "2024-04-04T15:28:36.954694", 
+  "usedBy": {}, 
+  "content": "**********"
 }
 ```
 
@@ -123,16 +123,16 @@ You can also provide the secret name instead of its ID.
 The properties that can be updated **depend on the secret type**. For example, you can update a `generic` secret's `name` and `content`:
 
 ```bash title="Command"
-ash console secret update ed8a3653-b6cc-4cd4-899f-ceee4159f545 '{name: my-secret-updated, content: "****"}'
+ash console secret update 6c7f3c7a-7e15-4359-b7cf-3eaacb1938c2 '{name: my-secret-updated, content: "****"}'
 ```
 
 ```bash title="Output"
 Secret updated successfully!
-+--------------------------------------+-------------+-------------------+---------+------------------+---------+
-| Secret ID                            | Owner ID    | Name              | Type    | Created at       | Used by |
-+======================================+=============+===================+=========+==================+=========+
-| ed8a3653-b6cc-4cd4-899f-ceee4159f545 | 2870...dc26 | my-secret-updated | Generic | 2023-10-30T21:58 | 0       |
-+--------------------------------------+-------------+-------------------+---------+------------------+---------+
++-------------------+-------------+---------+------------------+---------+
+| Secret name       | Secret ID   | Type    | Created at       | Used by |
++===================+=============+=========+==================+=========+
+| my-secret-updated | 6c7f...38c2 | Generic | 2024-04-04T15:28 | 0       |
++-------------------+-------------+---------+------------------+---------+
 ```
 
   </TabItem>
@@ -141,7 +141,7 @@ Secret updated successfully!
 The properties that can be updated **depend on the secret type**. For example, you can update a `generic` secret's `name` and `content` by sending a `PATCH` to the `secrets/${secretId}` endpoint:
 
 ```bash title="Command"
-curl -X PATCH https://api.console.ash.center/secrets/465a6c24-5640-46d4-963f-98c0990484e1 \
+curl -X PATCH https://api.console.ash.center/secrets/6c7f3c7a-7e15-4359-b7cf-3eaacb1938c2 \
   -H "Authorization: Bearer ${access_token}" \
   -H "Content-Type: application/json" \
   -d '{"name": "my-secret-updated", "content": "****"}'
@@ -149,13 +149,13 @@ curl -X PATCH https://api.console.ash.center/secrets/465a6c24-5640-46d4-963f-98c
 
 ```json title="Output"
 {
-  "content": "**********",
-  "created": "2023-10-30T22:16:41.870842",
-  "id": "465a6c24-5640-46d4-963f-98c0990484e1",
-  "name": "my-secret-updated",
-  "ownerId": "287090ee-7fae-4bd7-9263-d690959edc26",
-  "secretType": "generic",
-  "usedBy": {}
+  "id": "6c7f3c7a-7e15-4359-b7cf-3eaacb1938c2", 
+  "ownerId": "4d4dee2d-e943-432c-91ee-678975615caa", 
+  "name": "my-secret-updated", 
+  "secretType": "generic", 
+  "created": "2024-04-04T15:28:36.954694", 
+  "usedBy": {}, 
+  "content": "**********"
 }
 ```
 
@@ -178,6 +178,12 @@ ash console secret delete my-secret-updated
 ```
 
 ```bash title="Output"
++-------------------+-------------+---------+------------------+---------+
+| Secret name       | Secret ID   | Type    | Created at       | Used by |
++===================+=============+=========+==================+=========+
+| my-secret-updated | 6c7f...38c2 | Generic | 2024-04-04T15:28 | 0       |
++-------------------+-------------+---------+------------------+---------+
+
 > Are you sure you want to delete this secret? Yes
 Secret deleted successfully!
 ```
@@ -192,13 +198,13 @@ curl -X DELETE https://api.console.ash.center/secrets/my-secret-updated \
 
 ```bash title="Output"
 {
-  "content": "**********",
-  "created": "2023-10-30T23:23:23.883772",
-  "id": "465a6c24-5640-46d4-963f-98c0990484e1",
-  "name": "my-secret",
-  "ownerId": "287090ee-7fae-4bd7-9263-d690959edc26",
-  "secretType": "generic",
-  "usedBy": {}
+  "id": "6c7f3c7a-7e15-4359-b7cf-3eaacb1938c2", 
+  "ownerId": "4d4dee2d-e943-432c-91ee-678975615caa", 
+  "name": "my-secret-updated", 
+  "secretType": "generic", 
+  "created": "2024-04-04T15:28:36.954694", 
+  "usedBy": {}, 
+  "content": "**********"
 }
 ```
 

@@ -128,3 +128,12 @@ Access token refreshed successfully!
 
   </TabItem>
 </Tabs>
+
+:::tip
+If you plan to use the API directly, run:
+```bash title="Command"
+ash console auth refresh-token
+export access_token=$(ash console auth show-token | grep -)
+```
+
+:::

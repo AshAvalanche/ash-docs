@@ -20,13 +20,13 @@ ash console project create '{name: devnet-guide, network: local}'
 
 ```bash title="Output"
 Project created successfully!
-+--------------+-------------+---------+---------------+------------------+
-| Project name | Project ID  | Network | Cloud regions | Created at       |
-+==============+=============+=========+===============+==================+
-| devnet-guide | ac00...6673 | Local   |               | 2023-12-21T15:55 |
-+--------------+-------------+---------+---------------+------------------+
++--------------+-------------+---------+---------------+-----------+------------------+
+| Project name | Project ID  | Network | Cloud regions | Resources | Created at       |
++==============+=============+=========+===============+===========+==================+
+| devnet-guide | 9a98...ed67 | Local   |               |           | 2024-04-05T09:09 |
++--------------+-------------+---------+---------------+-----------+------------------+
 
-Switched to project 'devnet-guide' (ac00583b-7b98-4a3a-9a43-2402f8796673)!
+Switched to project 'devnet-guide' (9a98cc14-6022-44a9-8ca1-6d8db557ed67)!
 ```
 
 :::note
