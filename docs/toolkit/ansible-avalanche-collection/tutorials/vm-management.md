@@ -22,11 +22,11 @@ For now only the [Subnet EVM](https://github.com/ava-labs/subnet-evm) is support
 
 The VMs are managed by the `avalanchego_vms_install` role variable which is empty by default ([`avalanchego_vms_install: {}`](https://github.com/AshAvalanche/ansible-avalanche-collection/blob/main/roles/node/defaults/main.yml#L42)).
 
-To add a new VM that will be installed on our validator nodes, we just have to update the `avalanchego_vms_install` variable. For the next example, we will install Ava Labs' [Subnet EVM](https://github.com/ava-labs/subnet-evm) in version `0.5.5`. The variable we are should be added to [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml):
+To add a new VM that will be installed on our validator nodes, we just have to update the `avalanchego_vms_install` variable. For the next example, we will install Ava Labs' [Subnet EVM](https://github.com/ava-labs/subnet-evm) in version `0.6.3`. The variable we are should be added to [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local/group_vars/avalanche_nodes.yml):
 
 ```yml title="inventories/local/group_vars/avalanche_nodes.yml"
 avalanchego_vms_install:
-  subnet-evm: 0.5.5
+  subnet-evm: 0.6.3
 ```
 
 We can then install this VM to all the nodes defined in our Ansible inventory by running the `provision_nodes` playbook again:
