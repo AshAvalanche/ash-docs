@@ -45,7 +45,7 @@ The Ash Console subcommands support both JSON and YAML.
    +-------------------+-------------+---------------+-----------------+--------+------------------+---------+--------------------------+
    ```
 
-   **Note:** By default, [state sync](https://docs.avax.network/nodes/configure/chain-config-flags#state-sync) is enabled on the C-Chain.
+   **Note:** By default, [state sync](https://docs.avax.network/nodes/configure/chain-configs/C#state-sync) is enabled on the C-Chain.
 
    **Note:** See [Resource sizes](/docs/console/reference/resource-management#resource-sizes) for available resource sizes.
 
