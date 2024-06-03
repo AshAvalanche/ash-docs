@@ -20,7 +20,10 @@ We will use the `sharedResourceConfig` field of the project to set this shared c
 ash console project update devnet-guide '{
   sharedResourceConfig: {
     avalancheNodeConfig: {
-      avalanchego_version: 1.10.17
+      avalanchego_version: 1.10.17,
+      avalanchego_vms_install: {
+        subnet-evm: 0.5.10
+      }
     }
   }
 }'
