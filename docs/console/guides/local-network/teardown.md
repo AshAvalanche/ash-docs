@@ -1,8 +1,8 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
 
-# 6. Teardown
+# 7. Teardown
 
 :::caution
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
