@@ -25,9 +25,14 @@ const config = {
   onBrokenMarkdownLinks: "warn",
 
   // Search bar plugin
-  plugins: [[ require.resolve('docusaurus-lunr-search'), {
-    languages: ['en'] // language codes
-  }]],
+  plugins: [
+    [
+      require.resolve("docusaurus-lunr-search"),
+      {
+        languages: ["en"], // language codes
+      },
+    ],
+  ],
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -87,8 +92,19 @@ const config = {
             label: "Professional Services",
           },
           {
+            href: "https://suzaku.network",
+            position: "right",
+            label: "Suzaku",
+          },
+
+          {
+            href: "https://s4s.ash-test.center/welcome",
+            position: "right",
+            label: "Safe4Subnets",
+          },
+          {
             href: "https://ashavax.hashnode.dev",
-            position: "left",
+            position: "right",
             label: "Blog",
           },
           {
