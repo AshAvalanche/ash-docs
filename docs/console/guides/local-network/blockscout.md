@@ -2,17 +2,19 @@
 sidebar_position: 8
 ---
 
-# 6. Blockscout Creation
+# 6. Block-explorer Deployment
 
 :::caution
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
-In this section, we will create a Blockscout [resource](/docs/console/glossary#resource) on our local network.
+In this section, we will create a [Blockscout](https://www.blockscout.com/) [resource](/docs/console/glossary#resource) on our local network.
 
-## Subnet relation
+In addition to indexing blocks, this instance will be able to verify smart contracts. 
 
-Before creating a Blockscout, we need to this guide until here. The Subnet will be linked to a subnet to index their first blockchain.
+## Requirements
+
+Before setting up [Blockscout](https://www.blockscout.com/), we must deploy at least one [local Subnet](/docs/console/guides/local-network/subnet) to be indexed and wait until it's ready, as described in the [previous section](/docs/console/guides/local-network/subnet#subnet-information).
 
 ## Blockscout creation
 
@@ -27,7 +29,7 @@ ash console resource create '{
   subnetResourceId: ash-subnet, 
   blockscoutConfig: {
     blockscout_frontend_env_variables: {
-      NEXT_PUBLIC_NETWORK_NAME: Ash network
+      NEXT_PUBLIC_NETWORK_NAME: Ash-network
     }
   }
 }'
@@ -42,7 +44,7 @@ Resource successfully created in project 'ash-devnet'!
 +---------------+-------------+------------+---------------+--------+------------------+---------+----------------------+
 | Resource name | Resource ID | Type       | Cloud region  | Size   | Created at       | Status  | Resource specific    |
 +===============+=============+============+===============+========+==================+=========+======================+
-| blockscout    | 1d7f...960e | Blockscout | aws/us-east-1 | Medium | 2024-06-04T18:44 | Pending |  IP address |        |
+| blockscout    | e1d6...9a0b | Blockscout | aws/us-east-1 | Medium | 2024-06-07T21:20 | Pending |  IP address |        |
 |               |             |            |               |        |                  |         |  Running    | false  |
 +---------------+-------------+------------+---------------+--------+------------------+---------+----------------------+
 ```
@@ -53,15 +55,31 @@ Unlike other resources, there is no secrets to create here.
 
 ## Blockscout endpoint
 
-The CLI provides a powerful helper to get the URL where the user interface is.
+Ones blockscout is available through its information's:
 
 ```bash title="Command"
-ash console helper blockscout blockscout
+ash console resource info blockscout
 ```
 
 ```bash title="Output"
-Blockscout URL:
-  http:/10.223.241.15:3000/
+Resource 'blockscout' of project 'ash-devnet':
++---------------+-------------+------------+---------------+--------+------------------+---------+------------------------------+
+| Resource name | Resource ID | Type       | Cloud region  | Size   | Created at       | Status  | Resource specific            |
++===============+=============+============+===============+========+==================+=========+==============================+
+| blockscout    | e1d6...9a0b | Blockscout | aws/us-east-1 | Medium | 2024-06-07T21:20 | Running |  IP address | 44.210.241.77  |
+|               |             |            |               |        |                  |         |  Running    | true           |
++---------------+-------------+------------+---------------+--------+------------------+---------+------------------------------+
+```
+
+The CLI provides a powerful helper to get the URL where the user interface is.
+
+```bash title="Command"
+ash console helper explorer_url blockscout
+```
+
+```bash title="Output"
+Explorer URL:
+  http:/44.210.241.77:80
 ```
 
 :::note

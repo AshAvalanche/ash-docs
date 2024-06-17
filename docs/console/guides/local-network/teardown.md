@@ -18,6 +18,8 @@ for i in {1..5}; do
 done
 # If you created a Subnet
 ash console resource delete -y ash-subnet
+# If you created a Blockscout
+ash console resource delete -y ash-blockscout
 ```
 
 Wait for the resources to be deleted (removed from the list):
