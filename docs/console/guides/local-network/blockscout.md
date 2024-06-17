@@ -22,7 +22,7 @@ The following command will create a [Blockscout](https://www.blockscout.com/) in
 
 ```bash title="Command"
 ash console resource create '{
-  name: blockscout, 
+  name: ash-blockscout, 
   resourceType: blockscout, 
   cloudRegionId: aws/us-east-1, 
   size: medium, 
@@ -41,12 +41,12 @@ The `blockscoutConfig` field is following the same structure as the [Ansible Ava
 
 ```bash title="Output"
 Resource successfully created in project 'ash-devnet'!
-+---------------+-------------+------------+---------------+--------+------------------+---------+----------------------+
-| Resource name | Resource ID | Type       | Cloud region  | Size   | Created at       | Status  | Resource specific    |
-+===============+=============+============+===============+========+==================+=========+======================+
-| blockscout    | e1d6...9a0b | Blockscout | aws/us-east-1 | Medium | 2024-06-07T21:20 | Pending |  IP address |        |
-|               |             |            |               |        |                  |         |  Running    | false  |
-+---------------+-------------+------------+---------------+--------+------------------+---------+----------------------+
++----------------+-------------+------------+---------------+--------+------------------+---------+----------------------+
+| Resource name  | Resource ID | Type       | Cloud region  | Size   | Created at       | Status  | Resource specific    |
++================+=============+============+===============+========+==================+=========+======================+
+| ash-blockscout | e1d6...9a0b | Blockscout | aws/us-east-1 | Medium | 2024-06-07T21:20 | Pending |  IP address |        |
+|                |             |            |               |        |                  |         |  Running    | false  |
++----------------+-------------+------------+---------------+--------+------------------+---------+----------------------+
 ```
 
 :::info
@@ -58,23 +58,23 @@ Unlike other resources, there is no secrets to create here.
 Ones blockscout is available through its information's:
 
 ```bash title="Command"
-ash console resource info blockscout
+ash console resource info ash-blockscout
 ```
 
 ```bash title="Output"
-Resource 'blockscout' of project 'ash-devnet':
-+---------------+-------------+------------+---------------+--------+------------------+---------+------------------------------+
-| Resource name | Resource ID | Type       | Cloud region  | Size   | Created at       | Status  | Resource specific            |
-+===============+=============+============+===============+========+==================+=========+==============================+
-| blockscout    | e1d6...9a0b | Blockscout | aws/us-east-1 | Medium | 2024-06-07T21:20 | Running |  IP address | 44.210.241.77  |
-|               |             |            |               |        |                  |         |  Running    | true           |
-+---------------+-------------+------------+---------------+--------+------------------+---------+------------------------------+
+Resource 'ash-blockscout' of project 'ash-devnet':
++----------------+-------------+------------+---------------+--------+------------------+---------+------------------------------+
+| Resource name  | Resource ID | Type       | Cloud region  | Size   | Created at       | Status  | Resource specific            |
++================+=============+============+===============+========+==================+=========+==============================+
+| ash-blockscout | e1d6...9a0b | Blockscout | aws/us-east-1 | Medium | 2024-06-07T21:20 | Running |  IP address | 44.210.241.77  |
+|                |             |            |               |        |                  |         |  Running    | true           |
++----------------+-------------+------------+---------------+--------+------------------+---------+------------------------------+
 ```
 
 The CLI provides a powerful helper to get the URL where the user interface is.
 
 ```bash title="Command"
-ash console helper explorer_url blockscout
+ash console helper explorer_url ash-blockscout
 ```
 
 ```bash title="Output"
