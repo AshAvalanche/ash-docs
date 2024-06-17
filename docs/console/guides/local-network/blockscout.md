@@ -74,7 +74,7 @@ Resource 'ash-blockscout' of project 'ash-devnet':
 The CLI provides a powerful helper to get the URL where the user interface is.
 
 ```bash title="Command"
-ash console helper explorer_url ash-blockscout
+ash console helper blockscout_url ash-blockscout
 ```
 
 ```bash title="Output"
