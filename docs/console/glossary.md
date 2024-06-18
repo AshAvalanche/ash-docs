@@ -294,7 +294,7 @@ A `Resource` can be:
 - An `avalancheNode`
 - An `avalancheSubnet`
 - An `avalancheFaucet` (Not implemented in alpha)
-- A `blockExplorer` (Not implemented in alpha)
+- A `blockscout`
 - A `monitoringStack` (Not implemented in alpha)
 
 **A `Resource` belongs to only one `Project` and one `CloudRegion`.**

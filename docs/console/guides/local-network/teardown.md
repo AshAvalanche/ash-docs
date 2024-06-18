@@ -1,8 +1,8 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
 
-# 6. Teardown
+# 7. Teardown
 
 :::caution
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
@@ -18,6 +18,8 @@ for i in {1..5}; do
 done
 # If you created a Subnet
 ash console resource delete -y ash-subnet
+# If you created a Blockscout
+ash console resource delete -y ash-blockscout
 ```
 
 Wait for the resources to be deleted (removed from the list):
