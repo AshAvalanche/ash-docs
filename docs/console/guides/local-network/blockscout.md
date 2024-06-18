@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# 6. Block-explorer Deployment
+# 6. Block explorer Deployment
 
 :::caution
 The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
@@ -55,7 +55,7 @@ Unlike other resources, there is no secrets to create here.
 
 ## Blockscout endpoint
 
-Ones blockscout is available through its information's:
+After a few minutes, we can get the details on the Blockscout:
 
 ```bash title="Command"
 ash console resource info ash-blockscout
@@ -74,7 +74,7 @@ Resource 'ash-blockscout' of project 'ash-devnet':
 The CLI provides a powerful helper to get the URL where the user interface is.
 
 ```bash title="Command"
-ash console helper blockscout_url ash-blockscout
+ash console helper blockscout-url ash-blockscout
 ```
 
 ```bash title="Output"
