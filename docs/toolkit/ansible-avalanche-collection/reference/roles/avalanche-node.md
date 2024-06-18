@@ -120,6 +120,10 @@ Here is the compatibility matrix with AvalancheGo versions:
 | `28`         | `1.10.9-1.10.12`  | `0.5.5-0.5.6`   |
 | `29`         | `1.10.13-1.10.14` | `0.5.7-0.5.8`   |
 | `30`         | `1.10.15-1.10.17` | `0.5.9-0.5.10`  |
+| `31`         | `1.10.18-1.10.19` | `0.5.11`        |
+| `33`         | `1.11.0-1.11.1`   | `0.6.0-0.6.1`   |
+| `34`         | `1.11.2`          | `0.6.2`         |
+| `35`         | `1.11.3-1.11.7`   | `0.6.3-0.6.6`   |
 
 :::tip
 If a versions incompatibility is detected, an error message will be prompted and the role execution will stop.
