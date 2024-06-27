@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Knowledge Base
 
-This is a list of the known issues or limitations and their solutions about the Ash console.
+This is a list of the known issues or limitations and their solutions about the Ash Console.
 
 ## Issues and limitations
 
@@ -29,11 +29,11 @@ This is a list of the known issues or limitations and their solutions about the 
         ```
     - Resolution:
 
-        In that case you need to renew your GCP credentials and then update it in ash console.
+        In that case you need to renew your GCP credentials and then update it in Ash Console.
 
 - Insufficient access right
 
-    If a resource is created right after the region, the ash cli will raise the following error:
+    If a resource is created right after the region, the Ash CLI will raise the following error:
 
     ```output
     Error adding cloud region to the project: error in response: 400 Bad Request: 
@@ -52,7 +52,8 @@ This is a list of the known issues or limitations and their solutions about the 
 </Tabs>
 
 ### Cloud region already exists
-- Symptoms:
+
+- Error message:
 
     ```output
     Error adding cloud region to the project: error in response: 400 Bad Request:
@@ -63,9 +64,10 @@ This is a list of the known issues or limitations and their solutions about the 
         "status": 400
     }
     ```
+
 - Resolution:
 
-    In that case you need to run the following command to update they region internally:
+    In that case you need to run the following command to refresh the region internally:
     ```shell
     ash console region list
     ```
