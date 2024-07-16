@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Authentication
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 Before interacting with the Ash Console, you need to authenticate yourself. The authentication flow depends on the tool you are using (Ash Console Web UI, Ash CLI, Ash Console API).

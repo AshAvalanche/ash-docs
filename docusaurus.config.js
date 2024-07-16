@@ -96,7 +96,6 @@ const config = {
             position: "right",
             label: "Suzaku",
           },
-
           {
             href: "https://wallet.ash.center",
             position: "right",
@@ -108,7 +107,7 @@ const config = {
             label: "Blog",
           },
           {
-            href: "https://github.com/AshAvalanche/ash-docs",
+            href: "https://github.com/AshAvalanche",
             position: "right",
             className: "header-github-link",
             "aria-label": "GitHub Repository",
@@ -157,7 +156,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/AshAvalanche/ash-docs",
+                href: "https://github.com/AshAvalanche",
               },
             ],
           },
@@ -171,10 +170,6 @@ const config = {
               {
                 label: "Discord",
                 href: "https://discord.gg/7xSEzC2n7v",
-              },
-              {
-                label: "YouTube",
-                href: "https://www.youtube.com/@ash_avax",
               },
               {
                 label: "Branding Kit",
@@ -191,8 +186,22 @@ const config = {
               },
             ],
           },
+          {
+            title: "More",
+            items: [
+              {
+                href: "https://suzaku.network",
+                label: "Suzaku",
+              },
+    
+              {
+                href: "https://s4s.ash-test.center/welcome",
+                label: "Safe4Subnets",
+              },
+            ],
+          },
         ],
-        copyright: `Copyright © 2022-${new Date().getFullYear()} E36 Knots - Built with Docusaurus`,
+        copyright: `Copyright © 2022-${new Date().getFullYear()} E36 Knots`,
       },
       prism: {
         theme: lightCodeTheme,

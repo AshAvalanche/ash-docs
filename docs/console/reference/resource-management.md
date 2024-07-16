@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Resource Management
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 [Resources](/docs/console/glossary#secret) are the core feature of the Ash Console. They are the building blocks of your infrastructure, deployed in [cloud regions](/docs/console/glossary#cloud-region) of your cloud account/subscription/project and managed by Ash.

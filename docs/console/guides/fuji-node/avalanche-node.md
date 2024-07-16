@@ -5,7 +5,7 @@ sidebar_position: 6
 # 4. Avalanche Node Deployment
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 We can finally deploy our Avalanche node [resource](/docs/console/glossary#resource)!

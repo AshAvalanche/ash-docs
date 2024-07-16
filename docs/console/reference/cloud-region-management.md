@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Cloud Region Management
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 The [resources](/docs/console/glossary#resource) of a [project](/docs/console/glossary#project) are deployed across one or more [cloud regions](/docs/console/glossary#cloud-region).

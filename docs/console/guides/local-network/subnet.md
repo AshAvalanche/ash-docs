@@ -5,7 +5,7 @@ sidebar_position: 7
 # 5. Subnet Creation
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 In this section, we will create a Subnet [resource](/docs/console/glossary#resource) on our local network.
