@@ -5,7 +5,7 @@ sidebar_position: 3
 # 1. Cloud Credentials Setup
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 To **deploy the Avalanche node [resource](/docs/console/glossary#resource) into your cloud account/subscription/project**, you need to provide the Console with appropriate credentials.

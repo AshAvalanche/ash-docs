@@ -22,7 +22,7 @@ const FeatureList: FeatureItem[] = [
         is the one-stop shop for <b>Appchain development and operation</b> on
         Avalanche.
         <br />
-        100% <b>cloud-agnostic</b>.
+        100% <b>cloud-agnostic</b> and <b>open-source</b>.
       </>
     ),
   },

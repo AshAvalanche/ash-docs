@@ -27,7 +27,7 @@ export default function HomepageHeader() {
               <div className={styles.buttons}>
                 <Link
                   className="button button--secondary button--lg"
-                  to="/docs/toolkit"
+                  to="/docs/console"
                 >
                   🚀 Get started
                 </Link>
@@ -51,9 +51,9 @@ export default function HomepageHeader() {
               <div className={styles.buttons}>
                 <Link
                   className="button button--secondary button--lg"
-                  to="https://forms.gle/m66KkKT8FC2Jb9Y97"
+                  to="https://ashavax.hashnode.dev/tbd"
                 >
-                  ✍️ Register for the alpha!
+                  🎉 Read the beta announcement
                 </Link>
               </div>
             </div>

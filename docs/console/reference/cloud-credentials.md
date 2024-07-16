@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Cloud Credentials
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 The Ash Console is a PaaS that allow you to **deploy [resources](/docs/console/glossary#resource) into your own cloud accounts/subscriptions/projects**. To do so, you need to provide the Console with appropriate credentials.

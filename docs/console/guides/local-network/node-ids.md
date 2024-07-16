@@ -5,7 +5,7 @@ sidebar_position: 4
 # 2. Node ID / BLS keys Secrets Generation
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 The Ash Console **decorelates the node ID from Avalanche nodes**, so that you can have a better control over your validator nodes' lifecycle.

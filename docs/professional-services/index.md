@@ -18,15 +18,15 @@ They have deep knowledge of distributed systems architecture challenges and are 
 
 #### Open-source contributions
 
-Our team maintains multiple [open-source tools](/docs/toolkit/) tailored for Avalanche and is actively contributing to other projects in the Avalanche ecosystem.
+Our team maintains multiple [open-source tools](/docs/toolkit/) tailored for Avalanche and is the largest external contributor to the Avalanche ecosystem.
 
 See examples of the team contributions:
 
-- [Ava Labs repositories](https://github.com/issues?q=involves%3ANuttymoon+involves%3Aleopaul36+archived%3Afalse+org%3Aava-labs)
+- [Ava Labs repositories](https://github.com/issues?q=involves%3ANuttymoon+involves%3Aleopaul36+involves%3AAl3xGROS+archived%3Afalse+org%3Aava-labs)
 
 #### Node operating
 
-Ash is **operating multiple Avalanche nodes** (on the mainnet and Fuji testnet), and taking part in decentralized RPC networks such as [Lava](https://lavanet.xyz).
+Ash is **operating multiple Avalanche nodes** (on the mainnet and Fuji testnet).
 
 ### Education
 
@@ -38,18 +38,22 @@ Our team can offer you the following services:
 
 ### Avalanche nodes setup and maintenance
 
-Ash [open-source tools](/docs/toolkit/) and premium [Console](/docs/console/) plans can significantly reduce the setup and maintenance cost of your Avalanche nodes.
+Ash [open-source tools](/docs/toolkit/) and [Console](/docs/console/) can significantly reduce the setup and maintenance cost of your Avalanche nodes.
 
-Our team can help you with the **initial setup** and provide you with a maintenance plan **tailored to your needs**.
+Our team can help you with the **initial setup** and provide you with a support plan **tailored to your needs**.
 
-### Additional features for the Ash tools
+### Additional services for the Ash tools
 
-As the maintainers of the Ash [open-source tools](/docs/toolkit/) and [Console](/docs/console/), we can **develop additional features** for any need that is not already covered. This could be:
+As the maintainers of the Ash [open-source tools](/docs/toolkit/) and [Console](/docs/console/), we can **develop additional features** and provide more services for any need that is not already covered. This could be:
 
-- Better support for your cloud provider
-- Support for a new blockchain runtime (VM)
-- Integration with your monitoring system
-- Etc.
+- Get first class support from our expert team
+- Support for a new cloud provider or blockchain runtime (VM)
+- Receive custom alerts in real time and never miss an important event going on in your Subnet
+- Deploy and manage a trustless bridge to link your Subnet to other blockchains (including the C-Chain)
+- Automatic AvalancheGo upgrades
+- Launch a fully configurable [Faucet](https://github.com/ava-labs/avalanche-faucet) plugged on your Subnet for easy testing and user on-boarding.
+- Load balanced RPC for your Subnet
+- Anything else you might need!
 
 ### Subnet (Appchain) design and development
 

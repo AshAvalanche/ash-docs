@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Secret Management
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 [Secrets](/docs/console/glossary#secret) are used at different steps of an Appchain deployment through the Ash Console.

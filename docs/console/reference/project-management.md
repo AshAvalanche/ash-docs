@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Project Management
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 The first step for an Ash Console user is to create a [project](/docs/console/glossary#project): a logical set of [resources](/docs/console/glossary#resource) that are deployed in [cloud regions](/docs/console/glossary#cloud-region).
