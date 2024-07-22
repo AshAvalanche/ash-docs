@@ -181,8 +181,16 @@ const config = {
             title: "Legal",
             items: [
               {
-                label: "General Conditions of Use",
-                to: "/docs/terms-and-conditions/general-conditions-of-use",
+                label: "Terms and Conditions",
+                to: "/docs/legal/terms-and-conditions",
+              },
+              {
+                label: "Privacy Policy",
+                to: "/docs/legal/privacy-policy",
+              },
+              {
+                label: "Legal Notice",
+                to: "/docs/legal/legal-notice",
               },
             ],
           },
@@ -195,8 +203,8 @@ const config = {
               },
     
               {
-                href: "https://s4s.ash-test.center/welcome",
-                label: "Safe4Subnets",
+                href: "https://wallet.ash.center/welcome",
+                label: "Ash{Wallet}",
               },
             ],
           },
