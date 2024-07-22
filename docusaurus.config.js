@@ -98,9 +98,9 @@ const config = {
           },
 
           {
-            href: "https://s4s.ash-test.center/welcome",
+            href: "https://wallet.ash.center",
             position: "right",
-            label: "Safe4Subnets",
+            label: "Ash Wallet",
           },
           {
             href: "https://ashavax.hashnode.dev",
