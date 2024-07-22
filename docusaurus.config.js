@@ -165,7 +165,7 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Twitter",
+                label: "X / Twitter",
                 href: "https://twitter.com/ash_avax",
               },
               {
@@ -175,6 +175,10 @@ const config = {
               {
                 label: "YouTube",
                 href: "https://www.youtube.com/@ash_avax",
+              },
+              {
+                label: "Branding Kit",
+                href: "https://drive.google.com/drive/folders/104EdwhwJ9-8FzCsJMn9E8cZiLSM0wAlA?usp=sharing",
               },
             ],
           },
