@@ -5,7 +5,7 @@ sidebar_position: 11
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Smart Contract Deployement
+# Smart Contract Deployment
 
 In this section, we will deploy a smart contract to launch the ASHToken ERC20 token on an EVM Subnet deployed using the [ash.avalanche](https://github.com/AshAvalanche/ansible-avalanche-collection) Ansible collection.
 
