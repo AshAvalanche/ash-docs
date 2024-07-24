@@ -55,7 +55,6 @@ The tutorials still provide the snippets to query the Avalanche APIs with cURL.
    terraform -chdir=terraform/hypersdk-devnet init
    ```
 
-
 ## Create EC2 instances with Terraform
 
 1. Setup AWS keys environment variables:
@@ -73,6 +72,7 @@ The tutorials still provide the snippets to query the Avalanche APIs with cURL.
 
 :::tip
 This command will create the resources defined in [`main.tf`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/terraform/hypersdk-devnet/main.tf) including:
+
 - 5 a `t2.medium` EC2 instance with `8GiB` of storage
 - An associated [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 - A [security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) configured to allow SSH (port 22) and default AVAX ports (9650 for HTTP and 9651 for staking) as well as all outbound traffic.
@@ -103,36 +103,37 @@ If you want to use a custom inventory (i.e. you created VMs without Terraform or
 <details>
   <summary>Ansible hosts file</summary>
 
-  File content:
+File content:
 
-  ```ini
-   validator01 ansible_host=3.95.172.85 ansible_user=ubuntu ansible_ssh_private_key_file=./files/ansible_key.pem
-   validator02 ansible_host=52.73.132.144 ansible_user=ubuntu ansible_ssh_private_key_file=./files/ansible_key.pem
-   validator03 ansible_host=3.80.125.149 ansible_user=ubuntu ansible_ssh_private_key_file=./files/ansible_key.pem
-   validator04 ansible_host=34.235.117.99 ansible_user=ubuntu ansible_ssh_private_key_file=./files/ansible_key.pem
-   validator05 ansible_host=54.196.41.121 ansible_user=ubuntu ansible_ssh_private_key_file=./files/ansible_key.pem
+```ini
+ validator01 ansible_host=3.95.172.85 ansible_user=ubuntu ansible_ssh_private_key_file=./files/ansible_key.pem
+ validator02 ansible_host=52.73.132.144 ansible_user=ubuntu ansible_ssh_private_key_file=./files/ansible_key.pem
+ validator03 ansible_host=3.80.125.149 ansible_user=ubuntu ansible_ssh_private_key_file=./files/ansible_key.pem
+ validator04 ansible_host=34.235.117.99 ansible_user=ubuntu ansible_ssh_private_key_file=./files/ansible_key.pem
+ validator05 ansible_host=54.196.41.121 ansible_user=ubuntu ansible_ssh_private_key_file=./files/ansible_key.pem
 
-   [avalanche_nodes]
-   validator0[1:5]
+ [avalanche_nodes]
+ validator0[1:5]
 
-   [avalanche_nodes:children]
-   bootstrap_nodes
-   subnet_txs_host
-   subnet_validators
-   api_node
+ [avalanche_nodes:children]
+ bootstrap_nodes
+ subnet_txs_host
+ subnet_validators
+ api_node
 
-   [bootstrap_nodes]
-   validator01
+ [bootstrap_nodes]
+ validator01
 
-   [api_node]
-   validator01
+ [api_node]
+ validator01
 
-   [subnet_txs_host]
-   validator01
+ [subnet_txs_host]
+ validator01
 
-   [subnet_validators]
-   validator0[1:5]
-  ```
+ [subnet_validators]
+ validator0[1:5]
+```
+
 </details>
 :::
 
@@ -297,6 +298,10 @@ You will need to SSH to the node to run the command above using the Ash CLI. See
 
 ## Configure `morpheus-cli`
 
+:::tip
+Check out the official [`hypersk/morpheusvm`](https://github.com/ava-labs/hypersdk/tree/main/examples/morpheusvm) repository for more details on the `morpheus-cli` installation process and usage.
+:::
+
 1. Import the default key:
 
    ```bash title="Command"
@@ -309,7 +314,7 @@ You will need to SSH to the node to run the command above using the Ash CLI. See
    ```
 
 2. Import the chain:
- 
+
    ```bash title="Command"
    ./build/morpheus-cli chain import
    ```
@@ -332,10 +337,6 @@ You will need to SSH to the node to run the command above using the Ash CLI. See
    uri: http://54.226.148.124:9650/ext/bc/26iZJxV79s2vvTJQM2NebfW7tDqyzCr2SfzgyVXtoURQh5VFoM
    balance: 10000000000.000000000 RED
    ```
-
-:::tip
-Check out the official [`hypersk/morpheusvm`](https://github.com/ava-labs/hypersdk/tree/main/examples/morpheusvm) repository for more details on the `morpheus-cli` usage.
-:::
 
 ## Customization
 
