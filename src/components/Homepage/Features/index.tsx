@@ -17,10 +17,14 @@ const FeatureList: FeatureItem[] = [
       <>
         The{" "}
         <b>
-          <Link to="/docs/console">Ash Console</Link>
+          <Link to="/docs/console">one-stop shop</Link>
         </b>{" "}
-        is the one-stop shop for <b>Appchain development and operation</b> on
-        Avalanche.
+        for{" "}
+        <b>
+          Appchain <br />
+          development and operation
+        </b>{" "}
+        on Avalanche.
         <br />
         100% <b>cloud-agnostic</b>.
       </>
