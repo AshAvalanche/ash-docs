@@ -45,20 +45,6 @@ export default function HomepageHeader() {
             </div>
             <div className={clsx("col col--4")} />
           </div>
-          <div className="row">
-            <div className={clsx("col col--4")} />
-            <div className={clsx("col col--4")}>
-              <div className={styles.buttons}>
-                <Link
-                  className="button button--secondary button--lg"
-                  to="https://forms.gle/m66KkKT8FC2Jb9Y97"
-                >
-                  ✍️ Register for the alpha!
-                </Link>
-              </div>
-            </div>
-            <div className={clsx("col col--4")} />
-          </div>
         </div>
       </div>
     </header>

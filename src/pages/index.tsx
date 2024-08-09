@@ -3,9 +3,9 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageHeader from "../components/Homepage/Header/index";
 import HomepageFeatures from "@site/src/components/Homepage/Features";
-import Video from "../components/Homepage/Video";
-
-import styles from "./styles.module.css";
+import HomepageProducts from "../components/Homepage/Products";
+import HomepageSupporters from "../components/Homepage/Supporters";
+// import Video from "../components/Homepage/Video";
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
@@ -14,6 +14,8 @@ export default function Home(): JSX.Element {
       <main>
         <HomepageHeader />
         <HomepageFeatures />
+        <HomepageProducts />
+        <HomepageSupporters />
         {/* <div className={styles.section}>
           <Video />
         </div> */}

@@ -1,0 +1,26 @@
+.products {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+/* [data-theme="dark"] .products {
+  background-color: #0a081c;
+} */
+
+.productSvgLight {
+  height: 200px;
+  width: 200px;
+}
+.productSvgDark {
+  height: 200px;
+  width: 200px;
+}
+
+[data-theme="light"] .productSvgDark {
+  display: none;
+}
+[data-theme="dark"] .productSvgLight {
+  display: none;
+}
