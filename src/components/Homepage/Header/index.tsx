@@ -23,7 +23,7 @@ export default function HomepageHeader() {
         <div className="container">
           <div className="row">
             <div className={clsx("col col--4")} />
-            <div className={clsx("col col--4")}>
+            <div className={clsx("col col--2")}>
               <div className={styles.buttons}>
                 <Link
                   className="button button--secondary button--lg"
@@ -33,11 +33,7 @@ export default function HomepageHeader() {
                 </Link>
               </div>
             </div>
-            <div className={clsx("col col--4")} />
-          </div>
-          <div className="row">
-            <div className={clsx("col col--4")} />
-            <div className={clsx("col col--4")}>
+            <div className={clsx("col col--2")}>
               <div className={styles.buttons}>
                 <Link
                   className="button button--secondary button--lg"
