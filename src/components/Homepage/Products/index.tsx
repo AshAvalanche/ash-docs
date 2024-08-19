@@ -6,6 +6,7 @@ import Heading from "@theme/Heading";
 
 type ProductItem = {
   title: string;
+  link: string;
   SvgLight: React.ComponentType<React.ComponentProps<"svg">>;
   SvgDark: React.ComponentType<React.ComponentProps<"svg">>;
   description: JSX.Element;
@@ -14,6 +15,7 @@ type ProductItem = {
 const ProductList: ProductItem[] = [
   {
     title: "Ash Wallet",
+    link: "https://wallet.ash.center",
     SvgLight: require("@site/static/img/undraw-two-factor-authentication.svg")
       .default,
     SvgDark: require("@site/static/img/undraw-two-factor-authentication.svg")
@@ -32,6 +34,7 @@ const ProductList: ProductItem[] = [
   },
   {
     title: "Suzaku",
+    link: "https://suzaku.network",
     SvgLight: require("@site/static/img/suzaku-symbol-black.svg").default,
     SvgDark: require("@site/static/img/suzaku-symbol-white.svg").default,
     description: (
@@ -45,15 +48,19 @@ const ProductList: ProductItem[] = [
   },
 ];
 
-function Product({ title, SvgLight, SvgDark, description }: ProductItem) {
+function Product({ title, link, SvgLight, SvgDark, description }: ProductItem) {
   return (
     <div className={clsx("col col--6")}>
       <div className="text--center">
-        <SvgLight className={styles.productSvgLight} role="img" />
-        <SvgDark className={styles.productSvgDark} role="img" />
+        <Link to={link}>
+          <SvgLight className={styles.productSvgLight} role="img" />
+          <SvgDark className={styles.productSvgDark} role="img" />
+        </Link>
       </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+        <h3>
+          <Link to={link}>{title}</Link>
+        </h3>
         <p>{description}</p>
       </div>
     </div>
