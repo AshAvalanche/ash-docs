@@ -7,12 +7,12 @@ import TabItem from '@theme/TabItem';
 
 # Wallet Funding
 
-The Ash CLI allows to interact with wallets and issue transactions with them on the [Primary Network](https://docs.avax.network/learn/avalanche/avalanche-platform).
+The Ash CLI allows to interact with wallets and issue transactions with them on the [Primary Network](https://docs.avax.network/learn/primary-network).
 
 :::caution
 The Ash CLI uses **plain-text private keys** to interact with wallets. **It should never be used on the mainnet**. If you try do so, the command will fail with: `AvalancheNetwork error: wallet creation is not allowed on network 'mainnet'`.
 
-To interact with wallets on the mainnet (e.g. to create Subnets and blockchains), you should use the [Avalanche CLI](https://docs.avax.network/subnets/create-a-mainnet-subnet) which is compatible with Ledger devices.
+To interact with wallets on the mainnet (e.g. to create Subnets and blockchains), you should use the [Avalanche CLI](https://docs.avax.network/subnets/deploy-a-subnet/avalanche-mainnet) which is compatible with Ledger devices.
 :::
 
 <br/>
@@ -183,7 +183,7 @@ Balance of 'X-local1aszv6y7ugcnhgfvd7lzv8v3fk9hytlpstcazfk' on X-Chain (asset 'A
   </TabItem>
   <TabItem value="fuji" label="Fuji testnet">
 
-Follow the official tutorial: [Get a Drip from the Fuji Faucet](https://docs.avax.network/quickstart/fuji-workflow#get-a-drip-from-the-fuji-faucet) and use the wallet's `EVM address`.
+Follow the official tutorial: [Get a Drip from the Fuji Faucet](https://docs.avax.network/dapps/smart-contract-dev/get-test-funds) and use the wallet's `EVM address`.
 
   </TabItem>
 </Tabs>

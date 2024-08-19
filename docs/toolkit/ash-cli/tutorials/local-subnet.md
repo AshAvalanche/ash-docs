@@ -12,7 +12,7 @@ The Ash CLI allows to **create Subnets and blockchains**, and to **add validator
 :::caution
 The Ash CLI uses **plain-text private keys** to interact with wallets. **It should never be used on the mainnet**. If you try do so, the command will fail with: `AvalancheNetwork error: wallet creation is not allowed on network 'mainnet'`.
 
-To interact with wallets on the mainnet (e.g. to create Subnets and blockchains), you should use the [Avalanche CLI](https://docs.avax.network/subnets/create-a-mainnet-subnet) which is compatible with Ledger devices.
+To interact with wallets on the mainnet (e.g. to create Subnets and blockchains), you should use the [Avalanche CLI](https://docs.avax.network/subnets/deploy-a-subnet/avalanche-mainnet) which is compatible with Ledger devices.
 :::
 
 <br/>
@@ -26,7 +26,7 @@ In this tutorial, we will see how to create **a new Subnet with a Subnet EVM blo
   - Or the **Avalanche Network Runner** via Avalanche CLI: `avalanche network start`
 - A wallet with **some AVAX on the P-Chain**. See [Wallet Funding](/docs/toolkit/ash-cli/tutorials/wallet-funding).
 - **Ash CLI installed and configured** for your network. See [Installation](/docs/toolkit/ash-cli/installation) and [Configure the Ash CLI for your network](/docs/toolkit/ash-cli/tutorials/wallet-funding#configure-the-ash-cli-for-your-network).
-- **Avalanche CLI installed**. We use it to create the Subnet EVM genesis configuration using a nice wizard. See [Install Avalanche CLI](https://docs.avax.network/subnets/install-avalanche-cli).
+- **Avalanche CLI installed**. We use it to create the Subnet EVM genesis configuration using a nice wizard. See [Install Avalanche CLI](https://docs.avax.network/tooling/guides/get-avalanche-cli).
 
 ## Create the Subnet
 
@@ -195,7 +195,7 @@ The `start-time` and `end-time` arguments should follow the RFC 3339 format: `YY
 In this example validation period will start 2 minutes after the transaction is accepted and will end 2 days after.
 
 :::info
-See [platform.addSubnetValidator](https://docs.avax.network/apis/avalanchego/apis/p-chain#platformaddsubnetvalidator) for more information about **the weight parameter**.
+See [platform.getCurrentValidators](https://docs.avax.network/api-reference/p-chain/api#platformgetcurrentvalidators) for more information about **the weight parameter**.
 :::
 
 We can now **repeat the process** for the 4 other validators.

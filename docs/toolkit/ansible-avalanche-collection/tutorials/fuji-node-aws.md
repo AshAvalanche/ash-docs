@@ -143,7 +143,7 @@ Logs should look like this once the chain is bootstrapped:
 ```
 
 :::tip
-By default, AvalancheGo is configured to use [State Sync](https://docs.avax.network/nodes/maintain/chain-config-flags#state-sync) for faster node bootstrapping. If you want to run an **archival node**, you need to disable State Sync on the C-chain. This is configurable through the Ansible Avalanche Collection by adding the following keys to [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/fuji-aws/group_vars/avalanche_nodes.yml):
+By default, AvalancheGo is configured to use [State Sync](https://docs.avax.network/api-reference/c-chain/configs#state-sync) for faster node bootstrapping. If you want to run an **archival node**, you need to disable State Sync on the C-chain. This is configurable through the Ansible Avalanche Collection by adding the following keys to [`avalanche_nodes.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/fuji-aws/group_vars/avalanche_nodes.yml):
 
 ```yaml title="inventories/fuji-aws/group_vars/avalanche_nodes.yml"
 avalanchego_chains_configs:
@@ -155,7 +155,7 @@ avalanchego_chains_configs:
 
 ## Issue API calls
 
-The node `aws-fuji-node` exposes AvalancheGo APIs on it's public IP: you can query any [Avalanche API](https://docs.avax.network/build/avalanchego-apis/) from your terminal. For example, to check if the P-Chain is done bootstrapping:
+The node `aws-fuji-node` exposes AvalancheGo APIs on it's public IP: you can query any [Avalanche API](https://docs.avax.network/api-reference/p-chain/api) from your terminal. For example, to check if the P-Chain is done bootstrapping:
 
 <Tabs>
   <TabItem value="ash-cli" label="Using the Ash CLI" default>

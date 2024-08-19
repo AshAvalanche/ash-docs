@@ -119,7 +119,7 @@ Here are some details about the variables:
 
 - `m1`: The name of the VM.
 - `download_url`: URL where the VM binary archive and checksum can be downloaded from.
-- `id`: The VM ID (see [Installing a VM](https://docs.avax.network/build/vm/intro#installing-a-vm)).
+- `id`: The VM ID (see [Installing a VM](https://docs.avax.network/virtual-machines#installing-a-vm)).
 - `ash_vm_type`: The VM type used by the [Ash CLI](/docs/toolkit/ash-cli/introduction). `Custom` for a custom VM.
 - `binary_filename`: The name of the VM binary (will be used to generate the archive filename, the checksum filename and the extracted binary filename)
 - `versions_comp`: AvalancheGo version boundaries for which the VM is compatible. `le` is for "less or equal" and `ge` for "greater or equal".

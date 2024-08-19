@@ -33,7 +33,7 @@ Available Avalanche networks:
 ```
 
 :::tip
-The `mainnet` and `fuji` networks use [Avalanche public API servers](https://docs.avax.network/apis/avalanchego/public-api-server) that tend to reach their rate limit quickly. If this happens you can use the `*-ankr` and `*-blast` networks instead (they use [Ankr](https://www.ankr.com/) and [Blast](https://blastapi.io/) public API servers).
+The `mainnet` and `fuji` networks use [Avalanche public API servers](https://docs.avax.network/api-reference/rpc-providers#mainnet-rpc---public-api-server) that tend to reach their rate limit quickly. If this happens you can use the `*-ankr` and `*-blast` networks instead (they use [Ankr](https://www.ankr.com/) and [Blast](https://blastapi.io/) public API servers).
 :::
 
 ## Get information about Subnets and their blockchains and validators
@@ -102,7 +102,7 @@ Validator 'NodeID-54RagM4VF5VNeKWoVV5UNHJfM6ccHtBob' on Subnet '9m6a3Qte8FaRbLZi
   Weight:           1000
 ```
 
-Some properties are only returned for validators on **elastic (or PoS) Subnets** like the [Primary Network](https://docs.avax.network/learn/avalanche/avalanche-platform) (e.g. `Potential reward`, `Connected`, `Uptime`. See [platform.getCurrentValidators](https://docs.avax.network/apis/avalanchego/apis/p-chain#platformgetcurrentvalidators)):
+Some properties are only returned for validators on **elastic (or PoS) Subnets** like the [Primary Network](https://docs.avax.network/learn/primary-network) (e.g. `Potential reward`, `Connected`, `Uptime`. See [platform.getCurrentValidators](https://docs.avax.network/api-reference/p-chain/api#platformgetcurrentvalidators)):
 
 ```bash title="Command"
 # On an elastic Subnet

@@ -11,14 +11,14 @@ This role uses Ash CLI under the hood.
 
 The Ash CLI uses **plain-text private keys** to interact with wallets. **It should never be used on the mainnet**. If you try do so, commands will fail with: `AvalancheNetwork error: wallet creation is not allowed on network 'mainnet'`.
 
-To interact with wallets on the mainnet (e.g. to create Subnets and blockchains), you should use the [Avalanche CLI](https://docs.avax.network/subnets/create-a-mainnet-subnet) which is compatible with Ledger devices.
+To interact with wallets on the mainnet (e.g. to create Subnets and blockchains), you should use the [Avalanche CLI](https://docs.avax.network/tooling/create-deploy-subnets/deploy-on-mainnet) which is compatible with Ledger devices.
 :::
 
 ## Role variables
 
 | Variable                              | Comment                                                                                                                                                                                 | Default value                                                  |
 | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| `subnet_avalanche_network_id`         | The [Network ID](https://docs.avax.network/build/references/avalanchego-config-flags/#network-id) in which to create the Subnet                                                         | `local`                                                        |
+| `subnet_avalanche_network_id`         | The [Network ID](https://docs.avax.network/api-reference/avalanche-go-configs-flags/#network-id) in which to create the Subnet                                                          | `local`                                                        |
 | `subnet_txs_private_key`              | The private key used to sign all Subnet related transactions. The P-Chain address of the account will also be used as control key for the Subnet.                                       | `PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN` |
 | `subnet_txs_key_encoding`             | Encoding of the private key. Can be `cb58` or `hex`.                                                                                                                                    | `cb58`                                                         |
 | `subnet_blockchains_check_name`       | Whether to fail if a blockchain with the same name already exists                                                                                                                       | `true`                                                         |

@@ -53,7 +53,7 @@ As the maintainers of the Ash [open-source tools](/docs/toolkit/) and [Console](
 
 ### Subnet (Appchain) design and development
 
-Avalanche [Subnets](https://docs.avax.network/learn/avalanche/subnets-overview) allow any project to create **its dedicated blockchain** (or "Appchain") with their own set of rules and validators. Subnets can run **custom software** while benefiting from the **Avalanche consensus layer**.
+Avalanche [Subnets](https://docs.avax.network/learn/subnets) allow any project to create **its dedicated blockchain** (or "Appchain") with their own set of rules and validators. Subnets can run **custom software** while benefiting from the **Avalanche consensus layer**.
 
 Our team can help you **take the best decisions** regarding your Subnet design and follow you through the development process, **from devnet to mainnet**.
 

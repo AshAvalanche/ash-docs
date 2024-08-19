@@ -118,7 +118,7 @@ http://10.117.207.108:9090
 
 #### Targets
 
-In the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory, Prometheus is configured (see [`prometheus.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/prometheus.yml)) to scrape metrics from the Avalanche nodes (endpoint `/ext/metrics` on port `9650` of AvalancheGo, see [documentation](https://docs.avax.network/apis/avalanchego/apis/metrics) for details) and the Prometheus Node Exporter (port `9100` by default).
+In the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory, Prometheus is configured (see [`prometheus.yml`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/group_vars/prometheus.yml)) to scrape metrics from the Avalanche nodes (endpoint `/ext/metrics` on port `9650` of AvalancheGo, see [documentation](https://docs.avax.network/api-reference/metrics-api) for details) and the Prometheus Node Exporter (port `9100` by default).
 
 :::caution
 The `ash.avalanche.faucet` role is not yet compatible with secured HTTP API endpoints.

@@ -79,7 +79,7 @@ It's done! We now have a ready-to-use 5-nodes Avalanche local test network.
 
 ## Issue API calls
 
-The validator nodes expose AvalancheGo APIs on their local and public interfaces. Because the public IP address is not known in advance, it is easier to leverage `multipass exec` to query the [Avalanche APIs](https://docs.avax.network/build/avalanchego-apis/) on the local interface. For example, to check if the P-Chain is done bootstrapping:
+The validator nodes expose AvalancheGo APIs on their local and public interfaces. Because the public IP address is not known in advance, it is easier to leverage `multipass exec` to query the [Avalanche APIs](https://docs.avax.network/api-reference/p-chain/api) on the local interface. For example, to check if the P-Chain is done bootstrapping:
 
 ```bash title="Command"
 multipass exec validator01 -- curl -X POST --data '{
