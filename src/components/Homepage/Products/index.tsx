@@ -69,7 +69,7 @@ function Product({ title, link, SvgLight, SvgDark, description }: ProductItem) {
 
 export default function HomepageProducts(): JSX.Element {
   return (
-    <section className={clsx("hero hero--secondary", styles.products)}>
+    <section className={clsx("hero--secondary", styles.products)}>
       <div className="container text--center">
         <div className="row">
           <div className="col">

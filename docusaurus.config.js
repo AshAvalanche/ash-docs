@@ -203,8 +203,8 @@ const config = {
               },
     
               {
-                href: "https://wallet.ash.center/welcome",
-                label: "Ash{Wallet}",
+                href: "https://wallet.ash.center",
+                label: "Ash Wallet",
               },
             ],
           },

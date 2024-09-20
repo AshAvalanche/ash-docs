@@ -1,8 +1,11 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
-# 2. Node ID / BLS key Secret Generation
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# 3. Node ID / BLS key Secret Generation
 
 :::caution
 The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
@@ -28,7 +31,7 @@ The Node ID is stored as a [secret](/docs/console/glossary#secret) in the Consol
    ```
 
    ```bash title="Output"
-   Node ID: NodeID-Bdf7YwriWbpY15CPcXH5791uDTqtCYyjw
+   Node ID: NodeID-2rVh5jWQ5xtxRDWNuP91XvciQNPBWWy8n
    Certificate and key files written to 'node-id/node.crt' and 'node-id/node.key'
    ```
 
@@ -44,7 +47,7 @@ The Node ID is stored as a [secret](/docs/console/glossary#secret) in the Consol
    ```
 
    ```bash title="Output"
-   Node ID: NodeID-Bdf7YwriWbpY15CPcXH5791uDTqtCYyjw
+   Node ID: NodeID-2rVh5jWQ5xtxRDWNuP91XvciQNPBWWy8n
    ```
 
 ## Generate a BLS key
@@ -56,8 +59,8 @@ The Node ID is stored as a [secret](/docs/console/glossary#secret) in the Consol
    ```
 
    ```bash title="Output"
-   BLS public key: 0x94a8ee6943e043b2b523f9b507fca27cad3d96fd443d5a7b1e4496f6ed7bb4eb934f03bc36a4fd9719c06b7d36931523
-   BLS proof of possession: 0x97fd003ae1719d7d8bdac4a703909a169101f0d27d73077a3241c8fc01861a82603f45582f34266a5602b3ff3b28ee5910bb01f10a418cad08c2de0b0debbfd035f9900d8ffa78c3769476e599ae028b256cd08acadfa69974ae27f26f6c17e7
+   BLS public key: 0xa64edc101b5260a35a004fa0d81e129f6f592d2ccb037181c7aebb2ff9d8c90135f780d326555adde901f5bbd7cbf9d5
+   BLS proof of possession: 0xae8debe9b551a094f8503d8fe86f68243dfb2be93a782d69c32ca883c6e96d5293cd6047fda146366cf9f2c58d2254fe183433faffa1d459d93ba97ba6f91a5388ad8d61aa23c18a5b15551961e5b5289badcf931722dc9e6ba0a8539f74d442
    BLS private key file written to 'node-id/bls.key'
    ```
 
@@ -66,6 +69,24 @@ The Node ID is stored as a [secret](/docs/console/glossary#secret) in the Consol
    :::
 
 ## Create the node ID secret
+
+<Tabs>
+
+<TabItem value="console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Secrets** tab:
+- Click on the `Create Secret` button.
+- Select the `Node ID` secret type.
+- Pick a name for your secret, e.g., `fuji-node-id-01`.
+- Paste the Node ID generated in the previous step.
+- Upload the certificate, key and BLS key files generated in the previous step in the corresponding fields.
+- Click on the `Create` button to add secret to the project.
+
+![Ash Console NodeID secret create](/img/ash-console-fuji-nodeid-create.png)
+
+</TabItem>
+
+<TabItem value="cli" label="Using the Ash CLI">
 
 :::tip
 The Ash Console subcommands support both JSON and YAML.
@@ -78,7 +99,7 @@ Don't forget to **replace the Node ID** with yours:
 ash console secret create '{
   name: fuji-node-id-01,
   secretType: nodeId,
-  nodeId: NodeID-Bdf7YwriWbpY15CPcXH5791uDTqtCYyjw,
+  nodeId: NodeID-2rVh5jWQ5xtxRDWNuP91XvciQNPBWWy8n,
   nodeCert: node-id/node.crt,
   nodeKey: node-id/node.key,
   nodeBlsKey: node-id/bls.key
@@ -93,6 +114,9 @@ Secret created successfully!
 | fuji-node-id-01 | 41ea...c755 | NodeId | 2023-12-21T11:05 | 0       |
 +-----------------+-------------+--------+------------------+---------+
 ```
+
+</TabItem>
+</Tabs>
 
 :::note
 See the [reference](/docs/console/reference/secret-management) for more information about secrets lifecycle management.

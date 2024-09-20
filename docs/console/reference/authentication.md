@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 import Tabs from '@theme/Tabs';
@@ -14,13 +14,10 @@ The Ash Console is currently in beta and **not production-ready**. It is under a
 Before interacting with the Ash Console, you need to authenticate yourself. The authentication flow depends on the tool you are using (Ash Console Web UI, Ash CLI, Ash Console API).
 
 :::info
-During the Console alpha, **user accounts are created by the Ash team**. If you want to get access to the Console alpha, please contact us!
+During the Console beta, **user [registration](/docs/console/reference/registration) are open and the Console is free to use**. If you need help with anything regarding the Ash Console beta, please contact us!
 
-- [Register in advance](https://forms.gle/m66KkKT8FC2Jb9Y97)
-- [Book a call](https://calendly.com/ash-e36knots)
 - [DM us on Twitter](https://twitter.com/ash_avax)
 - [Join our Discord](https://discord.gg/7xSEzC2n7v)
-
 :::
 
 <Tabs queryString="ash-console-auth-client">
