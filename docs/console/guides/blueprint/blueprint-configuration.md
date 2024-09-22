@@ -208,7 +208,7 @@ Resource successfully created in project 'ash-devnet'!
 
 ## Health
 
-1. It will take a few minutes before the local network is `Bootstrapped` and `Healthy`. You can get its updated status with the `console resource info` command:
+1. It will take **a few minutes** before the local network is `Bootstrapped` and `Healthy`. You can get its updated status with the `console resource info` command:
 
    ```bash title="Command"
     ash console resource info local-node-01

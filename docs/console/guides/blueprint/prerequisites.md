@@ -24,6 +24,6 @@ To follow this guide, you will need:
   - [Azure](https://azure.microsoft.com/) (account = subscription)
   - [Google Cloud](https://cloud.google.com/) (account = project)
 
-:::tip
+:::caution
 This tutorial uses the `blueprint` function of the Ash CLI which is **not available** yet with the Ash Console Web UI. 
 :::

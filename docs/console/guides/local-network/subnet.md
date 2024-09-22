@@ -2,6 +2,9 @@
 sidebar_position: 7
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # 5. Subnet Creation
 
 :::caution
@@ -15,6 +18,25 @@ In this section, we will create a Subnet [resource](/docs/console/glossary#resou
 Before creating a Subnet, we need to create a `wallet` [secret](/docs/console/glossary#secret). This wallet will be use to sign the **Subnet transactions** (creation, validator management, etc.) and the P-Chain address will be used as the **control key** of the Subnet.
 
 To make things easier, we will use the `ewoq` address which is pre-funded on the local network.
+
+<Tabs>
+
+<TabItem value="console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Secrets** tab:
+- Click on the `Create Secret` button.
+- Select the `Wallet` secret type.
+- Set `ewoq-key` a name for your secret.
+- Set `PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN` in the `Private Key` field.
+- Set `P-fuji18jma8ppw3nhx5r4ap8clazz0dps7rv5u6wmu4t` in the `P-Chain Address` field.
+- Choose `cb58` in the `Private Key Format` field.
+- Click on the `Create` button to add secret to the project.
+
+![Ash Console NodeID secret create](/img/ash-console-ewoq-key.png)
+
+</TabItem>
+
+<TabItem value="cli" label="Using the Ash CLI" default>
 
 ```bash title="Command"
 ash console secret create '{
@@ -35,11 +57,37 @@ Secret created successfully!
 +-------------+-------------+--------+------------------+---------+
 ```
 
+</TabItem>
+</Tabs>
+
 :::warning
 Do not use this wallet as control key in production!
 :::
 
 ## Subnet creation
+
+<Tabs>
+
+<TabItem value="console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab:
+- Click on the `Subnets` tab.
+- Click on the `Create Subnet` button.
+- Pick a name for your Subnet, e.g., `ash-subnet`.
+- Select the cloud region you added in the previous step.
+- Select the `ewoq-key` secret you created in the previous step.
+- (Optional) Configure the Subnet with custom configurations if needed.
+- Click on the `Create` button.
+
+:::tip
+Make sure that all `local-node-0x` nodes are checked as Subnet validators.
+:::
+
+![Ash Console subnet create](/img/ash-console-devnet-subnet-create.png)
+
+</TabItem>
+
+<TabItem value="cli" label="Using the Ash CLI" default>
 
 The following command will create a [Subnet EVM](https://github.com/ava-labs/subnet-evm) blockchain with a standard [genesis](https://docs.avax.network/build/subnet/upgrade/customize-a-subnet#genesis) configuration.
 
@@ -127,6 +175,9 @@ Resource successfully created in project 'ash-devnet'!
 :::info
 Unlike the `avalancheNode` resource, there is no concept of `size` for the `avalancheSubnet` resource. The Ash Console will create a small instance (e.g.: `t2.micro`) that will serve as the Subnet control plane.
 :::
+
+</TabItem>
+</Tabs>
 
 ## Subnet information
 

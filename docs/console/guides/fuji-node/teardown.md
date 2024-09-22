@@ -29,6 +29,10 @@ From the `Cloud Regions` tab of the project, click on the `...` and then `Delete
 
 ![Ash Console cloud region delete](/img/ash-console-cloud-region-delete.png)
 
+:::tip
+Deleting the cloud region will also delete all the resources associated with it.
+:::
+
 ## Delete the `nodeId` secret
 
 From the `Secrets` tab of the project, click on the `...` and then `Delete` button of the Node ID secret:
@@ -84,6 +88,10 @@ Cloud regions of project 'fuji-node-guide':
 +==============+===========+=======================+============+========+
 +--------------+-----------+-----------------------+------------+--------+
 ```
+
+:::tip
+Deleting the cloud region will also delete all the resources associated with it.
+:::
 
 ## Delete the `nodeId` secret
 

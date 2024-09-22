@@ -1,8 +1,11 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
-# 2. Node ID / BLS keys Secrets Generation
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# 3. Node ID / BLS keys Secrets Creation
 
 :::caution
 The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
@@ -17,6 +20,46 @@ In this part of the guide, we will create **5 node ID secrets** for the 5 nodes 
 :::tip
 The Node ID secrets need to match the hardcoded Node IDs in the [`genesis_local.json`](https://github.com/ava-labs/avalanchego/blob/master/genesis/genesis_local.json#L47) file of the [AvalancheGo](https://github.com/ava-labs/avalanchego) codebase.
 :::
+
+<Tabs>
+
+<TabItem value="console" label="Using the Ash Console" default>
+
+## Fetch the node IDs certificates and BLS keys
+
+Before creating the Node ID secrets corresponding to the hardcoded Node IDs of the Avalanche devnet, we need to fetch the certificates and BLS keys of these nodes. They can be found in the [ansible-avalanche-getting-started](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/files/staking) repository.
+
+Here is a bash loop to quickly fetch the certificates and BLS keys of the 5 nodes:
+
+```bash
+for i in {01..05}; do
+  base_url="https://raw.githubusercontent.com/AshAvalanche/ansible-avalanche-getting-started/refs/heads/main/files/staking"
+  curl -sSL "${base_url}/validator${i}.bls.key" -o "validator${i}.bls.key"
+  curl -sSL "${base_url}/validator${i}.crt" -o "validator${i}.crt"
+  curl -sSL "${base_url}/validator${i}.key" -o "validator${i}.key"
+done
+```
+
+## Create the node ID secrets
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Secrets** tab:
+- Click on the `Create Secret` button.
+- Select the `Node ID` secret type.
+- Set the name `local-node-id-01` for the secret.
+- Paste the Node ID corresponding to the certificate and key files, e.g., `NodeID-7Xhw2mDxuDS44j42TCB6U5579esbSt3Lg` for the first node.
+- Upload the certificate, key and BLS key files of the approriate node in the corresponding fields.
+- Click on the `Create` button to add secret to the project.
+
+![Ash Console NodeID secret create](/img/ash-console-devnet-nodeid-create.png)
+
+
+:::tip
+Repeat the process above for the 4 other Node ID secrets.
+:::
+
+</TabItem>
+
+<TabItem value="cli" label="Using the Ash CLI">
 
 ## Fetch the node IDs blueprint
 
@@ -97,6 +140,9 @@ ash console secret list
 | my-aws-creds     | 2a29...fde2 | AwsCredentials | 2023-12-21T15:55 | 0       |
 +------------------+-------------+----------------+------------------+---------+
 ```
+
+</TabItem>
+</Tabs>
 
 :::note
 See the [reference](/docs/console/reference/secret-management) for more information about secrets lifecycle management.

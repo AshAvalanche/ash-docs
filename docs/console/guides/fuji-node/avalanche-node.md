@@ -5,7 +5,7 @@ sidebar_position: 6
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 4. Avalanche Node Deployment
+# 4. Avalanche Node Creation
 
 :::caution
 The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
