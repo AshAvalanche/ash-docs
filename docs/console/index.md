@@ -43,4 +43,4 @@ Need more features, professional support or additional services? The Ash team ca
 
 To get started with the Ash Console, follow one of our guides:
 - [Create an Avalanche validator on Fuji](/docs/console/guides/fuji-node/)
-- Create a devnet with 5 validators, a Subnet and a block explorer
+- [Create a devnet with 5 validators, a Subnet and a block explorer](/docs/console/guides/local-network/)

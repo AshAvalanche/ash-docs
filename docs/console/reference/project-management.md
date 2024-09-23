@@ -16,7 +16,14 @@ The first step for an Ash Console user is to create a [project](/docs/console/gl
 ## List projects
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+  <TabItem value="ash-console" label="Using the Ash Console" default>
+
+  To list projects, navigate to the [Ash Console](https://console.ash.center) home page:
+
+  ![Ash Console Home Page](/img/ash-console-project-list.png)
+
+  </TabItem>
+  <TabItem value="ash-cli" label="Using the Ash CLI">
 
 :::tip
 The Ash CLI displays information in a table format by default. To get a more detailed output (or for scripting), use the `--json` flag.
@@ -59,7 +66,14 @@ curl https://api.console.ash.center/projects \
 ## Create a project
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+  <TabItem value="ash-console" label="Using the Ash Console" default>
+
+  To create a project, navigate to the [Ash Console](https://console.ash.center) home page and click on the `Create a project` button:
+
+  ![Ash Console Project Create](/img/ash-console-fuji-project-create.png)
+
+  </TabItem>
+  <TabItem value="ash-cli" label="Using the Ash CLI">
 
 To create a new project, use the `create project` command and provide the required project properties as JSON:
 
@@ -148,7 +162,16 @@ You can also provide the project name instead of its ID.
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+  <TabItem value="ash-console" label="Using the Ash Console" default>
+
+  To update a project's configuration, navigate to the `Project overview` page and click on the `Project Settings` button:
+
+  ![Ash Console Project settings](/img/ash-console-project-settings.png)
+
+  Edit the configuration as needed and click on the `Update` button.
+
+  </TabItem>
+  <TabItem value="ash-cli" label="Using the Ash CLI">
 
 The only propery that can be updated is the project name:
 
@@ -200,8 +223,17 @@ Deleting a project will recursively delete **all the cloud regions and resources
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+  <TabItem value="ash-console" label="Using the Ash Console" default>
 
+  To delete a project, navigate to the `Project overview` page and click on the `Project Settings` button:
+
+  ![Ash Console Project delete](/img/ash-console-project-settings.png)
+
+  You can delete the project by clicking on the `Delete` button.
+
+  </TabItem>
+
+  <TabItem value="ash-cli" label="Using the Ash CLI">
 The CLI will ask for confirmation before deleting the project. To skip the confirmation, use the `--yes` flag.
 
 ```bash title="Command"

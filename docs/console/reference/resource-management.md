@@ -30,7 +30,15 @@ There are several types of resources. See [Resource](/docs/console/glossary#reso
 ## List resources
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab:
+
+![Ash Console resource list](/img/ash-console-node-list-bis.png)
+
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 
 :::tip
 The Ash CLI displays information in a table format by default. To get a more detailed output (or for scripting), use the `--json` flag.
@@ -112,7 +120,18 @@ You can provide the secrets' or cloud regions' names instead of their IDs.
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab:
+- Click on the `Create Node(s)` button.
+- Configure the node as needed
+- Click on the `Create` button.
+
+![Ash Console resource create](/img/ash-console-fuji-node-create.png)
+
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 
 To create a new resource, use the `create resource` command and provide the required resource properties as JSON.
 
@@ -223,7 +242,16 @@ You can also provide the resource name instead of its ID.
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab and click on a Resource:
+
+![Ash Console resource](/img/ash-console-node-list.png)
+
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 
 To get information about a resource, including its status, use the `resource info` command and provide the resource ID.
 
@@ -297,7 +325,18 @@ For some resource types, updates will not take effect until the resource is rest
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab and click on a Resource:
+
+Change the resource properties as needed and click on the `Update` button.
+
+![Ash Console resource update](/img/ash-console-node-update.png)
+
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 
 The properties that can be updated **depend on the resource type**. For example, you can update an `avalancheNode` resource's `name` and `nodeConfig`:
 
@@ -375,7 +414,18 @@ Restarting a resource will **interrupt its service** for a few seconds/minutes.
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab and click on a Resource:
+
+![Ash Console resource restart](/img/ash-console-node-restart.png)
+
+You can then click on the `Restart` button.
+
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 
 The CLI will ask for confirmation before restarting the resource. To skip the confirmation, use the `--yes` flag.
 
@@ -449,8 +499,18 @@ curl -X POST https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
 
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab and click on a Resource:
+
+![Ash Console resource delete](/img/ash-console-node-delete.png)
+
+You can then click on the `Delete` button.
+
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 The CLI will ask for confirmation before deleting the resource. To skip the confirmation, use the `--yes` flag.
 
 ```bash title="Command"

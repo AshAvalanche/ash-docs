@@ -21,6 +21,13 @@ During the Console beta, **user [registration](/docs/console/reference/registrat
 :::
 
 <Tabs queryString="ash-console-auth-client">
+  <TabItem value="ash-console" label="Authenticate using the Ash Console" default>
+
+  To authenticate in the Ash Console, just navigate to the [Ash Console](https://console.ash.center) and log in with your credentials.
+  
+  ![Ash Console login page](/img/ash-console-login.png)
+
+  </TabItem>
   <TabItem value="ash-cli" label="Authenticate using the Ash CLI" default>
 
 To authenticate, run:
@@ -49,6 +56,15 @@ The Console **session lasts at most 24 hours** (and 10 hours in case of inactivi
 
 ```bash
 Console OAuth2 error: failed to request OAuth2 token: Server returned error response
+```
+
+:::
+
+:::tip
+If you plan to use the API directly, run:
+```bash title="Command"
+ash console auth refresh-token
+export access_token=$(ash console auth show-token | grep -)
 ```
 
 :::
@@ -125,12 +141,3 @@ Access token refreshed successfully!
 
   </TabItem>
 </Tabs>
-
-:::tip
-If you plan to use the API directly, run:
-```bash title="Command"
-ash console auth refresh-token
-export access_token=$(ash console auth show-token | grep -)
-```
-
-:::
