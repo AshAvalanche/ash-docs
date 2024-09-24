@@ -28,7 +28,7 @@ From the [Ash Console](https://console.ash.center) project overview page, naviga
 - Choose a VM size between `small`, `medium`, and `large` (see [Resource sizes](/docs/console/reference/resource-management#resource-sizes) for details on available sizes).  
   For a testnet node, we recommend the `medium` size.
 - Select the `Node ID` secret you created in the previous step.
-- (Optional) Configure the node with custom configurations if needed.
+- (Optional) Configure the node with custom configurations if needed. See the [ash.avalanche.node](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-node) reference doc for a list of all supported configuration keys.
 - Click on the `Create` button.
 
 ![Ash Console node create](/img/ash-console-fuji-node-create.png)

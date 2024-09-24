@@ -16,7 +16,6 @@ Before interacting with the Ash Console, you need to authenticate yourself. The 
 :::info
 During the Console beta, **user [registration](/docs/console/reference/registration) are open and the Console is free to use**. If you need help with anything regarding the Ash Console beta, please contact us!
 
-- [DM us on Twitter](https://twitter.com/ash_avax)
 - [Join our Discord](https://discord.gg/7xSEzC2n7v)
 :::
 
