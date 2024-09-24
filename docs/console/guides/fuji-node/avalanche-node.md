@@ -25,7 +25,8 @@ From the [Ash Console](https://console.ash.center) project overview page, naviga
 - Click on the `Create Node(s)` button.
 - Pick a name for your node, e.g., `avalanche-node-01`.
 - Select the cloud region you added in the previous step.
-- Choose a VM size between `small`, `medium`, and `large` (see [Resource sizes](/docs/console/reference/resource-management#resource-sizes) for details on available sizes).
+- Choose a VM size between `small`, `medium`, and `large` (see [Resource sizes](/docs/console/reference/resource-management#resource-sizes) for details on available sizes).  
+  For a testnet node, we recommend the `medium` size.
 - Select the `Node ID` secret you created in the previous step.
 - (Optional) Configure the node with custom configurations if needed.
 - Click on the `Create` button.

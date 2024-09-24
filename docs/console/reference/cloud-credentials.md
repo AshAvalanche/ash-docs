@@ -387,7 +387,7 @@ From the [Ash Console](https://console.ash.center) project overview page, naviga
   - Click on the `Create Secret` button.
   - Select the `Azure` secret type.
   - Pick a name for your secret, e.g., `my-azure-credentials`.
-  - Paste the Subscription ID, Applcation ID and Application Password generated in the previous step.
+  - Paste the Subscription ID, Application ID, and Application Password generated in the previous step.
   - Click on the `Create` button.
 
 ![Ash Console Azure secret create](/img/ash-console-create-azure-secret.png)
