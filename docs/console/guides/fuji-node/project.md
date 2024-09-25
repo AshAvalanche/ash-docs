@@ -22,7 +22,7 @@ The Avalanche node [resource](/docs/console/glossary#resource) will be deployed 
 From the [Ash Console](https://console.ash.center) homepage, click the **Create a project** button:
 - Pick a name for your project, e.g., `fuji-node-guide`.
 - Select the `Testnet (Fuji)` network.
-- (Optional) Configure the project configuration to change defaults parameters like the AvalancheGo versions or installed VMs.
+- (Optional) Configure the project to change default parameters like the AvalancheGo versions or installed VMs.
 - Click on `Continue` to create the project.
 
 ![Ash Console project create](/img/ash-console-fuji-project-create.png)

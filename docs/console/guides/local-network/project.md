@@ -22,7 +22,7 @@ The Avalanche node [resources](/docs/console/glossary#resource) will be deployed
 From the [Ash Console](https://console.ash.center) homepage, click the **Create a project** button:
 - Pick a name for your project, e.g., `devnet-guide`.
 - Select the `Local` network.
-- Configure the project configuration to change defaults parameters like the screenshot bellow of the AvalancheGo versions and installed VMs.
+- Configure the project to change default parameters like the screenshot below of the AvalancheGo versions and installed VMs.
 - Click on `Continue` to create the project.
 
 ![Ash Console project create](/img/ash-console-devnet-project-create.png)

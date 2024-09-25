@@ -76,7 +76,8 @@ From the [Ash Console](https://console.ash.center) project overview page, naviga
 - Pick a name for your Subnet, e.g., `ash-subnet`.
 - Select the cloud region you added in the previous step.
 - Select the `ewoq-key` secret you created in the previous step.
-- (Optional) Configure the Subnet with custom configurations if needed.
+- (Optional) Configure the Subnet with custom configurations if needed. See the [ash.avalanche.subnet](/toolkit/ansible-avalanche-collection/reference/roles/avalanche-subnet) reference doc for a list of all supported configuration keys.
+
 - Click on the `Create` button.
 
 :::tip

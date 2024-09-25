@@ -25,7 +25,8 @@ From the [Ash Console](https://console.ash.center) project overview page, naviga
 - Click on the `Create Node(s)` button.
 - Set `local-node-01` for the name of the first node.
 - Select the cloud region you added in the previous step.
-- Choose a VM size between `small`, `medium`, and `large` (see [Resource sizes](/docs/console/reference/resource-management#resource-sizes) for details on available sizes).
+- Choose a VM size between `small`, `medium`, and `large` (see [Resource sizes](/docs/console/reference/resource-management#resource-sizes) for details on available sizes).  
+  For a devnet node, we recommend the `small` size.
 - Select the `local-node-id-01` secret you created in the previous step.
 - (Optional) Configure the node with custom configurations if needed. See the [ash.avalanche.node](/docs/toolkit/ansible-avalanche-collection/reference/roles/avalanche-node) reference doc for a list of all supported configuration keys.
 - Click on the `+` button and repeat the process to add the 4 other nodes.
