@@ -579,3 +579,51 @@ Here are the available sizes per resource type and their corresponding machine t
 | `small`  | 1-2GB | 1-2 | 8-32 (OS) + 50 GiB (resource storage)   | `Standard_B1ms` | `t2.small`            | `e2-small`       |
 | `medium` | 8GB   | 4   | 8-32 (OS) + 200 GiB (resource storage)  | `Standard_F4s`  | `c5.xlarge`           | `c2d-highcpu-4`  |
 | `large`  | 16GB  | 8   | 8-32 (OS) + 1000 GiB (resource storage) | `Standard_F8s`  | `c5.2xlarge`          | `c2d-highcpu-8`  |
+
+## SSH to a resource
+
+Accessing a resource created via the Ash Console can be useful in-depth debugging and additional configuration. Follow the insctructions below to learn how to SSH into a resource.
+
+<Tabs>
+<TabItem value="aws" label="On AWS" default>
+
+On the [AWS Console](https://aws.amazon.com/):
+- Navigate to `EC2`.
+- Click on a machine to access its details, resources created by the Ash Console should follow the `juju-cr-x-machine-x` name pattern.
+- Click on the `Connect` button to open an in-browser SSH session.
+
+![AWS Console SSH](/img/aws-console-ssh.png)
+
+:::tip
+Add your SSH public key to `/home/ubuntu/.ssh/authorized_keys` to SSH without having to go through the Azure Portal.
+:::
+
+</TabItem>
+
+<TabItem value="azure" label="On Azure">
+
+On the [Azure Portal](https://portal.azure.com/):
+- Navigate to `Virtual machines`.
+- Click on a machine to access its details, resources created by the Ash Console should follow the `machine-x` name pattern.
+- Go to `Help` > `Reset password`
+- Add a new SSH public key with `Add SSH public key`.
+
+![Azure Portal SSH key](/img/azure-portal-ssh.png)
+
+</TabItem>
+
+<TabItem value="google" label="On Google Cloud">
+
+On the [Google Cloud console](https://console.cloud.google.com/):
+- Navigate to `Compute Engine` > `VM instances`.
+- Click on a machine to access its details, resources created by the Ash Console should follow the `juju-x` name pattern.
+- Click on the `SSH` button to open an in-browser SSH session.
+
+![Google Cloud SSH](/img/google-cloud-ssh.png)
+
+:::tip
+Add your SSH public key to `/home/ubuntu/.ssh/authorized_keys` to SSH without having to go through the Google Cloud.
+:::
+
+</TabItem>
+</Tabs>

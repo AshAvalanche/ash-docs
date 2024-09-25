@@ -27,8 +27,14 @@ From the [Ash Console](https://console.ash.center) project overview page, naviga
 - Click on the `Create Secret` button.
 - Select the `Wallet` secret type.
 - Set `ewoq-key` a name for your secret.
-- Set `PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN` in the `Private Key` field.
-- Set `P-fuji18jma8ppw3nhx5r4ap8clazz0dps7rv5u6wmu4t` in the `P-Chain Address` field.
+- Copy-paste the `ewoq` key in the `Private Key` field:
+  ```
+  PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN
+  ```
+- Copy-paste the `ewoq` address in the `P-Chain Address` field:
+  ```
+  P-fuji18jma8ppw3nhx5r4ap8clazz0dps7rv5u6wmu4t
+  ```
 - Choose `cb58` in the `Private Key Format` field.
 - Click on the `Create` button to add secret to the project.
 
@@ -174,13 +180,35 @@ Resource successfully created in project 'ash-devnet'!
 ```
 
 :::info
-Unlike the `avalancheNode` resource, there is no concept of `size` for the `avalancheSubnet` resource. The Ash Console will create a small instance (e.g.: `t2.micro`) that will serve as the Subnet control plane.
+Unlike the `avalancheNode` resource, there is no concept of `size` for the `avalancheSubnet` resource. The Ash Console will create a small instance (e.g.: `t2.small`) that will serve as the Subnet control plane.
 :::
 
 </TabItem>
 </Tabs>
 
 ## Subnet information
+
+<Tabs>
+
+<TabItem value="console" label="Using the Ash Console" default>
+
+After a few minutes, we can get the Subnet ID and attached nodes:
+
+![Ash Console subnet attached nodes](/img/ash-console-devnet-subnet-nodes.png)
+
+Notice that upon Subnet creation, the attached nodes **table is empty**. This is because the Avalanche nodes have not been restarted yet. The nodes will automatically join the Subnet after the restart.
+
+We can confirm this by navigating to the `Ressources` tab and see that the `Restart required` field is set to `Yes` for each node:
+
+![Ash Console nodes restart required](/img/ash-console-devnet-node-need-restart.png)
+
+After restarting every node by clicking on `...` and then `Restart` button, the nodes will join the Subnet.
+
+After a few minutes, we can see that the nodes are now attached to the Subnet.
+
+</TabItem>
+
+<TabItem value="cli" label="Using the Ash CLI">
 
 After a few minutes, we can get the Subnet ID, control keys, blockchains, and validator nodes information from the `subnetStatus` field returned by the `console resource info` command:
 
@@ -225,7 +253,22 @@ We use the `--json` flag to get the extended information about the Subnet. All t
 }
 ```
 
+</TabItem>
+</Tabs>
+
 ## Blockchain RPC endpoint
+
+<Tabs>
+
+<TabItem value="console" label="Using the Ash Console" default>
+
+Navigate to the Subnet page to display the RPC endpoint that can be used to query the Subnet EVM blockchain (e.g. to connect a Web3 wallet):
+
+![Ash Console subnet RPC endpoint](/img/ash-console-devnet-subnet-rpc.png)
+
+</TabItem>
+
+<TabItem value="cli" label="Using the Ash Console">
 
 The CLI provides a powerful helper to get the RPC endpoint that can be used to query the Subnet EVM blockchain (e.g. to connect a Web3 wallet). Provide the `avalancheNode` resource name to be used as RPC and the `avalancheSubnet` resource name:
 
@@ -242,3 +285,5 @@ AshLocalEVM RCP endpoint:
 See the [reference](/docs/console/reference/resource-management) for more information about resources lifecycle management.
 :::
 
+</TabItem>
+</Tabs>

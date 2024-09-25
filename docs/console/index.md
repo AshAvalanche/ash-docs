@@ -5,6 +5,8 @@ sidebar_label: Overview
 
 # Ash Console
 
+![Ash Console Overview](/img/ash-console-overview.png)
+
 ## Overview
 
 The Ash Console is the one-stop shop for **L1 development and operation** on Avalanche. It allows you to manage your validators, create Subnets, and monitor your network **on your own infrastructure** (AWS, GCP, and Azure are supported during the public **beta**).

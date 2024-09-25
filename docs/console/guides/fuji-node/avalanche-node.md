@@ -37,6 +37,25 @@ It will take some time before the node is `Bootstrapped` and `Healthy`. You can 
 
 ![Ash Console node list](/img/ash-console-node-list.png)
 
+You can also SSH to the remote machine to check the node's synchronization progress see [**SSH to a resource**](/docs/console/reference/resource-management#ssh-to-a-resource) for details. You can then check the status of the synchronization of the node by printing the P/C-Chain logs:
+
+```bash
+ubuntu@machine-0:~$ ash avax node is-bootstrapped P
+Chain 'P' on node '127.0.0.1:9650': Not yet bootstrapped ✗
+
+ubuntu@machine-0:~$ sudo tail /var/log/avalanche/avalanchego/P.log # C.log for the C-Chain
+[09-25|14:01:23.956] INFO <P Chain> bootstrap/storage.go:245 executing blocks {"numExecuted": 44389, "numToExecute": 162562, "eta": "4m2s"}
+[09-25|14:01:28.985] INFO <P Chain> bootstrap/storage.go:245 executing blocks {"numExecuted": 44419, "numToExecute": 162562, "eta": "4m16s"}
+[09-25|14:01:34.041] INFO <P Chain> bootstrap/storage.go:245 executing blocks {"numExecuted": 44455, "numToExecute": 162562, "eta": "4m29s"}
+[09-25|14:01:39.117] INFO <P Chain> bootstrap/storage.go:245 executing blocks {"numExecuted": 44490, "numToExecute": 162562, "eta": "4m42s"}
+[09-25|14:01:44.117] INFO <P Chain> bootstrap/storage.go:245 executing blocks {"numExecuted": 45770, "numToExecute": 162562, "eta": "4m44s"}
+[09-25|14:01:49.117] INFO <P Chain> bootstrap/storage.go:245 executing blocks {"numExecuted": 55056, "numToExecute": 162562, "eta": "3m47s"}
+[09-25|14:01:54.117] INFO <P Chain> bootstrap/storage.go:245 executing blocks {"numExecuted": 63149, "numToExecute": 162562, "eta": "3m11s"}
+[09-25|14:01:59.117] INFO <P Chain> bootstrap/storage.go:245 executing blocks {"numExecuted": 71478, "numToExecute": 162562, "eta": "2m41s"}
+[09-25|14:02:04.117] INFO <P Chain> bootstrap/storage.go:245 executing blocks {"numExecuted": 79412, "numToExecute": 162562, "eta": "2m17s"}
+[09-25|14:02:09.152] INFO <P Chain> bootstrap/storage.go:245 executing blocks {"numExecuted": 84092, "numToExecute": 162562, "eta": "2m7s"}
+```
+
 Once the node is `Running`, can already query the node `info` endpoint with the `avalanche node info` command:
 
    ```bash title="Command"

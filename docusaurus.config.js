@@ -119,7 +119,7 @@ const config = {
             "aria-label": "Twitter Account",
           },
           {
-            href: "https://discord.gg/7xSEzC2n7v",
+            href: "https://discord.gg/ktSyGrzWXy",
             position: "right",
             className: "header-discord-link",
             "aria-label": "Discord Server",
@@ -169,7 +169,7 @@ const config = {
               },
               {
                 label: "Discord",
-                href: "https://discord.gg/7xSEzC2n7v",
+                href: "https://discord.gg/ktSyGrzWXy",
               },
               {
                 label: "Branding Kit",
