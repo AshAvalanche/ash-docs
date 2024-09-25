@@ -49,6 +49,10 @@ It will take **a few minutes** before the local network is `Bootstrapped` and `H
 
 ![Ash Console node list](/img/ash-console-node-list-bis.png)
 
+:::tip
+You can **SSH** into any Ash Console-created resource. See [**SSH to a resource**](/docs/console/reference/resource-management#ssh-to-a-resource) for details.
+:::
+
 Once a node is `Running`, you can also query the node `info` endpoint with the `avalanche node info` command:
 
 ```bash title="Command"
