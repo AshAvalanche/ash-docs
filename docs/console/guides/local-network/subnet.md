@@ -196,7 +196,7 @@ After a few minutes, we can get the Subnet ID and attached nodes:
 
 ![Ash Console subnet attached nodes](/img/ash-console-devnet-subnet-nodes.png)
 
-Notice that upon Subnet creation, the attached nodes **table is empty**. This is because the Avalanche nodes have not been restarted yet. The nodes will automatically join the Subnet after the restart.
+Notice that upon Subnet creation, the nodes' **uptime is 0%*. This is because the Avalanche nodes' configuration has been updated to track the Subnet but they have not been restarted so it has not been taken into account yet.
 
 We can confirm this by navigating to the `Ressources` tab and see that the `Restart required` field is set to `Yes` for each node:
 
@@ -204,7 +204,9 @@ We can confirm this by navigating to the `Ressources` tab and see that the `Rest
 
 After restarting every node by clicking on `...` and then `Restart` button, the nodes will join the Subnet.
 
-After a few minutes, we can see that the nodes are now attached to the Subnet.
+After a few minutes, we can see that the nodes' uptime is updated:
+
+![Ash Console subnet attached nodes bis](/img/ash-console-devnet-subnet-nodes-bis.png)
 
 </TabItem>
 
@@ -287,3 +289,7 @@ See the [reference](/docs/console/reference/resource-management) for more inform
 
 </TabItem>
 </Tabs>
+
+:::tip
+Checkout [**Contract Deployment**](/docs/toolkit/ansible-avalanche-collection/tutorials/contract-deployment) to learn how to deploy a smart contract on your Subnet EVM L1.
+:::
