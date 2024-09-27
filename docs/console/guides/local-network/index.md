@@ -1,11 +1,11 @@
 ---
-sidebar_position: 1.1
+sidebar_position: 1
 ---
 
 # Avalanche Devnet (Local Network)
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 This guide will walk you through setting up **a 5-node Avalanche devnet** ([local network](https://docs.avax.network/api-reference/avalanche-go-configs-flags#network-id)) with the Ash Console.

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Cloud Region Management
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 The [resources](/docs/console/glossary#resource) of a [project](/docs/console/glossary#project) are deployed across one or more [cloud regions](/docs/console/glossary#cloud-region).
@@ -26,7 +26,15 @@ See [Project Management](/docs/console/reference/project-management).
 ## List a project's cloud regions
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+  <TabItem value="ash-console" label="Using the Ash Console" default>
+
+  To list a project's cloud regions, navigate to the project's page and click on the `Cloud Regions` tab.
+
+  ![Ash Console Cloud Region list](/img/ash-console-cloud-region-list.png)
+
+  </TabItem>
+
+  <TabItem value="ash-cli" label="Using the Ash CLI">
 
 :::tip
 The Ash CLI displays information in a table format by default. To get a more detailed output (or for scripting), use the `--json` flag.
@@ -78,7 +86,19 @@ You can also provide the cloud credentials secret name instead of its ID in the 
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+  <TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Cloud Regions** tab:
+- Click on the `Add Cloud Region` button.
+- Select the cloud provider and region you want to use (see [list of supported regions](/docs/console/glossary#cloud-region)).
+- Select a cloud credentials secret.
+- Click on the `Create` button to add the cloud region to the project.
+
+![Ash Console cloud region create](/img/ash-console-create-cloud-region.png)
+
+  </TabItem>
+
+  <TabItem value="ash-cli" label="Using the Ash CLI">
 
 To add a cloud region to the current project, use the `region add` command and provide the required secret properties as JSON:
 
@@ -143,7 +163,15 @@ Removing a region from a project will recursively delete **all the resources** t
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+  <TabItem value="ash-console" label="Using the Ash Console" default>
+
+  From the `Cloud Regions` tab of the project, click on the `...` and then `Delete` button of the cloud region:
+
+  ![Ash Console cloud region delete](/img/ash-console-cloud-region-delete.png)
+
+  </TabItem>
+
+  <TabItem value="ash-cli" label="Using the Ash CLI">
 
 The CLI will ask for confirmation before deleting the secret. To skip the confirmation, use the `--yes` flag.
 

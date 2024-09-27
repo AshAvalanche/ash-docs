@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Console Blueprints
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 The Ash CLI provides a powerful blueprint feature that allows **creating and/or updating Ash Console entities** (projects, cloud regions, resources, etc.) using **declarative configuration files**. These files can be easily version-controlled and shared with your team, enabling **infrastructure-as-code** workflows.

@@ -96,7 +96,6 @@ const config = {
             position: "right",
             label: "Suzaku",
           },
-
           {
             href: "https://wallet.ash.center",
             position: "right",
@@ -108,7 +107,7 @@ const config = {
             label: "Blog",
           },
           {
-            href: "https://github.com/AshAvalanche/ash-docs",
+            href: "https://github.com/AshAvalanche",
             position: "right",
             className: "header-github-link",
             "aria-label": "GitHub Repository",
@@ -120,7 +119,7 @@ const config = {
             "aria-label": "Twitter Account",
           },
           {
-            href: "https://discord.gg/7xSEzC2n7v",
+            href: "https://discord.gg/ktSyGrzWXy",
             position: "right",
             className: "header-discord-link",
             "aria-label": "Discord Server",
@@ -157,7 +156,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/AshAvalanche/ash-docs",
+                href: "https://github.com/AshAvalanche",
               },
             ],
           },
@@ -170,11 +169,7 @@ const config = {
               },
               {
                 label: "Discord",
-                href: "https://discord.gg/7xSEzC2n7v",
-              },
-              {
-                label: "YouTube",
-                href: "https://www.youtube.com/@ash_avax",
+                href: "https://discord.gg/ktSyGrzWXy",
               },
               {
                 label: "Branding Kit",
@@ -186,13 +181,35 @@ const config = {
             title: "Legal",
             items: [
               {
-                label: "General Conditions of Use",
-                to: "/docs/terms-and-conditions/general-conditions-of-use",
+                label: "Terms and Conditions",
+                to: "/docs/legal/terms-and-conditions",
+              },
+              {
+                label: "Privacy Policy",
+                to: "/docs/legal/privacy-policy",
+              },
+              {
+                label: "Legal Notice",
+                to: "/docs/legal/legal-notice",
+              },
+            ],
+          },
+          {
+            title: "More",
+            items: [
+              {
+                href: "https://suzaku.network",
+                label: "Suzaku",
+              },
+    
+              {
+                href: "https://wallet.ash.center",
+                label: "Ash Wallet",
               },
             ],
           },
         ],
-        copyright: `Copyright © 2022-${new Date().getFullYear()} E36 Knots - Built with Docusaurus`,
+        copyright: `Copyright © 2022-${new Date().getFullYear()} E36 Knots`,
       },
       prism: {
         theme: lightCodeTheme,

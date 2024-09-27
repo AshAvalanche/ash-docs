@@ -27,7 +27,7 @@ export default function HomepageHeader() {
               <div className={styles.buttons}>
                 <Link
                   className="button button--secondary button--lg"
-                  to="/docs/toolkit"
+                  to="/docs/console"
                 >
                   🚀 Get started
                 </Link>
@@ -40,6 +40,20 @@ export default function HomepageHeader() {
                   to="https://calendly.com/ash-e36knots"
                 >
                   💬 Contact us
+                </Link>
+              </div>
+            </div>
+            <div className={clsx("col col--4")} />
+          </div>
+          <div className="row">
+            <div className={clsx("col col--4")} />
+            <div className={clsx("col col--4")}>
+              <div className={styles.buttons}>
+                <Link
+                  className="button button--secondary button--lg"
+                  to="https://ashavax.hashnode.dev/tbd"
+                >
+                  🎉 Read the beta announcement
                 </Link>
               </div>
             </div>

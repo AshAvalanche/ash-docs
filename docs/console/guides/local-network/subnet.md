@@ -2,10 +2,13 @@
 sidebar_position: 7
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # 5. Subnet Creation
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 In this section, we will create a Subnet [resource](/docs/console/glossary#resource) on our local network.
@@ -15,6 +18,31 @@ In this section, we will create a Subnet [resource](/docs/console/glossary#resou
 Before creating a Subnet, we need to create a `wallet` [secret](/docs/console/glossary#secret). This wallet will be use to sign the **Subnet transactions** (creation, validator management, etc.) and the P-Chain address will be used as the **control key** of the Subnet.
 
 To make things easier, we will use the `ewoq` address which is pre-funded on the local network.
+
+<Tabs>
+
+<TabItem value="console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Secrets** tab:
+- Click on the `Create Secret` button.
+- Select the `Wallet` secret type.
+- Set `ewoq-key` a name for your secret.
+- Copy-paste the `ewoq` key in the `Private Key` field:
+  ```
+  PrivateKey-ewoqjP7PxY4yr3iLTpLisriqt94hdyDFNgchSxGGztUrTXtNN
+  ```
+- Copy-paste the `ewoq` address in the `P-Chain Address` field:
+  ```
+  P-fuji18jma8ppw3nhx5r4ap8clazz0dps7rv5u6wmu4t
+  ```
+- Choose `cb58` in the `Private Key Format` field.
+- Click on the `Create` button to add secret to the project.
+
+![Ash Console NodeID secret create](/img/ash-console-ewoq-key.png)
+
+</TabItem>
+
+<TabItem value="cli" label="Using the Ash CLI" default>
 
 ```bash title="Command"
 ash console secret create '{
@@ -35,11 +63,38 @@ Secret created successfully!
 +-------------+-------------+--------+------------------+---------+
 ```
 
+</TabItem>
+</Tabs>
+
 :::warning
 Do not use this wallet as control key in production!
 :::
 
 ## Subnet creation
+
+<Tabs>
+
+<TabItem value="console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab:
+- Click on the `Subnets` tab.
+- Click on the `Create Subnet` button.
+- Pick a name for your Subnet, e.g., `ash-subnet`.
+- Select the cloud region you added in the previous step.
+- Select the `ewoq-key` secret you created in the previous step.
+- (Optional) Configure the Subnet with custom configurations if needed. See the [ash.avalanche.subnet](/toolkit/ansible-avalanche-collection/reference/roles/avalanche-subnet) reference doc for a list of all supported configuration keys.
+
+- Click on the `Create` button.
+
+:::tip
+Make sure that all `local-node-0x` nodes are checked as Subnet validators.
+:::
+
+![Ash Console subnet create](/img/ash-console-devnet-subnet-create.png)
+
+</TabItem>
+
+<TabItem value="cli" label="Using the Ash CLI" default>
 
 The following command will create a [Subnet EVM](https://github.com/ava-labs/subnet-evm) blockchain with a standard [genesis](https://docs.avax.network/build/subnet/upgrade/customize-a-subnet#genesis) configuration.
 
@@ -125,10 +180,37 @@ Resource successfully created in project 'ash-devnet'!
 ```
 
 :::info
-Unlike the `avalancheNode` resource, there is no concept of `size` for the `avalancheSubnet` resource. The Ash Console will create a small instance (e.g.: `t2.micro`) that will serve as the Subnet control plane.
+Unlike the `avalancheNode` resource, there is no concept of `size` for the `avalancheSubnet` resource. The Ash Console will create a small instance (e.g.: `t2.small`) that will serve as the Subnet control plane.
 :::
 
+</TabItem>
+</Tabs>
+
 ## Subnet information
+
+<Tabs>
+
+<TabItem value="console" label="Using the Ash Console" default>
+
+After a few minutes, we can get the Subnet ID and attached nodes:
+
+![Ash Console subnet attached nodes](/img/ash-console-devnet-subnet-nodes.png)
+
+Notice that upon Subnet creation, the nodes' **uptime is 0%*. This is because the Avalanche nodes' configuration has been updated to track the Subnet but they have not been restarted so it has not been taken into account yet.
+
+We can confirm this by navigating to the `Ressources` tab and see that the `Restart required` field is set to `Yes` for each node:
+
+![Ash Console nodes restart required](/img/ash-console-devnet-node-need-restart.png)
+
+After restarting every node by clicking on `...` and then `Restart` button, the nodes will join the Subnet.
+
+After a few minutes, we can see that the nodes' uptime is updated:
+
+![Ash Console subnet attached nodes bis](/img/ash-console-devnet-subnet-nodes-bis.png)
+
+</TabItem>
+
+<TabItem value="cli" label="Using the Ash CLI">
 
 After a few minutes, we can get the Subnet ID, control keys, blockchains, and validator nodes information from the `subnetStatus` field returned by the `console resource info` command:
 
@@ -173,7 +255,22 @@ We use the `--json` flag to get the extended information about the Subnet. All t
 }
 ```
 
+</TabItem>
+</Tabs>
+
 ## Blockchain RPC endpoint
+
+<Tabs>
+
+<TabItem value="console" label="Using the Ash Console" default>
+
+Navigate to the Subnet page to display the RPC endpoint that can be used to query the Subnet EVM blockchain (e.g. to connect a Web3 wallet):
+
+![Ash Console subnet RPC endpoint](/img/ash-console-devnet-subnet-rpc.png)
+
+</TabItem>
+
+<TabItem value="cli" label="Using the Ash Console">
 
 The CLI provides a powerful helper to get the RPC endpoint that can be used to query the Subnet EVM blockchain (e.g. to connect a Web3 wallet). Provide the `avalancheNode` resource name to be used as RPC and the `avalancheSubnet` resource name:
 
@@ -190,3 +287,9 @@ AshLocalEVM RCP endpoint:
 See the [reference](/docs/console/reference/resource-management) for more information about resources lifecycle management.
 :::
 
+</TabItem>
+</Tabs>
+
+:::tip
+Checkout [**Contract Deployment**](/docs/toolkit/ansible-avalanche-collection/tutorials/contract-deployment) to learn how to deploy a smart contract on your Subnet EVM L1.
+:::

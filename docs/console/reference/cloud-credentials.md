@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Cloud Credentials
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 The Ash Console is a PaaS that allow you to **deploy [resources](/docs/console/glossary#resource) into your own cloud accounts/subscriptions/projects**. To do so, you need to provide the Console with appropriate credentials.
@@ -308,7 +308,20 @@ jq -r '.private_key' ./${project_id}-${key_id}.json > ash-console-creds-01.key
   <TabItem value="aws" label="AWS credentials" default>
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Secrets** tab:
+  - Click on the `Create Secret` button.
+  - Select the `Amazon Web Services` secret type.
+  - Pick a name for your secret, e.g., `my-aws-credentials`.
+  - Paste the Access and Secret keys generated in the previous step.
+  - Click on the `Create` button.
+
+![Ash Console AWS secret create](/img/ash-console-create-aws-secret.png)
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 
 To create a new `awsCredentials` secret, use the `create secret` command and provide the required secret properties as JSON:
 
@@ -368,7 +381,19 @@ You can now use the secret upon [cloud region](/docs/console/glossary#cloud-regi
 <TabItem value="azure" label="Azure credentials">
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Secrets** tab:
+  - Click on the `Create Secret` button.
+  - Select the `Azure` secret type.
+  - Pick a name for your secret, e.g., `my-azure-credentials`.
+  - Paste the Subscription ID, Application ID, and Application Password generated in the previous step.
+  - Click on the `Create` button.
+
+![Ash Console Azure secret create](/img/ash-console-create-azure-secret.png)
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 
 To create a new `azureCredentials` secret, use the `create secret` command and provide the required secret properties as JSON:
 
@@ -428,7 +453,19 @@ curl -X POST https://api.console.ash.center/secrets \
 <TabItem value="google" label="Google credentials">
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Secrets** tab:
+  - Click on the `Create Secret` button.
+  - Select the `Google Cloud` secret type.
+  - Click on the `Upload` button and select the JSON file you downloaded in the previous step.
+  - Click on the `Create` button.
+
+![Ash Console GCP secret create](/img/ash-console-create-gcp-secret.png)
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI" default>
 
 To create a new `googleCredentials` secret, use the `create secret` command and provide the required secret properties as JSON.
 

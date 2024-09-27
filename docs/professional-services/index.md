@@ -5,51 +5,28 @@ sidebar_label: Overview
 
 # Professional Services
 
-## Our team expertise
-
-Why you can trust our team:
-
-### Distributed systems architecture
-
-[Gauthier](https://www.linkedin.com/in/gauthier-leonard/) and [Léo](https://www.linkedin.com/in/leo-schoukroun/), our technical founders, have **years of experience operating France's biggest data clusters** based on open-source technologies.  
-They have deep knowledge of distributed systems architecture challenges and are experts in setting up highly available and scalable infrastructures.
-
-### Avalanche knowledge
-
-#### Open-source contributions
-
-Our team maintains multiple [open-source tools](/docs/toolkit/) tailored for Avalanche and is actively contributing to other projects in the Avalanche ecosystem.
-
-See examples of the team contributions:
-
-- [Ava Labs repositories](https://github.com/issues?q=involves%3ANuttymoon+involves%3Aleopaul36+archived%3Afalse+org%3Aava-labs)
-
-#### Node operating
-
-Ash is **operating multiple Avalanche nodes** (on the mainnet and Fuji testnet), and taking part in decentralized RPC networks such as [Lava](https://lavanet.xyz).
-
-### Education
-
-[Gauthier](https://www.linkedin.com/in/gauthier-leonard/) has been a **distributed systems teacher** at some of the top French engineering schools ([CentraleSupélec](https://www.centralesupelec.fr/), [ECE Paris](https://www.ece.fr/), [DSTI](https://www.datasciencetech.institute/fr/)) for more than 3 years.
-
 ## How we can help you
 
-Our team can offer you the following services:
+### Avalanche L1 setup and maintenance
 
-### Avalanche nodes setup and maintenance
+Ash [open-source tools](/docs/toolkit/) and [Console](/docs/console/) can significantly reduce the setup and maintenance cost of your Avalanche nodes.
 
-Ash [open-source tools](/docs/toolkit/) and premium [Console](/docs/console/) plans can significantly reduce the setup and maintenance cost of your Avalanche nodes.
+Our team can help you with the **initial setup** and provide you with a **support plan** tailored to your needs.
 
-Our team can help you with the **initial setup** and provide you with a maintenance plan **tailored to your needs**.
+We also offer turnkey **Avalanche L1 deployment** on the cloud provider of your choice, managing everything from the infrastructure to the network operations.
 
-### Additional features for the Ash tools
+### Additional services for the Ash tools
 
-As the maintainers of the Ash [open-source tools](/docs/toolkit/) and [Console](/docs/console/), we can **develop additional features** for any need that is not already covered. This could be:
+As the maintainers of the Ash [open-source tools](/docs/toolkit/) and [Console](/docs/console/), we can **develop additional features** and provide more services for any need that is not already covered:
 
-- Better support for your cloud provider
-- Support for a new blockchain runtime (VM)
-- Integration with your monitoring system
-- Etc.
+- Get **first class support** from our expert team
+- Support for a new cloud provider or **custom blockchain runtime** (HyperSDK VM)
+- Deploy and manage a **trustless bridge** to link your Subnet to other blockchains (including the C-Chain)
+- Receive custom alerts in real time and never miss an important event going on in your Subnet
+- Launch a fully configurable [Faucet](https://github.com/ava-labs/avalanche-faucet) plugged on your Subnet for easy testing and user on-boarding.
+- Automatic AvalancheGo upgrades
+- Load balanced RPC for your Subnet
+- Anything else you might need!
 
 ### Subnet (Appchain) design and development
 
@@ -66,6 +43,34 @@ Our team can help you **design and setup** your private blockchain network, and 
 ### Training and education
 
 We can organize **training sessions** for your team to get them up to speed with Avalanche and its ecosystem.
+
+## Our team expertise
+
+Why you can trust our team:
+
+### Distributed systems architecture
+
+[Gauthier](https://www.linkedin.com/in/gauthier-leonard/) and [Léo](https://www.linkedin.com/in/leo-schoukroun/), our technical founders, have **years of experience operating France's biggest data clusters** based on open-source technologies.  
+They have deep knowledge of distributed systems architecture challenges and are experts in setting up highly available and scalable infrastructures.
+
+### Avalanche knowledge
+
+#### Open-source contributions
+
+Our team maintains multiple [open-source tools](/docs/toolkit/) tailored for Avalanche and is the largest external contributor to the Avalanche ecosystem.
+
+See examples of the team contributions:
+
+- [Ava Labs repositories](https://github.com/issues?q=involves%3ANuttymoon+involves%3Aleopaul36+involves%3AAl3xGROS+archived%3Afalse+org%3Aava-labs)
+
+#### Node operating
+
+Ash is **operating multiple Avalanche nodes** (on the mainnet and Fuji testnet).
+
+### Education
+
+[Gauthier](https://www.linkedin.com/in/gauthier-leonard/) has been a **distributed systems teacher** at some of the top French engineering schools ([CentraleSupélec](https://www.centralesupelec.fr/), [ECE Paris](https://www.ece.fr/), [DSTI](https://www.datasciencetech.institute/fr/)) for more than 3 years.
+
 
 ## Get in touch
 

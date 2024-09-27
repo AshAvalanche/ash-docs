@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # 2. Blueprint Configuration and Apply
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 We need to write [blueprints](/docs/console/reference/blueprints) that define all the entities needed to deploy a 5-node Avalanche devnet and to create the Subnet. For convenience, we have prepared the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/main/crates/ash_cli/examples/console/blueprint/devnet.yml) and [devnet-evm-subnet.yml](https://github.com/AshAvalanche/ash-rs/blob/main/crates/ash_cli/examples/console/blueprint/devnet-evm-subnet.yml) blueprints for you.
@@ -208,7 +208,7 @@ Resource successfully created in project 'ash-devnet'!
 
 ## Health
 
-1. It will take a few minutes before the local network is `Bootstrapped` and `Healthy`. You can get its updated status with the `console resource info` command:
+1. It will take **a few minutes** before the local network is `Bootstrapped` and `Healthy`. You can get its updated status with the `console resource info` command:
 
    ```bash title="Command"
     ash console resource info local-node-01

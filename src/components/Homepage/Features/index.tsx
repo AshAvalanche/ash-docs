@@ -26,7 +26,7 @@ const FeatureList: FeatureItem[] = [
         </b>{" "}
         on Avalanche.
         <br />
-        100% <b>cloud-agnostic</b>.
+        100% <b>cloud-agnostic</b> and <b>open-source</b>.
       </>
     ),
   },

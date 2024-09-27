@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Resource Management
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 [Resources](/docs/console/glossary#secret) are the core feature of the Ash Console. They are the building blocks of your infrastructure, deployed in [cloud regions](/docs/console/glossary#cloud-region) of your cloud account/subscription/project and managed by Ash.
@@ -30,7 +30,15 @@ There are several types of resources. See [Resource](/docs/console/glossary#reso
 ## List resources
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab:
+
+![Ash Console resource list](/img/ash-console-node-list-bis.png)
+
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 
 :::tip
 The Ash CLI displays information in a table format by default. To get a more detailed output (or for scripting), use the `--json` flag.
@@ -112,7 +120,18 @@ You can provide the secrets' or cloud regions' names instead of their IDs.
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab:
+- Click on the `Create Node(s)` button.
+- Configure the node as needed
+- Click on the `Create` button.
+
+![Ash Console resource create](/img/ash-console-fuji-node-create.png)
+
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 
 To create a new resource, use the `create resource` command and provide the required resource properties as JSON.
 
@@ -223,7 +242,16 @@ You can also provide the resource name instead of its ID.
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab and click on a Resource:
+
+![Ash Console resource](/img/ash-console-node-list.png)
+
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 
 To get information about a resource, including its status, use the `resource info` command and provide the resource ID.
 
@@ -297,7 +325,18 @@ For some resource types, updates will not take effect until the resource is rest
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab and click on a Resource:
+
+Change the resource properties as needed and click on the `Update` button.
+
+![Ash Console resource update](/img/ash-console-node-update.png)
+
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 
 The properties that can be updated **depend on the resource type**. For example, you can update an `avalancheNode` resource's `name` and `nodeConfig`:
 
@@ -375,7 +414,18 @@ Restarting a resource will **interrupt its service** for a few seconds/minutes.
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab and click on a Resource:
+
+![Ash Console resource restart](/img/ash-console-node-restart.png)
+
+You can then click on the `Restart` button.
+
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 
 The CLI will ask for confirmation before restarting the resource. To skip the confirmation, use the `--yes` flag.
 
@@ -449,8 +499,18 @@ curl -X POST https://api.console.ash.center/projects/399b6f5b-eed2-4713-8b68-993
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
 
+<TabItem value="ash-console" label="Using the Ash Console" default>
+
+From the [Ash Console](https://console.ash.center) project overview page, navigate to the **Ressources** tab and click on a Resource:
+
+![Ash Console resource delete](/img/ash-console-node-delete.png)
+
+You can then click on the `Delete` button.
+
+</TabItem>
+
+<TabItem value="ash-cli" label="Using the Ash CLI">
 The CLI will ask for confirmation before deleting the resource. To skip the confirmation, use the `--yes` flag.
 
 ```bash title="Command"
@@ -519,3 +579,51 @@ Here are the available sizes per resource type and their corresponding machine t
 | `small`  | 1-2GB | 1-2 | 8-32 (OS) + 50 GiB (resource storage)   | `Standard_B1ms` | `t2.small`            | `e2-small`       |
 | `medium` | 8GB   | 4   | 8-32 (OS) + 200 GiB (resource storage)  | `Standard_F4s`  | `c5.xlarge`           | `c2d-highcpu-4`  |
 | `large`  | 16GB  | 8   | 8-32 (OS) + 1000 GiB (resource storage) | `Standard_F8s`  | `c5.2xlarge`          | `c2d-highcpu-8`  |
+
+## SSH to a resource
+
+Accessing a resource created via the Ash Console can be useful in-depth debugging and additional configuration. Follow the insctructions below to learn how to SSH into a resource.
+
+<Tabs>
+<TabItem value="aws" label="On AWS" default>
+
+On the [AWS Console](https://aws.amazon.com/):
+- Navigate to `EC2`.
+- Click on a machine to access its details, resources created by the Ash Console should follow the `juju-cr-x-machine-x` name pattern.
+- Click on the `Connect` button to open an in-browser SSH session.
+
+![AWS Console SSH](/img/aws-console-ssh.png)
+
+:::tip
+Add your SSH public key to `/home/ubuntu/.ssh/authorized_keys` to SSH without having to go through the Azure Portal.
+:::
+
+</TabItem>
+
+<TabItem value="azure" label="On Azure">
+
+On the [Azure Portal](https://portal.azure.com/):
+- Navigate to `Virtual machines`.
+- Click on a machine to access its details, resources created by the Ash Console should follow the `machine-x` name pattern.
+- Go to `Help` > `Reset password`
+- Add a new SSH public key with `Add SSH public key`.
+
+![Azure Portal SSH key](/img/azure-portal-ssh.png)
+
+</TabItem>
+
+<TabItem value="google" label="On Google Cloud">
+
+On the [Google Cloud console](https://console.cloud.google.com/):
+- Navigate to `Compute Engine` > `VM instances`.
+- Click on a machine to access its details, resources created by the Ash Console should follow the `juju-x` name pattern.
+- Click on the `SSH` button to open an in-browser SSH session.
+
+![Google Cloud SSH](/img/google-cloud-ssh.png)
+
+:::tip
+Add your SSH public key to `/home/ubuntu/.ssh/authorized_keys` to SSH without having to go through the Google Cloud.
+:::
+
+</TabItem>
+</Tabs>

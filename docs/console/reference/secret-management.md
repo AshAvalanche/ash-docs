@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Secret Management
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 [Secrets](/docs/console/glossary#secret) are used at different steps of an Appchain deployment through the Ash Console.
@@ -20,7 +20,15 @@ There are several types of secrets, each with a different purpose. See [Secret](
 ## List secrets
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+  <TabItem value="ash-console" label="Using the Ash Console" default>
+
+  To list the secrets in the Ash Console, navigate to the `Secrets` tab:
+
+  ![Ash Console Secrets list](/img/ash-console-secret-list.png)
+
+  </TabItem>
+
+  <TabItem value="ash-cli" label="Using the Ash CLI">
 
 :::tip
 The Ash CLI displays information in a table format by default. To get a more detailed output (or for scripting), use the `--json` flag.
@@ -67,7 +75,15 @@ A secret **sensitive values can never be retrieved** from the Ash Console! Make 
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+  <TabItem value="ash-console" label="Using the Ash Console" default>
+
+  To create a secret, navigate to the `Secrets` tab, click on the `Create secret` button, and provide the required secret properties:
+
+  ![Ash Console Secrets create](/img/ash-console-create-aws-secret.png)
+
+  </TabItem>
+
+  <TabItem value="ash-cli" label="Using the Ash CLI">
 
 To create a new secret, use the `create secret` command and provide the required secret properties as JSON:
 
@@ -118,7 +134,15 @@ You can also provide the secret name instead of its ID.
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+  <TabItem value="ash-console" label="Using the Ash Console" default>
+
+  To update a secret, navigate to the `Secrets` tab, click on a secret. Update the needed properties and :
+
+  ![Ash Console Secrets update](/img/ash-console-secret-update.png)
+
+  </TabItem>
+
+  <TabItem value="ash-cli" label="Using the Ash CLI">
 
 The properties that can be updated **depend on the secret type**. For example, you can update a `generic` secret's `name` and `content`:
 
@@ -169,7 +193,15 @@ Deleting a secret is not allowed if it used by another entity.
 :::
 
 <Tabs groupId="ash-console-client">
-  <TabItem value="ash-cli" label="Using the Ash CLI" default>
+  <TabItem value="ash-console" label="Using the Ash Console" default>
+
+  To delete a secret, navigate to the `Secrets` tab, click on the ... and then Delete button of secret:
+
+  ![Ash Console Secrets delete](/img/ash-console-secret-delete.png)
+
+  </TabItem>
+
+  <TabItem value="ash-cli" label="Using the Ash CLI">
 
 The CLI will ask for confirmation before deleting the secret. To skip the confirmation, use the `--yes` flag.
 

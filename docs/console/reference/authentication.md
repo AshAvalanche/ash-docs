@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,22 +8,25 @@ import TabItem from '@theme/TabItem';
 # Authentication
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 Before interacting with the Ash Console, you need to authenticate yourself. The authentication flow depends on the tool you are using (Ash Console Web UI, Ash CLI, Ash Console API).
 
 :::info
-During the Console alpha, **user accounts are created by the Ash team**. If you want to get access to the Console alpha, please contact us!
+During the Console beta, **user [registration](/docs/console/reference/registration) are open and the Console is free to use**. If you need help with anything regarding the Ash Console beta, please contact us!
 
-- [Register in advance](https://forms.gle/m66KkKT8FC2Jb9Y97)
-- [Book a call](https://calendly.com/ash-e36knots)
-- [DM us on Twitter](https://twitter.com/ash_avax)
-- [Join our Discord](https://discord.gg/7xSEzC2n7v)
-
+- [Join our Discord](https://discord.gg/ktSyGrzWXy)
 :::
 
 <Tabs queryString="ash-console-auth-client">
+  <TabItem value="ash-console" label="Authenticate using the Ash Console" default>
+
+  To authenticate in the Ash Console, just navigate to the [Ash Console](https://console.ash.center) and log in with your credentials.
+  
+  ![Ash Console login page](/img/ash-console-login.png)
+
+  </TabItem>
   <TabItem value="ash-cli" label="Authenticate using the Ash CLI" default>
 
 To authenticate, run:
@@ -52,6 +55,15 @@ The Console **session lasts at most 24 hours** (and 10 hours in case of inactivi
 
 ```bash
 Console OAuth2 error: failed to request OAuth2 token: Server returned error response
+```
+
+:::
+
+:::tip
+If you plan to use the API directly, run:
+```bash title="Command"
+ash console auth refresh-token
+export access_token=$(ash console auth show-token | grep -)
 ```
 
 :::
@@ -128,12 +140,3 @@ Access token refreshed successfully!
 
   </TabItem>
 </Tabs>
-
-:::tip
-If you plan to use the API directly, run:
-```bash title="Command"
-ash console auth refresh-token
-export access_token=$(ash console auth show-token | grep -)
-```
-
-:::

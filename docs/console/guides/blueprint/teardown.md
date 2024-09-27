@@ -5,7 +5,7 @@ sidebar_position: 5
 # 3. Teardown
 
 :::caution
-The Ash Console is currently in alpha and **not production-ready**. It is under active development and subject to breaking changes.
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
 This section will guide you through the steps to delete the entities created in the previous sections.
