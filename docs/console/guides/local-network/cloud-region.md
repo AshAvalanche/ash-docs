@@ -43,7 +43,7 @@ From the [Ash Console](https://console.ash.center) project overview page, naviga
 Add a cloud region of your choice to the project with the `console region add` (see [list of supported regions](/docs/console/glossary#cloud-region))
 
 :::tip
-You need the **name of the cloud credentials secret** created in [step 1.](/docs/console/guides/fuji-node/cloud-credentials)
+You need the **name of the cloud credentials secret** created above.
 :::
 
 ```bash title="Command"
