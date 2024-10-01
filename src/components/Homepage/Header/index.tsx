@@ -51,7 +51,7 @@ export default function HomepageHeader() {
               <div className={styles.buttons}>
                 <Link
                   className="button button--secondary button--lg"
-                  to="https://ashavax.hashnode.dev/tbd"
+                  to="https://ashavax.hashnode.dev/introducing-ash9000-the-open-beta-of-the-ash-console"
                 >
                   🎉 Read the beta announcement
                 </Link>
