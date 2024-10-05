@@ -59,6 +59,20 @@ export default function HomepageHeader() {
             </div>
             <div className={clsx("col col--4")} />
           </div>
+          <div className="row">
+            <div className={clsx("col col--4")} />
+            <div className={clsx("col col--4")}>
+              <div className={styles.buttons}>
+                <Link
+                  className="button button--secondary button--lg"
+                  to="https://console.ash.center"
+                >
+                  👩‍💻 Start using the Console now!
+                </Link>
+              </div>
+            </div>
+            <div className={clsx("col col--4")} />
+          </div>
         </div>
       </div>
     </header>

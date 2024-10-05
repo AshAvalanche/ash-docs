@@ -74,6 +74,11 @@ const config = {
         },
         items: [
           {
+            href: "https://console.ash.center",
+            position: "left",
+            label: "Console",
+          },
+          {
             type: "doc",
             docId: "console/index",
             position: "left",
@@ -201,7 +206,7 @@ const config = {
                 href: "https://suzaku.network",
                 label: "Suzaku",
               },
-    
+
               {
                 href: "https://wallet.ash.center",
                 label: "Ash Wallet",
