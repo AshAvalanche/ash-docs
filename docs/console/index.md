@@ -31,7 +31,7 @@ Subnet management is only enabled in devnet and testnet environment for security
 
 ### Networks
 
-Ash supports running Avalanche validator nodes in a private devnet network, on the Fuji testnet or on the mainnet (**not supported during the public beta**).
+Ash supports running Avalanche validator nodes in a private devnet network, on the Fuji testnet or on the mainnet.
 
 ### Monitoring
 
