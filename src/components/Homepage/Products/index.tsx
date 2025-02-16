@@ -28,7 +28,7 @@ const ProductList: ProductItem[] = [
           all the features of <Link to="https://safe.global/">Safe</Link>
         </b>{" "}
         <br />
-        to the Avalanche L1s ecosystem
+        to the Avalanche L1s ecosystem.
       </>
     ),
   },
@@ -42,7 +42,20 @@ const ProductList: ProductItem[] = [
         The (re)staking protocol tailored to help
         <br /> <b>secure and decentralize</b> Avalanche L1s.
         <br />
-        <Link to="https://docs.suzaku.network">Read the docs</Link>
+        <Link to="https://docs.suzaku.network">Read the docs</Link>.
+      </>
+    ),
+  },
+  {
+    title: "Ash Console",
+    link: "/docs/console",
+    SvgLight: require("@site/static/img/undraw-nakamoto-ash.svg").default,
+    SvgDark: require("@site/static/img/undraw-nakamoto-ash.svg").default,
+    description: (
+      <>
+        The <b>self-service</b> L1 development and operations platform. Deploy
+        validator nodes, blockchains and more on{" "}
+        <b>your own cloud subscriptions</b>.
       </>
     ),
   },
@@ -50,7 +63,7 @@ const ProductList: ProductItem[] = [
 
 function Product({ title, link, SvgLight, SvgDark, description }: ProductItem) {
   return (
-    <div className={clsx("col col--6")}>
+    <div className={clsx("col col--4")}>
       <div className="text--center">
         <Link to={link}>
           <SvgLight className={styles.productSvgLight} role="img" />

@@ -1,0 +1,37 @@
+.projects {
+    padding: 4rem 0;
+}
+
+.sectionSubtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.8;
+}
+
+.projectSvgContainer {
+    position: relative;
+    height: 120px;
+    margin-bottom: 1rem;
+}
+
+.projectSvgLight,
+.projectSvgDark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 120px;
+    width: 120px;
+}
+
+.projectSvgDark {
+    display: none;
+}
+
+[data-theme='dark'] .projectSvgLight {
+    display: none;
+}
+
+[data-theme='dark'] .projectSvgDark {
+    display: block;
+}

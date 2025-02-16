@@ -11,22 +11,14 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Ash Console",
+    title: "L1-as-a-Service",
     Svg: require("@site/static/img/undraw-nakamoto-ash.svg").default,
     description: (
       <>
-        The{" "}
-        <b>
-          <Link to="/docs/console">one-stop shop</Link>
-        </b>{" "}
-        for{" "}
-        <b>
-          Appchain <br />
-          development and operation
-        </b>{" "}
-        on Avalanche.
+        The <b>managed Avalanche L1 experience</b>. Our expert team takes care
+        of L1 management, monitoring and more supporting <b>any Cloud</b>.{" "}
         <br />
-        100% <b>cloud-agnostic</b> and <b>open-source</b>.
+        <Link to="/docs/professional-services">Learn more</Link>.
       </>
     ),
   },
@@ -37,7 +29,7 @@ const FeatureList: FeatureItem[] = [
       <>
         The Ash team provides an{" "}
         <Link to="/docs/toolkit">open-source toolkit</Link> to{" "}
-        <b>develop Avalanche Subnets</b> and <b>operate Avalanche nodes</b>.
+        <b>develop Avalanche L1s</b> and <b>operate Avalanche nodes</b>.
       </>
     ),
   },

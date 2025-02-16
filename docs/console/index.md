@@ -7,6 +7,16 @@ sidebar_label: Overview
 
 ![Ash Console Overview](/img/ash-console-overview.png)
 
+:::caution
+The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
+:::
+
+:::info
+During the Console beta, **the Console is free to use**. User [registration](/docs/console/reference/registration) are invites only. If you want to get access or have any questions regarding the Ash Console beta, please contact us!
+
+- [Join our Discord](https://discord.gg/ktSyGrzWXy)
+:::
+
 ## Overview
 
 The Ash Console is the one-stop shop for **L1 development and operation** on Avalanche. It allows you to manage your validators, create Subnets, and monitor your network **on your own infrastructure** (AWS, GCP, and Azure are supported during the public **beta**).

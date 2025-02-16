@@ -9,7 +9,7 @@ The Ash Console is currently in beta and **not production-ready**. It is under a
 :::
 
 :::info
-During the Console beta, **user [registration](/docs/console/reference/registration) are open and the Console is free to use**. If you need help with anything regarding the Ash Console beta, please contact us!
+During the Console beta, **the Console is free to use**. User [registration](/docs/console/reference/registration) are invites only. If you want to get access or have any questions regarding the Ash Console beta, please contact us!
 
 - [Join our Discord](https://discord.gg/ktSyGrzWXy)
 :::

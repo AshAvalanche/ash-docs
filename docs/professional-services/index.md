@@ -1,42 +1,33 @@
 ---
 sidebar_position: 1
-sidebar_label: Overview
 ---
 
 # Professional Services
 
 ## How we can help you
 
-### Avalanche L1 setup and maintenance
-
-Ash [open-source tools](/docs/toolkit/) and [Console](/docs/console/) can significantly reduce the setup and maintenance cost of your Avalanche nodes.
-
-Our team can help you with the **initial setup** and provide you with a **support plan** tailored to your needs.
-
-We also offer turnkey **Avalanche L1 deployment** on the cloud provider of your choice, managing everything from the infrastructure to the network operations.
-
 ### Additional services for the Ash tools
 
 As the maintainers of the Ash [open-source tools](/docs/toolkit/) and [Console](/docs/console/), we can **develop additional features** and provide more services for any need that is not already covered:
 
 - Get **first class support** from our expert team
-- Support for a new cloud provider or **custom blockchain runtime** (HyperSDK VM)
-- Deploy and manage a **trustless bridge** to link your Subnet to other blockchains (including the C-Chain)
-- Receive custom alerts in real time and never miss an important event going on in your Subnet
-- Launch a fully configurable [Faucet](https://github.com/ava-labs/avalanche-faucet) plugged on your Subnet for easy testing and user on-boarding.
+- Support for a new cloud provider for Ash Console or **custom blockchain runtime** (HyperSDK VM)
+- Deploy and manage a **trustless bridge** to link your L1 to other blockchains (including the C-Chain)
+- Receive custom alerts in real time and never miss an important event going on in your L1
+- Launch a fully configurable [Faucet](https://github.com/ava-labs/avalanche-faucet) plugged on your L1 for easy testing and user on-boarding.
 - Automatic AvalancheGo upgrades
-- Load balanced RPC for your Subnet
+- Load balanced RPC for your L1
 - Anything else you might need!
 
-### Subnet (Appchain) design and development
+### Avalanche L1 design and development
 
-Avalanche [Subnets](https://docs.avax.network/learn/subnets) allow any project to create **its dedicated blockchain** (or "Appchain") with their own set of rules and validators. Subnets can run **custom software** while benefiting from the **Avalanche consensus layer**.
+Avalanche [L1s](https://build.avax.network/docs/quick-start/avalanche-l1s) allow any project to create **its dedicated blockchain** with their own set of rules and validators. L1s can run **custom software** while benefiting from the **Avalanche consensus layer**.
 
-Our team can help you **take the best decisions** regarding your Subnet design and follow you through the development process, **from devnet to mainnet**.
+Our team can help you **take the best decisions** regarding your L1 design and follow you through the development process, **from devnet to mainnet**.
 
 ### Private blockchain network design and setup
 
-The flexibility of Avalanche makes it the perfect tool to set up **private blockchain networks** with your partners. Each use case can be run on its own Subnet, with its own set of rules and runtime.
+The flexibility of Avalanche makes it the perfect tool to set up **private blockchain networks** with your partners. Each use case can be run on its own L1, with its own set of rules and runtime.
 
 Our team can help you **design and setup** your private blockchain network, and **train your team** to operate it.
 
