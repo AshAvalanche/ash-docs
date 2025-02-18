@@ -75,9 +75,9 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "ash-cloud/index",
+            docId: "ash-managed-l1s/index",
             position: "left",
-            label: "Ash Cloud",
+            label: "Ash Managed L1s",
           },
           {
             type: "doc",
@@ -144,8 +144,8 @@ const config = {
             title: "Solutions",
             items: [
               {
-                label: "Ash Cloud",
-                to: "/docs/ash-cloud",
+                label: "Ash Managed L1s",
+                to: "/docs/ash-managed-l1s",
               },
               {
                 label: "Ash Console",

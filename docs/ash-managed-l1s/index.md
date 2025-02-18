@@ -2,13 +2,13 @@
 sidebar_position: 1
 ---
 
-# Ash Cloud
+# Ash Managed L1s
 
 ## Overview
 
 Do you want to get started with your own Avalanche L1 but don't know where to start? Let us take care of the infrastructure and focus on what makes your L1 unique!
 
-Our **Ash Cloud** offer provides a comprehensive solution for organizations looking to deploy their own L1. Our service combines the power of Avalanche technology with Ash's enterprise-grade tooling and support, available across multiple cloud providers.
+Our **Ash Managed L1s** offer provides a comprehensive solution for organizations looking to deploy their own L1. Our service combines the power of Avalanche technology with Ash's enterprise-grade tooling and support, available across multiple cloud providers.
 
 ## Managed L1 Hosting Packages
 
@@ -49,20 +49,21 @@ Our team can also help you set up the following additional services for your L1:
 
 Contact us to discuss your needs and we can help you set up a custom package.
 
-## Ash Cloud vs AvaCloud
+## Ash Managed L1s vs AvaCloud
 
-| **Feature**                   | **Ash Cloud**                             | **AvaCloud**    |
-| ----------------------------- | ----------------------------------------- | --------------- |
-| **Hosting model**             | Managed                                   | Self service                                                  |
+| **Feature**                   | **Ash Managed L1s**                       | **AvaCloud**                                                  |
+| ----------------------------- | ----------------------------------------- | ------------------------------------------------------------- |
+| **Model**                     | Managed                                   | Self service                                                  |
 | **Supported Cloud Providers** | Any cloud                                 | AWS                                                           |
-| **Multi cloud**               | ✅                                        | ❌                                                            |
-| **Bring Your Own Hardware**   | ✅                                        | ❌                                                            |
+| **Multi cloud**               | ✅                                         | ❌                                                             |
+| **Bring Your Own Hardware**   | ✅                                         | ❌                                                             |
 | **Block explorer**            | [Blockscout](https://www.blockscout.com/) | Custom ([subnets.avax.network](https://subnets.avax.network)) |
-| **L1 runtime support**        | Subnet EVM, HyperSDK                      | Subnet EVM only |
+| **L1 runtime support**        | Subnet EVM, HyperSDK                      | Subnet EVM only                                               |
+| **Open source**               | ✅                                         | ❌                                                             |
 
 ## Getting Started
 
-To get started with Ash Cloud or to schedule a consultation, please contact our team through one of these channels:
+To get started with Ash Managed L1s or to schedule a consultation, please contact our team through one of these channels:
 - Book a call with our team [here](https://calendly.com/ash-e36knots/30min?month=2025-02)
 - Join our [Discord server](https://discord.gg/ktSyGrzWXy)
 - Message us on [Twitter](https://twitter.com/ash_avax)
