@@ -6,24 +6,24 @@ sidebar_position: 1
 
 ## Overview
 
-Want to get started with your own Avalanche L1 but don't know where to start? Let us take care of the infrastructure and focus on what makes your L1 unique!
+Do you want to get started with your own Avalanche L1 but don't know where to start? Let us take care of the infrastructure and focus on what makes your L1 unique!
 
 Our **Ash Cloud** offer provides a comprehensive solution for organizations looking to deploy their own L1. Our service combines the power of Avalanche technology with Ash's enterprise-grade tooling and support, available across multiple cloud providers.
 
 ## Managed L1 Hosting Packages
 
-| **Feature**         | **Testnet Package**                               | **Mainnet Package**                                      |
-| ------------------- | ------------------------------------------------- | -------------------------------------------------------- |
-| **Nodes\***         | 2 validator nodes                                 | 5 validator nodes                                        |
-| **Validator specs** | 2 vCPUs / 4 GiB RAM (AWS t2.medium or equivalent) | 4 vCPUs / 16 GiB RAM (AWS t2.xlarge or equivalent)       |
-| **Storage**         | 100GB SSD storage                                 | 1TB SSD storage                                          |
-| **Use Case**        | Perfect for development and testing               | Production-ready infrastructure                          |
-| **Price / mo**      | **$49** with Builder Credits\*\* (reg. $599)      | **$999** with Builder Credits\*\*\* (reg. $2999\*\*\*\*) |
+| **Feature**           | **Testnet Package**                                  | **Mainnet Package**                                                |
+| --------------------- | ---------------------------------------------------- | ------------------------------------------------------------------ |
+| **Nodes<sup>1</sup>** | 2 validator nodes                                    | 5 validator nodes                                                  |
+| **Validator specs**   | 2 vCPUs / 4 GiB RAM (AWS t2.medium or equivalent)    | 4 vCPUs / 16 GiB RAM (AWS t2.xlarge or equivalent)                 |
+| **Storage**           | 100GB SSD storage                                    | 1TB SSD storage                                                    |
+| **Use Case**          | Perfect for development and testing                  | Production-ready infrastructure                                    |
+| **Price / mo**        | **$49** with Builder Credits<sup>2</sup> (reg. $599) | **$999** with Builder Credits<sup>3</sup> (reg. $2999<sup>4</sup>) |
 
-- \* Additional nodes can be added on request
-- \*\* Builder Credits are available for 1 year starting from the date of subscription
-- \*\*\* Including Continuous Fee 
-- \*\*\*\* Regular price excludes Continuous Fee (1.33 AVAX / validator node / month)
+- <sup>1</sup> Additional nodes can be added on request
+- <sup>2</sup> Builder Credits are available for 1 year starting from the date of subscription
+- <sup>3</sup> Including Continuous Fee
+- <sup>4</sup> Regular price excludes Continuous Fee (1.33 AVAX / validator node / month)
 
 ## Included Features
 
@@ -53,10 +53,11 @@ Contact us to discuss your needs and we can help you set up a custom package.
 
 | **Feature**                   | **Ash Cloud**                             | **AvaCloud**    |
 | ----------------------------- | ----------------------------------------- | --------------- |
-| **Supported Cloud Providers** | Any cloud                                 | AWS             |
-| **Multi cloud**               | ✅                                         | ❌               |
-| **Bring Your Own Hardware**   | ✅                                         | ❌               |
-| **Block explorer**            | [Blockscout](https://www.blockscout.com/) | Custom          |
+| **Hosting model**             | Managed                                   | Self service                                                  |
+| **Supported Cloud Providers** | Any cloud                                 | AWS                                                           |
+| **Multi cloud**               | ✅                                        | ❌                                                            |
+| **Bring Your Own Hardware**   | ✅                                        | ❌                                                            |
+| **Block explorer**            | [Blockscout](https://www.blockscout.com/) | Custom ([subnets.avax.network](https://subnets.avax.network)) |
 | **L1 runtime support**        | Subnet EVM, HyperSDK                      | Subnet EVM only |
 
 ## Getting Started
