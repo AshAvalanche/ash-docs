@@ -2,8 +2,10 @@ import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageHeader from "../components/Homepage/Header/index";
-import HomepageFeatures from "@site/src/components/Homepage/Features";
-import HomepageProducts from "../components/Homepage/Products";
+import HomepageSolutions from "../components/Homepage/Solutions";
+import HomepageToolkit from "../components/Homepage/Toolkit";
+import HomepageServices from "../components/Homepage/Services";
+import HomepageProjects from "../components/Homepage/Projects";
 import HomepageSupporters from "../components/Homepage/Supporters";
 // import Video from "../components/Homepage/Video";
 
@@ -13,8 +15,10 @@ export default function Home(): JSX.Element {
     <Layout title={`${siteConfig.title}`} description={`${siteConfig.tagline}`}>
       <main>
         <HomepageHeader />
-        <HomepageFeatures />
-        <HomepageProducts />
+        <HomepageSolutions />
+        <HomepageToolkit />
+        <HomepageServices />
+        <HomepageProjects />
         <HomepageSupporters />
         {/* <div className={styles.section}>
           <Video />

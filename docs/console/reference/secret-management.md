@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
 :::
 
-[Secrets](/docs/console/glossary#secret) are used at different steps of an Appchain deployment through the Ash Console.
+[Secrets](/docs/console/glossary#secret) are used at different steps of an Avalanche L1 deployment through the Ash Console.
 
 ## Types of secrets
 

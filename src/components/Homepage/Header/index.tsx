@@ -53,21 +53,7 @@ export default function HomepageHeader() {
                   className="button button--secondary button--lg"
                   to="https://ashavax.hashnode.dev/introducing-ash9000-the-open-beta-of-the-ash-console"
                 >
-                  🎉 Read the beta announcement
-                </Link>
-              </div>
-            </div>
-            <div className={clsx("col col--4")} />
-          </div>
-          <div className="row">
-            <div className={clsx("col col--4")} />
-            <div className={clsx("col col--4")}>
-              <div className={styles.buttons}>
-                <Link
-                  className="button button--secondary button--lg"
-                  to="https://console.ash.center"
-                >
-                  👩‍💻 Start using the Console now!
+                  🎉 Builder Credits Announcement
                 </Link>
               </div>
             </div>

@@ -74,15 +74,16 @@ const config = {
         },
         items: [
           {
-            href: "https://console.ash.center",
+            type: "doc",
+            docId: "ash-managed-l1s/index",
             position: "left",
-            label: "Console",
+            label: "Ash Managed L1s",
           },
           {
             type: "doc",
             docId: "console/index",
             position: "left",
-            label: "Console Docs",
+            label: "Ash Console",
           },
           {
             type: "doc",
@@ -140,25 +141,25 @@ const config = {
         style: "light",
         links: [
           {
-            title: "Content",
+            title: "Solutions",
             items: [
               {
-                label: "Console",
+                label: "Ash Managed L1s",
+                to: "/docs/ash-managed-l1s",
+              },
+              {
+                label: "Ash Console",
                 to: "/docs/console",
-              },
-              {
-                label: "Toolkit",
-                to: "/docs/toolkit",
-              },
-              {
-                label: "Professional Services",
-                to: "/docs/professional-services",
               },
             ],
           },
           {
             title: "Developers",
             items: [
+              {
+                label: "Toolkit Docs",
+                to: "/docs/toolkit",
+              },
               {
                 label: "GitHub",
                 href: "https://github.com/AshAvalanche",
