@@ -2,11 +2,9 @@
 sidebar_position: 6
 ---
 
-# eRPC
+# Load balancing with eRPC
 
-eRPC is a fault-tolerant EVM RPC proxy with persistent caching, optimized for read-intensive workloads such as data indexing and high-traffic frontends. For more details, refer to the [eRPC Documentation](https://docs.erpc.cloud/).
-
-It leverages all available (or specified) network nodes to expose every detected (or specified) blockchain, enhancing availability and load balancing.
+[eRPC](https://erpc.cloud/) is a fault-tolerant EVM RPC proxy with persistent caching, optimized for read-intensive workloads such as data indexing and high-traffic frontends. For more details, refer to the [eRPC Documentation](https://docs.erpc.cloud/).
 
 :::note
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory from the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. Also ensure you have already created a Subnet and a blockchain; see [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) for details.
@@ -28,7 +26,7 @@ ansible-galaxy install -r ansible_collections/ash/avalanche/requirements.yml
 
 ## Deployment Guide
 
-There are two playbook to deploy an eRPC instance using this Ansible role:
+There are two playbooks to deploy an eRPC instance using this Ansible role:
 
 - **Auto-detect Network and Nodes:**  
   This method automatically scans your Avalanche network, detects all available blockchains, and configures the corresponding endpoints on all accessible nodes in your `avalanche_nodes` group (as defined in your host inventory).
@@ -58,17 +56,14 @@ To access a chain, use its EVM chain ID:
 After deploying eRPC, you can interact with the endpoints using:
   
   ```bash title="Command"
-  curl -X POST --data '{"jsonrpc":"2.0","id":1,"method":"eth_blockNumber","params":[]}' -H 'content-type:application/json;' $(terraform -chdir=terraform/multipass output -raw frontend_ip):4000/43113
+  FRONTEND_IP=$(terraform -chdir=terraform/multipass output -raw frontend_ip)
+  curl -X POST --data '{"jsonrpc":"2.0","id":1,"method":"eth_chainId","params":[]}' -H 'content-type:application/json;' $FRONTEND_IP:4000/43113
   ```
 
   ```json title="Output"
-  {"jsonrpc":"2.0","id":1,"result":"0x0"}
+  {"jsonrpc":"2.0","id":1,"result":"0xa868"}
   ```
 
 :::info
 For advanced [eRPC](https://docs.erpc.cloud/) configurations, you can use the `erpc_projects` variable to set up dedicated [projects](https://docs.erpc.cloud/config/projects). Additionally, `erpc_aliasing_rules` can be used to define [aliases](https://docs.erpc.cloud/config/aliasing-rules) and `erpc_limiters_budgets` for setting up [Rate Limiters](https://docs.erpc.cloud/config/rate-limiters).
-:::
-
-:::caution
-The `ash.avalanche.erpc` role is currently not compatible with secured HTTP API endpoints.
 :::
