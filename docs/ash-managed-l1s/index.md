@@ -45,6 +45,7 @@ Our team can also help you set up the following additional services for your L1:
   - Spin up your own validator nodes on your own hardware
   - We take care of the L1 deployment and maintenance
   - You keep 100% custody of the first validator nodes of the L1
+- Hosting and maintenance of a "[The Graph](https://thegraph.com/)" instance for indexing of your L1's smart contracts.
 - On call support
 
 Contact us to discuss your needs and we can help you set up a custom package.
