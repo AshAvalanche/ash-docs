@@ -32,7 +32,7 @@ Both Testnet & Mainnet packages include:
 - **Support & maintenance** by our team of experts
 - 24/7 **monitoring**
 - Custom **alerting**
-- Hosting & maintenance of a **dedicated public RPC endpoint** for your L1
+- Hosting & maintenance of a **dedicated public RPC endpoint** using [**eRPC**](https://erpc.cloud/) for your L1
 - [Ash Wallet](https://ashavax.hashnode.dev/announcing-ash-wallet-for-avalanche-l1s) integration enabling **multi-sig** capabilities to your L1
 - Configurable **Faucet** plugged on your L1 for easy testing and user on-boarding (Testnet only).
 
