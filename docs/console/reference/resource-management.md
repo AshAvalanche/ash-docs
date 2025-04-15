@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Resource Management
 
 :::caution
-The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
+**UPDATE**: The Ash Console open beta has ended. Looking to launch your Avalanche L1? See our latest [Ash Managed L1s offer announcement](https://ashavax.hashnode.dev/announcing-ash-managed-l1s-and-avalanche-builder-credits)!
 :::
 
 [Resources](/docs/console/glossary#secret) are the core feature of the Ash Console. They are the building blocks of your infrastructure, deployed in [cloud regions](/docs/console/glossary#cloud-region) of your cloud account/subscription/project and managed by Ash.

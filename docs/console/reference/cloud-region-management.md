@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Cloud Region Management
 
 :::caution
-The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
+**UPDATE**: The Ash Console open beta has ended. Looking to launch your Avalanche L1? See our latest [Ash Managed L1s offer announcement](https://ashavax.hashnode.dev/announcing-ash-managed-l1s-and-avalanche-builder-credits)!
 :::
 
 The [resources](/docs/console/glossary#resource) of a [project](/docs/console/glossary#project) are deployed across one or more [cloud regions](/docs/console/glossary#cloud-region).

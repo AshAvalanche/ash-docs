@@ -5,7 +5,7 @@ sidebar_position: 3
 # 1. Cloud Credentials Setup
 
 :::caution
-The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
+**UPDATE**: The Ash Console open beta has ended. Looking to launch your Avalanche L1? See our latest [Ash Managed L1s offer announcement](https://ashavax.hashnode.dev/announcing-ash-managed-l1s-and-avalanche-builder-credits)!
 :::
 
 To **deploy the Avalanche node [resources](/docs/console/glossary#resource) into your cloud account/subscription/project**, you need to provide the Console with appropriate credentials.

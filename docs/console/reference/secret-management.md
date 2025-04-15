@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Secret Management
 
 :::caution
-The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
+**UPDATE**: The Ash Console open beta has ended. Looking to launch your Avalanche L1? See our latest [Ash Managed L1s offer announcement](https://ashavax.hashnode.dev/announcing-ash-managed-l1s-and-avalanche-builder-credits)!
 :::
 
 [Secrets](/docs/console/glossary#secret) are used at different steps of an Avalanche L1 deployment through the Ash Console.

@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # 2. Blueprint Configuration and Apply
 
 :::caution
-The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
+**UPDATE**: The Ash Console open beta has ended. Looking to launch your Avalanche L1? See our latest [Ash Managed L1s offer announcement](https://ashavax.hashnode.dev/announcing-ash-managed-l1s-and-avalanche-builder-credits)!
 :::
 
 We need to write [blueprints](/docs/console/reference/blueprints) that define all the entities needed to deploy a 5-node Avalanche devnet and to create the Subnet. For convenience, we have prepared the [devnet.yml](https://github.com/AshAvalanche/ash-rs/blob/main/crates/ash_cli/examples/console/blueprint/devnet.yml) and [devnet-evm-subnet.yml](https://github.com/AshAvalanche/ash-rs/blob/main/crates/ash_cli/examples/console/blueprint/devnet-evm-subnet.yml) blueprints for you.

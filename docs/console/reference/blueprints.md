@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Console Blueprints
 
 :::caution
-The Ash Console is currently in beta and **not production-ready**. It is under active development and subject to breaking changes.
+**UPDATE**: The Ash Console open beta has ended. Looking to launch your Avalanche L1? See our latest [Ash Managed L1s offer announcement](https://ashavax.hashnode.dev/announcing-ash-managed-l1s-and-avalanche-builder-credits)!
 :::
 
 The Ash CLI provides a powerful blueprint feature that allows **creating and/or updating Ash Console entities** (projects, cloud regions, resources, etc.) using **declarative configuration files**. These files can be easily version-controlled and shared with your team, enabling **infrastructure-as-code** workflows.
