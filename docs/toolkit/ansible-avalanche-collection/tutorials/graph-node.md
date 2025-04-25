@@ -237,3 +237,34 @@ graph deploy --node http://$GRAPH_NODE_IP:8020/ --ipfs http://$GRAPH_NODE_IP:500
 
 Use the GraphQL API at `http://$GRAPH_NODE_IP:8000/subgraphs/name/subgraph-name` to query your subgraph.
 
+Example query:
+
+```graphql
+{
+  transfers(first: 1) {
+    id
+    from
+    to
+    value
+    blockNumber
+    timestamp
+  }
+}
+```
+output:
+```json
+{
+  "data": {
+    "transfers": [
+      {
+        "id": "0xea6dc0b9e51e12753b069ec14256ba425ecdb2fd8bf1528acdd18e622bb444d700000000",
+        "from": "0x0000000000000000000000000000000000000000",
+        "to": "0x8db97c7cece249c2b98bdc0226cc4c2a57bf52fc",
+        "value": "200000000000000000000",
+        "blockNumber": "1",
+        "timestamp": "1745577540"
+      }
+    ]
+  }
+}
+```
