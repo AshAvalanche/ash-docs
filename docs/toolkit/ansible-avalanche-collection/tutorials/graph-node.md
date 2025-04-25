@@ -124,12 +124,18 @@ dataSources:
       file: ./src/mapping.ts
 ```
 
-:::note
-The `address` field in the `source` section should be the address of your deployed smart contract. You can find this address in the output of the [Smart Contract Deployment](/docs/toolkit/ansible-avalanche-collection/tutorials/contract-deployment.md) tutorial.
-The `startBlock` field should be set to the block number where you want to start indexing. You can set it to `0` to index from the beginning.
-The `abi` field should match the name of the ABI file you will create in the next step.
-The `entities` field should include all the entities you want to index. In this case, we are indexing `Transfer` and `Approval` events.
-The `eventHandlers` field should include all the events you want to handle. In this case, we are handling `Transfer` and `Approval` events.
+:::info
+- The `network` field should be set to `subnet` to indicate that you are indexing a Subnet.
+- The `kind` field should be set to `ethereum/contract` to indicate that you are indexing an Ethereum-compatible contract.
+- The `name` field should be set to a unique name for your subgraph. In this case, we are using `ASHToken`.
+- The `description` field should be a brief description of your subgraph.
+- The `repository` field should be a link to your subgraph's repository (optional).
+- The `address` field in the `source` section should be the address of your deployed smart contract. You can find this address in the output of the [Smart Contract Deployment](/docs/toolkit/ansible-avalanche-collection/tutorials/contract-deployment.md) tutorial.
+- The `startBlock` field should be set to the block number where you want to start indexing. You can set it to `0` to index from the beginning.
+- The `abi` field should match the name of the ABI file you will create in the next step.
+- The `entities` field should include all the entities you want to index. In this case, we are indexing `Transfer` and `Approval` events.
+- The `eventHandlers` field should include all the events you want to handle. In this case, we are handling `Transfer` and `Approval` events.
+- The `file` field should point to the mapping file you will create in the next step.
 :::
 
 ### Step 4: Define the GraphQL Schema
@@ -258,11 +264,15 @@ npm install --save-dev @graphprotocol/graph-cli @graphprotocol/graph-ts
 
 ### Step 8: Generate TypeScript Types
 
+This command generates the necessary TypeScript types based on your GraphQL schema and smart contract ABIs. These types are later used in the mapping file for strong typing.
+
 ```bash
 graph codegen
 ```
 
 ### Step 9: Build the Subgraph
+
+Build your subgraph to ensure that all configurations, generated types, and mappings are correctly bundled.
 
 ```bash
 graph build
@@ -270,11 +280,15 @@ graph build
 
 ### Step 10: Create the Subgraph on the Graph Node
 
+This command creates the subgraph on your Graph Node instance. Replace `subgraph-name` with your desired name.
+
 ```bash
 graph create --node http://$GRAPH_NODE_IP:8020/ subgraph-name
 ```
 
 ### Step 11: Deploy the Subgraph
+
+Deploy your subgraph to the Graph Node using this command. This makes your subgraph available for indexing and querying. don't forget to replace `subgraph-name` with the name you used in the previous step.
 
 ```bash
 graph deploy --node http://$GRAPH_NODE_IP:8020/ --ipfs http://$GRAPH_NODE_IP:5001/ subgraph-name
