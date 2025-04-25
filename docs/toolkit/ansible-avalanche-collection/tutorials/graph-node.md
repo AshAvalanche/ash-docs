@@ -212,6 +212,7 @@ If you are using the [Ansible Avalanche Getting Started](https://github.com/AshA
 
 }
 ```
+:::
 
 ### Step 6: Add Mapping Functions
 
