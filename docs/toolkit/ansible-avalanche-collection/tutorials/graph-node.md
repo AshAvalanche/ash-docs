@@ -89,7 +89,7 @@ cd my-subgraph
 
 ### Step 3: Define the Subgraph Configuration
 
-Create a `subgraph.yaml` file in the `my-subgraph` directory:
+Create a `subgraph.yaml` file in the `my-subgraph` directory (don't forget to replace the `address` field with the address of your deployed smart contract):
 
 ```yaml title="my-subgraph/subgraph.yaml"
 specVersion: 0.0.4
@@ -123,6 +123,14 @@ dataSources:
           handler: handleApproval
       file: ./src/mapping.ts
 ```
+
+:::note
+The `address` field in the `source` section should be the address of your deployed smart contract. You can find this address in the output of the [Smart Contract Deployment](/docs/toolkit/ansible-avalanche-collection/tutorials/contract-deployment.md) tutorial.
+The `startBlock` field should be set to the block number where you want to start indexing. You can set it to `0` to index from the beginning.
+The `abi` field should match the name of the ABI file you will create in the next step.
+The `entities` field should include all the entities you want to index. In this case, we are indexing `Transfer` and `Approval` events.
+The `eventHandlers` field should include all the events you want to handle. In this case, we are handling `Transfer` and `Approval` events.
+:::
 
 ### Step 4: Define the GraphQL Schema
 
