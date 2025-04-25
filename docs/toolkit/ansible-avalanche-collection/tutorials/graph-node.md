@@ -167,6 +167,37 @@ touch abis/ASH.json
 
 Add the ABI content to `ASH.json`.
 
+:::note
+You can get the ABI of the smart contract from the getting started repository in `net/ash_token/out/ASHToken.sol/ASHToken.json` it should look like this:
+
+```json
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      ...
+    }
+  ]
+}
+```
+
 ### Step 6: Add Mapping Functions
 
 Create a `src` directory and add a `mapping.ts` file:
