@@ -74,7 +74,7 @@ A subgraph is a GraphQL schema that defines the data you want to index and how t
 
 ### Step 1: Set the `GRAPH_NODE_IP` Environment Variable
 
-Since we are using a local network, set the `GRAPH_NODE_IP` environment variable to the IP address of the Graph Node:
+Since we are using a local network, set the `GRAPH_NODE_IP` environment variable to the IP address of the Graph Node (which is the same as the frontend node):
 
 ```bash
 export GRAPH_NODE_IP=$(terraform -chdir=terraform/multipass output -raw frontend_ip)

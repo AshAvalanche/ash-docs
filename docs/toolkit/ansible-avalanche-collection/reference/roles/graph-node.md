@@ -20,7 +20,7 @@ Graph Node is a powerful tool for indexing and querying blockchain data. It prov
 | `graph_node_ports`        | Ports for GraphQL, admin, and metrics services.                            | See below     |
 | `graph_node_postgres`     | PostgreSQL configuration (user, password, database, port).                 | See below     |
 | `graph_node_ipfs`         | IPFS configuration (port, gateway port).                                  | See below     |
-| `graph_node_ethereum`     | Ethereum network configuration (network, RPC URL).                        | See below     |
+| `graph_node_ethereum`     | The network configuration (network, RPC URL).                        | See below     |
 | `graph_node_paths`        | Paths for configuration, custom files, assets, and logs.                  | See below     |
 | `graph_node_metrics_port` | Port for metrics service.                                                  | `8040`        |
 
