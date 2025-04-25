@@ -158,7 +158,8 @@ type Approval @entity(immutable: false) {
 
 ### Step 5: Add ABI Files
 
-Create an `abis` directory and add the ABI file for your smart contract:
+The ABI (Application Binary Interface) is a JSON file that describes the smart contract's functions and events. It is used by the Graph Node to decode the data from the blockchain.
+Create an `abis` directory and add the ABI file for the smart contract you want to index:
 
 ```bash
 mkdir abis
@@ -168,7 +169,7 @@ touch abis/ASH.json
 Add the ABI content to `ASH.json`.
 
 :::note
-You can get the ABI of the smart contract from the getting started repository in `net/ash_token/out/ASHToken.sol/ASHToken.json` it should look like this:
+If you are using the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started),You can get the ABI of the smart contract in `net/ash_token/out/ASHToken.sol/ASHToken.json` after you deployed your contract. It should look like this:
 
 ```json
 {
