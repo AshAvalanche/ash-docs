@@ -4,7 +4,7 @@ sidebar_position: 13
 
 # Avalanche Graph Node
 
-[Graph Node](https://thegraph.com/docs/en/indexing/tooling/graph-node) is a powerful tool for indexing and querying Avalanche data. It provides a GraphQL API that allows you to access blockchain data in a structured and efficient manner. For more information, refer to the [Graph Node Documentation](https://thegraph.com/docs/en/indexing/tooling/graph-node/).
+[The Graph](https://thegraph.com/docs/en/) is a decentralized protocol designed for indexing and querying blockchain data, including Avalanche. It enables developers to efficiently access and organize blockchain data using a GraphQL API. A key component of this protocol is the **Graph Node**, which processes and indexes data from the blockchain based on predefined subgraph configurations. For detailed guidance on setting up and using a Graph Node, refer to the [Graph Node Documentation](https://thegraph.com/docs/en/indexing/tooling/graph-node/).
 
 :::note
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory from the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. Also ensure you have already created a Subnet and a blockchain with a smart contract to index; see [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) and [Smart Contract Deployment](/docs/toolkit/ansible-avalanche-collection/tutorials/contract-deployment.md) for details.
@@ -18,8 +18,6 @@ Always make sure you have the latest version of the collection installed. See [I
 
 Before starting, ensure you have the following:
 
-- A local or remote environment with Ansible installed.
-- Docker installed on your system.
 - Node.js and npm installed (use [nvm](https://github.com/nvm-sh/nvm) if needed).
 - Access to the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository.
 
