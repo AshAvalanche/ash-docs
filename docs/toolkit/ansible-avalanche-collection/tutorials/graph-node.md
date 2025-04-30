@@ -18,6 +18,7 @@ Always make sure you have the latest version of the collection installed. See [I
 
 Before starting, ensure you have the following:
 
+- A local or remote environment with Ansible installed.
 - Node.js and npm installed (use [nvm](https://github.com/nvm-sh/nvm) if needed).
 - Access to the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository.
 
@@ -167,55 +168,13 @@ Create an `abis` directory and add the ABI file for the smart contract you want 
 
 ```bash
 mkdir abis
-touch abis/ASH.json
+ln ../../ash_token/out/ASHToken.sol/ASHToken.json abis/ASH.json
 ```
 
 Add the ABI content to `ASH.json`.
 
 :::note
-If you are using the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started),You can get the ABI of the smart contract in `net/ash_token/out/ASHToken.sol/ASHToken.json` after you deployed your contract. It should look like this:
-
-```json
-{
-  "abi": [
-  {
-    "type": "constructor",
-    "inputs": [
-      { "name": "initialSupply", "type": "uint256", "internalType": "uint256" }
-    ],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "allowance",
-    "inputs": [
-      { "name": "owner", "type": "address", "internalType": "address" },
-      { "name": "spender", "type": "address", "internalType": "address" }
-    ],
-    "outputs": [
-      { "name": "", "type": "uint256", "internalType": "uint256" }
-    ],
-    "stateMutability": "view"
-  },
-  ...,
-  {
-    "type": "error",
-    "name": "ERC20InvalidReceiver",
-    "inputs": [
-      { "name": "receiver", "type": "address", "internalType": "address" }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "ERC20InvalidSpender",
-    "inputs": [
-      { "name": "spender", "type": "address", "internalType": "address" }
-    ]
-  }
-]
-
-}
-```
+If you are using the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started),You can get the ABI of the smart contract in `net/ash_token/out/ASHToken.sol/ASHToken.json` after you deployed your contract.
 :::
 
 ### Step 6: Add Mapping Functions
