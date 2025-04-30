@@ -1,5 +1,5 @@
 ---
-sidbar_position: 3
+sidbar_position: 5
 ---
 
 # ash.avalanche.graph_node
@@ -25,6 +25,8 @@ This Ansible role installs and configures a [Graph Node](https://github.com/grap
 
 #### Ports
 
+The default ports for the Graph Node services are as follows:
+
 ```yaml
 ports:
   graphql: 8000
@@ -33,6 +35,8 @@ ports:
 
 #### PostgreSQL
 
+The PostgreSQL configuration includes options for both internal and external databases. The internal database is created by default, while the external database can be configured if needed.
+
 ```yaml
 postgres:
   create: true
@@ -40,7 +44,7 @@ postgres:
   password: "yqopFTn6n7MG0*FcG0*v"
   db: graph
   port: 5432
-  graph_node_postgres_external:
+  graph_node_postgres_external: # optional
     host: ""
     port: ""
     user: ""
@@ -50,6 +54,8 @@ postgres:
 
 #### IPFS
 
+The IPFS configuration includes the host, port, and gateway port.
+
 ```yaml
 ipfs:
   host: ipfs
@@ -58,6 +64,8 @@ ipfs:
 ```
 
 #### RPC
+
+The RPC configuration specifies the network and the URL for the RPC endpoint.
 
 ```yaml
 RPC:
@@ -77,12 +85,16 @@ paths:
 
 #### Metrics
 
+The metrics service is configured to run on port `8040` by default.
+
 ```yaml
 metrics:
   port: 8040
 ```
 
 #### Auto Restart
+
+The `graph_node_auto_restart` variable controls whether the Graph Node service should automatically restart if it fails. Set this to `true` to enable auto-restart.
 
 ```yaml
 graph_node_auto_restart: true
@@ -103,36 +115,39 @@ graph_node_auto_restart: true
   roles:
     - role: ash.avalanche.graph_node
       vars:
-        graph_node_version: latest
-        graph_node_user: root
-        graph_node_ports:
-          graphql: 8000
-          admin: 8020
-        graph_node_postgres:
-          create: true
-          user: graph
-          password: "yqopFTn6n7MG0*FcG0*v"
-          db: graph
-          port: 5432
-          graph_node_postgres_external:
-            host: ""
-            port: ""
-            user: ""
-            password: ""
-            db: ""
-        graph_node_ipfs:
-          host: ipfs
-          port: 5001
-          gateway_port: 8082
-        graph_node_RPC:
-          network: subnet
-          rpc_url: "http://127.0.0.1:9650/ext/bc/{{ graph_node_blockchain_id }}/rpc"
-        graph_node_paths:
-          conf:   /etc/graph-node
-          custom: /etc/graph-node/conf/custom
-          assets: /etc/graph-node/conf/custom/shared
-          logs:   /var/log/graph_node
-        graph_node_metrics_port: 8040
+        graph_node:
+          version: v0.38.0
+          user: root
+          ports:
+            graphql: 8000
+            admin: 8020
+          postgres:
+            create: true
+            user: graph
+            password: yqopFTn6n7MG0*FcG0*v
+            db: graph
+            port: 5432
+            graph_node_postgres_external:
+              host: ""
+              port: ""
+              user: ""
+              password: ""
+              db: ""
+          ipfs:
+            host: ipfs
+            port: 5001
+            gateway_port: 8082
+          RPC:
+            network: subnet
+            rpc_url: "http://127.0.0.1:9650/ext/bc/{{ graph_node_blockchain_id }}/rpc"
+          paths:
+            conf: /etc/graph-node
+            custom: /etc/graph-node/conf/custom
+            assets: /etc/graph-node/conf/custom/shared
+            logs:   /var/log/graph_node
+          metrics:
+            port: 8040
+
         graph_node_auto_restart: true
 ```
 
