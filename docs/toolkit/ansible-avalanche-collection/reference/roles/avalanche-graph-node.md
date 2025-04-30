@@ -143,6 +143,5 @@ graph_node_auto_restart: true
 
 ## Additional Notes
 
-- Ensure Docker is installed and running on the target node.
 - The `graph_node_blockchain_id` must match the blockchain ID of the Subnet you want to index.
 - Use the GraphQL API at `http://<node-ip>:8000` to query indexed data.
