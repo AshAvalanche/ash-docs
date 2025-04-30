@@ -16,7 +16,7 @@ This Ansible role installs and configures a [Graph Node](https://github.com/grap
 | `graph_node.ports`        | Ports for GraphQL and admin services.                                       | See below     |
 | `graph_node.postgres`     | PostgreSQL configuration, including internal and external options.          | See below     |
 | `graph_node.ipfs`         | IPFS configuration (host, port, gateway port).                              | See below     |
-| `graph_node.RPC`          | The network configuration (network, RPC URL).                               | See below     |
+| `graph_node.rpc`          | The network configuration (network, rpc URL).                               | See below     |
 | `graph_node.paths`        | Paths for configuration, custom files, assets, and logs.                   | See below     |
 | `graph_node.metrics.port` | Port for metrics service.                                                  | `8040`        |
 | `graph_node_auto_restart` | Whether to enable auto-restart for the Graph Node service.                 | `true`        |
@@ -63,12 +63,12 @@ ipfs:
   gateway_port: 8082
 ```
 
-#### RPC
+#### rpc
 
-The RPC configuration specifies the network and the URL for the RPC endpoint.
+The rpc configuration specifies the network and the URL for the rpc endpoint.
 
 ```yaml
-RPC:
+rpc:
   network: subnet
   rpc_url: "http://127.0.0.1:9650/ext/bc/{{ graph_node_blockchain_id }}/rpc"
 ```
@@ -137,7 +137,7 @@ graph_node_auto_restart: true
             host: ipfs
             port: 5001
             gateway_port: 8082
-          RPC:
+          rpc:
             network: subnet
             rpc_url: "http://127.0.0.1:9650/ext/bc/{{ graph_node_blockchain_id }}/rpc"
           paths:
