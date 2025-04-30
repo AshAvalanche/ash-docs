@@ -44,12 +44,7 @@ postgres:
   password: "yqopFTn6n7MG0*FcG0*v"
   db: graph
   port: 5432
-  graph_node_postgres_external: # optional
-    host: ""
-    port: ""
-    user: ""
-    password: ""
-    db: ""
+  host: localhost
 ```
 
 #### IPFS
@@ -127,12 +122,7 @@ graph_node_auto_restart: true
             password: yqopFTn6n7MG0*FcG0*v
             db: graph
             port: 5432
-            graph_node_postgres_external:
-              host: ""
-              port: ""
-              user: ""
-              password: ""
-              db: ""
+            host: localhost
           ipfs:
             host: ipfs
             port: 5001
