@@ -1,10 +1,10 @@
 ---
-sidebar_position: 8
+sidebar_position: 12
 ---
 
-# Avalanche Graph Node
+# Graph Node
 
-[The Graph](https://thegraph.com/docs/en/) is a decentralized protocol designed for indexing and querying blockchain data, including Avalanche. It enables developers to efficiently access and organize blockchain data using a GraphQL API. A key component of this protocol is the **Graph Node**, which processes and indexes data from the blockchain based on predefined subgraph configurations. For detailed guidance on setting up and using a Graph Node, refer to the [Graph Node Documentation](https://thegraph.com/docs/en/indexing/tooling/graph-node/).
+[The Graph](https://thegraph.com/docs/en/) is a decentralized protocol designed for indexing and querying blockchain data, including Avalanche. It enables developers to efficiently access and organize blockchain data using a GraphQL API. A key component of this protocol is the [**Graph Node**](https://github.com/graphprotocol/graph-node), which processes and indexes data from the blockchain based on predefined subgraph configurations. For detailed guidance on setting up and using a Graph Node, refer to the [Graph Node Documentation](https://thegraph.com/docs/en/indexing/tooling/graph-node/).
 
 :::note
 For this tutorial, we will use the [`local`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/tree/main/inventories/local) inventory from the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started) repository. Also ensure you have already created a Subnet and a blockchain with a smart contract to index; see [Subnet Creation](/docs/toolkit/ansible-avalanche-collection/tutorials/subnet-creation) and [Smart Contract Deployment](/docs/toolkit/ansible-avalanche-collection/tutorials/contract-deployment.md) for details.
@@ -49,11 +49,11 @@ If you don't have Node.js installed, follow the instructions on the [Node.js web
 
 ## Configure Graph Node
 
-The Graph Node will be installed as a [Docker Compose](https://docs.docker.com/compose/) service on the nodes of the `graph_nodes` Ansible group. In [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started), it is the `frontend` node by default. You can change this by editing the [`hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/hosts) file.
+The Graph Node will be installed as a [Docker Compose](https://docs.docker.com/compose/) service on the nodes of the `graph_node` Ansible group. In [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started), it is the `frontend` node by default. You can change this by editing the [`hosts`](https://github.com/AshAvalanche/ansible-avalanche-getting-started/blob/main/inventories/local/hosts) file.
 
-Set the blockchain ID in `graph_nodes.yml` (the `group_vars` file associated with our hosts' group):
+Set the blockchain ID in `graph_node.yml` (the `group_vars` file associated with our hosts' group):
 
-```yaml title="inventories/local/group_vars/graph_nodes.yml"
+```yaml title="inventories/local/group_vars/graph_node.yml"
 graph_node_blockchain_id: 2dEmExGjJT6MouJRr1PqV4PSQEbScDAjKuPtT6pgqYR5xdUuac
 ```
 
@@ -90,7 +90,7 @@ cd my-subgraph
 
 Create a `subgraph.yaml` file in the `my-subgraph` directory (don't forget to replace the `address` field with the address of your deployed smart contract):
 
-```yaml title="my-subgraph/subgraph.yaml"
+```yaml title="subgraph.yaml"
 specVersion: 0.0.4
 description: ASH Token on Subnet
 repository: https://example.com
@@ -141,7 +141,7 @@ dataSources:
 
 Create a `schema.graphql` file in the `my-subgraph` directory:
 
-```graphql title="my-subgraph/schema.graphql"
+```graphql title="schema.graphql"
 type Transfer @entity(immutable: false) {
   id: ID!
   from: Bytes!
@@ -164,17 +164,17 @@ type Approval @entity(immutable: false) {
 ### Step 5: Add ABI Files
 
 The ABI (Application Binary Interface) is a JSON file that describes the smart contract's functions and events. It is used by the Graph Node to decode the data from the blockchain.
-Create an `abis` directory and add the ABI file for the smart contract you want to index:
+Create an `abis` directory and add the ABI file for the smart contract you want to index.
+
+Add the ABI content to `ASH.json`:
 
 ```bash
 mkdir abis
-ln ../../ash_token/out/ASHToken.sol/ASHToken.json abis/ASH.json
+ln ../ash_token/out/ASHToken.sol/ASHToken.json abis/ASH.json
 ```
 
-Add the ABI content to `ASH.json`.
-
 :::note
-If you are using the [Ansible Avalanche Getting Started](https://github.com/AshAvalanche/ansible-avalanche-getting-started),You can get the ABI of the smart contract in `net/ash_token/out/ASHToken.sol/ASHToken.json` after you deployed your contract.
+In the example above, we are using the `ASHToken` contract from the [Smart Contract Deployment](/docs/toolkit/ansible-avalanche-collection/tutorials/contract-deployment.md) tutorial. You can replace it with your own contract's ABI file.
 :::
 
 ### Step 6: Add Mapping Functions
@@ -248,7 +248,7 @@ graph create --node http://$GRAPH_NODE_IP:8020/ subgraph-name
 Deploy your subgraph to the Graph Node using this command. This makes your subgraph available for indexing and querying. don't forget to replace `subgraph-name` with the name you used in the previous step.
 
 ```bash
-graph deploy --node http://$GRAPH_NODE_IP:8020/ --ipfs http://$GRAPH_NODE_IP:5001/ subgraph-name
+graph deploy --node http://$GRAPH_NODE_IP:8020/ --ipfs http://$GRAPH_NODE_IP:5001/ subgraph-name -l v0.0.1
 ```
 
 ### Step 12: Query the Subgraph
