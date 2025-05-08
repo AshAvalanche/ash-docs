@@ -79,10 +79,9 @@ Since we are using a local network, set the `GRAPH_NODE_IP` environment variable
 export GRAPH_NODE_IP=$(terraform -chdir=terraform/multipass output -raw frontend_ip)
 ```
 
-### Step 2: Create a Subgraph Directory
+### Step 2: CD into Subgraph Directory
 
 ```bash
-mkdir my-subgraph
 cd my-subgraph
 ```
 
@@ -166,11 +165,10 @@ type Approval @entity(immutable: false) {
 The ABI (Application Binary Interface) is a JSON file that describes the smart contract's functions and events. It is used by the Graph Node to decode the data from the blockchain.
 Create an `abis` directory and add the ABI file for the smart contract you want to index.
 
-Add the ABI content to `ASH.json`:
+Check the ABI content to `ASH.json`:
 
 ```bash
-mkdir abis
-ln ../ash_token/out/ASHToken.sol/ASHToken.json abis/ASH.json
+cat abis/ASH.json
 ```
 
 :::note
