@@ -1,5 +1,5 @@
 ---
-sidebar_position: 12
+sidebar_position: 13
 ---
 
 import Tabs from '@theme/Tabs';
@@ -23,7 +23,7 @@ We will be using the [`morpheusvm`](https://github.com/ava-labs/hypersdk/tree/ma
   - [jq](https://stedolan.github.io/jq/) (see [Installation](https://stedolan.github.io/jq/download/))
 
 :::note
-We recommend installing the Ash CLI to easily get information about your nodes and Subnets. See [Ash CLI - Installation](/docs/toolkit/ash-cli/installation).  
+We recommend installing the Ash CLI to easily get information about your nodes and Subnets. See [Ash CLI - Installation](/docs/toolkit/ash-cli/installation).
 The tutorials still provide the snippets to query the Avalanche APIs with cURL.
 :::
 
