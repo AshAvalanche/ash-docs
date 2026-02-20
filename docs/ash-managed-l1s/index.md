@@ -28,7 +28,8 @@ Our **Ash Managed L1s** offer provides a comprehensive solution for organization
 ## Included Features
 
 Both Testnet & Mainnet packages include:
-- Hosting & maintenance of a **block explorer** customized for your L1 (example: [PLYR L1 Explorer](https://explorer.plyr.network/))
+
+- Hosting & maintenance of a **block explorer** customized for your L1 (example: [ETO Explorer](https://eto-explorer.ash.center/))
 - **Support & maintenance** by our team of experts
 - 24/7 **monitoring**
 - Custom **alerting**
@@ -56,15 +57,16 @@ Contact us to discuss your needs and we can help you set up a custom package.
 | ----------------------------- | ----------------------------------------- | ------------------------------------------------------------- |
 | **Model**                     | Managed                                   | Self service                                                  |
 | **Supported Cloud Providers** | Any cloud                                 | AWS                                                           |
-| **Multi cloud**               | ✅                                         | ❌                                                             |
-| **Bring Your Own Hardware**   | ✅                                         | ❌                                                             |
+| **Multi cloud**               | ✅                                        | ❌                                                            |
+| **Bring Your Own Hardware**   | ✅                                        | ❌                                                            |
 | **Block explorer**            | [Blockscout](https://www.blockscout.com/) | Custom ([subnets.avax.network](https://subnets.avax.network)) |
-| **L1 runtime support**        | Subnet EVM, HyperSDK                      | Subnet EVM only                                               |
-| **Open source**               | ✅                                         | ❌                                                             |
+| **L1 runtime support**        | Subnet EVM + custom VMs on request        | Subnet EVM only                                               |
+| **Open source**               | ✅                                        | ❌                                                            |
 
 ## Getting Started
 
 To get started with Ash Managed L1s or to schedule a consultation, please contact our team through one of these channels:
+
 - Book a call with our team [here](https://calendly.com/ash-e36knots/30min?month=2025-02)
 - Join our [Discord server](https://discord.gg/ktSyGrzWXy)
 - Message us on [Twitter](https://twitter.com/ash_avax)

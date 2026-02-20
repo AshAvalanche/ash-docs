@@ -29,6 +29,11 @@
     margin-bottom: 1rem;
 }
 
+[data-theme="light"] .solutionSvgDark,
+[data-theme="dark"] .solutionSvgLight {
+    display: none;
+}
+
 .solutionDescription {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;

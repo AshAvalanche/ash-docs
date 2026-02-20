@@ -7,7 +7,8 @@ import Heading from "@theme/Heading";
 type SolutionItem = {
   title: string;
   link: string;
-  Svg: React.ComponentType<React.ComponentProps<"svg">>;
+  SvgLight: React.ComponentType<React.ComponentProps<"svg">>;
+  SvgDark: React.ComponentType<React.ComponentProps<"svg">>;
   description: JSX.Element;
   features: string[];
 };
@@ -16,7 +17,8 @@ const SolutionList: SolutionItem[] = [
   {
     title: "Ash Managed L1s",
     link: "/docs/ash-managed-l1s",
-    Svg: require("@site/static/img/undraw-ash-p2p.svg").default,
+    SvgLight: require("@site/static/img/undraw-ash-p2p.svg").default,
+    SvgDark: require("@site/static/img/undraw-ash-p2p.svg").default,
     description: (
       <>
         The <b>managed Avalanche L1 experience</b>. Let our expert team take
@@ -32,31 +34,56 @@ const SolutionList: SolutionItem[] = [
     ],
   },
   {
-    title: "Ash Console",
-    link: "/docs/console",
-    Svg: require("@site/static/img/undraw-nakamoto-ash.svg").default,
+    title: "Ash Wallet",
+    link: "https://wallet.ash.center",
+    SvgLight: require("@site/static/img/undraw-two-factor-authentication.svg").default,
+    SvgDark: require("@site/static/img/undraw-two-factor-authentication.svg").default,
     description: (
       <>
-        The <b>self-service</b> L1 development and operations platform for teams
-        that want to manage their own infrastructure.
+        A <b>Safe-based multi-signature wallet</b> built for Avalanche L1s.
+        Secure your team treasury and manage assets across every L1.
       </>
     ),
     features: [
-      "Configure validator nodes",
-      "Create custom blockchains",
-      "Deploy a block explorer",
-      "Use your own AWS, GCP & Azure subscription",
-      "Full infrastructure control",
+      "Multi-sig wallet for Avalanche L1s",
+      "Powered by Safe shared infrastructure",
+      "Team treasury & asset management",
+      "One wallet across all L1s",
+    ],
+  },
+  {
+    title: "Suzaku",
+    link: "https://suzaku.network",
+    SvgLight: require("@site/static/img/suzaku-symbol-black.svg").default,
+    SvgDark: require("@site/static/img/suzaku-symbol-white.svg").default,
+    description: (
+      <>
+        The <b>Decentralization Hub for L1s</b>. Securely scale and
+        decentralize your validator set through a permissionless marketplace.
+      </>
+    ),
+    features: [
+      "Validator marketplace for Avalanche L1s",
+      "From PoA to PoS security models",
+      "Staking of native and blue-chip assets",
+      "Backed by the Avalanche Foundation",
     ],
   },
 ];
 
-function Solution({ title, link, Svg, description, features }: SolutionItem) {
+function Solution({ title, link, SvgLight, SvgDark, description, features }: SolutionItem) {
   return (
-    <div className={clsx("col col--6 margin-bottom--lg")}>
+    <div className={clsx("col col--4 margin-bottom--lg")}>
       <div className={styles.solutionCard}>
         <div className="text--center">
-          <Svg className={styles.solutionSvg} role="img" />
+          {SvgLight === SvgDark ? (
+            <SvgLight className={styles.solutionSvg} role="img" />
+          ) : (
+            <>
+              <SvgLight className={clsx(styles.solutionSvg, styles.solutionSvgLight)} role="img" />
+              <SvgDark className={clsx(styles.solutionSvg, styles.solutionSvgDark)} role="img" />
+            </>
+          )}
         </div>
         <div className="text--center padding-horiz--md">
           <h3>{title}</h3>
@@ -85,8 +112,7 @@ export default function HomepageSolutions(): JSX.Element {
           <div className="col">
             <Heading as="h2">Solutions</Heading>
             <p className={styles.sectionSubtitle}>
-              Ash offers two solutions to help you get started with your own
-              Avalanche L1
+              Everything you need to launch, secure, and scale your Avalanche L1
             </p>
           </div>
         </div>

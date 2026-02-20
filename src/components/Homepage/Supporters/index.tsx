@@ -19,7 +19,7 @@ const SupporterList: SupporterItem[] = [
     link: "https://x.com/AvalancheFDN",
   },
   {
-    title: "COD3BAS3",
+    title: "codebase",
     SvgLight: require("@site/static/img/codebase-logo-black.svg").default,
     SvgDark: require("@site/static/img/codebase-logo-white.svg").default,
     link: "https://codebase.avax.network/",

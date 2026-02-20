@@ -6,9 +6,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Ash",
+  title: "Ash by Suzaku",
   tagline: "Your chain, your rules",
-  favicon: "img/ash-logo.svg",
+  favicon: "img/ash-by-suzaku-logo-color-transparent.png",
 
   // Set the production url of your site here
   url: "https://ash.center/",
@@ -50,6 +50,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/AshAvalanche/ash-docs/tree/main",
+          exclude: ["**/hypersdk-devnet-aws.md"],
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -70,7 +71,7 @@ const config = {
         title: "Ash",
         logo: {
           alt: "Ash Logo",
-          src: "img/ash-logo.svg",
+          src: "img/ash-by-suzaku-logo-color-transparent.png",
         },
         items: [
           {
@@ -78,12 +79,6 @@ const config = {
             docId: "ash-managed-l1s/index",
             position: "left",
             label: "Ash Managed L1s",
-          },
-          {
-            type: "doc",
-            docId: "console/index",
-            position: "left",
-            label: "Ash Console",
           },
           {
             type: "doc",
@@ -130,11 +125,6 @@ const config = {
             className: "header-discord-link",
             "aria-label": "Discord Server",
           },
-          {
-            href: "https://linktr.ee/ash.center",
-            position: "right",
-            label: "Linktree",
-          },
         ],
       },
       footer: {
@@ -146,10 +136,6 @@ const config = {
               {
                 label: "Ash Managed L1s",
                 to: "/docs/ash-managed-l1s",
-              },
-              {
-                label: "Ash Console",
-                to: "/docs/console",
               },
             ],
           },

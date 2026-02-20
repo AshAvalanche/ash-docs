@@ -46,19 +46,6 @@ const ProductList: ProductItem[] = [
       </>
     ),
   },
-  {
-    title: "Ash Console",
-    link: "/docs/console",
-    SvgLight: require("@site/static/img/undraw-nakamoto-ash.svg").default,
-    SvgDark: require("@site/static/img/undraw-nakamoto-ash.svg").default,
-    description: (
-      <>
-        The <b>self-service</b> L1 development and operations platform. Deploy
-        validator nodes, blockchains and more on{" "}
-        <b>your own cloud subscriptions</b>.
-      </>
-    ),
-  },
 ];
 
 function Product({ title, link, SvgLight, SvgDark, description }: ProductItem) {

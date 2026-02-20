@@ -10,14 +10,29 @@
   overflow: hidden;
   background: linear-gradient(
     90deg,
-    #ff0000 -6.32%,
-    #ff7200 98.01%,
-    #ff0000 202.34%
+    #00A4AF -6.32%,
+    #43F6AB 98.01%,
+    #00A4AF 202.34%
   );
 }
 
 .heroSubtitle {
   color: white;
+}
+
+.bySuzaku {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.bySuzaku a {
+  color: white;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media screen and (max-width: 996px) {

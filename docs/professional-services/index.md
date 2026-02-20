@@ -8,10 +8,9 @@ sidebar_position: 1
 
 ### Additional services for the Ash tools
 
-As the maintainers of the Ash [open-source tools](/docs/toolkit/) and [Console](/docs/console/), we can **develop additional features** and provide more services for any need that is not already covered:
+As the maintainers of the Ash [open-source tools](/docs/toolkit/), we can **develop additional features** and provide more services for any need that is not already covered:
 
 - Get **first class support** from our expert team
-- Support for a new cloud provider for Ash Console or **custom blockchain runtime** (HyperSDK VM)
 - Deploy and manage a **trustless bridge** to link your L1 to other blockchains (including the C-Chain)
 - Receive custom alerts in real time and never miss an important event going on in your L1
 - Launch a fully configurable [Faucet](https://github.com/ava-labs/avalanche-faucet) plugged on your L1 for easy testing and user on-boarding.
@@ -61,7 +60,6 @@ Ash is **operating multiple Avalanche nodes** (on the mainnet and Fuji testnet).
 ### Education
 
 [Gauthier](https://www.linkedin.com/in/gauthier-leonard/) has been a **distributed systems teacher** at some of the top French engineering schools ([CentraleSupélec](https://www.centralesupelec.fr/), [ECE Paris](https://www.ece.fr/), [DSTI](https://www.datasciencetech.institute/fr/)) for more than 3 years.
-
 
 ## Get in touch
 

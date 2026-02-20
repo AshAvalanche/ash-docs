@@ -5,7 +5,6 @@ import HomepageHeader from "../components/Homepage/Header/index";
 import HomepageSolutions from "../components/Homepage/Solutions";
 import HomepageToolkit from "../components/Homepage/Toolkit";
 import HomepageServices from "../components/Homepage/Services";
-import HomepageProjects from "../components/Homepage/Projects";
 import HomepageSupporters from "../components/Homepage/Supporters";
 // import Video from "../components/Homepage/Video";
 
@@ -18,7 +17,6 @@ export default function Home(): JSX.Element {
         <HomepageSolutions />
         <HomepageToolkit />
         <HomepageServices />
-        <HomepageProjects />
         <HomepageSupporters />
         {/* <div className={styles.section}>
           <Video />

@@ -19,6 +19,11 @@ export default function HomepageHeader() {
           {siteConfig.tagline}
           <br />
         </p>
+        <p className={styles.bySuzaku}>
+          by{" "}
+          <Link href="https://suzaku.network">Suzaku</Link>
+          {" "}— The Decentralization Hub for L1s
+        </p>
 
         <div className="container">
           <div className="row">
