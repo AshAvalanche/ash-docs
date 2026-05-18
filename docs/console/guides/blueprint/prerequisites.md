@@ -10,8 +10,6 @@ sidebar_position: 2
 
 :::info
 During the Console beta, **the Console is free to use**. User [registration](/docs/console/reference/registration) are invites only. If you want to get access or have any questions regarding the Ash Console beta, please contact us!
-
-- [Join our Discord](https://discord.gg/ktSyGrzWXy)
 :::
 
 To follow this guide, you will need:
@@ -24,5 +22,5 @@ To follow this guide, you will need:
   - [Google Cloud](https://cloud.google.com/) (account = project)
 
 :::caution
-This tutorial uses the `blueprint` function of the Ash CLI which is **not available** yet with the Ash Console Web UI. 
+This tutorial uses the `blueprint` function of the Ash CLI which is **not available** yet with the Ash Console Web UI.
 :::

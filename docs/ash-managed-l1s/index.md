@@ -68,5 +68,4 @@ Contact us to discuss your needs and we can help you set up a custom package.
 To get started with Ash Managed L1s or to schedule a consultation, please contact our team through one of these channels:
 
 - Book a call with our team [here](https://calendly.com/ash-e36knots/30min?month=2025-02)
-- Join our [Discord server](https://discord.gg/ktSyGrzWXy)
 - Message us on [Twitter](https://twitter.com/ash_avax)

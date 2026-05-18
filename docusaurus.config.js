@@ -119,12 +119,6 @@ const config = {
             className: "header-twitter-link",
             "aria-label": "Twitter Account",
           },
-          {
-            href: "https://discord.gg/ktSyGrzWXy",
-            position: "right",
-            className: "header-discord-link",
-            "aria-label": "Discord Server",
-          },
         ],
       },
       footer: {
@@ -158,10 +152,6 @@ const config = {
               {
                 label: "X / Twitter",
                 href: "https://twitter.com/ash_avax",
-              },
-              {
-                label: "Discord",
-                href: "https://discord.gg/ktSyGrzWXy",
               },
               {
                 label: "Branding Kit",

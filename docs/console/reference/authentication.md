@@ -15,16 +15,14 @@ Before interacting with the Ash Console, you need to authenticate yourself. The 
 
 :::info
 During the Console beta, **the Console is free to use**. User [registration](/docs/console/reference/registration) are invites only. If you want to get access or have any questions regarding the Ash Console beta, please contact us!
-
-- [Join our Discord](https://discord.gg/ktSyGrzWXy)
 :::
 
 <Tabs queryString="ash-console-auth-client">
   <TabItem value="ash-console" label="Authenticate using the Ash Console" default>
 
-  To authenticate in the Ash Console, just navigate to the [Ash Console](https://console.ash.center) and log in with your credentials.
-  
-  ![Ash Console login page](/img/ash-console-login.png)
+To authenticate in the Ash Console, just navigate to the [Ash Console](https://console.ash.center) and log in with your credentials.
+
+![Ash Console login page](/img/ash-console-login.png)
 
   </TabItem>
   <TabItem value="ash-cli" label="Authenticate using the Ash CLI" default>
@@ -61,6 +59,7 @@ Console OAuth2 error: failed to request OAuth2 token: Server returned error resp
 
 :::tip
 If you plan to use the API directly, run:
+
 ```bash title="Command"
 ash console auth refresh-token
 export access_token=$(ash console auth show-token | grep -)

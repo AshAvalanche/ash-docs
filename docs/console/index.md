@@ -13,8 +13,6 @@ sidebar_label: Overview
 
 :::info
 During the Console beta, **the Console is free to use**. User [registration](/docs/console/reference/registration) are invites only. If you want to get access or have any questions regarding the Ash Console beta, please contact us!
-
-- [Join our Discord](https://discord.gg/ktSyGrzWXy)
 :::
 
 ## Overview
@@ -58,5 +56,6 @@ Do you need more features, professional support, or additional services? The Ash
 ## Get started
 
 To get started with the Ash Console, follow one of our guides:
+
 - [Create an Avalanche validator on Fuji](/docs/console/guides/fuji-node/)
 - [Create a devnet with 5 validators, a Subnet and a block explorer](/docs/console/guides/local-network/)
