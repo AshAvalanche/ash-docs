@@ -11,7 +11,7 @@ sidebar_label: Overview
 The Ash Wallet web interface is a fork of [Safe{Wallet}](https://github.com/safe-global/safe-wallet-monorepo).
 :::
 
-[**Ash Wallet**](https://wallet.ash.center/) is **Safe**-based multi-signature wallet built for **Avalanche L1s** and the **Avalanche C-Chain**. It can be used to secure your team treasury and manage assets across every L1.
+[**Ash Wallet**](https://wallet.ash.center/) is **Safe**-based multi-signature wallet built for **Avalanche L1s** and the **Avalanche C-Chain**. It can be used to secure your team's treasury and critical operations, and manage assets across every L1.
 
 
 **Features:**

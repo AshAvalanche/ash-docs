@@ -18,7 +18,7 @@ title: FAQ - Known Issues
 </details>
 
 <details>
-  <summary>The ERC-20 logo of **TOKEN_SYMBOL** is missing</summary>
+  <summary>The ERC-20 logo of <b>TOKEN_SYMBOL</b> is missing</summary>
   <div>
   ERC-20 token logos are updated manually and set for the top Avalanche C-Chain tokens. If you want your token to be displayed, reach out on <a href="https://discord.com/invite/4XP6aqFkKX" target="_blank">Discord</a> in the 🔥(ash-wallet channel).
   </div>
@@ -49,4 +49,4 @@ title: FAQ - Known Issues
 
 ## Report an issue
 
-You can report any issue with Ash Wallet by opening a ticket on [Discord](https://discord.com/invite/4XP6aqFkKX) in the **🔥ash-wallet** channel.
+You can report any issue with Ash Wallet on [Discord](https://discord.com/invite/4XP6aqFkKX) in the `🔥|ash-wallet` channel.
