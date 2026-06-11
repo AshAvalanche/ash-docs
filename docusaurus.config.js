@@ -82,6 +82,12 @@ const config = {
           },
           {
             type: "doc",
+            docId: "ash-wallet/index",
+            position: "left",
+            label: "Ash Wallet Docs",
+          },
+          {
+            type: "doc",
             docId: "toolkit/index",
             position: "left",
             label: "Toolkit Docs",
