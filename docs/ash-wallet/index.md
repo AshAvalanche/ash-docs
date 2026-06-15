@@ -22,6 +22,18 @@ The Ash Wallet web interface is a fork of [Safe{Wallet}](https://github.com/safe
 
 *: Available if Safe 1.4.1 is deployed on the L1
 
+Ash Wallet is currently available for the following L1s:
+- Avalanche C-Chain
+- Fuji C-Chain
+- [GUNZ Chain](https://gunbygunz.com/)
+- [FIFA Collect](https://collect.fifa.com/pages/fifa-blockchain)
+- [Kite AI](https://gokite.ai/)
+- [Beam](https://onbeam.com/)
+- [Lamina1](https://lamina1.com/)
+- [Datagram](https://datagram.network/)
+- [Soshi Testnet](https://subnets-test.avax.network/tsoshi)
+- [Ozeki Testnet](https://subnets-test.avax.network/ozeki)
+
 :::danger
 ### Never fully trust a web UI for your critical operations
 
