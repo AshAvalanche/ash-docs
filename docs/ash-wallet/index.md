@@ -37,7 +37,7 @@ Ash Wallet is currently available for the following L1s:
 :::danger
 ### Never fully trust a web UI for your critical operations
 
-While we are doing everything possible to adhere **to best-in-class SecOps standards** for Ash Wallet, we have seen in the past that **even the best teams can be hacked**. The [Safe team itself has been hacked](https://rekt.news/bybit-rekt), compromising the official Safe web UI and resulting in a loss of over $1.4B for the [ByBit](https://www.bybit.com/en) exchange.
+While we are doing everything possible to adhere **to best-in-class SecOps standards** for Ash Wallet, we have seen in the recent years that **even the best teams can be hacked**.
 
 To **maximize the security** of your Safe operations, always follow the **best practices outlined in the transaction signing process**:
 
