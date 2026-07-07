@@ -15,21 +15,21 @@ Our **Ash Managed L1s** offer provides a comprehensive solution for organization
 | **Feature**           | **Testnet Package**                                  | **Mainnet Package**                                                |
 | --------------------- | ---------------------------------------------------- | ------------------------------------------------------------------ |
 | **Nodes<sup>1</sup>** | 2 validator nodes                                    | 5 validator nodes                                                  |
-| **Validator specs**   | 2 vCPUs / 4 GiB RAM (AWS t2.medium or equivalent)    | 4 vCPUs / 16 GiB RAM (AWS t2.xlarge or equivalent)                 |
-| **Storage**           | 100GB SSD storage                                    | 1TB SSD storage                                                    |
+| **Validator specs**   | 2 vCPUs / 4 GiB RAM (OVH VPS-1 or equivalent)        | 8 vCPUs / 24 GiB RAM (OVH VPS-4 or equivalent)                     |
+| **Storage**<sup>2</sup>           | 40GB SSD storage                                     | 200GB SSD storage                                                  |
+| **Dedicated RPC **    | ❌                                                   | 1 dedicated RPC                                                   |
 | **Use Case**          | Perfect for development and testing                  | Production-ready infrastructure                                    |
-| **Price / mo**        | **$49** with Builder Credits<sup>2</sup> (reg. $599) | **$999** with Builder Credits<sup>3</sup> (reg. $2999<sup>4</sup>) |
+| **Price / mo**        | **$399**                                             | **$1999**<sup>2</sup>                                              |
 
 - <sup>1</sup> Additional nodes can be added on request
-- <sup>2</sup> Builder Credits are available for 1 year starting from the date of subscription
-- <sup>3</sup> Including Continuous Fee
-- <sup>4</sup> Regular price excludes Continuous Fee (1.33 AVAX / validator node / month)
+- <sup>2</sup> Extra storage can be added on request
+- <sup>3</sup> Excluding Continuous Fee (1.33 AVAX / validator node / month)
 
 ## Included Features
 
 Both Testnet & Mainnet packages include:
 
-- Hosting & maintenance of a **block explorer** customized for your L1 (example: [ETO Explorer](https://eto-explorer.ash.center/))
+- Hosting & maintenance of a **block explorer** customized for your L1 based on [**Blockscout**](https://www.blockscout.com/)
 - **Support & maintenance** by our team of experts
 - 24/7 **monitoring**
 - Custom **alerting**
@@ -41,7 +41,7 @@ Both Testnet & Mainnet packages include:
 
 Our team can also help you set up the following additional services for your L1:
 
-- Hosting & maintenance of an **[ICM bridge](https://build.avax.network/docs/cross-chain/avalanche-warp-messaging/overview)** (example: [Plan B bridge](https://plan-b.gitbook.io/docs/user-guides/bridge-from-avalanche))
+- Hosting & maintenance of an **[ICM bridge](https://build.avax.network/docs/cross-chain/avalanche-warp-messaging/overview)**
 - **BYOH**: Bring Your Own Hardware (bare metal or VPS)
   - Spin up your own validator nodes on your own hardware
   - We take care of the L1 deployment and maintenance
@@ -67,5 +67,5 @@ Contact us to discuss your needs and we can help you set up a custom package.
 
 To get started with Ash Managed L1s or to schedule a consultation, please contact our team through one of these channels:
 
-- Book a call with our team [here](https://calendly.com/ash-e36knots/30min?month=2025-02)
+- Book a call with our team [here](https://calendly.com/ash-e36knots/30min)
 - Message us on [Twitter](https://twitter.com/ash_avax)
